@@ -3,10 +3,11 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1137.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nz.ac.auckland.se206.controllers.MainSceneController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1137.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nz.ac.auckland.se206.controllers.SuspectSelectionController">
    <children>
       <ImageView fitHeight="650.0" fitWidth="1137.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -18,7 +19,7 @@
             <Font size="52.0" />
          </font>
       </Text>
-      <ImageView fitHeight="472.0" fitWidth="359.0" layoutX="49.0" layoutY="115.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="472.0" fitWidth="359.0" layoutX="45.0" layoutY="115.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/notepad.png" />
          </image>
@@ -134,5 +135,8 @@
             <Image url="@../images/Fonts/Auctioneer/description4.png" />
          </image>
       </ImageView>
+      <Rectangle fx:id="rectArchaeologist" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="416.0" layoutX="81.0" layoutY="141.0" onMouseClicked="#handleArchaeologistClick" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="284.0" />
+      <Rectangle fx:id="rectAuctioneer" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="416.0" layoutX="427.0" layoutY="143.0" onMouseClicked="#handleAuctioneerClick" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="284.0" />
+      <Rectangle fx:id="rectCollector" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="416.0" layoutX="781.0" layoutY="143.0" onMouseClicked="#handleCollectorClick" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="284.0" />
    </children>
 </Pane>
