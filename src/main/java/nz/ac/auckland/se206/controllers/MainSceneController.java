@@ -4,7 +4,6 @@ import java.io.IOException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Rectangle;
@@ -22,7 +21,6 @@ public class MainSceneController {
   @FXML private Rectangle rectPerson2;
   @FXML private Rectangle rectPerson3;
   @FXML private Rectangle rectWaitress;
-  @FXML private Label lblProfession;
   @FXML private Button btnGuess;
 
   private static boolean isFirstTimeInit = true;
@@ -39,7 +37,6 @@ public class MainSceneController {
           "Chat with the three customers, and guess who is the " + context.getProfessionToGuess());
       isFirstTimeInit = false;
     }
-    lblProfession.setText(context.getProfessionToGuess());
   }
 
   /**
