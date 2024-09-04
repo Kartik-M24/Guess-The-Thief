@@ -57,9 +57,9 @@ public class TextToSpeech {
             return null;
           }
         };
-
+    System.out.println(text);
     Thread backgroundThread = new Thread(backgroundTask);
     backgroundThread.setDaemon(true); // Ensure the thread does not prevent JVM shutdown
-    backgroundThread.start();
+    // backgroundThread.start();
   }
 }
