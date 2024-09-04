@@ -16,15 +16,11 @@ import nz.ac.auckland.se206.speech.TextToSpeech;
  */
 public class MainSceneController {
 
-  @FXML private Rectangle rectCashier;
-  @FXML private Rectangle rectPerson1;
-  @FXML private Rectangle rectPerson2;
-  @FXML private Rectangle rectPerson3;
-  @FXML private Rectangle rectWaitress;
   @FXML private Button btnGuess;
 
   private static boolean isFirstTimeInit = true;
   private static GameStateContext context = new GameStateContext();
+  private boolean clueClicked;
 
   /**
    * Initializes the room view. If it's the first time initialization, it will provide instructions
@@ -60,15 +56,16 @@ public class MainSceneController {
   }
 
   /**
-   * Handles mouse clicks on rectangles representing people in the room.
+   * Handles mouse clicks on rectangles representing clues in the room.
    *
    * @param event the mouse event triggered by clicking a rectangle
    * @throws IOException if there is an I/O error
    */
   @FXML
-  private void handleRectangleClick(MouseEvent event) throws IOException {
+  private void handleClueClick(MouseEvent event) throws IOException {
     Rectangle clickedRectangle = (Rectangle) event.getSource();
-    context.handleRectangleClick(event, clickedRectangle.getId());
+    context.handleClueClick(event, clickedRectangle.getId());
+    clueClicked = true;
   }
 
   /**

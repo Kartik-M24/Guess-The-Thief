@@ -15,7 +15,7 @@
             <Image url="@../images/MainSceneView.jpg" />
          </image>
       </ImageView>
-      <Button fx:id="btnGuess" layoutX="493.0" layoutY="32.0" mnemonicParsing="false" onAction="#handleGuessClick" opacity="0.7" prefHeight="50.0" prefWidth="190.0" style="-fx-background-color: #010a2e;" text="Make a Guess" textFill="WHITE">
+      <Button fx:id="btnGuess" layoutX="493.0" layoutY="32.0" mnemonicParsing="false" onAction="#handleGuessClick" onMouseClicked="#handleGuessClick" opacity="0.7" prefHeight="50.0" prefWidth="190.0" style="-fx-background-color: #010a2e;" text="Make a Guess" textFill="WHITE">
          <font>
             <Font size="25.0" />
          </font>
@@ -25,8 +25,8 @@
             <Font size="52.0" />
          </font>
       </Text>
-      <Rectangle fx:id="lecternClue" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="128.0" layoutX="551.0" layoutY="239.0" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="78.0" />
-      <Rectangle fx:id="fuseboxClue" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="353.0" layoutX="215.0" layoutY="253.0" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="161.0" />
-      <Rectangle fx:id="securityCameraClue" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="62.0" layoutX="856.0" layoutY="20.0" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="78.0" />
+      <Rectangle fx:id="lecternClue" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="128.0" layoutX="551.0" layoutY="239.0" onMouseClicked="#handleClueClick" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="78.0" />
+      <Rectangle fx:id="fuseboxClue" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="353.0" layoutX="215.0" layoutY="253.0" onMouseClicked="#handleClueClick" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="161.0" />
+      <Rectangle fx:id="securityCameraClue" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="62.0" layoutX="856.0" layoutY="20.0" onMouseClicked="#handleClueClick" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="78.0" />
    </children>
 </Pane>
