@@ -20,7 +20,7 @@
       <Button layoutX="955.0" layoutY="584.0" mnemonicParsing="false" onAction="#onGoBack" prefHeight="36.0" prefWidth="117.0" text="Go Back" />
       <ImageView fitHeight="120.0" fitWidth="120.0" layoutX="992.0" layoutY="145.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../images/RichCollectorProfile%20(3).png" />
+            <Image url="@../images/RichCollectorProfile.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="120.0" fitWidth="120.0" layoutX="992.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">

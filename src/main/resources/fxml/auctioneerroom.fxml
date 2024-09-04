@@ -25,7 +25,7 @@
       </ImageView>
       <ImageView fitHeight="120.0" fitWidth="120.0" layoutX="992.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../images/RichCollectorProfile%20(3).png" />
+            <Image url="@../images/RichCollectorProfile.png" />
          </image>
       </ImageView>
    </children>
