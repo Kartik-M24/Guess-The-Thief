@@ -17,7 +17,6 @@ public class IntroSceneController {
 
     ImageView button = (ImageView) event.getSource();
     Scene sceneButtonIsIn = button.getScene();
-
     sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.MAINSCENE));
   }
 }
