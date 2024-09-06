@@ -5,7 +5,8 @@ import javafx.fxml.FXML;
 import javafx.scene.Scene;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import nz.ac.auckland.se206.controllers.SceneManager.AppUi;
+import nz.ac.auckland.se206.SceneManager;
+import nz.ac.auckland.se206.SceneManager.AppUi;
 
 public class IntroSceneController {
 
@@ -14,9 +15,7 @@ public class IntroSceneController {
   @FXML
   public void changeScene(MouseEvent event) throws IOException {
 
-    System.out.println("Button clicked: " + startButton.getId());
     ImageView button = (ImageView) event.getSource();
-    System.out.println("Button clicked: " + button.getId());
     Scene sceneButtonIsIn = button.getScene();
 
     sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.MAINSCENE));
