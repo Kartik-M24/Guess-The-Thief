@@ -81,6 +81,7 @@ public class App extends Application {
     SceneManager.addUi(SceneManager.AppUi.INTROSCENE, loadFxml("introscene"));
     SceneManager.addUi(SceneManager.AppUi.MAINSCENE, loadFxml("mainscene"));
     SceneManager.addUi(SceneManager.AppUi.SECONDSCENE, loadFxml("secondscene"));
+    SceneManager.addUi(SceneManager.AppUi.SUSPECTSSELECTION, loadFxml("suspectsselection"));
 
     scene = new Scene(SceneManager.getUiRoot(AppUi.INTROSCENE));
     stage.setScene(scene);

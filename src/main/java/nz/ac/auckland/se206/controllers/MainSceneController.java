@@ -3,12 +3,15 @@ package nz.ac.auckland.se206.controllers;
 import java.io.IOException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Rectangle;
 import nz.ac.auckland.se206.GameStateContext;
+import nz.ac.auckland.se206.SceneManager;
+import nz.ac.auckland.se206.SceneManager.AppUi;
 import nz.ac.auckland.se206.speech.TextToSpeech;
 
 /**
@@ -91,5 +94,9 @@ public class MainSceneController {
    * @throws IOException if there is an I/O error
    */
   @FXML
-  private void handleSuspectsClick(MouseEvent event) throws IOException {}
+  private void handleSuspectsClick(MouseEvent event) throws IOException {
+    ImageView button = (ImageView) event.getSource();
+    Scene sceneButtonIsIn = button.getScene();
+    sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.SUSPECTSSELECTION));
+  }
 }
