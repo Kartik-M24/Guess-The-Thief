@@ -22,7 +22,11 @@ public class SuspectSelectionController {
    * @throws IOException if there is an I/O error
    */
   @FXML
-  private void handleArchaeologistClick(MouseEvent event) throws IOException {}
+  private void handleArchaeologistClick(MouseEvent event) throws IOException {
+    Rectangle button = (Rectangle) event.getSource();
+    Scene sceneButtonIsIn = button.getScene();
+    sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.ARCHAEOLOGISTROOM));
+  }
 
   /**
    * Handles mouse clicks on rectangles representing people in the room.
@@ -31,7 +35,11 @@ public class SuspectSelectionController {
    * @throws IOException if there is an I/O error
    */
   @FXML
-  private void handleAuctioneerClick(MouseEvent event) throws IOException {}
+  private void handleAuctioneerClick(MouseEvent event) throws IOException {
+    Rectangle button = (Rectangle) event.getSource();
+    Scene sceneButtonIsIn = button.getScene();
+    sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.AUCTIONEERROOM));
+  }
 
   /**
    * Handles mouse clicks on rectangles representing people in the room.
@@ -40,7 +48,11 @@ public class SuspectSelectionController {
    * @throws IOException if there is an I/O error
    */
   @FXML
-  private void handleCollectorClick(MouseEvent event) throws IOException {}
+  private void handleCollectorClick(MouseEvent event) throws IOException {
+    Rectangle button = (Rectangle) event.getSource();
+    Scene sceneButtonIsIn = button.getScene();
+    sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.COLLECTORROOM));
+  }
 
   /**
    * Handles mouse clicks on rectangles representing people in the room.
