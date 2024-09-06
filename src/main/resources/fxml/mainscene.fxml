@@ -28,5 +28,10 @@
       <Rectangle fx:id="lecternClue" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="128.0" layoutX="551.0" layoutY="239.0" onMouseClicked="#handleClueClick" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="78.0" />
       <Rectangle fx:id="fuseboxClue" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="353.0" layoutX="215.0" layoutY="253.0" onMouseClicked="#handleClueClick" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="161.0" />
       <Rectangle fx:id="securityCameraClue" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="62.0" layoutX="856.0" layoutY="20.0" onMouseClicked="#handleClueClick" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="78.0" />
+      <ImageView fx:id="rectSuspects" fitHeight="69.0" fitWidth="69.0" layoutX="1048.0" layoutY="17.0" onMouseClicked="#handleSuspectsClick" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/suspectsIcon.png" />
+         </image>
+      </ImageView>
    </children>
 </Pane>
