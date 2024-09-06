@@ -10,7 +10,8 @@ public class SceneManager {
     SECONDSCENE,
     COLLECTORROOM,
     ARCHAEOLOGISTROOM,
-    AUCTIONEERROOM
+    AUCTIONEERROOM,
+    SUSPECTSSELECTION
   }
 
   private static HashMap<AppUi, Parent> sceneMap = new HashMap<AppUi, Parent>();
