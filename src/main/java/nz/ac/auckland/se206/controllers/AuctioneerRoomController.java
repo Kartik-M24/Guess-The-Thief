@@ -10,6 +10,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import nz.ac.auckland.apiproxy.chat.openai.ChatCompletionRequest;
 import nz.ac.auckland.apiproxy.chat.openai.ChatCompletionResult;
 import nz.ac.auckland.apiproxy.chat.openai.ChatMessage;
@@ -25,6 +26,7 @@ public class AuctioneerRoomController {
 
   @FXML private ImageView archaeologistpp;
   @FXML private ImageView collectorpp;
+  @FXML private ImageView imgCrimeScene;
   @FXML private TextArea txtaChat;
   @FXML private TextField txtInput;
   @FXML private Button btnSend;
@@ -115,15 +117,29 @@ public class AuctioneerRoomController {
   }
 
   /**
-   * Navigates back to the previous view.
+   * Handles mouse clicks on rectangles representing people in the room.
    *
-   * @param event the action event triggered by the go back button
+   * @param event the mouse event triggered by clicking a rectangle
    * @throws IOException if there is an I/O error
    */
   @FXML
-  private void onGoBack(ActionEvent event) throws IOException {
-    Button button = (Button) event.getSource();
+  private void handleCrimeSceneClick(MouseEvent event) throws IOException {
+    ImageView button = (ImageView) event.getSource();
     Scene sceneButtonIsIn = button.getScene();
     sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.MAINSCENE));
+  }
+
+  @FXML
+  private void gotoArchaeologist(MouseEvent event) throws IOException {
+    ImageView button = (ImageView) event.getSource();
+    Scene sceneButtonIsIn = button.getScene();
+    sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.ARCHAEOLOGISTROOM));
+  }
+
+  @FXML
+  private void gotoCollector(MouseEvent event) throws IOException {
+    ImageView button = (ImageView) event.getSource();
+    Scene sceneButtonIsIn = button.getScene();
+    sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.COLLECTORROOM));
   }
 }
