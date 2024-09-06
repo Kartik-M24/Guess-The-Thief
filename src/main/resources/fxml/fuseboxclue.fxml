@@ -15,10 +15,20 @@
          </image>
       </ImageView>
       <ButtonBar layoutX="404.0" layoutY="139.0" prefHeight="40.0" prefWidth="200.0" />
-      <Button layoutX="863.0" layoutY="65.0" mnemonicParsing="false" text="Analyse Contents">
+      <Button layoutX="48.0" layoutY="134.0" mnemonicParsing="false" text="Analyse Contents">
          <font>
             <Font size="24.0" />
          </font>
       </Button>
+      <ImageView fx:id="imgCrimeScene" fitHeight="90.0" fitWidth="88.0" layoutX="1008.0" layoutY="14.0" onMouseClicked="#handleCrimeSceneClick" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/crimeSceneIcon.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="448.0" fitWidth="333.0" layoutX="-11.0" layoutY="179.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/notepad.png" />
+         </image>
+      </ImageView>
    </children>
 </Pane>

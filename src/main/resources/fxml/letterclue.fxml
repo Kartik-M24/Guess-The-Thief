@@ -31,5 +31,10 @@
             <Image url="@../images/LetterClue/Letter_Image_3.png" />
          </image>
       </ImageView>
+      <ImageView fx:id="imgCrimeScene" fitHeight="90.0" fitWidth="88.0" layoutX="1008.0" layoutY="14.0" onMouseClicked="#handleCrimeSceneClick" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/crimeSceneIcon.png" />
+         </image>
+      </ImageView>
    </children>
 </Pane>
