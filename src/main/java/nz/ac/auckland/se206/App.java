@@ -8,9 +8,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
-import javafx.stage.WindowEvent;
+import nz.ac.auckland.se206.SceneManager.AppUi;
 import nz.ac.auckland.se206.controllers.ChatController;
-import nz.ac.auckland.se206.speech.FreeTextToSpeech;
 
 /**
  * This is the entry point of the JavaFX application. This class initializes and runs the JavaFX
@@ -79,15 +78,21 @@ public class App extends Application {
    */
   @Override
   public void start(final Stage stage) throws IOException {
-    Parent root = loadFxml("mainscene");
-    scene = new Scene(root);
+    SceneManager.addUi(SceneManager.AppUi.INTROSCENE, loadFxml("introscene"));
+    SceneManager.addUi(SceneManager.AppUi.MAINSCENE, loadFxml("mainscene"));
+    SceneManager.addUi(SceneManager.AppUi.SECONDSCENE, loadFxml("secondscene"));
+    SceneManager.addUi(SceneManager.AppUi.COLLECTORROOM, loadFxml("collectorroom"));
+    SceneManager.addUi(SceneManager.AppUi.ARCHAEOLOGISTROOM, loadFxml("archaeologistroom"));
+    SceneManager.addUi(SceneManager.AppUi.AUCTIONEERROOM, loadFxml("auctioneerroom"));
+
+    scene = new Scene(SceneManager.getUiRoot(AppUi.INTROSCENE));
     stage.setScene(scene);
     stage.show();
-    stage.setOnCloseRequest(event -> handleWindowClose(event));
-    root.requestFocus();
+    // stage.setOnCloseRequest(event -> handleWindowClose(event));
+    // root.requestFocus();
   }
 
-  private void handleWindowClose(WindowEvent event) {
-    FreeTextToSpeech.deallocateSynthesizer();
-  }
+  // private void handleWindowClose(WindowEvent event) {
+  //   FreeTextToSpeech.deallocateSynthesizer();
+  // }
 }
