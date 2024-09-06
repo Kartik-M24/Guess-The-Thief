@@ -1,9 +1,12 @@
 package nz.ac.auckland.se206.states;
 
 import java.io.IOException;
+import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;
-import nz.ac.auckland.se206.App;
+import javafx.scene.shape.Rectangle;
 import nz.ac.auckland.se206.GameStateContext;
+import nz.ac.auckland.se206.SceneManager;
+import nz.ac.auckland.se206.SceneManager.AppUi;
 import nz.ac.auckland.se206.speech.TextToSpeech;
 
 /**
@@ -45,6 +48,15 @@ public class GameStarted implements GameState {
    */
   @Override
   public void handleClueClick(MouseEvent event, String rectangleId) throws IOException {
-    TextToSpeech.speak("Open Clue");
+    if (rectangleId.equals("fuseboxClue")) {
+      Rectangle rectValue = (Rectangle) event.getSource();
+      Scene rectScene = rectValue.getScene();
+      rectScene.setRoot(SceneManager.getUiRoot(AppUi.FUSEBOXCLUE));
+    }
+    if (rectangleId.equals("lecternClue")) {
+      Rectangle rectValue = (Rectangle) event.getSource();
+      Scene rectScene = rectValue.getScene();
+      rectScene.setRoot(SceneManager.getUiRoot(AppUi.SECONDSCENE));
+    }
   }
 }

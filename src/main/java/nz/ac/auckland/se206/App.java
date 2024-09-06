@@ -84,6 +84,8 @@ public class App extends Application {
     SceneManager.addUi(SceneManager.AppUi.COLLECTORROOM, loadFxml("collectorroom"));
     SceneManager.addUi(SceneManager.AppUi.ARCHAEOLOGISTROOM, loadFxml("archaeologistroom"));
     SceneManager.addUi(SceneManager.AppUi.AUCTIONEERROOM, loadFxml("auctioneerroom"));
+    SceneManager.addUi(SceneManager.AppUi.LETTERCLUE, loadFxml("letterclue"));
+    SceneManager.addUi(SceneManager.AppUi.FUSEBOXCLUE, loadFxml("fuseboxclue"));
 
     scene = new Scene(SceneManager.getUiRoot(AppUi.INTROSCENE));
     stage.setScene(scene);
