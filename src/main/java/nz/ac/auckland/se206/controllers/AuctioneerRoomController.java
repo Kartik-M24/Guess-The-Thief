@@ -8,6 +8,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import nz.ac.auckland.apiproxy.chat.openai.ChatCompletionRequest;
 import nz.ac.auckland.apiproxy.chat.openai.ChatCompletionResult;
@@ -97,6 +98,22 @@ public class AuctioneerRoomController {
     } catch (ApiProxyException e) {
       e.printStackTrace();
       return null;
+    }
+  }
+
+  /**
+   * Handles the key pressed event.
+   *
+   * @param event the key event
+   */
+  @FXML
+  public void onKeyPressed(KeyEvent event) {
+    if (event.getCode().toString().equals("ENTER")) {
+      try {
+        onSendMessage(new ActionEvent());
+      } catch (ApiProxyException | IOException e) {
+        e.printStackTrace();
+      }
     }
   }
 
