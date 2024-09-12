@@ -41,7 +41,7 @@ public class ArchaeologistRoomController {
    * @return the system prompt string
    */
   private String getSystemPrompt() {
-    return PromptEngineering.getPrompt("chat.txt");
+    return PromptEngineering.getPrompt("archaeologistPrompt.txt");
   }
 
   /**
@@ -70,7 +70,11 @@ public class ArchaeologistRoomController {
    * @param msg the chat message to append
    */
   private void appendChatMessage(ChatMessage msg) {
-    txtaChat.appendText(msg.getRole() + ": " + msg.getContent() + "\n\n");
+    if (msg.getRole().equals("user")) {
+      txtaChat.appendText("You" + ": " + msg.getContent() + "\n\n");
+    } else {
+      txtaChat.appendText("Dr. Samuel Carter" + ": " + msg.getContent() + "\n\n");
+    }
   }
 
   /**

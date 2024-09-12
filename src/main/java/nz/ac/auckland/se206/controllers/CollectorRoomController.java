@@ -42,7 +42,7 @@ public class CollectorRoomController {
    */
   private String getSystemPrompt() {
 
-    return PromptEngineering.getPrompt("chat.txt");
+    return PromptEngineering.getPrompt("collectorPrompt.txt");
   }
 
   /**
@@ -71,7 +71,11 @@ public class CollectorRoomController {
    * @param msg the chat message to append
    */
   private void appendChatMessage(ChatMessage msg) {
-    txtaChat.appendText(msg.getRole() + ": " + msg.getContent() + "\n\n");
+    if (msg.getRole().equals("user")) {
+      txtaChat.appendText("You" + ": " + msg.getContent() + "\n\n");
+    } else {
+      txtaChat.appendText("Victor Lancaster" + ": " + msg.getContent() + "\n\n");
+    }
   }
 
   /**

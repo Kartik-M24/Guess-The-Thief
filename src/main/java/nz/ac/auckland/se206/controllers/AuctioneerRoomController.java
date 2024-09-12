@@ -41,7 +41,7 @@ public class AuctioneerRoomController {
    * @return the system prompt string
    */
   private String getSystemPrompt() {
-    return PromptEngineering.getPrompt("chat.txt");
+    return PromptEngineering.getPrompt("auctioneerPrompt.txt");
   }
 
   /**
