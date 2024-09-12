@@ -1,8 +1,6 @@
 package nz.ac.auckland.se206.controllers;
 
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
@@ -10,6 +8,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import nz.ac.auckland.apiproxy.chat.openai.ChatCompletionRequest;
 import nz.ac.auckland.apiproxy.chat.openai.ChatCompletionResult;
 import nz.ac.auckland.apiproxy.chat.openai.ChatMessage;
@@ -19,18 +18,22 @@ import nz.ac.auckland.apiproxy.exceptions.ApiProxyException;
 import nz.ac.auckland.se206.SceneManager;
 import nz.ac.auckland.se206.SceneManager.AppUi;
 import nz.ac.auckland.se206.prompts.PromptEngineering;
-import nz.ac.auckland.se206.speech.FreeTextToSpeech;
 
 public class AuctioneerRoomController {
 
   @FXML private ImageView archaeologistpp;
   @FXML private ImageView collectorpp;
+  @FXML private ImageView imgCrimeScene;
   @FXML private TextArea txtaChat;
   @FXML private TextField txtInput;
   @FXML private Button btnSend;
 
   private ChatCompletionRequest chatCompletionRequest;
-  private String profession;
+
+  @FXML
+  public void initialize() throws ApiProxyException {
+    setProfession();
+  }
 
   /**
    * Generates the system prompt based on the profession.
@@ -38,9 +41,7 @@ public class AuctioneerRoomController {
    * @return the system prompt string
    */
   private String getSystemPrompt() {
-    Map<String, String> map = new HashMap<>();
-    map.put("profession", profession);
-    return PromptEngineering.getPrompt("chat.txt", map);
+    return PromptEngineering.getPrompt("chat.txt");
   }
 
   /**
@@ -48,8 +49,7 @@ public class AuctioneerRoomController {
    *
    * @param profession the profession to set
    */
-  public void setProfession(String profession) {
-    this.profession = profession;
+  public void setProfession() {
     try {
       ApiProxyConfig config = ApiProxyConfig.readConfig();
       chatCompletionRequest =
@@ -70,7 +70,11 @@ public class AuctioneerRoomController {
    * @param msg the chat message to append
    */
   private void appendChatMessage(ChatMessage msg) {
-    txtaChat.appendText(msg.getRole() + ": " + msg.getContent() + "\n\n");
+    if (msg.getRole().equals("user")) {
+      txtaChat.appendText("You" + ": " + msg.getContent() + "\n\n");
+    } else {
+      txtaChat.appendText("Emily Clarke" + ": " + msg.getContent() + "\n\n");
+    }
   }
 
   /**
@@ -87,7 +91,8 @@ public class AuctioneerRoomController {
       Choice result = chatCompletionResult.getChoices().iterator().next();
       chatCompletionRequest.addMessage(result.getChatMessage());
       appendChatMessage(result.getChatMessage());
-      FreeTextToSpeech.speak(result.getChatMessage().getContent());
+      // FreeTextToSpeech.speak(result.getChatMessage().getContent());
+      System.out.println(result.getChatMessage().getContent());
       return result.getChatMessage();
     } catch (ApiProxyException e) {
       e.printStackTrace();
@@ -109,21 +114,35 @@ public class AuctioneerRoomController {
       return;
     }
     txtInput.clear();
-    ChatMessage msg = new ChatMessage("Detective", message);
+    ChatMessage msg = new ChatMessage("user", message);
     appendChatMessage(msg);
     runGpt(msg);
   }
 
   /**
-   * Navigates back to the previous view.
+   * Handles mouse clicks on rectangles representing people in the room.
    *
-   * @param event the action event triggered by the go back button
+   * @param event the mouse event triggered by clicking a rectangle
    * @throws IOException if there is an I/O error
    */
   @FXML
-  private void onGoBack(ActionEvent event) throws IOException {
-    Button button = (Button) event.getSource();
+  private void handleCrimeSceneClick(MouseEvent event) throws IOException {
+    ImageView button = (ImageView) event.getSource();
     Scene sceneButtonIsIn = button.getScene();
     sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.MAINSCENE));
+  }
+
+  @FXML
+  private void gotoArchaeologist(MouseEvent event) throws IOException {
+    ImageView button = (ImageView) event.getSource();
+    Scene sceneButtonIsIn = button.getScene();
+    sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.ARCHAEOLOGISTROOM));
+  }
+
+  @FXML
+  private void gotoCollector(MouseEvent event) throws IOException {
+    ImageView button = (ImageView) event.getSource();
+    Scene sceneButtonIsIn = button.getScene();
+    sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.COLLECTORROOM));
   }
 }
