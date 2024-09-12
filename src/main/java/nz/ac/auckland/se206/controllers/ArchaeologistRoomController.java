@@ -10,6 +10,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import nz.ac.auckland.apiproxy.chat.openai.ChatCompletionRequest;
 import nz.ac.auckland.apiproxy.chat.openai.ChatCompletionResult;
@@ -114,6 +115,14 @@ public class ArchaeologistRoomController {
     ChatMessage msg = new ChatMessage("Detective", message);
     appendChatMessage(msg);
     runGpt(msg);
+  }
+
+  @FXML
+  private void onSendMessageE(KeyEvent event) throws ApiProxyException, IOException {
+    if (!event.getCode().toString().equals("ENTER")) {
+      return;
+    }
+    btnSend.fire();
   }
 
   /**
