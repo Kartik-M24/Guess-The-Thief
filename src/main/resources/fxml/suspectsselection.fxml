@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
@@ -14,11 +15,6 @@
             <Image url="@../images/MainSceneView.jpg" />
          </image>
       </ImageView>
-      <Text fx:id="timer" fill="#e5000c" layoutX="14.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="5:00" wrappingWidth="101.06661987304682">
-         <font>
-            <Font size="52.0" />
-         </font>
-      </Text>
       <ImageView fitHeight="556.0" fitWidth="438.0" layoutX="733.0" layoutY="92.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/notepad.png" />
@@ -143,5 +139,10 @@
       <Rectangle fx:id="rectCollector" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="489.0" layoutX="774.0" layoutY="121.0" onMouseClicked="#handleCollectorClick" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="331.0" />
       <Rectangle fx:id="rectAuctioneer" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="489.0" layoutX="405.0" layoutY="125.0" onMouseClicked="#handleAuctioneerClick" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="331.0" />
       <Rectangle fx:id="rectArchaeologist" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="489.0" layoutX="34.0" layoutY="124.0" onMouseClicked="#handleArchaeologistClick" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="324.0" />
+      <Label fx:id="timer" alignment="CENTER" layoutX="24.0" layoutY="24.0" prefHeight="62.0" prefWidth="154.0" textAlignment="CENTER" textFill="#b71616">
+         <font>
+            <Font size="40.0" />
+         </font>
+      </Label>
    </children>
 </Pane>
