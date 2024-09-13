@@ -52,7 +52,6 @@ public class MainSceneController {
     }
 
     timerManager.startTimer();
-
     Timeline timeline = TimerManager.getTimeline();
     timeline.getKeyFrames().add(new KeyFrame(Duration.millis(1), event -> updateTimer()));
   }

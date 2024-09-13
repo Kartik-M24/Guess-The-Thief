@@ -53,6 +53,12 @@ public class TimerManager {
     }
   }
 
+  public void setStartingtime() {
+    minutes = 4;
+    seconds = 59;
+    milliseconds = 999;
+  }
+
   public String getFormattedTime() {
     return String.format("%1d:%02d", minutes, seconds);
   }
