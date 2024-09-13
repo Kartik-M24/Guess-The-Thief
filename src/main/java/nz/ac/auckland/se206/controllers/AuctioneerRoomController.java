@@ -1,15 +1,19 @@
 package nz.ac.auckland.se206.controllers;
 
 import java.io.IOException;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
+import javafx.util.Duration;
 import nz.ac.auckland.apiproxy.chat.openai.ChatCompletionRequest;
 import nz.ac.auckland.apiproxy.chat.openai.ChatCompletionResult;
 import nz.ac.auckland.apiproxy.chat.openai.ChatMessage;
@@ -18,6 +22,7 @@ import nz.ac.auckland.apiproxy.config.ApiProxyConfig;
 import nz.ac.auckland.apiproxy.exceptions.ApiProxyException;
 import nz.ac.auckland.se206.SceneManager;
 import nz.ac.auckland.se206.SceneManager.AppUi;
+import nz.ac.auckland.se206.TimerManager;
 import nz.ac.auckland.se206.prompts.PromptEngineering;
 
 public class AuctioneerRoomController {
@@ -28,12 +33,20 @@ public class AuctioneerRoomController {
   @FXML private TextArea txtaChat;
   @FXML private TextField txtInput;
   @FXML private Button btnSend;
+  @FXML private Label timer;
 
   private ChatCompletionRequest chatCompletionRequest;
+  private TimerManager timerManager = TimerManager.getInstance();
 
   @FXML
-  public void initialize() throws ApiProxyException {
+  public void initialize() {
     setProfession();
+    Timeline timeline = TimerManager.getTimeline();
+    timeline.getKeyFrames().add(new KeyFrame(Duration.millis(1), event -> updateTimer()));
+  }
+
+  public void updateTimer() {
+    timer.setText(timerManager.getFormattedTime());
   }
 
   /**
