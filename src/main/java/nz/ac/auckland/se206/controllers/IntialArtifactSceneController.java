@@ -13,6 +13,7 @@ import nz.ac.auckland.se206.TimerManager;
 public class IntialArtifactSceneController {
 
   @FXML private Rectangle lightRect;
+  public static boolean isFirstTime = true;
   private TimerManager timerManager = TimerManager.getInstance();
   private AudioManager audioManager = new AudioManager();
   private AudioManager audioManager2 = new AudioManager();
@@ -29,21 +30,24 @@ public class IntialArtifactSceneController {
     // Play auction audio
     if (timerManager.getMinutes() == 4
         && timerManager.getSeconds() == 57
-        && timerManager.getMilliseconds() == 999) {
+        && timerManager.getMilliseconds() == 999
+        && isFirstTime) {
       audioManager.playAudio(AudioManager.AudioType.INITIALTHEFTAUDIO, 1.2);
     }
 
     // Turn off light
     if (timerManager.getMinutes() == 4
         && timerManager.getSeconds() == 49
-        && timerManager.getMilliseconds() == 380) {
+        && timerManager.getMilliseconds() == 380
+        && isFirstTime) {
       lightRect.setVisible(true);
     }
 
     // Switch scene to no artifact scene
     if (timerManager.getMinutes() == 4
         && timerManager.getSeconds() == 48
-        && timerManager.getMilliseconds() == 0) {
+        && timerManager.getMilliseconds() == 0
+        && isFirstTime) {
       audioManager2.playAudio(AudioManager.AudioType.BACKGROUNDMUSIC, 0.5);
       try {
         App.setRoot("initialscenewithOUTartifact");

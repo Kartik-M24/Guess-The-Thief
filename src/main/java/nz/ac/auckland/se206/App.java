@@ -91,7 +91,6 @@ public class App extends Application {
 
     AudioManager.addAudio(AudioManager.AudioType.INITIALTHEFTAUDIO, "intialtheftaudio");
     AudioManager.addAudio(AudioManager.AudioType.AUDIENCEMURMUR, "audienceMurmur");
-    AudioManager.addAudio(AudioManager.AudioType.AUDIENCEGASP, "audienceGasp");
     AudioManager.addAudio(AudioManager.AudioType.BACKGROUNDMUSIC, "backgroundMusic");
 
     scene = new Scene(SceneManager.getUiRoot(AppUi.INTROSCENE));

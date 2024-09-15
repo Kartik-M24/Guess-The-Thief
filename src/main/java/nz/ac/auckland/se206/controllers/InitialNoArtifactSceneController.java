@@ -4,6 +4,7 @@ import javafx.animation.FadeTransition;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
 import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
@@ -13,6 +14,7 @@ public class InitialNoArtifactSceneController {
 
   @FXML private Rectangle lightRect;
   @FXML private Pane introPane;
+  @FXML private Label timer;
 
   private TimerManager timerManager = TimerManager.getInstance();
 
@@ -22,7 +24,15 @@ public class InitialNoArtifactSceneController {
   @FXML
   public void initialize() {
     Timeline timeline = TimerManager.getTimeline();
-    timeline.getKeyFrames().add(new KeyFrame(Duration.millis(1), event -> checkTime()));
+    timeline
+        .getKeyFrames()
+        .add(
+            new KeyFrame(
+                Duration.millis(1),
+                event -> {
+                  checkTime();
+                  updateTimer();
+                }));
 
     fadeLightTransition.setNode(lightRect);
     fadeLightTransition.setDuration(Duration.seconds(1.5));
@@ -39,15 +49,30 @@ public class InitialNoArtifactSceneController {
     fadeIntroTransition.setAutoReverse(false);
   }
 
+  public void updateTimer() {
+    timer.setText(timerManager.getFormattedTime());
+  }
+
   public void checkTime() {
     if (timerManager.getMinutes() == 4
         && timerManager.getSeconds() == 44
-        && timerManager.getMilliseconds() == 0) {
+        && timerManager.getMilliseconds() == 0
+        && IntialArtifactSceneController.isFirstTime) {
       fadeLightTransition.play();
     }
+
     if (timerManager.getMinutes() == 4
-        && timerManager.getSeconds() == 40
-        && timerManager.getMilliseconds() == 700) {
+        && timerManager.getSeconds() == 43
+        && timerManager.getMilliseconds() == 900
+        && IntialArtifactSceneController.isFirstTime) {
+      timerManager.setTime(4, 59, 999);
+      IntialArtifactSceneController.isFirstTime = false;
+    }
+
+    if (timerManager.getMinutes() == 4
+        && timerManager.getSeconds() == 57
+        && timerManager.getMilliseconds() == 0
+        && !IntialArtifactSceneController.isFirstTime) {
       fadeIntroTransition.play();
     }
   }

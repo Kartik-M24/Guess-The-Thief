@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
@@ -14,6 +15,11 @@
             <Image url="@../images/auctionWithoutArtifact.jpg" />
          </image>
       </ImageView>
+      <Label fx:id="timer" alignment="CENTER" layoutX="24.0" layoutY="24.0" prefHeight="62.0" prefWidth="154.0" textAlignment="CENTER" textFill="#b71616">
+         <font>
+            <Font size="40.0" />
+         </font>
+      </Label>
       <Rectangle fx:id="lightRect" arcHeight="5.0" arcWidth="5.0" height="650.0" layoutX="1.0" stroke="BLACK" strokeType="INSIDE" width="1137.0" />
       <Pane fx:id="introPane" layoutX="216.0" layoutY="68.0" opacity="0.0" prefHeight="514.0" prefWidth="706.0">
          <children>
