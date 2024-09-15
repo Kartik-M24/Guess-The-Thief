@@ -12,6 +12,7 @@ public class IntialArtifactSceneController {
 
   @FXML private Rectangle lightRect;
   private TimerManager timerManager = TimerManager.getInstance();
+  private AudioManager audioManager = new AudioManager();
 
   @FXML
   public void initialize() {
@@ -21,10 +22,18 @@ public class IntialArtifactSceneController {
   }
 
   public void checkTime() {
+
+    // Play auction audio
     if (timerManager.getMinutes() == 4
         && timerManager.getSeconds() == 57
         && timerManager.getMilliseconds() == 999) {
-      AudioManager.playAudio(AudioManager.AudioType.INITIALTHEFTAUDIO);
+      audioManager.playAudio(AudioManager.AudioType.INITIALTHEFTAUDIO, 1.2);
+    }
+
+    if (timerManager.getMinutes() == 4
+        && timerManager.getSeconds() == 49
+        && timerManager.getMilliseconds() == 370) {
+      lightRect.setVisible(true);
     }
   }
 }
