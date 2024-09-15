@@ -9,6 +9,7 @@ import javafx.beans.property.SimpleIntegerProperty;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.ProgressIndicator;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -17,6 +18,7 @@ import javafx.scene.text.Text;
 import javafx.util.Duration;
 import nz.ac.auckland.se206.SceneManager;
 import nz.ac.auckland.se206.SceneManager.AppUi;
+import nz.ac.auckland.se206.TimerManager;
 
 public class FuseBoxClueController {
 
@@ -28,19 +30,28 @@ public class FuseBoxClueController {
   @FXML private Text text3;
   @FXML private Text text4;
   @FXML private Text text5;
+  @FXML private Label timer;
   private Timeline timeLine;
   private boolean t1;
   private boolean t2;
   private boolean t3;
+  private TimerManager timerManager = TimerManager.getInstance();
 
   @FXML
   public void initialize() {
+    Timeline timeline = TimerManager.getTimeline();
+    timeline.getKeyFrames().add(new KeyFrame(Duration.millis(1), event -> updateTimer()));
     progressIndicator.setVisible(false);
     notepad.setVisible(false);
     text1.setVisible(false);
     text2.setVisible(false);
     text3.setVisible(false);
     text4.setVisible(false);
+    text5.setVisible(false);
+  }
+
+  public void updateTimer() {
+    timer.setText(timerManager.getFormattedTime());
   }
 
   /**
