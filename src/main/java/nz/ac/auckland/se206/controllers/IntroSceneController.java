@@ -14,7 +14,7 @@ public class IntroSceneController {
 
   @FXML private ImageView startButton;
   private TimerManager timerManager = TimerManager.getInstance();
-  private AudioManager audioManager = new AudioManager();
+  public static AudioManager audioManager = new AudioManager();
 
   @FXML
   public void changeScene(MouseEvent event) throws IOException {

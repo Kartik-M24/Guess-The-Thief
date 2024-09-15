@@ -39,7 +39,8 @@ public class InitialNoArtifactSceneController {
     if (timerManager.getMinutes() == 4
         && timerManager.getSeconds() == 41
         && timerManager.getMilliseconds() == 300) {
-      audioManager.playAudio(AudioManager.AudioType.AUDIENCEGASP, 0.3);
+      audioManager.playAudio(AudioManager.AudioType.AUDIENCEGASP, 0.5);
+      // IntroSceneController.audioManager.stopAudio();
     }
   }
 }

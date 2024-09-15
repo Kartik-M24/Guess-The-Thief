@@ -31,4 +31,8 @@ public class AudioManager {
     player.setVolume(volume);
     player.play();
   }
+
+  public void stopAudio() {
+    sound = null;
+  }
 }
