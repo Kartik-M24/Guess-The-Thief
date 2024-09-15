@@ -8,7 +8,8 @@ import javafx.scene.media.MediaPlayer;
 public class AudioManager {
   public enum AudioType {
     INITIALTHEFTAUDIO,
-    AUDIENCEMURMUR
+    AUDIENCEMURMUR,
+    AUDIENCEGASP
   }
 
   private Media sound;

@@ -1,10 +1,12 @@
 package nz.ac.auckland.se206.controllers;
 
+import java.io.IOException;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.fxml.FXML;
 import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
+import nz.ac.auckland.se206.App;
 import nz.ac.auckland.se206.AudioManager;
 import nz.ac.auckland.se206.TimerManager;
 
@@ -30,10 +32,23 @@ public class IntialArtifactSceneController {
       audioManager.playAudio(AudioManager.AudioType.INITIALTHEFTAUDIO, 1.2);
     }
 
+    // Turn off light
     if (timerManager.getMinutes() == 4
         && timerManager.getSeconds() == 49
-        && timerManager.getMilliseconds() == 370) {
+        && timerManager.getMilliseconds() == 380) {
       lightRect.setVisible(true);
+    }
+
+    // Switch scene to no artifact scene
+    if (timerManager.getMinutes() == 4
+        && timerManager.getSeconds() == 48
+        && timerManager.getMilliseconds() == 0) {
+
+      try {
+        App.setRoot("initialscenewithOUTartifact");
+      } catch (IOException e) {
+        e.printStackTrace();
+      }
     }
   }
 }
