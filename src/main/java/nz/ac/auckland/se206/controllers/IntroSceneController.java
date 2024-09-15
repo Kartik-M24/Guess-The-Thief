@@ -16,9 +16,9 @@ public class IntroSceneController {
 
   @FXML
   public void changeScene(MouseEvent event) throws IOException {
-    timerManager.setStartingtime();
+    timerManager.setTime(4, 59, 999);
     ImageView button = (ImageView) event.getSource();
     Scene sceneButtonIsIn = button.getScene();
-    sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.MAINSCENE));
+    sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.INITIALARTIFACTSCENE));
   }
 }

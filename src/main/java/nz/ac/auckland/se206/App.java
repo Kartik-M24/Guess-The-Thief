@@ -80,11 +80,17 @@ public class App extends Application {
   public void start(final Stage stage) throws IOException {
     SceneManager.addUi(SceneManager.AppUi.INTROSCENE, loadFxml("introscene"));
     SceneManager.addUi(SceneManager.AppUi.MAINSCENE, loadFxml("mainscene"));
-    SceneManager.addUi(SceneManager.AppUi.SECONDSCENE, loadFxml("secondscene"));
     SceneManager.addUi(SceneManager.AppUi.SUSPECTSSELECTION, loadFxml("suspectsselection"));
     SceneManager.addUi(SceneManager.AppUi.COLLECTORROOM, loadFxml("collectorroom"));
     SceneManager.addUi(SceneManager.AppUi.ARCHAEOLOGISTROOM, loadFxml("archaeologistroom"));
     SceneManager.addUi(SceneManager.AppUi.AUCTIONEERROOM, loadFxml("auctioneerroom"));
+    SceneManager.addUi(
+        SceneManager.AppUi.INITIALARTIFACTSCENE, loadFxml("initialscenewithartifact"));
+    SceneManager.addUi(
+        SceneManager.AppUi.INTIALWITHOUTARTIFACTSCENE, loadFxml("initialscenewithOUTartifact"));
+
+    AudioManager.addAudio(AudioManager.AudioType.INITIALTHEFTAUDIO, "intialtheftaudio");
+    AudioManager.addAudio(AudioManager.AudioType.AUDIENCEMURMUR, "audienceMurmur");
 
     scene = new Scene(SceneManager.getUiRoot(AppUi.INTROSCENE));
     stage.setScene(scene);

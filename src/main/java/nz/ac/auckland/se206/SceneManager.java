@@ -7,11 +7,12 @@ public class SceneManager {
   public enum AppUi {
     INTROSCENE,
     MAINSCENE,
-    SECONDSCENE,
     COLLECTORROOM,
     ARCHAEOLOGISTROOM,
     AUCTIONEERROOM,
-    SUSPECTSSELECTION
+    SUSPECTSSELECTION,
+    INITIALARTIFACTSCENE,
+    INTIALWITHOUTARTIFACTSCENE
   }
 
   private static HashMap<AppUi, Parent> sceneMap = new HashMap<AppUi, Parent>();

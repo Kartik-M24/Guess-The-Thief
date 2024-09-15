@@ -6,7 +6,10 @@ import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 
 public class AudioManager {
-  public enum AudioType {}
+  public enum AudioType {
+    INITIALTHEFTAUDIO,
+    AUDIENCEMURMUR
+  }
 
   private static Media sound;
   private static HashMap<AudioType, String> audioMap = new HashMap<AudioType, String>();
