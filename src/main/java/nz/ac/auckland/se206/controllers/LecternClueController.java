@@ -1,7 +1,6 @@
 package nz.ac.auckland.se206.controllers;
 
 import java.io.IOException;
-
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.fxml.FXML;
@@ -55,5 +54,27 @@ public class LecternClueController {
   private void handleClueClick(MouseEvent event) throws IOException {
     Rectangle clickedRectangle = (Rectangle) event.getSource();
     context.handleClueClick(event, clickedRectangle.getId());
+  }
+
+  /**
+   * Handles mouse hover on rectangles to help identify clues
+   *
+   * @param event the mouse event triggered by clicking a rectangle
+   */
+  @FXML
+  private void onMouseEntered(MouseEvent event) {
+    Rectangle clickedRectangle = (Rectangle) event.getSource();
+    clickedRectangle.setCursor(javafx.scene.Cursor.HAND);
+  }
+
+  /**
+   * Handles mouse hover on image
+   *
+   * @param event the mouse event triggered by clicking a rectangle
+   */
+  @FXML
+  private void onMouseEnteredImage(MouseEvent event) {
+    ImageView clickedRectangle = (ImageView) event.getSource();
+    clickedRectangle.setCursor(javafx.scene.Cursor.HAND);
   }
 }

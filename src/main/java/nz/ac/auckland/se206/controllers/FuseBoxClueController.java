@@ -32,11 +32,14 @@ public class FuseBoxClueController {
   @FXML private Text text5;
   @FXML private Label timer;
   private Timeline timeLine;
-  private boolean t1;
-  private boolean t2;
-  private boolean t3;
+  private boolean t1 = false;
+  private boolean t2 = false;
+  private boolean t3 = false;
   private TimerManager timerManager = TimerManager.getInstance();
 
+  /**
+   * Initializes the fuse box view.
+   */
   @FXML
   public void initialize() {
     Timeline timeline = TimerManager.getTimeline();
@@ -67,6 +70,12 @@ public class FuseBoxClueController {
     sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.MAINSCENE));
   }
 
+  /**
+   * Handles mouse clicks on rectangles representing clues in the room.
+   *
+   * @param event the mouse event triggered by clicking a rectangle
+   * @throws IOException if there is an I/O error
+   */
   @FXML
   private void handleRectClick(MouseEvent event) throws IOException {
     Rectangle clickedRectangle = (Rectangle) event.getSource();
@@ -103,5 +112,27 @@ public class FuseBoxClueController {
       text5.setVisible(true);
       progressIndicator.setVisible(false);
     }
+  }
+
+  /**
+   * Handles mouse hover on rectangles to help identify clues
+   *
+   * @param event the mouse event triggered by clicking a rectangle
+   */
+  @FXML
+  private void onMouseEntered(MouseEvent event) {
+    Rectangle clickedRectangle = (Rectangle) event.getSource();
+    clickedRectangle.setCursor(javafx.scene.Cursor.HAND);
+  }
+
+  /**
+   * Handles mouse hover on image
+   *
+   * @param event the mouse event triggered by clicking a rectangle
+   */
+  @FXML
+  private void onMouseEnteredImage(MouseEvent event) {
+    ImageView clickedRectangle = (ImageView) event.getSource();
+    clickedRectangle.setCursor(javafx.scene.Cursor.HAND);
   }
 }

@@ -23,6 +23,7 @@ public class SuspectSelectionController {
 
   private TimerManager timerManager = TimerManager.getInstance();
 
+  /** Initializes the suspect selection view. */
   @FXML
   public void initialize() {
     Timeline timeline = TimerManager.getTimeline();
@@ -83,5 +84,27 @@ public class SuspectSelectionController {
     ImageView button = (ImageView) event.getSource();
     Scene sceneButtonIsIn = button.getScene();
     sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.MAINSCENE));
+  }
+
+  /**
+   * Handles mouse hover on rectangles to help identify clues
+   *
+   * @param event the mouse event triggered by clicking a rectangle
+   */
+  @FXML
+  private void onMouseEntered(MouseEvent event) {
+    Rectangle clickedRectangle = (Rectangle) event.getSource();
+    clickedRectangle.setCursor(javafx.scene.Cursor.HAND);
+  }
+
+  /**
+   * Handles mouse hover on image
+   *
+   * @param event the mouse event triggered by clicking a rectangle
+   */
+  @FXML
+  private void onMouseEnteredImage(MouseEvent event) {
+    ImageView clickedRectangle = (ImageView) event.getSource();
+    clickedRectangle.setCursor(javafx.scene.Cursor.HAND);
   }
 }

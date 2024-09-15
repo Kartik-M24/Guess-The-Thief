@@ -131,14 +131,14 @@
             <Image url="@../images/Fonts/Auctioneer/description4.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="imgCrimeScene" fitHeight="90.0" fitWidth="88.0" layoutX="1008.0" layoutY="14.0" onMouseClicked="#handleCrimeSceneClick" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imgCrimeScene" fitHeight="90.0" fitWidth="88.0" layoutX="1008.0" layoutY="14.0" onMouseClicked="#handleCrimeSceneClick" onMouseEntered="#onMouseEnteredImage" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/crimeSceneIcon.png" />
          </image>
       </ImageView>
-      <Rectangle fx:id="rectCollector" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="489.0" layoutX="774.0" layoutY="121.0" onMouseClicked="#handleCollectorClick" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="331.0" />
-      <Rectangle fx:id="rectAuctioneer" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="489.0" layoutX="405.0" layoutY="125.0" onMouseClicked="#handleAuctioneerClick" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="331.0" />
-      <Rectangle fx:id="rectArchaeologist" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="489.0" layoutX="34.0" layoutY="124.0" onMouseClicked="#handleArchaeologistClick" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="324.0" />
+      <Rectangle fx:id="rectCollector" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="489.0" layoutX="774.0" layoutY="121.0" onMouseClicked="#handleCollectorClick" onMouseEntered="#onMouseEntered" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="331.0" />
+      <Rectangle fx:id="rectAuctioneer" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="489.0" layoutX="405.0" layoutY="125.0" onMouseClicked="#handleAuctioneerClick" onMouseEntered="#onMouseEntered" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="331.0" />
+      <Rectangle fx:id="rectArchaeologist" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="489.0" layoutX="34.0" layoutY="124.0" onMouseClicked="#handleArchaeologistClick" onMouseEntered="#onMouseEntered" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="324.0" />
       <Label fx:id="timer" alignment="CENTER" layoutX="24.0" layoutY="24.0" prefHeight="62.0" prefWidth="154.0" textAlignment="CENTER" textFill="#b71616">
          <font>
             <Font size="40.0" />

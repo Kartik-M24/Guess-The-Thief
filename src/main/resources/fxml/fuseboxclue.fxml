@@ -18,7 +18,7 @@
          </image>
       </ImageView>
       <ButtonBar layoutX="404.0" layoutY="139.0" prefHeight="40.0" prefWidth="200.0" />
-      <ImageView fx:id="imgCrimeScene" fitHeight="90.0" fitWidth="88.0" layoutX="1008.0" layoutY="14.0" onMouseClicked="#handleCrimeSceneClick" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imgCrimeScene" fitHeight="90.0" fitWidth="88.0" layoutX="1008.0" layoutY="14.0" onMouseClicked="#handleCrimeSceneClick" onMouseEntered="#onMouseEnteredImage" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/crimeSceneIcon.png" />
          </image>
@@ -48,10 +48,10 @@
             <Font size="16.0" />
          </font>
       </Text>
-      <Rectangle fx:id="switches" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="200.0" layoutX="456.0" layoutY="122.0" onMouseClicked="#handleRectClick" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="235.0" />
-      <Rectangle fx:id="wires" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="64.0" layoutX="451.0" layoutY="26.0" onMouseClicked="#handleRectClick" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="235.0" />
+      <Rectangle fx:id="switches" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="200.0" layoutX="456.0" layoutY="122.0" onMouseClicked="#handleRectClick" onMouseEntered="#onMouseEntered" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="235.0" />
+      <Rectangle fx:id="wires" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="64.0" layoutX="451.0" layoutY="26.0" onMouseClicked="#handleRectClick" onMouseEntered="#onMouseEntered" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="235.0" />
       <ProgressIndicator fx:id="progressIndicator" layoutX="494.0" layoutY="268.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="125.0" prefWidth="125.0" progress="0.55" style="-fx-progress-color: #ff0000;" />
-      <Rectangle fx:id="ashes" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="139.0" layoutX="366.0" layoutY="496.0" onMouseClicked="#handleRectClick" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="382.0" />
+      <Rectangle fx:id="ashes" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="139.0" layoutX="366.0" layoutY="496.0" onMouseClicked="#handleRectClick" onMouseEntered="#onMouseEntered" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="382.0" />
       <Text fx:id="text5" fill="WHITE" layoutX="314.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Analysis Complete">
          <font>
             <Font size="63.0" />
