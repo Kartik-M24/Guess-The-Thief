@@ -15,6 +15,7 @@ public class IntialArtifactSceneController {
   @FXML private Rectangle lightRect;
   private TimerManager timerManager = TimerManager.getInstance();
   private AudioManager audioManager = new AudioManager();
+  private AudioManager audioManager2 = new AudioManager();
 
   @FXML
   public void initialize() {
@@ -43,7 +44,7 @@ public class IntialArtifactSceneController {
     if (timerManager.getMinutes() == 4
         && timerManager.getSeconds() == 48
         && timerManager.getMilliseconds() == 0) {
-
+      audioManager2.playAudio(AudioManager.AudioType.BACKGROUNDMUSIC, 0.5);
       try {
         App.setRoot("initialscenewithOUTartifact");
       } catch (IOException e) {
