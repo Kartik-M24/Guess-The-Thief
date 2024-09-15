@@ -1,13 +1,19 @@
 package nz.ac.auckland.se206.controllers;
 
+import java.io.IOException;
 import javafx.animation.FadeTransition;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.fxml.FXML;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
+import nz.ac.auckland.se206.SceneManager;
+import nz.ac.auckland.se206.SceneManager.AppUi;
 import nz.ac.auckland.se206.TimerManager;
 
 public class InitialNoArtifactSceneController {
@@ -15,6 +21,7 @@ public class InitialNoArtifactSceneController {
   @FXML private Rectangle lightRect;
   @FXML private Pane introPane;
   @FXML private Label timer;
+  @FXML private ImageView nextButton;
 
   private TimerManager timerManager = TimerManager.getInstance();
 
@@ -74,6 +81,20 @@ public class InitialNoArtifactSceneController {
         && timerManager.getMilliseconds() == 0
         && !IntialArtifactSceneController.isFirstTime) {
       fadeIntroTransition.play();
+      nextButton.setDisable(false);
     }
+  }
+
+  /**
+   * Handles the guess button click event.
+   *
+   * @param event the action event triggered by clicking the guess button
+   * @throws IOException if there is an I/O error
+   */
+  @FXML
+  private void handleNextClick(MouseEvent event) throws IOException {
+    ImageView button = (ImageView) event.getSource();
+    Scene sceneButtonIsIn = button.getScene();
+    sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.MAINSCENE));
   }
 }

@@ -33,7 +33,7 @@
                   <Font size="18.0" />
                </font>
             </Text>
-            <ImageView fitHeight="62.0" fitWidth="178.0" layoutX="488.0" layoutY="407.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="nextButton" disable="true" fitHeight="62.0" fitWidth="178.0" layoutX="488.0" layoutY="407.0" onMouseReleased="#handleNextClick" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../images/nextArrow.png" />
                </image>
