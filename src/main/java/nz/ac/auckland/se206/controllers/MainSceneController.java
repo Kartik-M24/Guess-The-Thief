@@ -25,11 +25,6 @@ import nz.ac.auckland.se206.speech.TextToSpeech;
  */
 public class MainSceneController {
 
-  @FXML private Rectangle rectCashier;
-  @FXML private Rectangle rectPerson1;
-  @FXML private Rectangle rectPerson2;
-  @FXML private Rectangle rectPerson3;
-  @FXML private Rectangle rectWaitress;
   @FXML private Button btnGuess;
   @FXML private ImageView imgSuspects;
   @FXML private Label timer;
@@ -37,6 +32,7 @@ public class MainSceneController {
   private static boolean isFirstTimeInit = true;
   private static GameStateContext context = new GameStateContext();
   private TimerManager timerManager = TimerManager.getInstance();
+  private boolean clueClicked;
 
   /**
    * Initializes the room view. If it's the first time initialization, it will provide instructions
@@ -81,15 +77,16 @@ public class MainSceneController {
   }
 
   /**
-   * Handles mouse clicks on rectangles representing people in the room.
+   * Handles mouse clicks on rectangles representing clues in the room.
    *
    * @param event the mouse event triggered by clicking a rectangle
    * @throws IOException if there is an I/O error
    */
   @FXML
-  private void handleRectangleClick(MouseEvent event) throws IOException {
+  private void handleClueClick(MouseEvent event) throws IOException {
     Rectangle clickedRectangle = (Rectangle) event.getSource();
-    context.handleRectangleClick(event, clickedRectangle.getId());
+    context.handleClueClick(event, clickedRectangle.getId());
+    clueClicked = true;
   }
 
   /**
@@ -114,5 +111,27 @@ public class MainSceneController {
     ImageView button = (ImageView) event.getSource();
     Scene sceneButtonIsIn = button.getScene();
     sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.SUSPECTSSELECTION));
+  }
+
+  /**
+   * Handles mouse hover on rectangles to help identify clues
+   *
+   * @param event the mouse event triggered by clicking a rectangle
+   */
+  @FXML
+  private void onMouseEntered(MouseEvent event) {
+    Rectangle clickedRectangle = (Rectangle) event.getSource();
+    clickedRectangle.setCursor(javafx.scene.Cursor.HAND);
+  }
+
+  /**
+   * Handles mouse hover on image
+   *
+   * @param event the mouse event triggered by clicking a rectangle
+   */
+  @FXML
+  private void onMouseEnteredImage(MouseEvent event) {
+    ImageView clickedRectangle = (ImageView) event.getSource();
+    clickedRectangle.setCursor(javafx.scene.Cursor.HAND);
   }
 }

@@ -18,17 +18,17 @@
     </ImageView>
     <TextArea fx:id="txtaChat" editable="false" layoutX="46.0" layoutY="428.0" opacity="0.8" prefHeight="147.0" prefWidth="1035.0" wrapText="true" />
     <Button fx:id="btnSend" layoutX="956.0" layoutY="584.0" mnemonicParsing="false" onAction="#onSendMessage" prefHeight="36.0" prefWidth="125.0" text="Send" />
-    <ImageView fx:id="archaeologistpp" fitHeight="120.0" fitWidth="120.0" layoutX="992.0" layoutY="116.0" onMouseClicked="#gotoArchaeologist" pickOnBounds="true" preserveRatio="true">
+    <ImageView fx:id="archaeologistpp" fitHeight="120.0" fitWidth="120.0" layoutX="992.0" layoutY="116.0" onMouseClicked="#gotoArchaeologist" onMouseEntered="#onMouseEnteredImage" pickOnBounds="true" preserveRatio="true">
       <image>
         <Image url="@../images/ArchaeologistProfile.png" />
       </image>
     </ImageView>
-    <ImageView fx:id="collectorpp" fitHeight="120.0" fitWidth="120.0" layoutX="992.0" layoutY="256.0" onMouseClicked="#gotoCollector" pickOnBounds="true" preserveRatio="true">
+    <ImageView fx:id="collectorpp" fitHeight="120.0" fitWidth="120.0" layoutX="992.0" layoutY="256.0" onMouseClicked="#gotoCollector" onMouseExited="#onMouseEnteredImage" pickOnBounds="true" preserveRatio="true">
       <image>
         <Image url="@../images/RichCollectorProfile.png" />
       </image>
     </ImageView>
-    <ImageView fx:id="imgCrimeScene" fitHeight="90.0" fitWidth="88.0" layoutX="1008.0" layoutY="14.0" onMouseClicked="#handleCrimeSceneClick" pickOnBounds="true" preserveRatio="true">
+    <ImageView fx:id="imgCrimeScene" fitHeight="90.0" fitWidth="88.0" layoutX="1008.0" layoutY="14.0" onMouseClicked="#handleCrimeSceneClick" onMouseEntered="#onMouseEnteredImage" pickOnBounds="true" preserveRatio="true">
       <image>
         <Image url="@../images/crimeSceneIcon.png" />
       </image>

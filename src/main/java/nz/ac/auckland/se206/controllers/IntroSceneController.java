@@ -16,6 +16,12 @@ public class IntroSceneController {
   private TimerManager timerManager = TimerManager.getInstance();
   public static AudioManager audioManager = new AudioManager();
 
+  /**
+   * Transitions to the second scene when the start button is clicked.
+   *
+   * @param event the mouse event triggered by clicking a rectangle
+   * @throws IOException if there is an I/O error
+   */
   @FXML
   public void changeScene(MouseEvent event) throws IOException {
     timerManager.setTime(4, 59, 999);
@@ -23,5 +29,16 @@ public class IntroSceneController {
     Scene sceneButtonIsIn = button.getScene();
     sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.INITIALARTIFACTSCENE));
     audioManager.playAudio(AudioManager.AudioType.AUDIENCEMURMUR, 0.2);
+  }
+
+  /**
+   * Handles mouse hover on rectangles to help identify clues
+   *
+   * @param event the mouse event triggered by clicking a rectangle
+   */
+  @FXML
+  private void onMouseEntered(MouseEvent event) {
+    ImageView clickedRectangle = (ImageView) event.getSource();
+    clickedRectangle.setCursor(javafx.scene.Cursor.HAND);
   }
 }
