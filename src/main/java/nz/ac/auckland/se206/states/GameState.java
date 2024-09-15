@@ -10,18 +10,18 @@ import javafx.scene.input.MouseEvent;
 public interface GameState {
 
   /**
-   * Handles the event when a rectangle is clicked.
-   *
-   * @param event the mouse event triggered by clicking a rectangle
-   * @param rectangleId the ID of the clicked rectangle
-   * @throws IOException if there is an I/O error
-   */
-  void handleRectangleClick(MouseEvent event, String rectangleId) throws IOException;
-
-  /**
    * Handles the event when the guess button is clicked.
    *
    * @throws IOException if there is an I/O error
    */
   void handleGuessClick() throws IOException;
+
+  /**
+   * Handles the event when the clue button is clicked.
+   *
+   * @param event the mouse event triggered by clicking the clue button
+   * @param rectangleId the ID of the clicked rectangle
+   * @throws IOException if there is an I/O error
+   */
+  void handleClueClick(MouseEvent event, String rectangleId) throws IOException;
 }

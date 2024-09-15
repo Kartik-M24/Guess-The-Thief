@@ -135,22 +135,22 @@ public class GameStateContext {
   }
 
   /**
-   * Handles the event when a rectangle is clicked.
-   *
-   * @param event the mouse event triggered by clicking a rectangle
-   * @param rectangleId the ID of the clicked rectangle
-   * @throws IOException if there is an I/O error
-   */
-  public void handleRectangleClick(MouseEvent event, String rectangleId) throws IOException {
-    gameState.handleRectangleClick(event, rectangleId);
-  }
-
-  /**
    * Handles the event when the guess button is clicked.
    *
    * @throws IOException if there is an I/O error
    */
   public void handleGuessClick() throws IOException {
     gameState.handleGuessClick();
+  }
+
+  /**
+   * Handles the event when the clue button is clicked.
+   *
+   * @param event the mouse event triggered by clicking the clue button
+   * @param rectangleId the ID of the clicked rectangle
+   * @throws IOException if there is an I/O error
+   */
+  public void handleClueClick(MouseEvent event, String rectangleId) throws IOException {
+    gameState.handleClueClick(event, rectangleId);
   }
 }
