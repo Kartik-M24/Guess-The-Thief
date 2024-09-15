@@ -10,7 +10,7 @@ import nz.ac.auckland.se206.App;
 import nz.ac.auckland.se206.AudioManager;
 import nz.ac.auckland.se206.TimerManager;
 
-public class IntialArtifactSceneController {
+public class InitialSceneWithArtifactController {
 
   @FXML private Rectangle lightRect;
   public static boolean isFirstTime = true;

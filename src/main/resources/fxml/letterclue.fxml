@@ -10,7 +10,7 @@
    <children>
       <ImageView fitHeight="649.0" fitWidth="1180.0" opacity="0.8" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../images/Initial%20Crime%20Scene%20WITHOUT%20artifact.jpg" />
+            <Image url="@../images/auctionWithoutArtifact.jpg" />
          </image>
       </ImageView>
       <ImageView fitHeight="656.0" fitWidth="492.0" layoutX="329.0" layoutY="-4.0" pickOnBounds="true" preserveRatio="true">
