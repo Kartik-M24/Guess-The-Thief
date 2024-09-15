@@ -13,7 +13,8 @@ public class SceneManager {
     AUCTIONEERROOM,
     LETTERCLUE,
     FUSEBOXCLUE,
-    SUSPECTSSELECTION
+    SUSPECTSSELECTION,
+    LECTERNCLUE
   }
 
   private static HashMap<AppUi, Parent> sceneMap = new HashMap<AppUi, Parent>();

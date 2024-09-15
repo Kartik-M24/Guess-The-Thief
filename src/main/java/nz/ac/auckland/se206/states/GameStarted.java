@@ -56,7 +56,12 @@ public class GameStarted implements GameState {
     if (rectangleId.equals("lecternClue")) {
       Rectangle rectValue = (Rectangle) event.getSource();
       Scene rectScene = rectValue.getScene();
-      rectScene.setRoot(SceneManager.getUiRoot(AppUi.SECONDSCENE));
+      rectScene.setRoot(SceneManager.getUiRoot(AppUi.LECTERNCLUE));
+    }
+    if (rectangleId.equals("letterClue")) {
+      Rectangle rectValue = (Rectangle) event.getSource();
+      Scene rectScene = rectValue.getScene();
+      rectScene.setRoot(SceneManager.getUiRoot(AppUi.LETTERCLUE));
     }
   }
 }
