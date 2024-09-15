@@ -1,17 +1,22 @@
 package nz.ac.auckland.se206.controllers;
 
 import java.io.IOException;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Rectangle;
+import javafx.util.Duration;
 import nz.ac.auckland.se206.GameStateContext;
 import nz.ac.auckland.se206.SceneManager;
 import nz.ac.auckland.se206.SceneManager.AppUi;
+import nz.ac.auckland.se206.TimerManager;
 import nz.ac.auckland.se206.speech.TextToSpeech;
 
 /**
@@ -22,9 +27,11 @@ public class MainSceneController {
 
   @FXML private Button btnGuess;
   @FXML private ImageView imgSuspects;
+  @FXML private Label timer;
 
   private static boolean isFirstTimeInit = true;
   private static GameStateContext context = new GameStateContext();
+  private TimerManager timerManager = TimerManager.getInstance();
   private boolean clueClicked;
 
   /**
@@ -33,11 +40,20 @@ public class MainSceneController {
    */
   @FXML
   public void initialize() {
+
     if (isFirstTimeInit) {
       TextToSpeech.speak(
           "Chat with the three customers, and guess who is the " + context.getProfessionToGuess());
       isFirstTimeInit = false;
     }
+
+    timerManager.startTimer();
+    Timeline timeline = TimerManager.getTimeline();
+    timeline.getKeyFrames().add(new KeyFrame(Duration.millis(1), event -> updateTimer()));
+  }
+
+  public void updateTimer() {
+    timer.setText(timerManager.getFormattedTime());
   }
 
   /**

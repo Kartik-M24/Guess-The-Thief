@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1137.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nz.ac.auckland.se206.controllers.ArchaeologistRoomController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#onKeyPressed" prefHeight="650.0" prefWidth="1137.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nz.ac.auckland.se206.controllers.ArchaeologistRoomController">
   <children>
     <ImageView fitHeight="650.0" fitWidth="1137.0">
       <image>
@@ -32,5 +34,10 @@
       </image>
     </ImageView>
     <TextField fx:id="txtInput" layoutX="46.0" layoutY="584.0" opacity="0.8" prefHeight="36.0" prefWidth="898.0" />
+      <Label fx:id="timer" alignment="CENTER" layoutX="24.0" layoutY="24.0" prefHeight="62.0" prefWidth="154.0" textAlignment="CENTER" textFill="#b71616">
+         <font>
+            <Font size="40.0" />
+         </font>
+      </Label>
   </children>
 </Pane>

@@ -7,14 +7,16 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import nz.ac.auckland.se206.SceneManager;
 import nz.ac.auckland.se206.SceneManager.AppUi;
+import nz.ac.auckland.se206.TimerManager;
 
 public class IntroSceneController {
 
   @FXML private ImageView startButton;
+  private TimerManager timerManager = TimerManager.getInstance();
 
   @FXML
   public void changeScene(MouseEvent event) throws IOException {
-
+    timerManager.setStartingtime();
     ImageView button = (ImageView) event.getSource();
     Scene sceneButtonIsIn = button.getScene();
     sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.MAINSCENE));
