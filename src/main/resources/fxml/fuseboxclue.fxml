@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.ProgressIndicator?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="649.0" prefWidth="1137.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nz.ac.auckland.se206.controllers.FuseBoxClueController">
+<Pane fx:id="base" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="649.0" prefWidth="1137.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nz.ac.auckland.se206.controllers.FuseBoxClueController">
    <children>
       <ImageView fitHeight="692.0" fitWidth="1137.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -15,20 +17,44 @@
          </image>
       </ImageView>
       <ButtonBar layoutX="404.0" layoutY="139.0" prefHeight="40.0" prefWidth="200.0" />
-      <Button layoutX="48.0" layoutY="134.0" mnemonicParsing="false" text="Analyse Contents">
-         <font>
-            <Font size="24.0" />
-         </font>
-      </Button>
       <ImageView fx:id="imgCrimeScene" fitHeight="90.0" fitWidth="88.0" layoutX="1008.0" layoutY="14.0" onMouseClicked="#handleCrimeSceneClick" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/crimeSceneIcon.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="448.0" fitWidth="333.0" layoutX="-11.0" layoutY="179.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="notepad" fitHeight="448.0" fitWidth="342.0" layoutX="19.0" layoutY="89.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/notepad.png" />
          </image>
       </ImageView>
+      <Text fx:id="text1" layoutX="73.0" layoutY="223.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Wire Tampering: Some of the wires are frayed and disconnected." wrappingWidth="244.53672790527344">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <Text fx:id="text3" layoutX="73.0" layoutY="145.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Finger Prints: None Found." wrappingWidth="223.7367401123047">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <Text fx:id="text4" layoutX="73.0" layoutY="276.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Additional Materials: Cigar ash was detected  on the bottom frame. Ingredients seem to match with the expensive cuban cigar brand Cohiba." wrappingWidth="244.53672790527338">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <Text fx:id="text2" layoutX="73.0" layoutY="173.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Switch Manipulation: Swithces have been manually disabled." wrappingWidth="223.7367401123047">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <Rectangle fx:id="switches" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="200.0" layoutX="456.0" layoutY="122.0" onMouseClicked="#handleRectClick" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="235.0" />
+      <Rectangle fx:id="wires" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="64.0" layoutX="451.0" layoutY="26.0" onMouseClicked="#handleRectClick" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="235.0" />
+      <ProgressIndicator fx:id="progressIndicator" layoutX="494.0" layoutY="268.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="125.0" prefWidth="125.0" progress="0.55" style="-fx-progress-color: #ff0000;" />
+      <Rectangle fx:id="ashes" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="139.0" layoutX="366.0" layoutY="496.0" onMouseClicked="#handleRectClick" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="382.0" />
+      <Text fx:id="text5" fill="WHITE" layoutX="314.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Analysis Complete">
+         <font>
+            <Font size="63.0" />
+         </font>
+      </Text>
    </children>
 </Pane>
