@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane maxHeight="343.0" maxWidth="1137.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1137.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nz.ac.auckland.se206.controllers.InitialSceneWithoutArtifactController">
+   <children>
+      <ImageView fitHeight="650.0" fitWidth="1137.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/auctionWithoutArtifact.jpg" />
+         </image>
+      </ImageView>
+      <Label fx:id="timer" alignment="CENTER" layoutX="24.0" layoutY="24.0" prefHeight="62.0" prefWidth="154.0" textAlignment="CENTER" textFill="#b71616">
+         <font>
+            <Font size="40.0" />
+         </font>
+      </Label>
+      <Rectangle fx:id="lightRect" arcHeight="5.0" arcWidth="5.0" height="650.0" layoutX="1.0" stroke="BLACK" strokeType="INSIDE" width="1137.0" />
+      <Pane fx:id="introPane" layoutX="216.0" layoutY="68.0" opacity="0.0" prefHeight="514.0" prefWidth="706.0">
+         <children>
+            <ImageView fitHeight="706.0" fitWidth="514.0" layoutX="96.0" layoutY="-70.0" opacity="0.9" pickOnBounds="true" preserveRatio="true" rotate="90.0">
+               <image>
+                  <Image url="@../images/notepad.png" />
+               </image>
+            </ImageView>
+            <Text layoutX="76.0" layoutY="208.0" strokeType="OUTSIDE" strokeWidth="0.0" text="𝐀 𝐩𝐫𝐢𝐜𝐞𝐥𝐞𝐬𝐬 𝐄𝐠𝐲𝐩𝐭𝐢𝐚𝐧 𝐬𝐚𝐫𝐜𝐨𝐩𝐡𝐚𝐠𝐮𝐬 𝐡𝐚𝐬 𝐯𝐚𝐧𝐢𝐬𝐡𝐞𝐝 𝐝𝐮𝐫𝐢𝐧𝐠 𝐚 𝐡𝐢𝐠𝐡-𝐩𝐫𝐨𝐟𝐢𝐥𝐞 𝐚𝐮𝐜𝐭𝐢𝐨𝐧, 𝐬𝐭𝐨𝐥𝐞𝐧 𝐢𝐧 𝐭𝐡𝐞 𝐜𝐡𝐚𝐨𝐬 𝐨𝐟 𝐚 𝐬𝐮𝐝𝐝𝐞𝐧 𝐩𝐨𝐰𝐞𝐫 𝐨𝐮𝐭𝐚𝐠𝐞. 𝐀𝐬 𝐭𝐡𝐞 𝐢𝐧𝐯𝐞𝐬𝐭𝐢𝐠𝐚𝐭𝐨𝐫, 𝐲𝐨𝐮'𝐫𝐞 𝐭𝐚𝐬𝐤𝐞𝐝 𝐰𝐢𝐭𝐡 𝐮𝐧𝐜𝐨𝐯𝐞𝐫𝐢𝐧𝐠 𝐭𝐡𝐞 𝐭𝐫𝐮𝐭𝐡 𝐛𝐞𝐡𝐢𝐧𝐝 𝐭𝐡𝐞 𝐭𝐡𝐞𝐟𝐭. 𝐖𝐢𝐭𝐡 𝐨𝐧𝐥𝐲 𝐚 𝐡𝐚𝐧𝐝𝐟𝐮𝐥 𝐨𝐟 𝐬𝐮𝐬𝐩𝐞𝐜𝐭𝐬—𝐢𝐭'𝐬 𝐮𝐩 𝐭𝐨 𝐲𝐨𝐮 𝐭𝐨 𝐠𝐚𝐭𝐡𝐞𝐫 𝐜𝐥𝐮𝐞𝐬, 𝐢𝐧𝐭𝐞𝐫𝐫𝐨𝐠𝐚𝐭𝐞 𝐞𝐚𝐜𝐡 𝐬𝐮𝐬𝐩𝐞𝐜𝐭, 𝐚𝐧𝐝 𝐩𝐢𝐞𝐜𝐞 𝐭𝐨𝐠𝐞𝐭𝐡𝐞𝐫 𝐭𝐡𝐞 𝐦𝐲𝐬𝐭𝐞𝐫𝐲. 𝐄𝐯𝐞𝐫𝐲 𝐜𝐨𝐧𝐯𝐞𝐫𝐬𝐚𝐭𝐢𝐨𝐧, 𝐞𝐯𝐞𝐫𝐲 𝐝𝐞𝐭𝐚𝐢𝐥, 𝐜𝐨𝐮𝐥𝐝 𝐫𝐞𝐯𝐞𝐚𝐥 𝐭𝐡𝐞 𝐜𝐮𝐥𝐩𝐫𝐢𝐭. 𝐂𝐚𝐧 𝐲𝐨𝐮 𝐬𝐨𝐥𝐯𝐞 𝐭𝐡𝐞 𝐜𝐚𝐬𝐞 𝐛𝐞𝐟𝐨𝐫𝐞 𝐭𝐡𝐞 𝐭𝐫𝐮𝐭𝐡 𝐢𝐬 𝐥𝐨𝐬𝐭 𝐟𝐨𝐫𝐞𝐯𝐞𝐫?" textAlignment="CENTER" wrappingWidth="567.13671875">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <ImageView fx:id="nextButton" disable="true" fitHeight="62.0" fitWidth="178.0" layoutX="488.0" layoutY="407.0" onMouseEntered="#onMouseEnteredImage" onMouseReleased="#handleNextClick" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/nextArrow.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+   </children>
+</Pane>

@@ -11,7 +11,7 @@
    <children>
       <ImageView fitHeight="649.0" fitWidth="1137.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../images/Initial%20Crime%20Scene%20WITHOUT%20artifact.jpg" />
+            <Image url="@../images/auctionWithoutArtifact.jpg" />
          </image>
       </ImageView>
       <ImageView fx:id="imgCrimeScene" fitHeight="90.0" fitWidth="88.0" layoutX="1008.0" layoutY="14.0" onMouseClicked="#handleCrimeSceneClick" onMouseEntered="#onMouseEnteredImage" pickOnBounds="true" preserveRatio="true">

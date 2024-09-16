@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.scene.Scene;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import nz.ac.auckland.se206.AudioManager;
 import nz.ac.auckland.se206.SceneManager;
 import nz.ac.auckland.se206.SceneManager.AppUi;
 import nz.ac.auckland.se206.TimerManager;
@@ -13,6 +14,7 @@ public class IntroSceneController {
 
   @FXML private ImageView startButton;
   private TimerManager timerManager = TimerManager.getInstance();
+  public static AudioManager audioManager = new AudioManager();
 
   /**
    * Transitions to the second scene when the start button is clicked.
@@ -22,10 +24,11 @@ public class IntroSceneController {
    */
   @FXML
   public void changeScene(MouseEvent event) throws IOException {
-    timerManager.setStartingtime();
+    timerManager.setTime(4, 59, 999);
     ImageView button = (ImageView) event.getSource();
     Scene sceneButtonIsIn = button.getScene();
-    sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.MAINSCENE));
+    sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.INITIALARTIFACTSCENE));
+    audioManager.playAudio(AudioManager.AudioType.AUDIENCEMURMUR, 0.2);
   }
 
   /**

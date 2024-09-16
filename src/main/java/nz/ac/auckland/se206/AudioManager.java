@@ -6,16 +6,20 @@ import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 
 public class AudioManager {
-  public enum AudioType {}
+  public enum AudioType {
+    INITIALTHEFTAUDIO,
+    AUDIENCEMURMUR,
+    BACKGROUNDMUSIC
+  }
 
-  private static Media sound;
+  private Media sound;
   private static HashMap<AudioType, String> audioMap = new HashMap<AudioType, String>();
 
   public static void addAudio(AudioType audioType, String audioFileName) {
     audioMap.put(audioType, audioFileName);
   }
 
-  public static void playAudio(AudioType audioType) {
+  public void playAudio(AudioType audioType, double volume) {
     String audioFileName = audioMap.get(audioType);
     try {
       sound =
@@ -24,6 +28,11 @@ public class AudioManager {
       e.printStackTrace();
     }
     MediaPlayer player = new MediaPlayer(sound);
+    player.setVolume(volume);
     player.play();
+  }
+
+  public void stopAudio() {
+    sound = null;
   }
 }

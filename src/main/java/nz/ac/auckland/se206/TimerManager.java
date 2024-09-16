@@ -15,7 +15,7 @@ public class TimerManager {
     return instance;
   }
 
-  private int minutes = 4;
+  private int minutes = 10;
   private int seconds = 59;
   private int milliseconds = 999;
   private static Timeline timeline;
@@ -53,10 +53,22 @@ public class TimerManager {
     }
   }
 
-  public void setStartingtime() {
-    minutes = 4;
-    seconds = 59;
-    milliseconds = 999;
+  public void setTime(int minutes, int seconds, int milliseconds) {
+    this.minutes = minutes;
+    this.seconds = seconds;
+    this.milliseconds = milliseconds;
+  }
+
+  public int getMinutes() {
+    return minutes;
+  }
+
+  public int getSeconds() {
+    return seconds;
+  }
+
+  public int getMilliseconds() {
+    return milliseconds;
   }
 
   public String getFormattedTime() {

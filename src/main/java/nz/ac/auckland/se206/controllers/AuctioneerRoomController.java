@@ -109,7 +109,6 @@ public class AuctioneerRoomController {
       chatCompletionRequest.addMessage(result.getChatMessage());
       appendChatMessage(result.getChatMessage());
       // FreeTextToSpeech.speak(result.getChatMessage().getContent());
-      System.out.println(result.getChatMessage().getContent());
       return result.getChatMessage();
     } catch (ApiProxyException e) {
       e.printStackTrace();
