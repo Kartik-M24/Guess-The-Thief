@@ -16,7 +16,7 @@ public class SceneManager {
     LETTERCLUE,
     FUSEBOXCLUE,
     LECTERNCLUE,
-    GUESSINGSCENE
+    GUESSINGSCENE, CRIMEEXPLANATION
   }
 
   private static HashMap<AppUi, Parent> sceneMap = new HashMap<AppUi, Parent>();
