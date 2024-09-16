@@ -99,7 +99,10 @@ public class MainSceneController {
    */
   @FXML
   private void handleGuessClick(ActionEvent event) throws IOException {
-    context.handleGuessClick();
+    // context.handleGuessClick();
+    Button button = (Button) event.getSource();
+    Scene sceneButtonIsIn = button.getScene();
+    sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.GUESSINGSCENE));
   }
 
   /**

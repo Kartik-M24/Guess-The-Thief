@@ -43,7 +43,7 @@ public class GuessingSceneController {
   private void handleArchaeologistClick(MouseEvent event) throws IOException {
     Rectangle button = (Rectangle) event.getSource();
     Scene sceneButtonIsIn = button.getScene();
-    sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.ARCHAEOLOGISTROOM));
+    sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.CRIMEEXPLANATION));
   }
 
   /**
@@ -56,7 +56,7 @@ public class GuessingSceneController {
   private void handleAuctioneerClick(MouseEvent event) throws IOException {
     Rectangle button = (Rectangle) event.getSource();
     Scene sceneButtonIsIn = button.getScene();
-    sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.AUCTIONEERROOM));
+    sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.CRIMEEXPLANATION));
   }
 
   /**
@@ -69,7 +69,7 @@ public class GuessingSceneController {
   private void handleCollectorClick(MouseEvent event) throws IOException {
     Rectangle button = (Rectangle) event.getSource();
     Scene sceneButtonIsIn = button.getScene();
-    sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.COLLECTORROOM));
+    sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.CRIMEEXPLANATION));
   }
 
   /**
