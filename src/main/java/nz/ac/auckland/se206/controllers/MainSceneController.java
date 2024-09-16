@@ -43,7 +43,9 @@ public class MainSceneController {
 
     if (isFirstTimeInit) {
       TextToSpeech.speak(
-          "Chat with the three customers, and guess who is the " + context.getProfessionToGuess());
+          "Welcome to the crime scene. You have 5 minutes to investigate the crime scene and find"
+              + " clues. Click on the clues to investigate them. Once you have found all the clues,"
+              + " you can make a guess. Good luck!");
       isFirstTimeInit = false;
     }
 
