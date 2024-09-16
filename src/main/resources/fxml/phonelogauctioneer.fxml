@@ -23,5 +23,40 @@
             <Font size="40.0" />
          </font>
       </Label>
+      <ImageView fitHeight="331.0" fitWidth="333.0" layoutX="101.0" layoutY="318.0" opacity="0.5" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/phonescreen.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="331.0" fitWidth="333.0" layoutX="755.0" layoutY="318.0" opacity="0.5" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/phonescreen.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="428.0" fitWidth="404.0" layoutX="386.0" layoutY="221.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/phonescreen.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="141.0" fitWidth="172.0" layoutX="182.0" layoutY="177.0" opacity="0.5" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/ArchaeologistProfile.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="141.0" fitWidth="172.0" layoutX="511.0" layoutY="86.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/AuctioneerProfile.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="141.0" fitWidth="172.0" layoutX="836.0" layoutY="177.0" opacity="0.5" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/RichCollectorProfile.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="399.0" fitWidth="303.0" layoutX="432.0" layoutY="256.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/phonemessages%20(1).png" />
+         </image>
+      </ImageView>
    </children>
 </Pane>
