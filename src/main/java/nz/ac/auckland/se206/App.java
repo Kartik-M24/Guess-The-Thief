@@ -65,8 +65,9 @@ public class App extends Application {
     SceneManager.addUi(SceneManager.AppUi.LETTERCLUE, loadFxml("letterclue"));
     SceneManager.addUi(SceneManager.AppUi.FUSEBOXCLUE, loadFxml("fuseboxclue"));
     SceneManager.addUi(SceneManager.AppUi.LECTERNCLUE, loadFxml("lecternclue"));
+    SceneManager.addUi(SceneManager.AppUi.GUESSINGSCENE, loadFxml("guessingscene"));
 
-    scene = new Scene(SceneManager.getUiRoot(AppUi.INTROSCENE));
+    scene = new Scene(SceneManager.getUiRoot(AppUi.GUESSINGSCENE));
     stage.setScene(scene);
     stage.show();
     // stage.setOnCloseRequest(event -> handleWindowClose(event));
