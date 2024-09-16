@@ -15,7 +15,8 @@ public class SceneManager {
     INTIALWITHOUTARTIFACTSCENE,
     LETTERCLUE,
     FUSEBOXCLUE,
-    LECTERNCLUE
+    LECTERNCLUE,
+    PHONELOGAUCTIONEER
   }
 
   private static HashMap<AppUi, Parent> sceneMap = new HashMap<AppUi, Parent>();

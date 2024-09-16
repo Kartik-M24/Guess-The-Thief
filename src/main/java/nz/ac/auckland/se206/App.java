@@ -68,6 +68,8 @@ public class App extends Application {
     SceneManager.addUi(SceneManager.AppUi.LETTERCLUE, loadFxml("letterclue"));
     SceneManager.addUi(SceneManager.AppUi.FUSEBOXCLUE, loadFxml("fuseboxclue"));
     SceneManager.addUi(SceneManager.AppUi.LECTERNCLUE, loadFxml("lecternclue"));
+    SceneManager.addUi(SceneManager.AppUi.PHONELOGAUCTIONEER, loadFxml("phonelogauctioneer"));
+
     AudioManager.addAudio(AudioManager.AudioType.INITIALTHEFTAUDIO, "intialtheftaudio");
     AudioManager.addAudio(AudioManager.AudioType.AUDIENCEMURMUR, "audienceMurmur");
     AudioManager.addAudio(AudioManager.AudioType.BACKGROUNDMUSIC, "backgroundMusic");
