@@ -16,7 +16,7 @@ import nz.ac.auckland.se206.SceneManager;
 import nz.ac.auckland.se206.SceneManager.AppUi;
 import nz.ac.auckland.se206.TimerManager;
 
-public class InitialNoArtifactSceneController {
+public class InitialSceneWithoutArtifactController {
 
   @FXML private Rectangle lightRect;
   @FXML private Pane introPane;
@@ -64,22 +64,22 @@ public class InitialNoArtifactSceneController {
     if (timerManager.getMinutes() == 4
         && timerManager.getSeconds() == 44
         && timerManager.getMilliseconds() == 0
-        && IntialArtifactSceneController.isFirstTime) {
+        && InitialSceneWithArtifactController.isFirstTime) {
       fadeLightTransition.play();
     }
 
     if (timerManager.getMinutes() == 4
         && timerManager.getSeconds() == 43
         && timerManager.getMilliseconds() == 900
-        && IntialArtifactSceneController.isFirstTime) {
+        && InitialSceneWithArtifactController.isFirstTime) {
       timerManager.setTime(4, 59, 999);
-      IntialArtifactSceneController.isFirstTime = false;
+      InitialSceneWithArtifactController.isFirstTime = false;
     }
 
     if (timerManager.getMinutes() == 4
         && timerManager.getSeconds() == 57
         && timerManager.getMilliseconds() == 0
-        && !IntialArtifactSceneController.isFirstTime) {
+        && !InitialSceneWithArtifactController.isFirstTime) {
       fadeIntroTransition.play();
       nextButton.setDisable(false);
     }
@@ -97,5 +97,16 @@ public class InitialNoArtifactSceneController {
     Scene sceneButtonIsIn = button.getScene();
     sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.MAINSCENE));
     IntroSceneController.audioManager.stopAudio();
+  }
+
+  /**
+   * Handles mouse hover on rectangles to help identify clues
+   *
+   * @param event the mouse event triggered by clicking a rectangle
+   */
+  @FXML
+  private void onMouseEnteredImage(MouseEvent event) {
+    ImageView clickedRectangle = (ImageView) event.getSource();
+    clickedRectangle.setCursor(javafx.scene.Cursor.HAND);
   }
 }
