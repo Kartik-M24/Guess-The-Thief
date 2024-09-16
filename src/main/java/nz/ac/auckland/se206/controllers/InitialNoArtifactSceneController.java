@@ -96,5 +96,6 @@ public class InitialNoArtifactSceneController {
     ImageView button = (ImageView) event.getSource();
     Scene sceneButtonIsIn = button.getScene();
     sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.MAINSCENE));
+    IntroSceneController.audioManager.stopAudio();
   }
 }
