@@ -140,10 +140,12 @@ public class CrimeExplanationController {
     if (message.isEmpty()) {
       return;
     }
+    txtInput.setVisible(false);
     txtInput.clear();
     ChatMessage msg = new ChatMessage("user", message);
     appendChatMessage(msg);
     runGpt(msg);
+    btnSend.setVisible(false);
   }
 
   /**
