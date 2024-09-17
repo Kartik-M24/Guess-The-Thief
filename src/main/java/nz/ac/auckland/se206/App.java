@@ -25,28 +25,6 @@ public class App extends Application {
     launch();
   }
 
-  public static void initialize() throws IOException {
-    SceneManager.addUi(SceneManager.AppUi.INTROSCENE, loadFxml("introscene"));
-    SceneManager.addUi(SceneManager.AppUi.MAINSCENE, loadFxml("mainscene"));
-    SceneManager.addUi(SceneManager.AppUi.SUSPECTSSELECTION, loadFxml("suspectsselection"));
-    SceneManager.addUi(SceneManager.AppUi.COLLECTORROOM, loadFxml("collectorroom"));
-    SceneManager.addUi(SceneManager.AppUi.ARCHAEOLOGISTROOM, loadFxml("archaeologistroom"));
-    SceneManager.addUi(SceneManager.AppUi.AUCTIONEERROOM, loadFxml("auctioneerroom"));
-    SceneManager.addUi(
-        SceneManager.AppUi.INITIALARTIFACTSCENE, loadFxml("initialscenewithartifact"));
-    SceneManager.addUi(
-        SceneManager.AppUi.INTIALWITHOUTARTIFACTSCENE, loadFxml("initialscenewithOUTartifact"));
-    SceneManager.addUi(SceneManager.AppUi.LETTERCLUE, loadFxml("letterclue"));
-    SceneManager.addUi(SceneManager.AppUi.FUSEBOXCLUE, loadFxml("fuseboxclue"));
-    SceneManager.addUi(SceneManager.AppUi.LECTERNCLUE, loadFxml("lecternclue"));
-    SceneManager.addUi(SceneManager.AppUi.GUESSINGSCENE, loadFxml("guessingscene"));
-    SceneManager.addUi(SceneManager.AppUi.CRIMEEXPLANATION, loadFxml("crimeexplanation"));
-    SceneManager.addUi(SceneManager.AppUi.GAMEOVER, loadFxml("gameover"));
-    AudioManager.addAudio(AudioManager.AudioType.INITIALTHEFTAUDIO, "intialtheftaudio");
-    AudioManager.addAudio(AudioManager.AudioType.AUDIENCEMURMUR, "audienceMurmur");
-    AudioManager.addAudio(AudioManager.AudioType.BACKGROUNDMUSIC, "backgroundMusic");
-  }
-
   /**
    * Sets the root of the scene to the specified FXML file.
    *
@@ -77,19 +55,32 @@ public class App extends Application {
    */
   @Override
   public void start(final Stage stage) throws IOException {
-    initialize();
+    SceneManager.addUi(SceneManager.AppUi.INTROSCENE, loadFxml("introscene"));
+    SceneManager.addUi(SceneManager.AppUi.MAINSCENE, loadFxml("mainscene"));
+    SceneManager.addUi(SceneManager.AppUi.SUSPECTSSELECTION, loadFxml("suspectsselection"));
+    SceneManager.addUi(SceneManager.AppUi.COLLECTORROOM, loadFxml("collectorroom"));
+    SceneManager.addUi(SceneManager.AppUi.ARCHAEOLOGISTROOM, loadFxml("archaeologistroom"));
+    SceneManager.addUi(SceneManager.AppUi.AUCTIONEERROOM, loadFxml("auctioneerroom"));
+    SceneManager.addUi(
+        SceneManager.AppUi.INITIALARTIFACTSCENE, loadFxml("initialscenewithartifact"));
+    SceneManager.addUi(
+        SceneManager.AppUi.INTIALWITHOUTARTIFACTSCENE, loadFxml("initialscenewithOUTartifact"));
+    SceneManager.addUi(SceneManager.AppUi.LETTERCLUE, loadFxml("letterclue"));
+    SceneManager.addUi(SceneManager.AppUi.FUSEBOXCLUE, loadFxml("fuseboxclue"));
+    SceneManager.addUi(SceneManager.AppUi.LECTERNCLUE, loadFxml("lecternclue"));
+    SceneManager.addUi(SceneManager.AppUi.GUESSINGSCENE, loadFxml("guessingscene"));
+    SceneManager.addUi(SceneManager.AppUi.CRIMEEXPLANATION, loadFxml("crimeexplanation"));
+    SceneManager.addUi(SceneManager.AppUi.GAMEOVER, loadFxml("gameover"));
+    SceneManager.addUi(SceneManager.AppUi.LIGHTSOFFSCENE, loadFxml("lightsoffscene"));
+
+    AudioManager.addAudio(AudioManager.AudioType.INITIALTHEFTAUDIO, "intialtheftaudio");
+    AudioManager.addAudio(AudioManager.AudioType.AUDIENCEMURMUR, "audienceMurmur");
+    AudioManager.addAudio(AudioManager.AudioType.BACKGROUNDMUSIC, "backgroundMusic");
     scene = new Scene(SceneManager.getUiRoot(AppUi.INTROSCENE));
     stage.setScene(scene);
     stage.show();
     // stage.setOnCloseRequest(event -> handleWindowClose(event));
     // root.requestFocus();
-  }
-
-  public static void restart(Stage stage) throws IOException {
-    initialize();
-    scene = new Scene(SceneManager.getUiRoot(AppUi.INTROSCENE));
-    stage.setScene(scene);
-    stage.show();
   }
 
   // private void handleWindowClose(WindowEvent event) {

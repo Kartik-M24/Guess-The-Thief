@@ -2,18 +2,16 @@ package nz.ac.auckland.se206.controllers;
 
 import java.io.IOException;
 import javafx.fxml.FXML;
+import javafx.scene.Scene;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import javafx.stage.Stage;
-import nz.ac.auckland.se206.App;
 import nz.ac.auckland.se206.AudioManager;
 import nz.ac.auckland.se206.SceneManager;
-import nz.ac.auckland.se206.TimerManager;
+import nz.ac.auckland.se206.SceneManager.AppUi;
 
 public class GameOverController {
 
   @FXML private ImageView restartButton;
-  private TimerManager timerManager = TimerManager.getInstance();
   public static AudioManager audioManager = new AudioManager();
 
   /**
@@ -24,8 +22,10 @@ public class GameOverController {
    */
   @FXML
   public void changeScene(MouseEvent event) throws IOException {
-    SceneManager.reset();
-    App.restart(new Stage());
+    InitialSceneWithArtifactController.audioManager2.stopAudio();
+    ImageView button = (ImageView) event.getSource();
+    Scene sceneButtonIsIn = button.getScene();
+    sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.INTROSCENE));
   }
 
   /**

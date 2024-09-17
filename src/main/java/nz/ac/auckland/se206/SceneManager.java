@@ -18,7 +18,8 @@ public class SceneManager {
     LECTERNCLUE,
     GUESSINGSCENE,
     CRIMEEXPLANATION,
-    GAMEOVER
+    GAMEOVER,
+    LIGHTSOFFSCENE
   }
 
   private static HashMap<AppUi, Parent> sceneMap = new HashMap<AppUi, Parent>();
