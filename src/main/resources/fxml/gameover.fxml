@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1137.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nz.ac.auckland.se206.controllers.GameOverController">
+  <children>
+    <ImageView fitHeight="650.0" fitWidth="1137.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@../images/MainSceneView.jpg" />
+      </image>
+    </ImageView>
+      <ImageView fitHeight="443.0" fitWidth="923.0" layoutX="113.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/gameover.gif" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="restartButton" fitHeight="190.0" fitWidth="289.0" layoutX="476.0" layoutY="445.0" onMouseClicked="#changeScene" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/restart.gif" />
+         </image>
+      </ImageView>
+  </children>
+</Pane>

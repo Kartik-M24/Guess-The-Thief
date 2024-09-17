@@ -16,7 +16,9 @@ public class SceneManager {
     LETTERCLUE,
     FUSEBOXCLUE,
     LECTERNCLUE,
-    GUESSINGSCENE, CRIMEEXPLANATION
+    GUESSINGSCENE,
+    CRIMEEXPLANATION,
+    GAMEOVER
   }
 
   private static HashMap<AppUi, Parent> sceneMap = new HashMap<AppUi, Parent>();
@@ -27,5 +29,9 @@ public class SceneManager {
 
   public static Parent getUiRoot(AppUi appUi) {
     return sceneMap.get(appUi);
+  }
+
+  public static void reset() {
+    sceneMap.clear();
   }
 }
