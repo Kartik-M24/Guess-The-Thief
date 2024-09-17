@@ -53,7 +53,7 @@ public class CrimeExplanationController {
    */
   private String getSystemPrompt() {
 
-    return PromptEngineering.getPrompt("collectorPrompt.txt");
+    return PromptEngineering.getPrompt("crimePrompt.txt");
   }
 
   /**
@@ -85,7 +85,7 @@ public class CrimeExplanationController {
     if (msg.getRole().equals("user")) {
       txtaChat.appendText("You" + ": " + msg.getContent() + "\n\n");
     } else {
-      txtaChat.appendText("Victor Lancaster" + ": " + msg.getContent() + "\n\n");
+      txtaChat.appendText("Evaluation Bot" + ": " + msg.getContent() + "\n\n");
     }
   }
 
