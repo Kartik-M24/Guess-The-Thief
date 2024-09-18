@@ -20,7 +20,7 @@ public class IntroSceneController {
    * Transitions to the second scene when the start button is clicked.
    *
    * @param event the mouse event triggered by clicking a rectangle
-   * @throws IOException if there is an I/O error
+   * @throws IOException if there is an I/O error1
    */
   @FXML
   public void changeScene(MouseEvent event) throws IOException {

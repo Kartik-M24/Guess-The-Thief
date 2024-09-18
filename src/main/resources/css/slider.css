@@ -1,0 +1,14 @@
+.slider .track {
+  -fx-background-color: linear-gradient(to left, darkslategray, black);
+  background-color: linear-gradient(to left, darkslategray, black);
+  -fx-background-radius: 0;
+  -fx-pref-width: 10px;
+}
+
+.slider .thumb {
+  -fx-pref-width: 30;
+  -fx-pref-height: 10;
+  -fx-background-color: linear-gradient(to top, gold, goldenrod);
+  background-color: linear-gradient(to top, gold, goldenrod);
+  -fx-background-radius: 0;
+}

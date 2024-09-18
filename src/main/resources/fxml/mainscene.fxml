@@ -49,5 +49,12 @@
         <Font size="40.0" />
       </font>
     </Label>
+    <ImageView fx:id="phoneLogButton" fitHeight="69.0" fitWidth="69.0" layoutX="1060.0"
+      layoutY="104.0" onMouseClicked="#handlePhoneClick" onMouseEntered="#onMouseEnteredImage"
+      pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@../images/phonelogicon.png" />
+      </image>
+    </ImageView>
   </children>
 </Pane>

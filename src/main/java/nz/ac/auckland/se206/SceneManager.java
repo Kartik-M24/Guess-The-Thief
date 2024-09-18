@@ -19,7 +19,10 @@ public class SceneManager {
     GUESSINGSCENE,
     CRIMEEXPLANATION,
     GAMEOVER,
-    LIGHTSOFFSCENE
+    LIGHTSOFFSCENE,
+    PHONELOGAUCTIONEER,
+    PHONELOGARCHAEOLOGIST,
+    PHONELOGCOLLECTOR
   }
 
   private static HashMap<AppUi, Parent> sceneMap = new HashMap<AppUi, Parent>();
