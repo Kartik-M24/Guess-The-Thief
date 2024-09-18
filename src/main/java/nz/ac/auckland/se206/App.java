@@ -2,6 +2,7 @@ package nz.ac.auckland.se206;
 
 import java.io.IOException;
 import javafx.application.Application;
+import javafx.concurrent.Task;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -47,6 +48,32 @@ public class App extends Application {
     return new FXMLLoader(App.class.getResource("/fxml/" + fxml + ".fxml")).load();
   }
 
+  Task<Void> initializescene =
+      new Task<>() {
+        @Override
+        protected Void call() {
+          try {
+            SceneManager.addUi(SceneManager.AppUi.MAINSCENE, loadFxml("mainscene"));
+            SceneManager.addUi(SceneManager.AppUi.SUSPECTSSELECTION, loadFxml("suspectsselection"));
+            SceneManager.addUi(SceneManager.AppUi.COLLECTORROOM, loadFxml("collectorroom"));
+            SceneManager.addUi(SceneManager.AppUi.ARCHAEOLOGISTROOM, loadFxml("archaeologistroom"));
+            SceneManager.addUi(SceneManager.AppUi.AUCTIONEERROOM, loadFxml("auctioneerroom"));
+            SceneManager.addUi(SceneManager.AppUi.LETTERCLUE, loadFxml("letterclue"));
+            SceneManager.addUi(SceneManager.AppUi.FUSEBOXCLUE, loadFxml("fuseboxclue"));
+            SceneManager.addUi(SceneManager.AppUi.LECTERNCLUE, loadFxml("lecternclue"));
+            SceneManager.addUi(
+                SceneManager.AppUi.PHONELOGAUCTIONEER, loadFxml("phonelogauctioneer"));
+            SceneManager.addUi(
+                SceneManager.AppUi.PHONELOGARCHAEOLOGIST, loadFxml("phonelogarchaeologist"));
+            SceneManager.addUi(SceneManager.AppUi.PHONELOGCOLLECTOR, loadFxml("phonelogcollector"));
+            AudioManager.addAudio(AudioManager.AudioType.BACKGROUNDMUSIC, "backgroundMusic");
+          } catch (IOException e) {
+            e.printStackTrace();
+          }
+          return null;
+        }
+      };
+
   /**
    * This method is invoked when the application starts. It loads and shows the "room" scene.
    *
@@ -55,26 +82,15 @@ public class App extends Application {
    */
   @Override
   public void start(final Stage stage) throws IOException {
+    Thread initialize = new Thread(initializescene);
+    initialize.start();
     SceneManager.addUi(SceneManager.AppUi.INTROSCENE, loadFxml("introscene"));
-    SceneManager.addUi(SceneManager.AppUi.MAINSCENE, loadFxml("mainscene"));
-    SceneManager.addUi(SceneManager.AppUi.SUSPECTSSELECTION, loadFxml("suspectsselection"));
-    SceneManager.addUi(SceneManager.AppUi.COLLECTORROOM, loadFxml("collectorroom"));
-    SceneManager.addUi(SceneManager.AppUi.ARCHAEOLOGISTROOM, loadFxml("archaeologistroom"));
-    SceneManager.addUi(SceneManager.AppUi.AUCTIONEERROOM, loadFxml("auctioneerroom"));
     SceneManager.addUi(
         SceneManager.AppUi.INITIALARTIFACTSCENE, loadFxml("initialscenewithartifact"));
     SceneManager.addUi(
         SceneManager.AppUi.INTIALWITHOUTARTIFACTSCENE, loadFxml("initialscenewithOUTartifact"));
-    SceneManager.addUi(SceneManager.AppUi.LETTERCLUE, loadFxml("letterclue"));
-    SceneManager.addUi(SceneManager.AppUi.FUSEBOXCLUE, loadFxml("fuseboxclue"));
-    SceneManager.addUi(SceneManager.AppUi.LECTERNCLUE, loadFxml("lecternclue"));
-    SceneManager.addUi(SceneManager.AppUi.PHONELOGAUCTIONEER, loadFxml("phonelogauctioneer"));
-    SceneManager.addUi(SceneManager.AppUi.PHONELOGARCHAEOLOGIST, loadFxml("phonelogarchaeologist"));
-    SceneManager.addUi(SceneManager.AppUi.PHONELOGCOLLECTOR, loadFxml("phonelogcollector"));
     AudioManager.addAudio(AudioManager.AudioType.INITIALTHEFTAUDIO, "intialtheftaudio");
     AudioManager.addAudio(AudioManager.AudioType.AUDIENCEMURMUR, "audienceMurmur");
-    AudioManager.addAudio(AudioManager.AudioType.BACKGROUNDMUSIC, "backgroundMusic");
-
     scene = new Scene(SceneManager.getUiRoot(AppUi.INTROSCENE));
     stage.setScene(scene);
     stage.show();
