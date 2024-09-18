@@ -29,6 +29,9 @@ public class LetterClueController {
   @FXML
   public void initialize() {
     hintText.setVisible(true);
+    textImage1.setOpacity(0);
+    textImage2.setOpacity(0);
+    textImage3.setOpacity(0);
     Timeline timeline = TimerManager.getTimeline();
     timeline.getKeyFrames().add(new KeyFrame(Duration.millis(1), event -> updateTimer()));
   }
@@ -56,10 +59,11 @@ public class LetterClueController {
     Slider slider = (Slider) event.getSource();
     int value = (int) slider.getValue();
     // Step 1: Linearly map the value from [-50, 50] to [0, 100]
-    value = (value + 50) * 100 / 100;
+    value = value + 50;
     if (value > 80) {
       value -= 20;
     }
+
     // Step 2: Add a random perturbation
     Random random = new Random();
     int perturbation1 = random.nextInt(21) - 10; // Random value between -10 and 10
@@ -69,12 +73,14 @@ public class LetterClueController {
     // Combine perturbations with a non-linear transformation
     int opacityValue = value + perturbation1 + perturbation2 + perturbation3;
     opacityValue =
-        (int) (opacityValue * (0.8 + 0.4 * random.nextDouble())); // Adding a random scaling factor
+        (int) (opacityValue * (0.8 + 0.3 * random.nextDouble())); // Adding a random scaling factor
     // Step 3: Ensure the final value is within the range [0, 100]
     if (opacityValue < 0) {
       opacityValue *= -1;
     } else if (opacityValue > 100) {
-      opacityValue = (opacityValue % 100) + 12;
+      opacityValue = (opacityValue % 100);
+    } else if (value == 0 || value == 50 || value == -50) {
+      opacityValue = 0;
     }
 
     // Step 4: Set the opacity of the image view
