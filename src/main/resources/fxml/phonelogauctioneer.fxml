@@ -72,5 +72,15 @@
             <Image url="@../images/crimeSceneIcon.png" />
          </image>
       </ImageView>
+      <ImageView fx:id="nextCollectorButton" fitHeight="56.0" fitWidth="52.0" layoutX="1070.0" layoutY="502.0" onMouseClicked="#handleNextCollectorClick" onMouseEntered="#onMouseEnteredImage" opacity="0.95" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/Chat%20for%20BETA/nextRight.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="nextArchaeologistButton" fitHeight="56.0" fitWidth="52.0" layoutX="7.0" layoutY="502.0" onMouseClicked="#handleNextArchaeologistClick" onMouseEntered="#onMouseEnteredImage" opacity="0.95" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/Chat%20for%20BETA/nextLeft.png" />
+         </image>
+      </ImageView>
    </children>
 </Pane>

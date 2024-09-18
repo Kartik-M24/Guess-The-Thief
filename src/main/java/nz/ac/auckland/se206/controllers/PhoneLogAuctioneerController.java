@@ -16,13 +16,14 @@ import nz.ac.auckland.se206.TimerManager;
 
 public class PhoneLogAuctioneerController {
 
-  @FXML private ImageView imgSuspects;
   @FXML private ImageView imgPolice;
   @FXML private ImageView imgFriend;
+  @FXML private ImageView nextCollectorButton;
+  @FXML private ImageView nextArchaeologistButton;
+
   @FXML private Rectangle rectFriend;
   @FXML private Rectangle rectPolice;
   @FXML private Rectangle backButton;
-
   @FXML private Label timer;
   private TimerManager timerManager = TimerManager.getInstance();
 
@@ -45,9 +46,50 @@ public class PhoneLogAuctioneerController {
    */
   @FXML
   private void handleSuspectsClick(MouseEvent event) throws IOException {
+    backButton.setDisable(true);
+    imgPolice.setOpacity(0);
+    imgFriend.setOpacity(0);
+    rectFriend.setDisable(false);
+    rectPolice.setDisable(false);
     ImageView button = (ImageView) event.getSource();
     Scene sceneButtonIsIn = button.getScene();
     sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.SUSPECTSSELECTION));
+  }
+
+  /**
+   * Handles the guess button click event.
+   *
+   * @param event the action event triggered by clicking the guess button
+   * @throws IOException if there is an I/O error
+   */
+  @FXML
+  private void handleNextArchaeologistClick(MouseEvent event) throws IOException {
+    imgPolice.setOpacity(0);
+    imgFriend.setOpacity(0);
+    rectFriend.setDisable(false);
+    rectPolice.setDisable(false);
+    backButton.setDisable(true);
+    ImageView button = (ImageView) event.getSource();
+    Scene sceneButtonIsIn = button.getScene();
+    sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.PHONELOGARCHAEOLOGIST));
+  }
+
+  /**
+   * Handles the guess button click event.
+   *
+   * @param event the action event triggered by clicking the guess button
+   * @throws IOException if there is an I/O error
+   */
+  @FXML
+  private void handleNextCollectorClick(MouseEvent event) throws IOException {
+    imgPolice.setOpacity(0);
+    imgFriend.setOpacity(0);
+    rectFriend.setDisable(false);
+    rectPolice.setDisable(false);
+    backButton.setDisable(true);
+    ImageView button = (ImageView) event.getSource();
+    Scene sceneButtonIsIn = button.getScene();
+    sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.PHONELOGARCHAEOLOGIST));
   }
 
   /**
@@ -96,6 +138,24 @@ public class PhoneLogAuctioneerController {
   }
 
   /**
+   * Handles mouse click to go to the Crime Scene.
+   *
+   * @param event the mouse event triggered by clicking a rectangle
+   * @throws IOException if there is an I/O error
+   */
+  @FXML
+  private void handleCrimeSceneClick(MouseEvent event) throws IOException {
+    imgPolice.setOpacity(0);
+    imgFriend.setOpacity(0);
+    rectFriend.setDisable(false);
+    rectPolice.setDisable(false);
+    ImageView button = (ImageView) event.getSource();
+    Scene sceneButtonIsIn = button.getScene();
+    sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.MAINSCENE));
+    backButton.setDisable(true);
+  }
+
+  /**
    * Handles mouse hover on image
    *
    * @param event the mouse event triggered by clicking a rectangle
@@ -115,18 +175,5 @@ public class PhoneLogAuctioneerController {
   private void onMouseEntered(MouseEvent event) {
     Rectangle clickedRectangle = (Rectangle) event.getSource();
     clickedRectangle.setCursor(javafx.scene.Cursor.HAND);
-  }
-
-  /**
-   * Handles mouse click to go to the Crime Scene.
-   *
-   * @param event the mouse event triggered by clicking a rectangle
-   * @throws IOException if there is an I/O error
-   */
-  @FXML
-  private void handleCrimeSceneClick(MouseEvent event) throws IOException {
-    ImageView button = (ImageView) event.getSource();
-    Scene sceneButtonIsIn = button.getScene();
-    sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.MAINSCENE));
   }
 }
