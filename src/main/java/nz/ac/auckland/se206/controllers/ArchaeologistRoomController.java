@@ -139,6 +139,10 @@ public class ArchaeologistRoomController {
     return isArchaeologistRoomVisited;
   }
 
+  public static void setArchaeologistRoomVisited() {
+    isArchaeologistRoomVisited = false;
+  }
+
   /**
    * Handles the key pressed event.
    *

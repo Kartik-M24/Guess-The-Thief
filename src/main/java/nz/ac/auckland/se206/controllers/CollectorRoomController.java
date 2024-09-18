@@ -140,6 +140,10 @@ public class CollectorRoomController {
     return isCollectorRoomVisited;
   }
 
+  public static void setCollectorRoomVisited() {
+    isCollectorRoomVisited = false;
+  }
+
   /**
    * Handles the key pressed event.
    *

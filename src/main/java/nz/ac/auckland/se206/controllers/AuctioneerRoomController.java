@@ -139,6 +139,10 @@ public class AuctioneerRoomController {
     return isAuctioneerRoomVisited;
   }
 
+  public static void setAuctioneerRoomVisited() {
+    isAuctioneerRoomVisited = false;
+  }
+
   /**
    * Handles the key pressed event.
    *

@@ -23,6 +23,9 @@ public class GameOverController {
   @FXML
   public void changeScene(MouseEvent event) throws IOException {
     InitialSceneWithArtifactController.audioManager2.stopAudio();
+    ArchaeologistRoomController.setArchaeologistRoomVisited();
+    CollectorRoomController.setCollectorRoomVisited();
+    AuctioneerRoomController.setAuctioneerRoomVisited();
     ImageView button = (ImageView) event.getSource();
     Scene sceneButtonIsIn = button.getScene();
     sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.INTROSCENE));
