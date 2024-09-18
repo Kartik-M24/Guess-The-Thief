@@ -176,6 +176,12 @@ public class CrimeExplanationController {
     clickedRectangle.setCursor(javafx.scene.Cursor.HAND);
   }
 
+  /**
+   * Handles when the button is clicked to take you to the game over screen
+   *
+   * @param event the mouse event triggered by clicking a rectangle
+   * @throws IOException if there is an I/O error
+   */
   @FXML
   private void handleGameOver(MouseEvent event) throws IOException {
     ImageView button = (ImageView) event.getSource();
