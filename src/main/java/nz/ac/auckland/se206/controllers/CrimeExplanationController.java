@@ -5,6 +5,7 @@ import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
@@ -20,6 +21,8 @@ import nz.ac.auckland.apiproxy.chat.openai.ChatMessage;
 import nz.ac.auckland.apiproxy.chat.openai.Choice;
 import nz.ac.auckland.apiproxy.config.ApiProxyConfig;
 import nz.ac.auckland.apiproxy.exceptions.ApiProxyException;
+import nz.ac.auckland.se206.SceneManager;
+import nz.ac.auckland.se206.SceneManager.AppUi;
 import nz.ac.auckland.se206.TimerManager;
 import nz.ac.auckland.se206.prompts.PromptEngineering;
 
@@ -29,6 +32,7 @@ public class CrimeExplanationController {
   @FXML private TextField txtInput;
   @FXML private Button btnSend;
   @FXML private Label timer;
+  @FXML private ImageView gameoverButton;
 
   private ChatCompletionRequest chatCompletionRequest;
   private TimerManager timerManager = TimerManager.getInstance();
@@ -39,6 +43,7 @@ public class CrimeExplanationController {
     setProfession();
     Timeline timeline = TimerManager.getTimeline();
     timeline.getKeyFrames().add(new KeyFrame(Duration.millis(1), event -> updateTimer()));
+    gameoverButton.setVisible(false);
   }
 
   /** Updates the timer. */
@@ -146,6 +151,7 @@ public class CrimeExplanationController {
     appendChatMessage(msg);
     runGpt(msg);
     btnSend.setVisible(false);
+    gameoverButton.setVisible(true);
   }
 
   /**
@@ -168,5 +174,12 @@ public class CrimeExplanationController {
   private void onMouseEnteredImage(MouseEvent event) {
     ImageView clickedRectangle = (ImageView) event.getSource();
     clickedRectangle.setCursor(javafx.scene.Cursor.HAND);
+  }
+
+  @FXML
+  private void handleGameOver(MouseEvent event) throws IOException {
+    ImageView button = (ImageView) event.getSource();
+    Scene sceneButtonIsIn = button.getScene();
+    sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.GAMEOVER));
   }
 }

@@ -59,5 +59,10 @@
     <Button fx:id="btnSend" layoutX="960.0" layoutY="542.0" mnemonicParsing="false" onAction="#onSendMessage" prefHeight="36.0" prefWidth="125.0" text="Send" />
     <TextArea fx:id="txtaChat" editable="false" layoutX="439.0" layoutY="40.0" opacity="0.8" prefHeight="470.0" prefWidth="644.0" wrapText="true" />
     <TextField fx:id="txtInput" layoutX="442.0" layoutY="544.0" opacity="0.8" prefHeight="36.0" prefWidth="507.0" />
+      <ImageView fx:id="gameoverButton" fitHeight="85.0" fitWidth="93.0" layoutX="707.0" layoutY="535.0" onMouseClicked="#handleGameOver" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/restart.gif" />
+         </image>
+      </ImageView>
   </children>
 </Pane>
