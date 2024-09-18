@@ -39,6 +39,7 @@ public class CollectorRoomController {
 
   private ChatCompletionRequest chatCompletionRequest;
   private TimerManager timerManager = TimerManager.getInstance();
+  private boolean isCollectorRoomVisited = false;
 
   /** Initializes the room view. */
   @FXML
@@ -104,7 +105,7 @@ public class CollectorRoomController {
    * @throws ApiProxyException if there is an error communicating with the API proxy
    */
   private ChatMessage runGpt(ChatMessage msg) throws ApiProxyException {
-
+    isCollectorRoomVisited = true;
     txtaChat.appendText("Victor Lancaster is thinking...");
 
     Task<ChatMessage> task =
@@ -132,6 +133,10 @@ public class CollectorRoomController {
     Thread gtpThread = new Thread(task);
     gtpThread.start();
     return msg;
+  }
+
+  public boolean isCollectorRoomVisited() {
+    return isCollectorRoomVisited;
   }
 
   /**
