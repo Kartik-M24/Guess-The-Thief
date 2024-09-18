@@ -27,6 +27,8 @@ public class MainSceneController {
 
   @FXML private Button btnGuess;
   @FXML private ImageView imgSuspects;
+  @FXML private ImageView phoneLogButton;
+
   @FXML private Label timer;
 
   private static boolean isFirstTimeInit = true;
@@ -113,6 +115,19 @@ public class MainSceneController {
     ImageView button = (ImageView) event.getSource();
     Scene sceneButtonIsIn = button.getScene();
     sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.SUSPECTSSELECTION));
+  }
+
+  /**
+   * Handles the guess button click event.
+   *
+   * @param event the action event triggered by clicking the guess button
+   * @throws IOException if there is an I/O error
+   */
+  @FXML
+  private void handlePhoneClick(MouseEvent event) throws IOException {
+    ImageView button = (ImageView) event.getSource();
+    Scene sceneButtonIsIn = button.getScene();
+    sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.PHONELOGAUCTIONEER));
   }
 
   /**
