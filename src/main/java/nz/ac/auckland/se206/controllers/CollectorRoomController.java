@@ -105,6 +105,8 @@ public class CollectorRoomController {
    */
   private ChatMessage runGpt(ChatMessage msg) throws ApiProxyException {
 
+    txtaChat.appendText("Victor Lancaster is thinking...");
+
     Task<ChatMessage> task =
         new Task<ChatMessage>() {
           @Override
@@ -114,6 +116,10 @@ public class CollectorRoomController {
               ChatCompletionResult chatCompletionResult = chatCompletionRequest.execute();
               Choice result = chatCompletionResult.getChoices().iterator().next();
               chatCompletionRequest.addMessage(result.getChatMessage());
+
+              int beginIndex = txtaChat.getText().lastIndexOf("Victor Lancaster is thinking...");
+              txtaChat.replaceText(beginIndex, beginIndex + 31, "");
+
               appendChatMessage(result.getChatMessage());
               return result.getChatMessage();
             } catch (ApiProxyException e) {
