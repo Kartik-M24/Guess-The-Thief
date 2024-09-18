@@ -39,6 +39,7 @@ public class ArchaeologistRoomController {
 
   private ChatCompletionRequest chatCompletionRequest;
   private TimerManager timerManager = TimerManager.getInstance();
+  private boolean isArchaeologistRoomVisited = false;
 
   /** Initializes the room view. */
   @FXML
@@ -103,7 +104,7 @@ public class ArchaeologistRoomController {
    * @throws ApiProxyException if there is an error communicating with the API proxy
    */
   private ChatMessage runGpt(ChatMessage msg) throws ApiProxyException {
-
+    isArchaeologistRoomVisited = true;
     Task<ChatMessage> task =
         new Task<ChatMessage>() {
           @Override
@@ -125,6 +126,10 @@ public class ArchaeologistRoomController {
     Thread gtpThread = new Thread(task);
     gtpThread.start();
     return msg;
+  }
+
+  public boolean isArchaeologistRoomVisited() {
+    return isArchaeologistRoomVisited;
   }
 
   /**

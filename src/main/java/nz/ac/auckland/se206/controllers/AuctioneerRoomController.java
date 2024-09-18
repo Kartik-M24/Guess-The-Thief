@@ -39,6 +39,7 @@ public class AuctioneerRoomController {
 
   private ChatCompletionRequest chatCompletionRequest;
   private TimerManager timerManager = TimerManager.getInstance();
+  private boolean isAuctioneerRoomVisited = false;
 
   /** Initializes the Auctioneer room view. */
   @FXML
@@ -103,7 +104,7 @@ public class AuctioneerRoomController {
    * @throws ApiProxyException if there is an error communicating with the API proxy
    */
   private ChatMessage runGpt(ChatMessage msg) throws ApiProxyException {
-
+    isAuctioneerRoomVisited = true;
     Task<ChatMessage> task =
         new Task<ChatMessage>() {
           @Override
@@ -125,6 +126,10 @@ public class AuctioneerRoomController {
     Thread gtpThread = new Thread(task);
     gtpThread.start();
     return msg;
+  }
+
+  public boolean isAuctioneerRoomVisited() {
+    return isAuctioneerRoomVisited;
   }
 
   /**
