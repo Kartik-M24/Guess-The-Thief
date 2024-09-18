@@ -39,12 +39,13 @@ public class CollectorRoomController {
 
   private ChatCompletionRequest chatCompletionRequest;
   private TimerManager timerManager = TimerManager.getInstance();
-  private boolean isCollectorRoomVisited = false;
+  private static boolean isCollectorRoomVisited;
 
   /** Initializes the room view. */
   @FXML
   public void initialize() {
     setProfession();
+    isCollectorRoomVisited = false;
     Timeline timeline = TimerManager.getTimeline();
     timeline.getKeyFrames().add(new KeyFrame(Duration.millis(1), event -> updateTimer()));
   }
@@ -135,7 +136,7 @@ public class CollectorRoomController {
     return msg;
   }
 
-  public boolean isCollectorRoomVisited() {
+  public static boolean isCollectorRoomVisited() {
     return isCollectorRoomVisited;
   }
 

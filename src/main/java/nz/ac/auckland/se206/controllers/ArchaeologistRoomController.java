@@ -39,12 +39,13 @@ public class ArchaeologistRoomController {
 
   private ChatCompletionRequest chatCompletionRequest;
   private TimerManager timerManager = TimerManager.getInstance();
-  private boolean isArchaeologistRoomVisited = false;
+  private static boolean isArchaeologistRoomVisited;
 
   /** Initializes the room view. */
   @FXML
   public void initialize() {
     setProfession();
+    isArchaeologistRoomVisited = false;
     Timeline timeline = TimerManager.getTimeline();
     timeline.getKeyFrames().add(new KeyFrame(Duration.millis(1), event -> updateTimer()));
   }
@@ -134,7 +135,7 @@ public class ArchaeologistRoomController {
     return msg;
   }
 
-  public boolean isArchaeologistRoomVisited() {
+  public static boolean isArchaeologistRoomVisited() {
     return isArchaeologistRoomVisited;
   }
 

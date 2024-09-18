@@ -66,6 +66,10 @@ public class App extends Application {
             SceneManager.addUi(
                 SceneManager.AppUi.PHONELOGARCHAEOLOGIST, loadFxml("phonelogarchaeologist"));
             SceneManager.addUi(SceneManager.AppUi.PHONELOGCOLLECTOR, loadFxml("phonelogcollector"));
+            SceneManager.addUi(SceneManager.AppUi.GUESSINGSCENE, loadFxml("guessingscene"));
+            SceneManager.addUi(SceneManager.AppUi.CRIMEEXPLANATION, loadFxml("crimeexplanation"));
+            SceneManager.addUi(SceneManager.AppUi.GAMEOVER, loadFxml("gameover"));
+            SceneManager.addUi(SceneManager.AppUi.LIGHTSOFFSCENE, loadFxml("lightsoffscene"));
             AudioManager.addAudio(AudioManager.AudioType.BACKGROUNDMUSIC, "backgroundMusic");
           } catch (IOException e) {
             e.printStackTrace();
@@ -89,11 +93,6 @@ public class App extends Application {
         SceneManager.AppUi.INITIALARTIFACTSCENE, loadFxml("initialscenewithartifact"));
     SceneManager.addUi(
         SceneManager.AppUi.INTIALWITHOUTARTIFACTSCENE, loadFxml("initialscenewithOUTartifact"));
-    SceneManager.addUi(SceneManager.AppUi.GUESSINGSCENE, loadFxml("guessingscene"));
-    SceneManager.addUi(SceneManager.AppUi.CRIMEEXPLANATION, loadFxml("crimeexplanation"));
-    SceneManager.addUi(SceneManager.AppUi.GAMEOVER, loadFxml("gameover"));
-    SceneManager.addUi(SceneManager.AppUi.LIGHTSOFFSCENE, loadFxml("lightsoffscene"));
-
     AudioManager.addAudio(AudioManager.AudioType.INITIALTHEFTAUDIO, "intialtheftaudio");
     AudioManager.addAudio(AudioManager.AudioType.AUDIENCEMURMUR, "audienceMurmur");
     scene = new Scene(SceneManager.getUiRoot(AppUi.INTROSCENE));

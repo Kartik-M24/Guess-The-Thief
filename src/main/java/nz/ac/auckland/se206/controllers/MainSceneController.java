@@ -102,10 +102,16 @@ public class MainSceneController {
   @FXML
   private void handleGuessClick(ActionEvent event) throws IOException {
     // context.handleGuessClick();
-    timerManager.setTime(1, 0, 0);
-    Button button = (Button) event.getSource();
-    Scene sceneButtonIsIn = button.getScene();
-    sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.GUESSINGSCENE));
+    if (CollectorRoomController.isCollectorRoomVisited()
+        && ArchaeologistRoomController.isArchaeologistRoomVisited()
+        && AuctioneerRoomController.isAuctioneerRoomVisited()) {
+      timerManager.setTime(1, 0, 0);
+      Button button = (Button) event.getSource();
+      Scene sceneButtonIsIn = button.getScene();
+      sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.GUESSINGSCENE));
+    } else {
+      TextToSpeech.speak("You need to investigate all the rooms before making a guess.");
+    }
   }
 
   /**

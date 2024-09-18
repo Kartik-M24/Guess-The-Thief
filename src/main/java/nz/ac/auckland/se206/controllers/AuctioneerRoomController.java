@@ -39,12 +39,13 @@ public class AuctioneerRoomController {
 
   private ChatCompletionRequest chatCompletionRequest;
   private TimerManager timerManager = TimerManager.getInstance();
-  private boolean isAuctioneerRoomVisited = false;
+  private static boolean isAuctioneerRoomVisited;
 
   /** Initializes the Auctioneer room view. */
   @FXML
   public void initialize() {
     setProfession();
+    isAuctioneerRoomVisited = false;
     Timeline timeline = TimerManager.getTimeline();
     timeline.getKeyFrames().add(new KeyFrame(Duration.millis(1), event -> updateTimer()));
   }
@@ -134,7 +135,7 @@ public class AuctioneerRoomController {
     return msg;
   }
 
-  public boolean isAuctioneerRoomVisited() {
+  public static boolean isAuctioneerRoomVisited() {
     return isAuctioneerRoomVisited;
   }
 
