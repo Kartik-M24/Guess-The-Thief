@@ -89,7 +89,7 @@ public class PhoneLogAuctioneerController {
     backButton.setDisable(true);
     ImageView button = (ImageView) event.getSource();
     Scene sceneButtonIsIn = button.getScene();
-    sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.PHONELOGARCHAEOLOGIST));
+    sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.PHONELOGCOLLECTOR));
   }
 
   /**

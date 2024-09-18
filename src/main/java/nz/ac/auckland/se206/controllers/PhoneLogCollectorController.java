@@ -14,11 +14,13 @@ import nz.ac.auckland.se206.SceneManager;
 import nz.ac.auckland.se206.SceneManager.AppUi;
 import nz.ac.auckland.se206.TimerManager;
 
-public class PhoneLogArchaeologistController {
-  @FXML private ImageView imgColleague;
-  @FXML private ImageView imgVictor;
-  @FXML private Rectangle rectVictor;
-  @FXML private Rectangle rectColleague;
+public class PhoneLogCollectorController {
+  @FXML private ImageView imgStaff;
+  @FXML private ImageView imgLoan;
+  @FXML private ImageView imgSamuel;
+  @FXML private Rectangle rectLoan;
+  @FXML private Rectangle rectStaff;
+  @FXML private Rectangle rectSamuel;
   @FXML private Rectangle backButton;
 
   @FXML private Label timer;
@@ -43,10 +45,12 @@ public class PhoneLogArchaeologistController {
    */
   @FXML
   private void handleCrimeSceneClick(MouseEvent event) throws IOException {
-    imgColleague.setOpacity(0);
-    imgVictor.setOpacity(0);
-    rectVictor.setDisable(false);
-    rectColleague.setDisable(false);
+    imgStaff.setOpacity(0);
+    imgLoan.setOpacity(0);
+    imgSamuel.setOpacity(0);
+    rectLoan.setDisable(false);
+    rectStaff.setDisable(false);
+    rectSamuel.setDisable(false);
     ImageView button = (ImageView) event.getSource();
     Scene sceneButtonIsIn = button.getScene();
     sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.MAINSCENE));
@@ -61,10 +65,12 @@ public class PhoneLogArchaeologistController {
    */
   @FXML
   private void handleSuspectsClick(MouseEvent event) throws IOException {
-    imgColleague.setOpacity(0);
-    imgVictor.setOpacity(0);
-    rectVictor.setDisable(false);
-    rectColleague.setDisable(false);
+    imgStaff.setOpacity(0);
+    imgLoan.setOpacity(0);
+    imgSamuel.setOpacity(0);
+    rectLoan.setDisable(false);
+    rectStaff.setDisable(false);
+    rectSamuel.setDisable(false);
     ImageView button = (ImageView) event.getSource();
     Scene sceneButtonIsIn = button.getScene();
     sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.SUSPECTSSELECTION));
@@ -78,11 +84,13 @@ public class PhoneLogArchaeologistController {
    * @throws IOException if there is an I/O error
    */
   @FXML
-  private void handleVictorClick(MouseEvent event) throws IOException {
-    imgColleague.setOpacity(0);
-    imgVictor.setOpacity(1);
-    rectVictor.setDisable(true);
-    rectColleague.setDisable(true);
+  private void handleLoanClick(MouseEvent event) throws IOException {
+    imgStaff.setOpacity(0);
+    imgLoan.setOpacity(1);
+    imgSamuel.setOpacity(0);
+    rectLoan.setDisable(true);
+    rectStaff.setDisable(true);
+    rectSamuel.setDisable(true);
     backButton.setDisable(false);
   }
 
@@ -93,11 +101,30 @@ public class PhoneLogArchaeologistController {
    * @throws IOException if there is an I/O error
    */
   @FXML
-  private void handleColleagueClick(MouseEvent event) throws IOException {
-    imgColleague.setOpacity(1);
-    imgVictor.setOpacity(0);
-    rectVictor.setDisable(true);
-    rectColleague.setDisable(true);
+  private void handleStaffClick(MouseEvent event) throws IOException {
+    imgStaff.setOpacity(1);
+    imgLoan.setOpacity(0);
+    imgSamuel.setOpacity(0);
+    rectLoan.setDisable(true);
+    rectStaff.setDisable(true);
+    rectSamuel.setDisable(true);
+    backButton.setDisable(false);
+  }
+
+  /**
+   * Handles the guess button click event.
+   *
+   * @param event the action event triggered by clicking the guess button
+   * @throws IOException if there is an I/O error
+   */
+  @FXML
+  private void handleSamuelClick(MouseEvent event) throws IOException {
+    imgStaff.setOpacity(0);
+    imgLoan.setOpacity(0);
+    imgSamuel.setOpacity(1);
+    rectLoan.setDisable(true);
+    rectStaff.setDisable(true);
+    rectSamuel.setDisable(true);
     backButton.setDisable(false);
   }
 
@@ -109,11 +136,33 @@ public class PhoneLogArchaeologistController {
    */
   @FXML
   private void handleBackClick(MouseEvent event) throws IOException {
-    imgColleague.setOpacity(0);
-    imgVictor.setOpacity(0);
+    imgStaff.setOpacity(0);
+    imgLoan.setOpacity(0);
+    imgSamuel.setOpacity(0);
     backButton.setDisable(true);
-    rectVictor.setDisable(false);
-    rectColleague.setDisable(false);
+    rectLoan.setDisable(false);
+    rectStaff.setDisable(false);
+    rectSamuel.setDisable(false);
+  }
+
+  /**
+   * Handles the guess button click event.
+   *
+   * @param event the action event triggered by clicking the guess button
+   * @throws IOException if there is an I/O error
+   */
+  @FXML
+  private void handleNextArchaeologistClick(MouseEvent event) throws IOException {
+    imgStaff.setOpacity(0);
+    imgLoan.setOpacity(0);
+    imgSamuel.setOpacity(0);
+    rectLoan.setDisable(false);
+    rectStaff.setDisable(false);
+    rectSamuel.setDisable(false);
+    backButton.setDisable(true);
+    ImageView button = (ImageView) event.getSource();
+    Scene sceneButtonIsIn = button.getScene();
+    sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.PHONELOGARCHAEOLOGIST));
   }
 
   /**
@@ -124,32 +173,16 @@ public class PhoneLogArchaeologistController {
    */
   @FXML
   private void handleNextAuctioneerClick(MouseEvent event) throws IOException {
-    imgColleague.setOpacity(0);
-    imgVictor.setOpacity(0);
-    rectVictor.setDisable(false);
-    rectColleague.setDisable(false);
+    imgStaff.setOpacity(0);
+    imgLoan.setOpacity(0);
+    imgSamuel.setOpacity(0);
+    rectLoan.setDisable(false);
+    rectStaff.setDisable(false);
+    rectSamuel.setDisable(false);
     backButton.setDisable(true);
     ImageView button = (ImageView) event.getSource();
     Scene sceneButtonIsIn = button.getScene();
     sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.PHONELOGAUCTIONEER));
-  }
-
-  /**
-   * Handles the guess button click event.
-   *
-   * @param event the action event triggered by clicking the guess button
-   * @throws IOException if there is an I/O error
-   */
-  @FXML
-  private void handleNextCollectorClick(MouseEvent event) throws IOException {
-    imgColleague.setOpacity(0);
-    imgVictor.setOpacity(0);
-    rectVictor.setDisable(false);
-    rectColleague.setDisable(false);
-    backButton.setDisable(true);
-    ImageView button = (ImageView) event.getSource();
-    Scene sceneButtonIsIn = button.getScene();
-    sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.PHONELOGCOLLECTOR));
   }
 
   /**

@@ -17,7 +17,8 @@ public class SceneManager {
     FUSEBOXCLUE,
     LECTERNCLUE,
     PHONELOGAUCTIONEER,
-    PHONELOGARCHAEOLOGIST
+    PHONELOGARCHAEOLOGIST,
+    PHONELOGCOLLECTOR
   }
 
   private static HashMap<AppUi, Parent> sceneMap = new HashMap<AppUi, Parent>();
