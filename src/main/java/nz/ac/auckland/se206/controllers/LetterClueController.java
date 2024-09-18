@@ -57,6 +57,9 @@ public class LetterClueController {
     int value = (int) slider.getValue();
     // Step 1: Linearly map the value from [-50, 50] to [0, 100]
     value = (value + 50) * 100 / 100;
+    if (value > 80) {
+      value -= 20;
+    }
     // Step 2: Add a random perturbation
     Random random = new Random();
     int perturbation1 = random.nextInt(21) - 10; // Random value between -10 and 10
@@ -71,7 +74,7 @@ public class LetterClueController {
     if (opacityValue < 0) {
       opacityValue *= -1;
     } else if (opacityValue > 100) {
-      opacityValue = (opacityValue % 100) + 24;
+      opacityValue = (opacityValue % 100) + 12;
     }
 
     // Step 4: Set the opacity of the image view
