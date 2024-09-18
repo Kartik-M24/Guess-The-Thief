@@ -27,8 +27,8 @@ public class IntroSceneController {
     timerManager.setTime(4, 59, 999);
     ImageView button = (ImageView) event.getSource();
     Scene sceneButtonIsIn = button.getScene();
-    sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.MAINSCENE));
-    // audioManager.playAudio(AudioManager.AudioType.AUDIENCEMURMUR, 0.2);
+    sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.INITIALARTIFACTSCENE));
+    audioManager.playAudio(AudioManager.AudioType.AUDIENCEMURMUR, 0.2);
   }
 
   /**
