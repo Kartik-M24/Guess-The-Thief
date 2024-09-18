@@ -58,19 +58,15 @@ public class LetterClueController {
     hintText.setVisible(false);
     Slider slider = (Slider) event.getSource();
     int value = (int) slider.getValue();
-    // Step 1: Linearly map the value from [-50, 50] to [0, 100]
-    value = value + 50;
-    if (value > 80) {
-      value -= 20;
-    }
 
-    // Step 2: Add a random perturbation
+    // Step 1: Add a random perturbation
     Random random = new Random();
+    int fullOpacity = (random.nextInt(101)) - 50;
     int perturbation1 = random.nextInt(21) - 10; // Random value between -10 and 10
     int perturbation2 = random.nextInt(11) - 5; // Random value between -5 and 5
     int perturbation3 = random.nextInt(31) - 15; // Random value between -15 and 15
 
-    // Combine perturbations with a non-linear transformation
+    // Step 2: Combine perturbations with a non-linear transformation
     int opacityValue = value + perturbation1 + perturbation2 + perturbation3;
     opacityValue =
         (int) (opacityValue * (0.8 + 0.3 * random.nextDouble())); // Adding a random scaling factor
@@ -81,6 +77,10 @@ public class LetterClueController {
       opacityValue = (opacityValue % 100);
     } else if (value == 0 || value == 50 || value == -50) {
       opacityValue = 0;
+    }
+
+    if (value == fullOpacity) {
+      opacityValue = 100;
     }
 
     // Step 4: Set the opacity of the image view
