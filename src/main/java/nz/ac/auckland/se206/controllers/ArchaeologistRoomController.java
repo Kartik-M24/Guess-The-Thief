@@ -105,6 +105,8 @@ public class ArchaeologistRoomController {
    */
   private ChatMessage runGpt(ChatMessage msg) throws ApiProxyException {
     isArchaeologistRoomVisited = true;
+    txtaChat.appendText("Dr. Samuel Carter is thinking...");
+
     Task<ChatMessage> task =
         new Task<ChatMessage>() {
           @Override
@@ -114,6 +116,10 @@ public class ArchaeologistRoomController {
               ChatCompletionResult chatCompletionResult = chatCompletionRequest.execute();
               Choice result = chatCompletionResult.getChoices().iterator().next();
               chatCompletionRequest.addMessage(result.getChatMessage());
+
+              int beginIndex = txtaChat.getText().lastIndexOf("Dr. Samuel Carter is thinking...");
+              txtaChat.replaceText(beginIndex, beginIndex + 32, "");
+
               appendChatMessage(result.getChatMessage());
               return result.getChatMessage();
             } catch (ApiProxyException e) {

@@ -105,6 +105,8 @@ public class AuctioneerRoomController {
    */
   private ChatMessage runGpt(ChatMessage msg) throws ApiProxyException {
     isAuctioneerRoomVisited = true;
+    txtaChat.appendText("Emily Clarke is thinking...");
+
     Task<ChatMessage> task =
         new Task<ChatMessage>() {
           @Override
@@ -114,6 +116,10 @@ public class AuctioneerRoomController {
               ChatCompletionResult chatCompletionResult = chatCompletionRequest.execute();
               Choice result = chatCompletionResult.getChoices().iterator().next();
               chatCompletionRequest.addMessage(result.getChatMessage());
+
+              int beginIndex = txtaChat.getText().lastIndexOf("Emily Clarke is thinking...");
+              txtaChat.replaceText(beginIndex, beginIndex + 27, "");
+
               appendChatMessage(result.getChatMessage());
               return result.getChatMessage();
             } catch (ApiProxyException e) {

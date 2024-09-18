@@ -61,6 +61,11 @@ public class App extends Application {
             SceneManager.addUi(SceneManager.AppUi.LETTERCLUE, loadFxml("letterclue"));
             SceneManager.addUi(SceneManager.AppUi.FUSEBOXCLUE, loadFxml("fuseboxclue"));
             SceneManager.addUi(SceneManager.AppUi.LECTERNCLUE, loadFxml("lecternclue"));
+            SceneManager.addUi(
+                SceneManager.AppUi.PHONELOGAUCTIONEER, loadFxml("phonelogauctioneer"));
+            SceneManager.addUi(
+                SceneManager.AppUi.PHONELOGARCHAEOLOGIST, loadFxml("phonelogarchaeologist"));
+            SceneManager.addUi(SceneManager.AppUi.PHONELOGCOLLECTOR, loadFxml("phonelogcollector"));
             AudioManager.addAudio(AudioManager.AudioType.BACKGROUNDMUSIC, "backgroundMusic");
           } catch (IOException e) {
             e.printStackTrace();

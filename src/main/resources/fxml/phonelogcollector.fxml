@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="649.0" prefWidth="1137.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nz.ac.auckland.se206.controllers.PhoneLogCollectorController">
+   <children>
+      <ImageView fitHeight="650.0" fitWidth="1137.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/MainSceneView.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="rectSuspects" fitHeight="69.0" fitWidth="69.0" layoutX="1036.0" layoutY="117.0" onMouseClicked="#handleSuspectsClick" onMouseEntered="#onMouseEnteredImage" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/suspectsIcon.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgCrimeScene" fitHeight="90.0" fitWidth="88.0" layoutX="1026.0" layoutY="11.0" onMouseClicked="#handleCrimeSceneClick" onMouseDragEntered="#onMouseEntered" onMouseEntered="#onMouseEnteredImage" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/crimeSceneIcon.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="timer" alignment="CENTER" layoutX="24.0" layoutY="24.0" prefHeight="62.0" prefWidth="154.0" textAlignment="CENTER" textFill="#b71616">
+         <font>
+            <Font size="40.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="462.0" fitWidth="426.0" layoutX="358.0" layoutY="191.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/Chat%20for%20BETA/Collector/phonemessages-collector.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="141.0" fitWidth="172.0" layoutX="133.0" layoutY="164.0" opacity="0.5" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/AuctioneerProfile.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="141.0" fitWidth="172.0" layoutX="498.0" layoutY="66.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/RichCollectorProfile.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="141.0" fitWidth="172.0" layoutX="848.0" layoutY="151.0" opacity="0.5" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/ArchaeologistProfile.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="358.0" fitWidth="332.0" layoutX="40.0" layoutY="292.0" opacity="0.5" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/Chat%20for%20BETA/Auctioneer/phonemessages-auctioneer.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="358.0" fitWidth="332.0" layoutX="755.0" layoutY="292.0" opacity="0.5" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/Chat%20for%20BETA/Archaeologist/phonemessages-archaeologist.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgLoan" fitHeight="462.0" fitWidth="426.0" layoutX="361.0" layoutY="191.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/Chat%20for%20BETA/Collector/phonechat-collector-loanshark.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgSamuel" fitHeight="462.0" fitWidth="426.0" layoutX="361.0" layoutY="191.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/Chat%20for%20BETA/Collector/phonechat-collector-Samuel.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgStaff" fitHeight="462.0" fitWidth="426.0" layoutX="361.0" layoutY="191.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/Chat%20for%20BETA/Collector/phonechat-collector-staff.png" />
+         </image>
+      </ImageView>
+      <Rectangle fx:id="rectLoan" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="56.0" layoutX="415.0" layoutY="406.0" onMouseClicked="#handleLoanClick" onMouseEntered="#onMouseEntered" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="315.0" />
+      <Rectangle fx:id="rectStaff" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="62.0" layoutX="413.0" layoutY="465.0" onMouseClicked="#handleStaffClick" onMouseEntered="#onMouseEntered" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="315.0" />
+      <Rectangle fx:id="backButton" arcHeight="5.0" arcWidth="5.0" disable="true" fill="DODGERBLUE" height="21.0" layoutX="424.0" layoutY="295.0" onMouseClicked="#handleBackClick" onMouseEntered="#onMouseEntered" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="18.0" />
+      <ImageView fx:id="nextAuctioneerButton" fitHeight="56.0" fitWidth="52.0" layoutX="1070.0" layoutY="502.0" onMouseClicked="#handleNextArchaeologistClick" onMouseEntered="#onMouseEnteredImage" opacity="0.95" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/Chat%20for%20BETA/nextRight.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="nextCollectorButton" fitHeight="56.0" fitWidth="52.0" layoutX="7.0" layoutY="502.0" onMouseClicked="#handleNextAuctioneerClick" onMouseEntered="#onMouseEnteredImage" opacity="0.95" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/Chat%20for%20BETA/nextLeft.png" />
+         </image>
+      </ImageView>
+      <Rectangle fx:id="rectSamuel" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="62.0" layoutX="411.0" layoutY="523.0" onMouseClicked="#handleSamuelClick" onMouseEntered="#onMouseEntered" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="315.0" />
+   </children>
+</Pane>
