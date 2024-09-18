@@ -139,7 +139,7 @@
             <Font size="40.0" />
          </font>
       </Label>
-      <Label layoutX="241.0" layoutY="23.0" prefHeight="74.0" prefWidth="853.0" text="Guess the theif" textFill="WHITE">
+      <Label layoutX="39.0" layoutY="31.0" prefHeight="74.0" prefWidth="317.0" text="Guess the Thief" textFill="WHITE">
          <font>
             <Font size="40.0" />
          </font>
