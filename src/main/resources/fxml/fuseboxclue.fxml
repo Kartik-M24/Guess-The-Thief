@@ -49,7 +49,7 @@
          </font>
       </Text>
       <Rectangle fx:id="switches" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="200.0" layoutX="456.0" layoutY="122.0" onMouseClicked="#handleRectClick" onMouseEntered="#onMouseEntered" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="235.0" />
-      <Rectangle fx:id="wires" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="64.0" layoutX="451.0" layoutY="26.0" onMouseClicked="#handleRectClick" onMouseEntered="#onMouseEntered" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="235.0" />
+      <Rectangle fx:id="wires" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="94.0" layoutX="417.0" layoutY="12.0" onMouseClicked="#handleRectClick" onMouseEntered="#onMouseEntered" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="305.0" />
       <ProgressIndicator fx:id="progressIndicator" layoutX="494.0" layoutY="268.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="125.0" prefWidth="125.0" progress="0.55" style="-fx-progress-color: #ff0000;" />
       <Rectangle fx:id="ashes" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="139.0" layoutX="366.0" layoutY="496.0" onMouseClicked="#handleRectClick" onMouseEntered="#onMouseEntered" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="382.0" />
       <Text fx:id="text5" fill="WHITE" layoutX="314.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Analysis Complete">
