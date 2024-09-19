@@ -66,6 +66,9 @@ public class App extends Application {
             SceneManager.addUi(
                 SceneManager.AppUi.PHONELOGARCHAEOLOGIST, loadFxml("phonelogarchaeologist"));
             SceneManager.addUi(SceneManager.AppUi.PHONELOGCOLLECTOR, loadFxml("phonelogcollector"));
+            SceneManager.addUi(SceneManager.AppUi.SECURITYFOOTAGE, loadFxml("securityfootage"));
+            SceneManager.addUi(
+                SceneManager.AppUi.SECURITYFOOTAGEBEFORE, loadFxml("securityfootagebefore"));
             AudioManager.addAudio(AudioManager.AudioType.BACKGROUNDMUSIC, "backgroundMusic");
           } catch (IOException e) {
             e.printStackTrace();
