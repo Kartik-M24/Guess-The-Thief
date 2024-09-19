@@ -15,7 +15,8 @@ public class AudioManager {
     DOOR,
     PHONENEXT,
     PHONEBACK,
-    CRIMESCENE
+    CRIMESCENE,
+    SECURITYCAMERA
   }
 
   private Media sound;

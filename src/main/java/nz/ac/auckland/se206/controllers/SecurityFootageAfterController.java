@@ -13,6 +13,7 @@ import javafx.scene.shape.Line;
 import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
 import nz.ac.auckland.se206.AudioManager;
+import nz.ac.auckland.se206.AudioManager.AudioType;
 import nz.ac.auckland.se206.SceneManager;
 import nz.ac.auckland.se206.SceneManager.AppUi;
 import nz.ac.auckland.se206.TimerManager;
@@ -83,7 +84,6 @@ public class SecurityFootageAfterController {
     suspect2Image.setVisible(true);
   }
 
-
   /**
    * Handles mouse clicks on left button, moves them to next scene.
    *
@@ -94,6 +94,7 @@ public class SecurityFootageAfterController {
   private void nextSceneLeft(MouseEvent event) throws IOException {
     Scene scene = ((ImageView) event.getSource()).getScene();
     scene.setRoot(SceneManager.getUiRoot(AppUi.SECURITYFOOTAGE));
+    audioManager.playAudio(AudioType.SECURITYCAMERA, 0.7);
   }
 
   /**

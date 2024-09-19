@@ -10,6 +10,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.util.Duration;
 import nz.ac.auckland.se206.AudioManager;
+import nz.ac.auckland.se206.AudioManager.AudioType;
 import nz.ac.auckland.se206.SceneManager;
 import nz.ac.auckland.se206.SceneManager.AppUi;
 import nz.ac.auckland.se206.TimerManager;
@@ -53,6 +54,7 @@ public class SecurityFootageController {
    */
   @FXML
   private void nextSceneRight(MouseEvent event) throws IOException {
+    audioManager.playAudio(AudioType.SECURITYCAMERA, 0.7);
     Scene scene = ((ImageView) event.getSource()).getScene();
     scene.setRoot(SceneManager.getUiRoot(AppUi.SECURITYFOOTAGEAFTER));
   }
@@ -65,6 +67,7 @@ public class SecurityFootageController {
    */
   @FXML
   private void nextSceneLeft(MouseEvent event) throws IOException {
+    audioManager.playAudio(AudioType.SECURITYCAMERA, 0.7);
     ImageView button = (ImageView) event.getSource();
     Scene sceneButtonIsIn = button.getScene();
     sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.SECURITYFOOTAGEBEFORE));
