@@ -177,6 +177,17 @@ public class MainSceneController {
     clickedRectangle.setCursor(javafx.scene.Cursor.HAND);
   }
 
+  @FXML
+  private void onMouseEnteredImageB(MouseEvent event) {
+    if (CollectorRoomController.isCollectorRoomVisited()
+        && ArchaeologistRoomController.isArchaeologistRoomVisited()
+        && AuctioneerRoomController.isAuctioneerRoomVisited()
+        && clueClicked) {
+      Button clickedRectangle = (Button) event.getSource();
+      clickedRectangle.setCursor(javafx.scene.Cursor.HAND);
+    }
+  }
+
   public static void setClueClicked() {
     clueClicked = false;
   }
