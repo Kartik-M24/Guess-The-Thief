@@ -9,6 +9,7 @@ import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.util.Duration;
+import nz.ac.auckland.se206.App;
 import nz.ac.auckland.se206.AudioManager;
 import nz.ac.auckland.se206.AudioManager.AudioType;
 import nz.ac.auckland.se206.SceneManager;
@@ -29,6 +30,18 @@ public class SecurityFootageController {
   }
 
   public void updateTimer() {
+    if (timerManager.isTimeUp()
+        && !MainSceneController.isUserAtGuessingScene
+        && !GuessingSceneController.isUserAtExplanationScene) {
+      timerManager.setTime(1, 0, 0);
+      audioManager.playAudio(AudioManager.AudioType.TIMESUP, 0.5);
+      try {
+        App.setRoot("guessingscene");
+      } catch (IOException e) {
+        e.printStackTrace();
+      }
+      MainSceneController.isUserAtGuessingScene = true;
+    }
     timer.setText(timerManager.getFormattedTime());
   }
 

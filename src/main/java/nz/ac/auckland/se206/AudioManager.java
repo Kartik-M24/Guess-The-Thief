@@ -21,7 +21,9 @@ public class AudioManager {
     FUSEBOXCLOSE,
     WALKING,
     CCTVSTART,
-    CCTVSTOP
+    CCTVSTOP,
+    TIMESUP,
+    POLICESIREN
   }
 
   private Media sound;

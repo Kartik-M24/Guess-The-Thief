@@ -12,6 +12,7 @@ import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
 import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
+import nz.ac.auckland.se206.App;
 import nz.ac.auckland.se206.AudioManager;
 import nz.ac.auckland.se206.AudioManager.AudioType;
 import nz.ac.auckland.se206.SceneManager;
@@ -43,6 +44,18 @@ public class SecurityFootageAfterController {
   }
 
   public void updateTimer() {
+    if (timerManager.isTimeUp()
+        && !MainSceneController.isUserAtGuessingScene
+        && !GuessingSceneController.isUserAtExplanationScene) {
+      timerManager.setTime(1, 0, 0);
+      audioManager.playAudio(AudioManager.AudioType.TIMESUP, 0.5);
+      try {
+        App.setRoot("guessingscene");
+      } catch (IOException e) {
+        e.printStackTrace();
+      }
+      MainSceneController.isUserAtGuessingScene = true;
+    }
     timer.setText(timerManager.getFormattedTime());
   }
 

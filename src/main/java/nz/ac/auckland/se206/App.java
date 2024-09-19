@@ -111,6 +111,8 @@ public class App extends Application {
     AudioManager.addAudio(AudioManager.AudioType.WALKING, "walking");
     AudioManager.addAudio(AudioManager.AudioType.CCTVSTART, "CCTVstart");
     AudioManager.addAudio(AudioManager.AudioType.CCTVSTOP, "CCTVstop");
+    AudioManager.addAudio(AudioManager.AudioType.TIMESUP, "timesup");
+    AudioManager.addAudio(AudioManager.AudioType.POLICESIREN, "policesiren");
     scene = new Scene(SceneManager.getUiRoot(AppUi.INTROSCENE));
     stage.setScene(scene);
     stage.show();

@@ -64,6 +64,7 @@ public class MainSceneController {
         && !isUserAtGuessingScene
         && !GuessingSceneController.isUserAtExplanationScene) {
       timerManager.setTime(1, 0, 0);
+      audioManager.playAudio(AudioManager.AudioType.TIMESUP, 0.5);
       try {
         App.setRoot("guessingscene");
       } catch (IOException e) {
@@ -121,6 +122,7 @@ public class MainSceneController {
         && AuctioneerRoomController.isAuctioneerRoomVisited()
         && clueClicked) {
       timerManager.setTime(1, 0, 0);
+      audioManager.playAudio(AudioManager.AudioType.TIMESUP, 0.5);
       Button button = (Button) event.getSource();
       Scene sceneButtonIsIn = button.getScene();
       sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.GUESSINGSCENE));
