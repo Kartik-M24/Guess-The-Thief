@@ -27,6 +27,7 @@ import nz.ac.auckland.se206.speech.TextToSpeech;
 public class MainSceneController {
 
   @FXML private Button btnGuess;
+  @FXML private Button btnInteract;
   @FXML private ImageView imgSuspects;
   @FXML private ImageView phoneLogButton;
   @FXML private Label timer;
@@ -51,6 +52,7 @@ public class MainSceneController {
               + " you can make a guess. Good luck!");
       isFirstTimeInit = false;
     }
+    btnInteract.setVisible(false);
     clueClicked = false;
     timerManager.startTimer();
     Timeline timeline = TimerManager.getTimeline();
@@ -185,7 +187,16 @@ public class MainSceneController {
         && clueClicked) {
       Button clickedRectangle = (Button) event.getSource();
       clickedRectangle.setCursor(javafx.scene.Cursor.HAND);
+    } else {
+      btnGuess.setVisible(false);
+      btnInteract.setVisible(true);
     }
+  }
+
+  @FXML
+  private void onMouseExitedImageB(MouseEvent event) {
+    btnGuess.setVisible(true);
+    btnInteract.setVisible(false);
   }
 
   public static void setClueClicked() {
