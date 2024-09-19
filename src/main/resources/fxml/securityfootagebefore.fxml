@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="650.0" prefWidth="1137.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="650.0" prefWidth="1137.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nz.ac.auckland.se206.controllers.SecurityFootageBeforeController">
    <children>
       <ImageView fitHeight="649.0" fitWidth="1143.0" opacity="0.81" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -51,8 +52,8 @@
             <Image url="@../images/auctionWithArtifact.png" />
          </image>
       </ImageView>
-      <Circle fx:id="suspect1Circle" fill="#ff212100" layoutX="330.0" layoutY="398.0" onMouseClicked="#displaySuspect1" onMouseEntered="#onMouseEntered" radius="12.0" stroke="RED" strokeType="INSIDE" strokeWidth="2.0" />
-      <Circle fx:id="suspect2Circle" fill="#ff212100" layoutX="794.0" layoutY="387.0" onMouseClicked="#displaySuspect2" onMouseEntered="#onMouseEntered" radius="12.0" stroke="RED" strokeType="INSIDE" strokeWidth="2.0" />
+      <Circle fx:id="suspect1Circle" fill="#ff212100" layoutX="330.0" layoutY="398.0" radius="12.0" stroke="RED" strokeType="INSIDE" strokeWidth="2.0" />
+      <Circle fx:id="suspect2Circle" fill="#ff212100" layoutX="794.0" layoutY="387.0" radius="12.0" stroke="RED" strokeType="INSIDE" strokeWidth="2.0" />
       <Line fx:id="suspect1Line" endX="16.4000244140625" endY="54.0" layoutX="342.0" layoutY="442.0" startX="-10.79998779296875" startY="-33.0" stroke="RED" strokeWidth="2.0" />
       <Line fx:id="suspect2Line" endX="-32.20001220703125" endY="35.20001220703125" layoutX="757.0" layoutY="452.0" startX="32.60003662109375" startY="-55.20001220703125" stroke="RED" strokeWidth="2.0" />
       <ImageView fx:id="suspect1Image" fitHeight="150.0" fitWidth="200.0" layoutX="294.0" layoutY="475.0" pickOnBounds="true" preserveRatio="true">
@@ -65,5 +66,12 @@
             <Image url="@../images/RichCollectorProfile.png" />
          </image>
       </ImageView>
+      <Label fx:id="timer" alignment="CENTER" layoutX="34.0" layoutY="34.0" prefHeight="62.0" prefWidth="154.0" textAlignment="CENTER" textFill="#b71616">
+         <font>
+            <Font size="40.0" />
+         </font>
+      </Label>
+      <Rectangle fx:id="rectSuspect1" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="69.0" layoutX="289.0" layoutY="361.0" onMouseClicked="#displaySuspect1" onMouseEntered="#onMouseEntered" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="82.0" />
+      <Rectangle fx:id="rectSuspect2" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="69.0" layoutX="750.0" layoutY="353.0" onMouseClicked="#displaySuspect2" onMouseEntered="#onMouseEntered" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="82.0" />
    </children>
 </Pane>

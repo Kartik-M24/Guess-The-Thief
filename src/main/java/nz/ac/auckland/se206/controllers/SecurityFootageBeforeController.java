@@ -10,6 +10,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
+import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
 import nz.ac.auckland.se206.SceneManager;
 import nz.ac.auckland.se206.SceneManager.AppUi;
@@ -111,6 +112,17 @@ public class SecurityFootageBeforeController {
   @FXML
   private void onMouseEnteredImage(MouseEvent event) {
     ImageView clickedRectangle = (ImageView) event.getSource();
+    clickedRectangle.setCursor(javafx.scene.Cursor.HAND);
+  }
+
+  /**
+   * Handles mouse hover on circle
+   *
+   * @param event the mouse event triggered by clicking a rectangle
+   */
+  @FXML
+  private void onMouseEntered(MouseEvent event) {
+    Rectangle clickedRectangle = (Rectangle) event.getSource();
     clickedRectangle.setCursor(javafx.scene.Cursor.HAND);
   }
 }
