@@ -15,14 +15,14 @@ import nz.ac.auckland.se206.SceneManager;
 import nz.ac.auckland.se206.SceneManager.AppUi;
 import nz.ac.auckland.se206.TimerManager;
 
-public class SuspectSelectionController {
+public class GuessingSceneController {
   @FXML private Rectangle rectArchaeologist;
   @FXML private Rectangle rectAuctioneer;
   @FXML private Rectangle rectCollector;
-  @FXML private ImageView imgCrimeScene;
   @FXML private Label timer;
 
   private TimerManager timerManager = TimerManager.getInstance();
+  public static boolean isUserAtExplanationScene = false;
 
   /** Initializes the suspect selection view. */
   @FXML
@@ -32,16 +32,13 @@ public class SuspectSelectionController {
   }
 
   public void updateTimer() {
-    if (timerManager.isTimeUp()
-        && !MainSceneController.isUserAtGuessingScene
-        && !GuessingSceneController.isUserAtExplanationScene) {
-      timerManager.setTime(1, 0, 0);
+    if (timerManager.isTimeUp() && MainSceneController.isUserAtGuessingScene) {
       try {
-        App.setRoot("guessingscene");
+        App.setRoot("gameover");
       } catch (IOException e) {
         e.printStackTrace();
       }
-      MainSceneController.isUserAtGuessingScene = true;
+      MainSceneController.isUserAtGuessingScene = false;
     }
     timer.setText(timerManager.getFormattedTime());
   }
@@ -54,9 +51,10 @@ public class SuspectSelectionController {
    */
   @FXML
   private void handleArchaeologistClick(MouseEvent event) throws IOException {
+    MainSceneController.isUserAtGuessingScene = false;
     Rectangle button = (Rectangle) event.getSource();
     Scene sceneButtonIsIn = button.getScene();
-    sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.ARCHAEOLOGISTROOM));
+    sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.GAMEOVER));
   }
 
   /**
@@ -67,9 +65,10 @@ public class SuspectSelectionController {
    */
   @FXML
   private void handleAuctioneerClick(MouseEvent event) throws IOException {
+    MainSceneController.isUserAtGuessingScene = false;
     Rectangle button = (Rectangle) event.getSource();
     Scene sceneButtonIsIn = button.getScene();
-    sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.AUCTIONEERROOM));
+    sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.GAMEOVER));
   }
 
   /**
@@ -80,22 +79,11 @@ public class SuspectSelectionController {
    */
   @FXML
   private void handleCollectorClick(MouseEvent event) throws IOException {
+    MainSceneController.isUserAtGuessingScene = false;
+    isUserAtExplanationScene = true;
     Rectangle button = (Rectangle) event.getSource();
     Scene sceneButtonIsIn = button.getScene();
-    sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.COLLECTORROOM));
-  }
-
-  /**
-   * Handles mouse clicks on rectangles representing people in the room.
-   *
-   * @param event the mouse event triggered by clicking a rectangle
-   * @throws IOException if there is an I/O error
-   */
-  @FXML
-  private void handleCrimeSceneClick(MouseEvent event) throws IOException {
-    ImageView button = (ImageView) event.getSource();
-    Scene sceneButtonIsIn = button.getScene();
-    sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.MAINSCENE));
+    sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.CRIMEEXPLANATION));
   }
 
   /**

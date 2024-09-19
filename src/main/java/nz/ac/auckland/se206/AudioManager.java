@@ -13,6 +13,7 @@ public class AudioManager {
   }
 
   private Media sound;
+  private MediaPlayer player;
   private static HashMap<AudioType, String> audioMap = new HashMap<AudioType, String>();
 
   public static void addAudio(AudioType audioType, String audioFileName) {
@@ -27,12 +28,15 @@ public class AudioManager {
     } catch (URISyntaxException e) {
       e.printStackTrace();
     }
-    MediaPlayer player = new MediaPlayer(sound);
+    player = new MediaPlayer(sound);
     player.setVolume(volume);
     player.play();
   }
 
   public void stopAudio() {
-    sound = null;
+    if (player != null) {
+      player.stop(); // Stop the audio immediately
+      player = null; // Clean up the player
+    }
   }
 }

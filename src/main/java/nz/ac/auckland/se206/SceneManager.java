@@ -16,6 +16,10 @@ public class SceneManager {
     LETTERCLUE,
     FUSEBOXCLUE,
     LECTERNCLUE,
+    GUESSINGSCENE,
+    CRIMEEXPLANATION,
+    GAMEOVER,
+    LIGHTSOFFSCENE,
     PHONELOGAUCTIONEER,
     PHONELOGARCHAEOLOGIST,
     PHONELOGCOLLECTOR,
@@ -32,5 +36,9 @@ public class SceneManager {
 
   public static Parent getUiRoot(AppUi appUi) {
     return sceneMap.get(appUi);
+  }
+
+  public static void reset() {
+    sceneMap.clear();
   }
 }

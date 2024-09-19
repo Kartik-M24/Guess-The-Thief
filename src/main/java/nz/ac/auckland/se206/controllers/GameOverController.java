@@ -8,28 +8,28 @@ import javafx.scene.input.MouseEvent;
 import nz.ac.auckland.se206.AudioManager;
 import nz.ac.auckland.se206.SceneManager;
 import nz.ac.auckland.se206.SceneManager.AppUi;
-import nz.ac.auckland.se206.TimerManager;
 
-public class IntroSceneController {
+public class GameOverController {
 
-  @FXML private ImageView startButton;
-  private TimerManager timerManager = TimerManager.getInstance();
+  @FXML private ImageView restartButton;
   public static AudioManager audioManager = new AudioManager();
 
   /**
    * Transitions to the second scene when the start button is clicked.
    *
    * @param event the mouse event triggered by clicking a rectangle
-   * @throws IOException if there is an I/O error1
+   * @throws IOException if there is an I/O error
    */
   @FXML
   public void changeScene(MouseEvent event) throws IOException {
-    timerManager.setTime(4, 59, 999);
-    InitialSceneWithArtifactController.isFirstTime = true;
+    InitialSceneWithArtifactController.audioManager2.stopAudio();
+    ArchaeologistRoomController.setArchaeologistRoomVisited();
+    CollectorRoomController.setCollectorRoomVisited();
+    AuctioneerRoomController.setAuctioneerRoomVisited();
+    MainSceneController.setClueClicked();
     ImageView button = (ImageView) event.getSource();
     Scene sceneButtonIsIn = button.getScene();
-    sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.INITIALARTIFACTSCENE));
-    audioManager.playAudio(AudioManager.AudioType.AUDIENCEMURMUR, 0.2);
+    sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.INTROSCENE));
   }
 
   /**

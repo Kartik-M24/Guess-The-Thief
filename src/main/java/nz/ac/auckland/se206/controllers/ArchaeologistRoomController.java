@@ -22,6 +22,7 @@ import nz.ac.auckland.apiproxy.chat.openai.ChatMessage;
 import nz.ac.auckland.apiproxy.chat.openai.Choice;
 import nz.ac.auckland.apiproxy.config.ApiProxyConfig;
 import nz.ac.auckland.apiproxy.exceptions.ApiProxyException;
+import nz.ac.auckland.se206.App;
 import nz.ac.auckland.se206.SceneManager;
 import nz.ac.auckland.se206.SceneManager.AppUi;
 import nz.ac.auckland.se206.TimerManager;
@@ -39,18 +40,30 @@ public class ArchaeologistRoomController {
 
   private ChatCompletionRequest chatCompletionRequest;
   private TimerManager timerManager = TimerManager.getInstance();
-  private boolean isArchaeologistRoomVisited = false;
+  private static boolean isArchaeologistRoomVisited;
 
   /** Initializes the room view. */
   @FXML
   public void initialize() {
     setProfession();
+    isArchaeologistRoomVisited = false;
     Timeline timeline = TimerManager.getTimeline();
     timeline.getKeyFrames().add(new KeyFrame(Duration.millis(1), event -> updateTimer()));
   }
 
   /** Updates the timer. */
   public void updateTimer() {
+    if (timerManager.isTimeUp()
+        && !MainSceneController.isUserAtGuessingScene
+        && !GuessingSceneController.isUserAtExplanationScene) {
+      timerManager.setTime(1, 0, 0);
+      try {
+        App.setRoot("guessingscene");
+      } catch (IOException e) {
+        e.printStackTrace();
+      }
+      MainSceneController.isUserAtGuessingScene = true;
+    }
     timer.setText(timerManager.getFormattedTime());
   }
 
@@ -134,8 +147,12 @@ public class ArchaeologistRoomController {
     return msg;
   }
 
-  public boolean isArchaeologistRoomVisited() {
+  public static boolean isArchaeologistRoomVisited() {
     return isArchaeologistRoomVisited;
+  }
+
+  public static void setArchaeologistRoomVisited() {
+    isArchaeologistRoomVisited = false;
   }
 
   /**

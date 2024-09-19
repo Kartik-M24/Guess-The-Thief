@@ -13,6 +13,7 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
+import nz.ac.auckland.se206.App;
 import nz.ac.auckland.se206.GameStateContext;
 import nz.ac.auckland.se206.SceneManager;
 import nz.ac.auckland.se206.SceneManager.AppUi;
@@ -28,13 +29,14 @@ public class MainSceneController {
   @FXML private Button btnGuess;
   @FXML private ImageView imgSuspects;
   @FXML private ImageView phoneLogButton;
-
   @FXML private Label timer;
 
   private static boolean isFirstTimeInit = true;
   private static GameStateContext context = new GameStateContext();
   private TimerManager timerManager = TimerManager.getInstance();
-  private boolean clueClicked;
+  private static boolean clueClicked;
+
+  public static boolean isUserAtGuessingScene = false;
 
   /**
    * Initializes the room view. If it's the first time initialization, it will provide instructions
@@ -49,13 +51,24 @@ public class MainSceneController {
               + " you can make a guess. Good luck!");
       isFirstTimeInit = false;
     }
-
+    clueClicked = false;
     timerManager.startTimer();
     Timeline timeline = TimerManager.getTimeline();
     timeline.getKeyFrames().add(new KeyFrame(Duration.millis(1), event -> updateTimer()));
   }
 
   public void updateTimer() {
+    if (timerManager.isTimeUp()
+        && !isUserAtGuessingScene
+        && !GuessingSceneController.isUserAtExplanationScene) {
+      timerManager.setTime(1, 0, 0);
+      try {
+        App.setRoot("guessingscene");
+      } catch (IOException e) {
+        e.printStackTrace();
+      }
+      isUserAtGuessingScene = true;
+    }
     timer.setText(timerManager.getFormattedTime());
   }
 
@@ -100,7 +113,19 @@ public class MainSceneController {
    */
   @FXML
   private void handleGuessClick(ActionEvent event) throws IOException {
-    context.handleGuessClick();
+    // context.handleGuessClick();
+    if (CollectorRoomController.isCollectorRoomVisited()
+        && ArchaeologistRoomController.isArchaeologistRoomVisited()
+        && AuctioneerRoomController.isAuctioneerRoomVisited()
+        && clueClicked) {
+      timerManager.setTime(1, 0, 0);
+      Button button = (Button) event.getSource();
+      Scene sceneButtonIsIn = button.getScene();
+      sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.GUESSINGSCENE));
+      isUserAtGuessingScene = true;
+    } else {
+      TextToSpeech.speak("You need to investigate all the rooms before making a guess.");
+    }
   }
 
   /**
@@ -124,6 +149,7 @@ public class MainSceneController {
    */
   @FXML
   private void handlePhoneClick(MouseEvent event) throws IOException {
+    clueClicked = true;
     ImageView button = (ImageView) event.getSource();
     Scene sceneButtonIsIn = button.getScene();
     sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.PHONELOGAUCTIONEER));
@@ -149,5 +175,9 @@ public class MainSceneController {
   private void onMouseEnteredImage(MouseEvent event) {
     ImageView clickedRectangle = (ImageView) event.getSource();
     clickedRectangle.setCursor(javafx.scene.Cursor.HAND);
+  }
+
+  public static void setClueClicked() {
+    clueClicked = false;
   }
 }
