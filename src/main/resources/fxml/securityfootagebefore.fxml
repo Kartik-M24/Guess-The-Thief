@@ -37,7 +37,7 @@
             <Image url="@../images/Chat%20for%20BETA/nextRight.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="78.0" fitWidth="69.0" layoutX="44.0" layoutY="290.0" onMouseClicked="#nextSceneLeft" onMouseEntered="#onMouseEnteredImage" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="78.0" fitWidth="69.0" layoutX="44.0" layoutY="290.0" opacity="0.66" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/Chat%20for%20BETA/nextLeft.png" />
          </image>
@@ -61,7 +61,7 @@
             <Image url="@../images/ArchaeologistProfile.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="suspect2Image" fitHeight="150.0" fitWidth="200.0" layoutX="629.0" layoutY="475.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="suspect2Image" fitHeight="150.0" fitWidth="200.0" layoutX="629.0" layoutY="475.0" opacity="0.69" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/RichCollectorProfile.png" />
          </image>
@@ -73,5 +73,11 @@
       </Label>
       <Rectangle fx:id="rectSuspect1" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="69.0" layoutX="295.0" layoutY="365.0" onMouseClicked="#displaySuspect1" onMouseEntered="#onMouseEntered" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="82.0" />
       <Rectangle fx:id="rectSuspect2" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="69.0" layoutX="750.0" layoutY="353.0" onMouseClicked="#displaySuspect2" onMouseEntered="#onMouseEntered" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="82.0" />
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="604.0" layoutY="481.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="missingImage" fitHeight="150.0" fitWidth="200.0" layoutX="613.0" layoutY="495.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/missingImage.png" />
+         </image>
+      </ImageView>
    </children>
 </Pane>

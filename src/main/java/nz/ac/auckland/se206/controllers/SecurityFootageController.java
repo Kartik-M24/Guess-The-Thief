@@ -50,9 +50,8 @@ public class SecurityFootageController {
    */
   @FXML
   private void nextSceneRight(MouseEvent event) throws IOException {
-    ImageView button = (ImageView) event.getSource();
-    Scene sceneButtonIsIn = button.getScene();
-    sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.SECURITYFOOTAGEAFTER));
+    Scene scene = ((ImageView) event.getSource()).getScene();
+    scene.setRoot(SceneManager.getUiRoot(AppUi.SECURITYFOOTAGEAFTER));
   }
 
   /**

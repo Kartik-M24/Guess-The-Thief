@@ -33,7 +33,7 @@
             <Font size="22.0" />
          </font>
       </Text>
-      <ImageView fx:id="afterBlackoutButton" fitHeight="101.0" fitWidth="69.0" layoutX="1020.0" layoutY="290.0" onMouseClicked="#nextSceneRight" onMouseEntered="#onMouseEnteredImage" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="afterBlackoutButton" fitHeight="101.0" fitWidth="69.0" layoutX="1020.0" layoutY="290.0" opacity="0.66" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/Chat%20for%20BETA/nextRight.png" />
          </image>
@@ -63,7 +63,7 @@
             <Image url="@../images/ArchaeologistProfile.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="suspect2Image" fitHeight="150.0" fitWidth="200.0" layoutX="629.0" layoutY="475.0" opacity="0.69" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="suspect2Image" fitHeight="150.0" fitWidth="200.0" layoutX="629.0" layoutY="475.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/RichCollectorProfile.png" />
          </image>
@@ -75,11 +75,6 @@
       </Label>
       <Rectangle fx:id="rectSuspect1" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="69.0" layoutX="328.0" layoutY="271.0" onMouseClicked="#displaySuspect1" onMouseEntered="#onMouseEntered" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="82.0" />
       <Rectangle fx:id="rectSuspect2" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="69.0" layoutX="752.0" layoutY="353.0" onMouseClicked="#displaySuspect2" onMouseEntered="#onMouseEntered" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="82.0" />
-      <ImageView fx:id="missingImage" fitHeight="150.0" fitWidth="200.0" layoutX="604.0" layoutY="486.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../images/missingImage.png" />
-         </image>
-      </ImageView>
       <Rectangle fx:id="rectSuspect1" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="69.0" layoutX="295.0" layoutY="364.0" onMouseClicked="#displaySuspect1" onMouseEntered="#onMouseEntered" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="82.0" />
    </children>
 </Pane>

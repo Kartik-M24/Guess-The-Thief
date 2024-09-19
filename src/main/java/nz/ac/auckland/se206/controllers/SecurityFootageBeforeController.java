@@ -25,6 +25,7 @@ public class SecurityFootageBeforeController {
   @FXML private Line suspect2Line;
   @FXML private ImageView suspect1Image;
   @FXML private ImageView suspect2Image;
+  @FXML private ImageView missingImage;
   private TimerManager timerManager = TimerManager.getInstance();
 
   @FXML
@@ -37,6 +38,7 @@ public class SecurityFootageBeforeController {
     suspect2Line.setVisible(false);
     suspect1Image.setVisible(false);
     suspect2Image.setVisible(false);
+    missingImage.setVisible(false);
   }
 
   public void updateTimer() {
@@ -78,6 +80,7 @@ public class SecurityFootageBeforeController {
     suspect2Circle.setVisible(true);
     suspect2Line.setVisible(true);
     suspect2Image.setVisible(true);
+    missingImage.setVisible(true);
   }
 
   /**

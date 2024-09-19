@@ -25,7 +25,6 @@ public class SecurityFootageAfterController {
   @FXML private Line suspect2Line;
   @FXML private ImageView suspect1Image;
   @FXML private ImageView suspect2Image;
-  @FXML private ImageView missingImage;
   private TimerManager timerManager = TimerManager.getInstance();
 
   @FXML
@@ -38,7 +37,6 @@ public class SecurityFootageAfterController {
     suspect2Line.setVisible(false);
     suspect1Image.setVisible(false);
     suspect2Image.setVisible(false);
-    missingImage.setVisible(false);
   }
 
   public void updateTimer() {
@@ -80,20 +78,8 @@ public class SecurityFootageAfterController {
     suspect2Circle.setVisible(true);
     suspect2Line.setVisible(true);
     suspect2Image.setVisible(true);
-    missingImage.setVisible(true);
   }
 
-  /**
-   * Handles mouse clicks on right button, moves them to next scene.
-   *
-   * @param event the mouse event triggered by clicking an image
-   * @throws IOException if there is an I/O error
-   */
-  @FXML
-  private void nextSceneRight(MouseEvent event) throws IOException {
-    Scene scene = ((ImageView) event.getSource()).getScene();
-    scene.setRoot(SceneManager.getUiRoot(AppUi.SECURITYFOOTAGEBEFORE));
-  }
 
   /**
    * Handles mouse clicks on left button, moves them to next scene.

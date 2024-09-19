@@ -36,7 +36,7 @@
             <Font size="22.0" />
          </font>
       </Text>
-      <ImageView fx:id="afterBlackoutButton" fitHeight="101.0" fitWidth="69.0" layoutX="1020.0" layoutY="290.0" onMouseEntered="#onMouseEnteredImage" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="afterBlackoutButton" fitHeight="101.0" fitWidth="69.0" layoutX="1020.0" layoutY="290.0" onMouseClicked="#nextSceneRight" onMouseEntered="#onMouseEnteredImage" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/Chat%20for%20BETA/nextRight.png" />
          </image>
