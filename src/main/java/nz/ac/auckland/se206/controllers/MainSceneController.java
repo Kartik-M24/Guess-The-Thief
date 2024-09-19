@@ -34,7 +34,7 @@ public class MainSceneController {
   private static boolean isFirstTimeInit = true;
   private static GameStateContext context = new GameStateContext();
   private TimerManager timerManager = TimerManager.getInstance();
-  private boolean clueClicked;
+  private static boolean clueClicked;
 
   /**
    * Initializes the room view. If it's the first time initialization, it will provide instructions
@@ -50,7 +50,7 @@ public class MainSceneController {
               + " you can make a guess. Good luck!");
       isFirstTimeInit = false;
     }
-
+    clueClicked = false;
     timerManager.startTimer();
     Timeline timeline = TimerManager.getTimeline();
     timeline.getKeyFrames().add(new KeyFrame(Duration.millis(1), event -> updateTimer()));
@@ -104,7 +104,8 @@ public class MainSceneController {
     // context.handleGuessClick();
     if (CollectorRoomController.isCollectorRoomVisited()
         && ArchaeologistRoomController.isArchaeologistRoomVisited()
-        && AuctioneerRoomController.isAuctioneerRoomVisited()) {
+        && AuctioneerRoomController.isAuctioneerRoomVisited()
+        && clueClicked) {
       timerManager.setTime(1, 0, 0);
       Button button = (Button) event.getSource();
       Scene sceneButtonIsIn = button.getScene();
@@ -135,6 +136,7 @@ public class MainSceneController {
    */
   @FXML
   private void handlePhoneClick(MouseEvent event) throws IOException {
+    clueClicked = true;
     ImageView button = (ImageView) event.getSource();
     Scene sceneButtonIsIn = button.getScene();
     sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.PHONELOGAUCTIONEER));
@@ -160,5 +162,9 @@ public class MainSceneController {
   private void onMouseEnteredImage(MouseEvent event) {
     ImageView clickedRectangle = (ImageView) event.getSource();
     clickedRectangle.setCursor(javafx.scene.Cursor.HAND);
+  }
+
+  public static void setClueClicked() {
+    clueClicked = false;
   }
 }

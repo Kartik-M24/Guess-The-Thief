@@ -26,6 +26,7 @@ public class GameOverController {
     ArchaeologistRoomController.setArchaeologistRoomVisited();
     CollectorRoomController.setCollectorRoomVisited();
     AuctioneerRoomController.setAuctioneerRoomVisited();
+    MainSceneController.setClueClicked();
     ImageView button = (ImageView) event.getSource();
     Scene sceneButtonIsIn = button.getScene();
     sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.INTROSCENE));
