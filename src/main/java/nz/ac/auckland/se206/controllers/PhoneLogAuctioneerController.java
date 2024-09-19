@@ -165,6 +165,7 @@ public class PhoneLogAuctioneerController {
    */
   @FXML
   private void handleCrimeSceneClick(MouseEvent event) throws IOException {
+    audioManager.playAudio(AudioManager.AudioType.CRIMESCENE, 0.4);
     imgPolice.setOpacity(0);
     imgFriend.setOpacity(0);
     rectFriend.setDisable(false);

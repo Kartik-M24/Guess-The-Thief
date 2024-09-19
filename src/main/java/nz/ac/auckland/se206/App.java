@@ -100,6 +100,7 @@ public class App extends Application {
     AudioManager.addAudio(AudioManager.AudioType.DOOR, "door");
     AudioManager.addAudio(AudioManager.AudioType.PHONENEXT, "phoneNext");
     AudioManager.addAudio(AudioManager.AudioType.PHONEBACK, "phoneBack");
+    AudioManager.addAudio(AudioManager.AudioType.CRIMESCENE, "crimeScene");
     scene = new Scene(SceneManager.getUiRoot(AppUi.INTROSCENE));
     stage.setScene(scene);
     stage.show();

@@ -14,7 +14,8 @@ public class AudioManager {
     PAGEFLIP,
     DOOR,
     PHONENEXT,
-    PHONEBACK
+    PHONEBACK,
+    CRIMESCENE
   }
 
   private Media sound;
