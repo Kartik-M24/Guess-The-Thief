@@ -14,6 +14,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
 import nz.ac.auckland.se206.App;
+import nz.ac.auckland.se206.AudioManager;
 import nz.ac.auckland.se206.GameStateContext;
 import nz.ac.auckland.se206.SceneManager;
 import nz.ac.auckland.se206.SceneManager.AppUi;
@@ -35,7 +36,7 @@ public class MainSceneController {
   private static GameStateContext context = new GameStateContext();
   private TimerManager timerManager = TimerManager.getInstance();
   private static boolean clueClicked;
-
+  private AudioManager pageAudioManager = new AudioManager();
   public static boolean isUserAtGuessingScene = false;
 
   /**
@@ -137,6 +138,7 @@ public class MainSceneController {
    */
   @FXML
   private void handleSuspectsClick(MouseEvent event) throws IOException {
+    pageAudioManager.playAudio(AudioManager.AudioType.PAGEFLIP, 0.8);
     ImageView button = (ImageView) event.getSource();
     Scene sceneButtonIsIn = button.getScene();
     sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.SUSPECTSSELECTION));

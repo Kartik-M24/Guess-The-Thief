@@ -43,6 +43,7 @@ public class CollectorRoomController {
   private TimerManager timerManager = TimerManager.getInstance();
   private static boolean isCollectorRoomVisited;
   private AudioManager audioManager = new AudioManager();
+  private AudioManager doorAudioManager = new AudioManager();
 
   /** Initializes the room view. */
   @FXML
@@ -224,6 +225,7 @@ public class CollectorRoomController {
    */
   @FXML
   private void gotoArchaeologist(MouseEvent event) throws IOException {
+    doorAudioManager.playAudio(AudioManager.AudioType.DOOR, 0.8);
     ImageView button = (ImageView) event.getSource();
     Scene sceneButtonIsIn = button.getScene();
     sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.ARCHAEOLOGISTROOM));
@@ -237,6 +239,7 @@ public class CollectorRoomController {
    */
   @FXML
   private void gotoAuctioneer(MouseEvent event) throws IOException {
+    doorAudioManager.playAudio(AudioManager.AudioType.DOOR, 0.8);
     ImageView button = (ImageView) event.getSource();
     Scene sceneButtonIsIn = button.getScene();
     sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.AUCTIONEERROOM));

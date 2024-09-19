@@ -10,7 +10,9 @@ public class AudioManager {
     INITIALTHEFTAUDIO,
     AUDIENCEMURMUR,
     BACKGROUNDMUSIC,
-    TYPEWRITER
+    TYPEWRITER,
+    PAGEFLIP,
+    DOOR
   }
 
   private Media sound;

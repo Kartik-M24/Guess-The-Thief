@@ -11,6 +11,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
 import nz.ac.auckland.se206.App;
+import nz.ac.auckland.se206.AudioManager;
 import nz.ac.auckland.se206.SceneManager;
 import nz.ac.auckland.se206.SceneManager.AppUi;
 import nz.ac.auckland.se206.TimerManager;
@@ -23,6 +24,7 @@ public class SuspectSelectionController {
   @FXML private Label timer;
 
   private TimerManager timerManager = TimerManager.getInstance();
+  private AudioManager doorAudioManager = new AudioManager();
 
   /** Initializes the suspect selection view. */
   @FXML
@@ -54,6 +56,7 @@ public class SuspectSelectionController {
    */
   @FXML
   private void handleArchaeologistClick(MouseEvent event) throws IOException {
+    doorAudioManager.playAudio(AudioManager.AudioType.DOOR, 0.8);
     Rectangle button = (Rectangle) event.getSource();
     Scene sceneButtonIsIn = button.getScene();
     sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.ARCHAEOLOGISTROOM));
@@ -67,6 +70,7 @@ public class SuspectSelectionController {
    */
   @FXML
   private void handleAuctioneerClick(MouseEvent event) throws IOException {
+    doorAudioManager.playAudio(AudioManager.AudioType.DOOR, 0.8);
     Rectangle button = (Rectangle) event.getSource();
     Scene sceneButtonIsIn = button.getScene();
     sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.AUCTIONEERROOM));
@@ -80,6 +84,7 @@ public class SuspectSelectionController {
    */
   @FXML
   private void handleCollectorClick(MouseEvent event) throws IOException {
+    doorAudioManager.playAudio(AudioManager.AudioType.DOOR, 0.8);
     Rectangle button = (Rectangle) event.getSource();
     Scene sceneButtonIsIn = button.getScene();
     sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.COLLECTORROOM));

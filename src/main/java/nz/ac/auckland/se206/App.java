@@ -96,6 +96,8 @@ public class App extends Application {
     AudioManager.addAudio(AudioManager.AudioType.INITIALTHEFTAUDIO, "intialtheftaudio");
     AudioManager.addAudio(AudioManager.AudioType.AUDIENCEMURMUR, "audienceMurmur");
     AudioManager.addAudio(AudioManager.AudioType.TYPEWRITER, "typewriteraudio");
+    AudioManager.addAudio(AudioManager.AudioType.PAGEFLIP, "pageflip");
+    AudioManager.addAudio(AudioManager.AudioType.DOOR, "door");
     scene = new Scene(SceneManager.getUiRoot(AppUi.INTROSCENE));
     stage.setScene(scene);
     stage.show();

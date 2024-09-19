@@ -43,6 +43,7 @@ public class AuctioneerRoomController {
   private TimerManager timerManager = TimerManager.getInstance();
   private static boolean isAuctioneerRoomVisited;
   private AudioManager audioManager = new AudioManager();
+  private AudioManager doorAudioManager = new AudioManager();
 
   /** Initializes the Auctioneer room view. */
   @FXML
@@ -223,6 +224,7 @@ public class AuctioneerRoomController {
    */
   @FXML
   private void gotoArchaeologist(MouseEvent event) throws IOException {
+    doorAudioManager.playAudio(AudioManager.AudioType.DOOR, 0.8);
     ImageView button = (ImageView) event.getSource();
     Scene sceneButtonIsIn = button.getScene();
     sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.ARCHAEOLOGISTROOM));
@@ -236,6 +238,7 @@ public class AuctioneerRoomController {
    */
   @FXML
   private void gotoCollector(MouseEvent event) throws IOException {
+    doorAudioManager.playAudio(AudioManager.AudioType.DOOR, 0.8);
     ImageView button = (ImageView) event.getSource();
     Scene sceneButtonIsIn = button.getScene();
     sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.COLLECTORROOM));
