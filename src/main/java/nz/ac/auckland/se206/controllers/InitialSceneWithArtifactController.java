@@ -4,7 +4,6 @@ import java.io.IOException;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.fxml.FXML;
-import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
 import nz.ac.auckland.se206.App;
 import nz.ac.auckland.se206.AudioManager;
@@ -12,15 +11,13 @@ import nz.ac.auckland.se206.TimerManager;
 
 public class InitialSceneWithArtifactController {
 
-  @FXML private Rectangle lightRect;
   public static boolean isFirstTime = true;
   private TimerManager timerManager = TimerManager.getInstance();
   private AudioManager audioManager = new AudioManager();
-  private AudioManager audioManager2 = new AudioManager();
+  public static AudioManager audioManager2 = new AudioManager();
 
   @FXML
   public void initialize() {
-    lightRect.setVisible(false);
     Timeline timeline = TimerManager.getTimeline();
     timeline.getKeyFrames().add(new KeyFrame(Duration.millis(1), event -> checkTime()));
   }
@@ -40,7 +37,11 @@ public class InitialSceneWithArtifactController {
         && timerManager.getSeconds() == 49
         && timerManager.getMilliseconds() == 380
         && isFirstTime) {
-      lightRect.setVisible(true);
+      try {
+        App.setRoot("lightsoffscene");
+      } catch (IOException e) {
+        e.printStackTrace();
+      }
     }
 
     // Switch scene to no artifact scene

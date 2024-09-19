@@ -22,6 +22,7 @@ import nz.ac.auckland.apiproxy.chat.openai.ChatMessage;
 import nz.ac.auckland.apiproxy.chat.openai.Choice;
 import nz.ac.auckland.apiproxy.config.ApiProxyConfig;
 import nz.ac.auckland.apiproxy.exceptions.ApiProxyException;
+import nz.ac.auckland.se206.App;
 import nz.ac.auckland.se206.SceneManager;
 import nz.ac.auckland.se206.SceneManager.AppUi;
 import nz.ac.auckland.se206.TimerManager;
@@ -39,18 +40,30 @@ public class CollectorRoomController {
 
   private ChatCompletionRequest chatCompletionRequest;
   private TimerManager timerManager = TimerManager.getInstance();
-  private boolean isCollectorRoomVisited = false;
+  private static boolean isCollectorRoomVisited;
 
   /** Initializes the room view. */
   @FXML
   public void initialize() {
     setProfession();
+    isCollectorRoomVisited = false;
     Timeline timeline = TimerManager.getTimeline();
     timeline.getKeyFrames().add(new KeyFrame(Duration.millis(1), event -> updateTimer()));
   }
 
   /** Updates the timer. */
   public void updateTimer() {
+    if (timerManager.isTimeUp()
+        && !MainSceneController.isUserAtGuessingScene
+        && !GuessingSceneController.isUserAtExplanationScene) {
+      timerManager.setTime(1, 0, 0);
+      try {
+        App.setRoot("guessingscene");
+      } catch (IOException e) {
+        e.printStackTrace();
+      }
+      MainSceneController.isUserAtGuessingScene = true;
+    }
     timer.setText(timerManager.getFormattedTime());
   }
 
@@ -135,8 +148,12 @@ public class CollectorRoomController {
     return msg;
   }
 
-  public boolean isCollectorRoomVisited() {
+  public static boolean isCollectorRoomVisited() {
     return isCollectorRoomVisited;
+  }
+
+  public static void setCollectorRoomVisited() {
+    isCollectorRoomVisited = false;
   }
 
   /**

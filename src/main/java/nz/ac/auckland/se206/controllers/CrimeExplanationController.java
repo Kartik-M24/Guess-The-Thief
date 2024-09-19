@@ -22,47 +22,39 @@ import nz.ac.auckland.apiproxy.chat.openai.ChatMessage;
 import nz.ac.auckland.apiproxy.chat.openai.Choice;
 import nz.ac.auckland.apiproxy.config.ApiProxyConfig;
 import nz.ac.auckland.apiproxy.exceptions.ApiProxyException;
-import nz.ac.auckland.se206.App;
 import nz.ac.auckland.se206.SceneManager;
 import nz.ac.auckland.se206.SceneManager.AppUi;
 import nz.ac.auckland.se206.TimerManager;
 import nz.ac.auckland.se206.prompts.PromptEngineering;
 
-public class AuctioneerRoomController {
+public class CrimeExplanationController {
 
-  @FXML private ImageView archaeologistpp;
-  @FXML private ImageView collectorpp;
-  @FXML private ImageView imgCrimeScene;
   @FXML private TextArea txtaChat;
   @FXML private TextField txtInput;
   @FXML private Button btnSend;
   @FXML private Label timer;
+  @FXML private ImageView gameoverButton;
 
   private ChatCompletionRequest chatCompletionRequest;
   private TimerManager timerManager = TimerManager.getInstance();
-  private static boolean isAuctioneerRoomVisited;
 
-  /** Initializes the Auctioneer room view. */
+  /** Initializes the room view. */
   @FXML
   public void initialize() {
     setProfession();
-    isAuctioneerRoomVisited = false;
     Timeline timeline = TimerManager.getTimeline();
     timeline.getKeyFrames().add(new KeyFrame(Duration.millis(1), event -> updateTimer()));
+    gameoverButton.setVisible(false);
   }
 
   /** Updates the timer. */
   public void updateTimer() {
-    if (timerManager.isTimeUp()
-        && !MainSceneController.isUserAtGuessingScene
-        && !GuessingSceneController.isUserAtExplanationScene) {
-      timerManager.setTime(1, 0, 0);
+    if (timerManager.isTimeUp() && GuessingSceneController.isUserAtExplanationScene) {
       try {
-        App.setRoot("guessingscene");
-      } catch (IOException e) {
+        onSendMessage(new ActionEvent());
+      } catch (ApiProxyException | IOException e) {
         e.printStackTrace();
       }
-      MainSceneController.isUserAtGuessingScene = true;
     }
     timer.setText(timerManager.getFormattedTime());
   }
@@ -73,7 +65,8 @@ public class AuctioneerRoomController {
    * @return the system prompt string
    */
   private String getSystemPrompt() {
-    return PromptEngineering.getPrompt("auctioneerPrompt.txt");
+
+    return PromptEngineering.getPrompt("crimePrompt.txt");
   }
 
   /**
@@ -105,7 +98,7 @@ public class AuctioneerRoomController {
     if (msg.getRole().equals("user")) {
       txtaChat.appendText("You" + ": " + msg.getContent() + "\n\n");
     } else {
-      txtaChat.appendText("Emily Clarke" + ": " + msg.getContent() + "\n\n");
+      txtaChat.appendText("Evaluation Bot" + ": " + msg.getContent() + "\n\n");
     }
   }
 
@@ -117,8 +110,8 @@ public class AuctioneerRoomController {
    * @throws ApiProxyException if there is an error communicating with the API proxy
    */
   private ChatMessage runGpt(ChatMessage msg) throws ApiProxyException {
-    isAuctioneerRoomVisited = true;
-    txtaChat.appendText("Emily Clarke is thinking...");
+
+    txtaChat.appendText("Evaluation Bot is thinking...");
 
     Task<ChatMessage> task =
         new Task<ChatMessage>() {
@@ -130,8 +123,8 @@ public class AuctioneerRoomController {
               Choice result = chatCompletionResult.getChoices().iterator().next();
               chatCompletionRequest.addMessage(result.getChatMessage());
 
-              int beginIndex = txtaChat.getText().lastIndexOf("Emily Clarke is thinking...");
-              txtaChat.replaceText(beginIndex, beginIndex + 27, "");
+              int beginIndex = txtaChat.getText().lastIndexOf("Evaluation Bot is thinking...");
+              txtaChat.replaceText(beginIndex, beginIndex + 29, "");
 
               appendChatMessage(result.getChatMessage());
               return result.getChatMessage();
@@ -145,14 +138,6 @@ public class AuctioneerRoomController {
     Thread gtpThread = new Thread(task);
     gtpThread.start();
     return msg;
-  }
-
-  public static boolean isAuctioneerRoomVisited() {
-    return isAuctioneerRoomVisited;
-  }
-
-  public static void setAuctioneerRoomVisited() {
-    isAuctioneerRoomVisited = false;
   }
 
   /**
@@ -184,49 +169,13 @@ public class AuctioneerRoomController {
     if (message.isEmpty()) {
       return;
     }
+    txtInput.setVisible(false);
     txtInput.clear();
     ChatMessage msg = new ChatMessage("user", message);
     appendChatMessage(msg);
     runGpt(msg);
-  }
-
-  /**
-   * Handles mouse click to go to the Crime Scene.
-   *
-   * @param event the mouse event triggered by clicking a rectangle
-   * @throws IOException if there is an I/O error
-   */
-  @FXML
-  private void handleCrimeSceneClick(MouseEvent event) throws IOException {
-    ImageView button = (ImageView) event.getSource();
-    Scene sceneButtonIsIn = button.getScene();
-    sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.MAINSCENE));
-  }
-
-  /**
-   * Handles mouse clicks to go to the Archaeologist room.
-   *
-   * @param event the mouse event triggered by clicking a rectangle
-   * @throws IOException if there is an I/O error
-   */
-  @FXML
-  private void gotoArchaeologist(MouseEvent event) throws IOException {
-    ImageView button = (ImageView) event.getSource();
-    Scene sceneButtonIsIn = button.getScene();
-    sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.ARCHAEOLOGISTROOM));
-  }
-
-  /**
-   * Handles mouse clicks to go to the Collector room.
-   *
-   * @param event the mouse event triggered by clicking a rectangle
-   * @throws IOException if there is an I/O error
-   */
-  @FXML
-  private void gotoCollector(MouseEvent event) throws IOException {
-    ImageView button = (ImageView) event.getSource();
-    Scene sceneButtonIsIn = button.getScene();
-    sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.COLLECTORROOM));
+    btnSend.setVisible(false);
+    gameoverButton.setVisible(true);
   }
 
   /**
@@ -249,5 +198,18 @@ public class AuctioneerRoomController {
   private void onMouseEnteredImage(MouseEvent event) {
     ImageView clickedRectangle = (ImageView) event.getSource();
     clickedRectangle.setCursor(javafx.scene.Cursor.HAND);
+  }
+
+  /**
+   * Handles when the button is clicked to take you to the game over screen
+   *
+   * @param event the mouse event triggered by clicking a rectangle
+   * @throws IOException if there is an I/O error
+   */
+  @FXML
+  private void handleGameOver(MouseEvent event) throws IOException {
+    ImageView button = (ImageView) event.getSource();
+    Scene sceneButtonIsIn = button.getScene();
+    sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.GAMEOVER));
   }
 }
