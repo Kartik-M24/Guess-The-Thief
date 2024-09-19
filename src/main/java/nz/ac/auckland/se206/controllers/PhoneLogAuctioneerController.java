@@ -36,7 +36,9 @@ public class PhoneLogAuctioneerController {
   }
 
   public void updateTimer() {
-    if (timerManager.isTimeUp() && !MainSceneController.isUserAtGuessingScene) {
+    if (timerManager.isTimeUp()
+        && !MainSceneController.isUserAtGuessingScene
+        && !GuessingSceneController.isUserAtExplanationScene) {
       timerManager.setTime(1, 0, 0);
       try {
         App.setRoot("guessingscene");

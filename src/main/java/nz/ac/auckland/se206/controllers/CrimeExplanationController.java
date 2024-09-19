@@ -48,6 +48,13 @@ public class CrimeExplanationController {
 
   /** Updates the timer. */
   public void updateTimer() {
+    if (timerManager.isTimeUp() && GuessingSceneController.isUserAtExplanationScene) {
+      try {
+        onSendMessage(new ActionEvent());
+      } catch (ApiProxyException | IOException e) {
+        e.printStackTrace();
+      }
+    }
     timer.setText(timerManager.getFormattedTime());
   }
 

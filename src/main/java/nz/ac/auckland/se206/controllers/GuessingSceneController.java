@@ -22,6 +22,7 @@ public class GuessingSceneController {
   @FXML private Label timer;
 
   private TimerManager timerManager = TimerManager.getInstance();
+  public static boolean isUserAtExplanationScene = false;
 
   /** Initializes the suspect selection view. */
   @FXML
@@ -79,6 +80,7 @@ public class GuessingSceneController {
   @FXML
   private void handleCollectorClick(MouseEvent event) throws IOException {
     MainSceneController.isUserAtGuessingScene = false;
+    isUserAtExplanationScene = true;
     Rectangle button = (Rectangle) event.getSource();
     Scene sceneButtonIsIn = button.getScene();
     sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.CRIMEEXPLANATION));

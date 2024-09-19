@@ -59,7 +59,9 @@ public class MainSceneController {
   }
 
   public void updateTimer() {
-    if (timerManager.isTimeUp() && !isUserAtGuessingScene) {
+    if (timerManager.isTimeUp()
+        && !isUserAtGuessingScene
+        && !GuessingSceneController.isUserAtExplanationScene) {
       timerManager.setTime(1, 0, 0);
       try {
         App.setRoot("guessingscene");
