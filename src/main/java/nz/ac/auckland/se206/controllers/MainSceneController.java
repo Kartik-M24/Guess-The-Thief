@@ -44,7 +44,6 @@ public class MainSceneController {
    */
   @FXML
   public void initialize() {
-
     if (isFirstTimeInit) {
       TextToSpeech.speak(
           "Welcome to the crime scene. You have 5 minutes to investigate the crime scene and find"

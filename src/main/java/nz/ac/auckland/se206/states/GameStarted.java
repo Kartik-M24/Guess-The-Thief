@@ -63,5 +63,10 @@ public class GameStarted implements GameState {
       Scene rectScene = rectValue.getScene();
       rectScene.setRoot(SceneManager.getUiRoot(AppUi.LETTERCLUE));
     }
+    if (rectangleId.equals("securityCameraClue")) {
+      Rectangle rectValue = (Rectangle) event.getSource();
+      Scene rectScene = rectValue.getScene();
+      rectScene.setRoot(SceneManager.getUiRoot(AppUi.SECURITYFOOTAGE));
+    }
   }
 }

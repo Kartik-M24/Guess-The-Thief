@@ -22,7 +22,10 @@ public class SceneManager {
     LIGHTSOFFSCENE,
     PHONELOGAUCTIONEER,
     PHONELOGARCHAEOLOGIST,
-    PHONELOGCOLLECTOR
+    PHONELOGCOLLECTOR,
+    SECURITYFOOTAGE,
+    SECURITYFOOTAGEBEFORE,
+    SECURITYFOOTAGEAFTER,
   }
 
   private static HashMap<AppUi, Parent> sceneMap = new HashMap<AppUi, Parent>();
