@@ -95,6 +95,7 @@ public class App extends Application {
         SceneManager.AppUi.INTIALWITHOUTARTIFACTSCENE, loadFxml("initialscenewithOUTartifact"));
     AudioManager.addAudio(AudioManager.AudioType.INITIALTHEFTAUDIO, "intialtheftaudio");
     AudioManager.addAudio(AudioManager.AudioType.AUDIENCEMURMUR, "audienceMurmur");
+    AudioManager.addAudio(AudioManager.AudioType.TYPEWRITER, "typewriteraudio");
     scene = new Scene(SceneManager.getUiRoot(AppUi.INTROSCENE));
     stage.setScene(scene);
     stage.show();

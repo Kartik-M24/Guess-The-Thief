@@ -9,7 +9,8 @@ public class AudioManager {
   public enum AudioType {
     INITIALTHEFTAUDIO,
     AUDIENCEMURMUR,
-    BACKGROUNDMUSIC
+    BACKGROUNDMUSIC,
+    TYPEWRITER
   }
 
   private Media sound;

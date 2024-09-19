@@ -33,7 +33,7 @@
         <Image url="@../images/crimeSceneIcon.png" />
       </image>
     </ImageView>
-      <TextField fx:id="txtInput" layoutX="46.0" layoutY="584.0" opacity="0.8" prefHeight="36.0" prefWidth="898.0" />
+      <TextField fx:id="txtInput" layoutX="46.0" layoutY="584.0" onKeyTyped="#onKeyTyped" opacity="0.8" prefHeight="36.0" prefWidth="898.0" />
       <Label fx:id="timer" alignment="CENTER" layoutX="24.0" layoutY="24.0" prefHeight="62.0" prefWidth="154.0" textAlignment="CENTER" textFill="#b71616">
          <font>
             <Font size="40.0" />
