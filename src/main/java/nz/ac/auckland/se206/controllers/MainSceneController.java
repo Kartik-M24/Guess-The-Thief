@@ -37,7 +37,7 @@ public class MainSceneController {
   private static GameStateContext context = new GameStateContext();
   private TimerManager timerManager = TimerManager.getInstance();
   private static boolean clueClicked;
-  private AudioManager audioManager = new AudioManager();
+  public static AudioManager audioManager = new AudioManager();
   public static boolean isUserAtGuessingScene = false;
 
   /**

@@ -16,7 +16,12 @@ public class AudioManager {
     PHONENEXT,
     PHONEBACK,
     CRIMESCENE,
-    SECURITYCAMERA
+    SECURITYCAMERA,
+    FUSEBOXOPEN,
+    FUSEBOXCLOSE,
+    WALKING,
+    CCTVSTART,
+    CCTVSTOP
   }
 
   private Media sound;

@@ -62,7 +62,7 @@ public class LetterClueController {
    */
   @FXML
   private void handleCrimeSceneClick(MouseEvent event) throws IOException {
-    audioManager.playAudio(AudioManager.AudioType.CRIMESCENE, 0.4);
+    audioManager.playAudio(AudioManager.AudioType.WALKING, 0.8);
     ImageView button = (ImageView) event.getSource();
     Scene sceneButtonIsIn = button.getScene();
     sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.MAINSCENE));

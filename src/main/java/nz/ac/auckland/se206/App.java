@@ -106,6 +106,11 @@ public class App extends Application {
     AudioManager.addAudio(AudioManager.AudioType.PHONEBACK, "phoneBack");
     AudioManager.addAudio(AudioManager.AudioType.CRIMESCENE, "crimeScene");
     AudioManager.addAudio(AudioManager.AudioType.SECURITYCAMERA, "securityCamera");
+    AudioManager.addAudio(AudioManager.AudioType.FUSEBOXOPEN, "fuseBoxOpen");
+    AudioManager.addAudio(AudioManager.AudioType.FUSEBOXCLOSE, "fuseBoxClose");
+    AudioManager.addAudio(AudioManager.AudioType.WALKING, "walking");
+    AudioManager.addAudio(AudioManager.AudioType.CCTVSTART, "CCTVstart");
+    AudioManager.addAudio(AudioManager.AudioType.CCTVSTOP, "CCTVstop");
     scene = new Scene(SceneManager.getUiRoot(AppUi.INTROSCENE));
     stage.setScene(scene);
     stage.show();

@@ -58,7 +58,7 @@ public class PhoneLogArchaeologistController {
    */
   @FXML
   private void handleCrimeSceneClick(MouseEvent event) throws IOException {
-    audioManager.playAudio(AudioManager.AudioType.CRIMESCENE, 0.4);
+    audioManager.playAudio(AudioManager.AudioType.PHONEBACK, 0.8);
     imgColleague.setOpacity(0);
     imgVictor.setOpacity(0);
     rectVictor.setDisable(false);

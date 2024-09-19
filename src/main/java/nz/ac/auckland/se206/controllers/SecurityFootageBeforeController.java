@@ -56,7 +56,7 @@ public class SecurityFootageBeforeController {
    */
   @FXML
   private void handleCrimeSceneClick(MouseEvent event) throws IOException {
-    audioManager.playAudio(AudioManager.AudioType.CRIMESCENE, 0.4);
+    audioManager.playAudio(AudioManager.AudioType.CCTVSTOP, 0.1);
     ImageView button = (ImageView) event.getSource();
     Scene sceneButtonIsIn = button.getScene();
     sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.MAINSCENE));
@@ -95,7 +95,7 @@ public class SecurityFootageBeforeController {
    */
   @FXML
   private void nextSceneRight(MouseEvent event) throws IOException {
-    audioManager.playAudio(AudioType.SECURITYCAMERA, 0.7);
+    audioManager.playAudio(AudioType.SECURITYCAMERA, 0.4);
     Scene scene = ((ImageView) event.getSource()).getScene();
     scene.setRoot(SceneManager.getUiRoot(AppUi.SECURITYFOOTAGE));
   }

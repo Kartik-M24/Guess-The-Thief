@@ -59,8 +59,8 @@ public class PhoneLogCollectorController {
    */
   @FXML
   private void handleCrimeSceneClick(MouseEvent event) throws IOException {
+    audioManager.playAudio(AudioManager.AudioType.PHONEBACK, 0.8);
     imgStaff.setOpacity(0);
-    audioManager.playAudio(AudioManager.AudioType.CRIMESCENE, 0.4);
     imgLoan.setOpacity(0);
     imgSamuel.setOpacity(0);
     rectLoan.setDisable(false);

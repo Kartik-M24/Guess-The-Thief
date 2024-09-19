@@ -77,7 +77,7 @@ public class FuseBoxClueController {
    */
   @FXML
   private void handleCrimeSceneClick(MouseEvent event) throws IOException {
-    audioManager.playAudio(AudioManager.AudioType.CRIMESCENE, 0.4);
+    audioManager.playAudio(AudioManager.AudioType.FUSEBOXCLOSE, 1);
     ImageView button = (ImageView) event.getSource();
     Scene sceneButtonIsIn = button.getScene();
     sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.MAINSCENE));
