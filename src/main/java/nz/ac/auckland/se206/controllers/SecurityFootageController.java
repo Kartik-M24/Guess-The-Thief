@@ -48,11 +48,12 @@ public class SecurityFootageController {
    * @param event the mouse event triggered by clicking an image
    * @throws IOException if there is an I/O error
    */
-  // @FXML
-  // private void nextSceneRight(MouseEvent event) throws IOException {
-  //   Scene scene = ((ImageView) event.getSource()).getScene();
-  //   scene.setRoot(SceneManager.getUiRoot(AppUi.ARCHAEOLOGISTROOM));
-  // }
+  @FXML
+  private void nextSceneRight(MouseEvent event) throws IOException {
+    ImageView button = (ImageView) event.getSource();
+    Scene sceneButtonIsIn = button.getScene();
+    sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.SECURITYFOOTAGEAFTER));
+  }
 
   /**
    * Handles mouse clicks on left button, moves them to next scene.

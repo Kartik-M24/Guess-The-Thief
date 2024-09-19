@@ -16,7 +16,7 @@ import nz.ac.auckland.se206.SceneManager;
 import nz.ac.auckland.se206.SceneManager.AppUi;
 import nz.ac.auckland.se206.TimerManager;
 
-public class SecurityFootageBeforeController {
+public class SecurityFootageAfterController {
 
   @FXML private Label timer;
   @FXML private Circle suspect1Circle;
@@ -25,6 +25,7 @@ public class SecurityFootageBeforeController {
   @FXML private Line suspect2Line;
   @FXML private ImageView suspect1Image;
   @FXML private ImageView suspect2Image;
+  @FXML private ImageView missingImage;
   private TimerManager timerManager = TimerManager.getInstance();
 
   @FXML
@@ -37,6 +38,7 @@ public class SecurityFootageBeforeController {
     suspect2Line.setVisible(false);
     suspect1Image.setVisible(false);
     suspect2Image.setVisible(false);
+    missingImage.setVisible(false);
   }
 
   public void updateTimer() {
@@ -78,6 +80,7 @@ public class SecurityFootageBeforeController {
     suspect2Circle.setVisible(true);
     suspect2Line.setVisible(true);
     suspect2Image.setVisible(true);
+    missingImage.setVisible(true);
   }
 
   /**
@@ -89,7 +92,7 @@ public class SecurityFootageBeforeController {
   @FXML
   private void nextSceneRight(MouseEvent event) throws IOException {
     Scene scene = ((ImageView) event.getSource()).getScene();
-    scene.setRoot(SceneManager.getUiRoot(AppUi.SECURITYFOOTAGE));
+    scene.setRoot(SceneManager.getUiRoot(AppUi.SECURITYFOOTAGEBEFORE));
   }
 
   /**
@@ -101,7 +104,7 @@ public class SecurityFootageBeforeController {
   @FXML
   private void nextSceneLeft(MouseEvent event) throws IOException {
     Scene scene = ((ImageView) event.getSource()).getScene();
-    scene.setRoot(SceneManager.getUiRoot(AppUi.SECURITYFOOTAGEAFTER));
+    scene.setRoot(SceneManager.getUiRoot(AppUi.SECURITYFOOTAGE));
   }
 
   /**

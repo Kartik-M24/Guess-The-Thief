@@ -69,6 +69,7 @@ public class App extends Application {
             SceneManager.addUi(SceneManager.AppUi.SECURITYFOOTAGE, loadFxml("securityfootage"));
             SceneManager.addUi(
                 SceneManager.AppUi.SECURITYFOOTAGEBEFORE, loadFxml("securityfootagebefore"));
+            SceneManager.addUi(AppUi.SECURITYFOOTAGEAFTER, loadFxml("securityfootageafter"));
             AudioManager.addAudio(AudioManager.AudioType.BACKGROUNDMUSIC, "backgroundMusic");
           } catch (IOException e) {
             e.printStackTrace();
