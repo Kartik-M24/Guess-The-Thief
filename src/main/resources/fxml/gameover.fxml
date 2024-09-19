@@ -11,7 +11,7 @@
             <Image url="@../images/GameOverPage.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="restartButton" fitHeight="165.0" fitWidth="506.0" layoutX="404.0" layoutY="464.0" onMouseClicked="#changeScene" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="restartButton" fitHeight="165.0" fitWidth="506.0" layoutX="404.0" layoutY="464.0" onMouseClicked="#changeScene" onMouseEntered="#onMouseEnteredImage" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/GameOverButton.png" />
          </image>

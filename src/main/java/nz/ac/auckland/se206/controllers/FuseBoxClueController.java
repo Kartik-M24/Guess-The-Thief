@@ -90,6 +90,15 @@ public class FuseBoxClueController {
   private void handleRectClick(MouseEvent event) throws IOException {
     Rectangle clickedRectangle = (Rectangle) event.getSource();
     String clickedRectangleId = clickedRectangle.getId();
+    if (clickedRectangleId.equals("wires") && t1) {
+      return;
+    }
+    if (clickedRectangleId.equals("switches") && t2) {
+      return;
+    }
+    if (clickedRectangleId.equals("ashes") && t3) {
+      return;
+    }
     progressIndicator.setVisible(true);
     progressIndicator.setProgress(ProgressIndicator.INDETERMINATE_PROGRESS);
     IntegerProperty seconds = new SimpleIntegerProperty();
@@ -117,7 +126,10 @@ public class FuseBoxClueController {
             t3 = true;
           }
         });
+  }
 
+  /** Displays analysis is complete when all clues have been analysed */
+  private void checkAllTexts() {
     if (t1 && t2 && t3) {
       text5.setVisible(true);
       progressIndicator.setVisible(false);
@@ -133,6 +145,7 @@ public class FuseBoxClueController {
   private void onMouseEntered(MouseEvent event) {
     Rectangle clickedRectangle = (Rectangle) event.getSource();
     clickedRectangle.setCursor(javafx.scene.Cursor.HAND);
+    checkAllTexts();
   }
 
   /**
