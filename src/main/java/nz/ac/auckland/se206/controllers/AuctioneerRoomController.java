@@ -30,6 +30,16 @@ import nz.ac.auckland.se206.prompts.PromptEngineering;
 
 public class AuctioneerRoomController {
 
+  private static boolean isAuctioneerRoomVisited;
+
+  public static boolean isAuctioneerRoomVisited() {
+    return isAuctioneerRoomVisited;
+  }
+
+  public static void setAuctioneerRoomVisited() {
+    isAuctioneerRoomVisited = false;
+  }
+
   @FXML private ImageView archaeologistpp;
   @FXML private ImageView collectorpp;
   @FXML private ImageView imgCrimeScene;
@@ -40,7 +50,6 @@ public class AuctioneerRoomController {
 
   private ChatCompletionRequest chatCompletionRequest;
   private TimerManager timerManager = TimerManager.getInstance();
-  private static boolean isAuctioneerRoomVisited;
 
   /** Initializes the Auctioneer room view. */
   @FXML
@@ -145,14 +154,6 @@ public class AuctioneerRoomController {
     Thread gtpThread = new Thread(task);
     gtpThread.start();
     return msg;
-  }
-
-  public static boolean isAuctioneerRoomVisited() {
-    return isAuctioneerRoomVisited;
-  }
-
-  public static void setAuctioneerRoomVisited() {
-    isAuctioneerRoomVisited = false;
   }
 
   /**

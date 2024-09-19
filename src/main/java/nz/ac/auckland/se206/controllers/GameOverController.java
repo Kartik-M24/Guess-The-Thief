@@ -13,7 +13,7 @@ public class GameOverController {
 
   @FXML private ImageView restartButton;
   public static AudioManager audioManager = new AudioManager();
-  public TimerManager timerManager = TimerManager.getInstance();
+  private TimerManager timerManager = TimerManager.getInstance();
 
   /**
    * Transitions to the second scene when the start button is clicked.

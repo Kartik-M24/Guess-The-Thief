@@ -30,6 +30,16 @@ import nz.ac.auckland.se206.prompts.PromptEngineering;
 
 public class CollectorRoomController {
 
+  private static boolean isCollectorRoomVisited;
+
+  public static boolean isCollectorRoomVisited() {
+    return isCollectorRoomVisited;
+  }
+
+  public static void setCollectorRoomVisited() {
+    isCollectorRoomVisited = false;
+  }
+
   @FXML private ImageView archaeologistpp;
   @FXML private ImageView auctioneerpp;
   @FXML private ImageView imgCrimeScene;
@@ -40,7 +50,6 @@ public class CollectorRoomController {
 
   private ChatCompletionRequest chatCompletionRequest;
   private TimerManager timerManager = TimerManager.getInstance();
-  private static boolean isCollectorRoomVisited;
 
   /** Initializes the room view. */
   @FXML
@@ -146,14 +155,6 @@ public class CollectorRoomController {
     Thread gtpThread = new Thread(task);
     gtpThread.start();
     return msg;
-  }
-
-  public static boolean isCollectorRoomVisited() {
-    return isCollectorRoomVisited;
-  }
-
-  public static void setCollectorRoomVisited() {
-    isCollectorRoomVisited = false;
   }
 
   /**
