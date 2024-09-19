@@ -2,17 +2,18 @@ package nz.ac.auckland.se206.controllers;
 
 import java.io.IOException;
 import javafx.fxml.FXML;
-import javafx.scene.Scene;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
+import nz.ac.auckland.se206.App;
 import nz.ac.auckland.se206.AudioManager;
-import nz.ac.auckland.se206.SceneManager;
-import nz.ac.auckland.se206.SceneManager.AppUi;
+import nz.ac.auckland.se206.TimerManager;
 
 public class GameOverController {
 
   @FXML private ImageView restartButton;
   public static AudioManager audioManager = new AudioManager();
+  public TimerManager timerManager = TimerManager.getInstance();
 
   /**
    * Transitions to the second scene when the start button is clicked.
@@ -27,9 +28,13 @@ public class GameOverController {
     CollectorRoomController.setCollectorRoomVisited();
     AuctioneerRoomController.setAuctioneerRoomVisited();
     MainSceneController.setClueClicked();
-    ImageView button = (ImageView) event.getSource();
-    Scene sceneButtonIsIn = button.getScene();
-    sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.INTROSCENE));
+    // ImageView button = (ImageView) event.getSource();
+    // Scene sceneButtonIsIn = button.getScene();
+    // sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.INTROSCENE));
+    timerManager.stopTimer();
+    Stage stage = (Stage) restartButton.getScene().getWindow();
+    App app = new App();
+    app.start(stage);
   }
 
   /**
