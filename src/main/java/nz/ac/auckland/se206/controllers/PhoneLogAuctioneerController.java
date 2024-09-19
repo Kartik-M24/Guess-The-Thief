@@ -11,6 +11,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
 import nz.ac.auckland.se206.App;
+import nz.ac.auckland.se206.AudioManager;
 import nz.ac.auckland.se206.SceneManager;
 import nz.ac.auckland.se206.SceneManager.AppUi;
 import nz.ac.auckland.se206.TimerManager;
@@ -27,6 +28,7 @@ public class PhoneLogAuctioneerController {
   @FXML private Rectangle backButton;
   @FXML private Label timer;
   private TimerManager timerManager = TimerManager.getInstance();
+  private AudioManager audioManager = new AudioManager();
 
   /** Initializes the letter clue view. */
   @FXML
@@ -58,6 +60,7 @@ public class PhoneLogAuctioneerController {
    */
   @FXML
   private void handleSuspectsClick(MouseEvent event) throws IOException {
+    audioManager.playAudio(AudioManager.AudioType.PAGEFLIP, 0.8);
     backButton.setDisable(true);
     imgPolice.setOpacity(0);
     imgFriend.setOpacity(0);
@@ -76,6 +79,7 @@ public class PhoneLogAuctioneerController {
    */
   @FXML
   private void handleNextArchaeologistClick(MouseEvent event) throws IOException {
+    audioManager.playAudio(AudioManager.AudioType.PHONEBACK, 0.8);
     imgPolice.setOpacity(0);
     imgFriend.setOpacity(0);
     rectFriend.setDisable(false);
@@ -94,6 +98,7 @@ public class PhoneLogAuctioneerController {
    */
   @FXML
   private void handleNextCollectorClick(MouseEvent event) throws IOException {
+    audioManager.playAudio(AudioManager.AudioType.PHONEBACK, 0.8);
     imgPolice.setOpacity(0);
     imgFriend.setOpacity(0);
     rectFriend.setDisable(false);
@@ -112,6 +117,7 @@ public class PhoneLogAuctioneerController {
    */
   @FXML
   private void handleFriendClick(MouseEvent event) throws IOException {
+    audioManager.playAudio(AudioManager.AudioType.PHONENEXT, 0.8);
     imgPolice.setOpacity(0);
     imgFriend.setOpacity(1);
     backButton.setDisable(false);
@@ -127,6 +133,7 @@ public class PhoneLogAuctioneerController {
    */
   @FXML
   private void handlePoliceClick(MouseEvent event) throws IOException {
+    audioManager.playAudio(AudioManager.AudioType.PHONENEXT, 0.8);
     imgPolice.setOpacity(1);
     imgFriend.setOpacity(0);
     backButton.setDisable(false);
@@ -142,6 +149,7 @@ public class PhoneLogAuctioneerController {
    */
   @FXML
   private void handleBackClick(MouseEvent event) throws IOException {
+    audioManager.playAudio(AudioManager.AudioType.PHONENEXT, 0.8);
     imgPolice.setOpacity(0);
     imgFriend.setOpacity(0);
     backButton.setDisable(true);

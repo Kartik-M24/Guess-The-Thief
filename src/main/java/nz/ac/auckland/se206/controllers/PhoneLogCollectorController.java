@@ -11,6 +11,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
 import nz.ac.auckland.se206.App;
+import nz.ac.auckland.se206.AudioManager;
 import nz.ac.auckland.se206.SceneManager;
 import nz.ac.auckland.se206.SceneManager.AppUi;
 import nz.ac.auckland.se206.TimerManager;
@@ -26,6 +27,7 @@ public class PhoneLogCollectorController {
 
   @FXML private Label timer;
   private TimerManager timerManager = TimerManager.getInstance();
+  private AudioManager audioManager = new AudioManager();
 
   /** Initializes the letter clue view. */
   @FXML
@@ -77,6 +79,7 @@ public class PhoneLogCollectorController {
    */
   @FXML
   private void handleSuspectsClick(MouseEvent event) throws IOException {
+    audioManager.playAudio(AudioManager.AudioType.PAGEFLIP, 0.8);
     imgStaff.setOpacity(0);
     imgLoan.setOpacity(0);
     imgSamuel.setOpacity(0);
@@ -97,6 +100,7 @@ public class PhoneLogCollectorController {
    */
   @FXML
   private void handleLoanClick(MouseEvent event) throws IOException {
+    audioManager.playAudio(AudioManager.AudioType.PHONENEXT, 0.8);
     imgStaff.setOpacity(0);
     imgLoan.setOpacity(1);
     imgSamuel.setOpacity(0);
@@ -114,6 +118,7 @@ public class PhoneLogCollectorController {
    */
   @FXML
   private void handleStaffClick(MouseEvent event) throws IOException {
+    audioManager.playAudio(AudioManager.AudioType.PHONENEXT, 0.8);
     imgStaff.setOpacity(1);
     imgLoan.setOpacity(0);
     imgSamuel.setOpacity(0);
@@ -131,6 +136,7 @@ public class PhoneLogCollectorController {
    */
   @FXML
   private void handleSamuelClick(MouseEvent event) throws IOException {
+    audioManager.playAudio(AudioManager.AudioType.PHONENEXT, 0.8);
     imgStaff.setOpacity(0);
     imgLoan.setOpacity(0);
     imgSamuel.setOpacity(1);
@@ -148,6 +154,7 @@ public class PhoneLogCollectorController {
    */
   @FXML
   private void handleBackClick(MouseEvent event) throws IOException {
+    audioManager.playAudio(AudioManager.AudioType.PHONENEXT, 0.8);
     imgStaff.setOpacity(0);
     imgLoan.setOpacity(0);
     imgSamuel.setOpacity(0);
@@ -165,6 +172,7 @@ public class PhoneLogCollectorController {
    */
   @FXML
   private void handleNextArchaeologistClick(MouseEvent event) throws IOException {
+    audioManager.playAudio(AudioManager.AudioType.PHONEBACK, 0.8);
     imgStaff.setOpacity(0);
     imgLoan.setOpacity(0);
     imgSamuel.setOpacity(0);
@@ -185,6 +193,7 @@ public class PhoneLogCollectorController {
    */
   @FXML
   private void handleNextAuctioneerClick(MouseEvent event) throws IOException {
+    audioManager.playAudio(AudioManager.AudioType.PHONEBACK, 0.8);
     imgStaff.setOpacity(0);
     imgLoan.setOpacity(0);
     imgSamuel.setOpacity(0);

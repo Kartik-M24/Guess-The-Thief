@@ -12,7 +12,9 @@ public class AudioManager {
     BACKGROUNDMUSIC,
     TYPEWRITER,
     PAGEFLIP,
-    DOOR
+    DOOR,
+    PHONENEXT,
+    PHONEBACK
   }
 
   private Media sound;
