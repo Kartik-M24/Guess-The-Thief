@@ -12,6 +12,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 import javafx.util.Duration;
+import nz.ac.auckland.se206.App;
 import nz.ac.auckland.se206.SceneManager;
 import nz.ac.auckland.se206.SceneManager.AppUi;
 import nz.ac.auckland.se206.TimerManager;
@@ -37,6 +38,15 @@ public class LetterClueController {
   }
 
   public void updateTimer() {
+    if (timerManager.isTimeUp() && !MainSceneController.isUserAtGuessingScene) {
+      timerManager.setTime(1, 0, 0);
+      try {
+        App.setRoot("guessingscene");
+      } catch (IOException e) {
+        e.printStackTrace();
+      }
+      MainSceneController.isUserAtGuessingScene = true;
+    }
     timer.setText(timerManager.getFormattedTime());
   }
 

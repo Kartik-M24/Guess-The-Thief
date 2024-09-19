@@ -22,6 +22,7 @@ import nz.ac.auckland.apiproxy.chat.openai.ChatMessage;
 import nz.ac.auckland.apiproxy.chat.openai.Choice;
 import nz.ac.auckland.apiproxy.config.ApiProxyConfig;
 import nz.ac.auckland.apiproxy.exceptions.ApiProxyException;
+import nz.ac.auckland.se206.App;
 import nz.ac.auckland.se206.SceneManager;
 import nz.ac.auckland.se206.SceneManager.AppUi;
 import nz.ac.auckland.se206.TimerManager;
@@ -52,6 +53,15 @@ public class CollectorRoomController {
 
   /** Updates the timer. */
   public void updateTimer() {
+    if (timerManager.isTimeUp() && !MainSceneController.isUserAtGuessingScene) {
+      timerManager.setTime(1, 0, 0);
+      try {
+        App.setRoot("guessingscene");
+      } catch (IOException e) {
+        e.printStackTrace();
+      }
+      MainSceneController.isUserAtGuessingScene = true;
+    }
     timer.setText(timerManager.getFormattedTime());
   }
 

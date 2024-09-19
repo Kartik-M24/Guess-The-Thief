@@ -10,6 +10,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
+import nz.ac.auckland.se206.App;
 import nz.ac.auckland.se206.SceneManager;
 import nz.ac.auckland.se206.SceneManager.AppUi;
 import nz.ac.auckland.se206.TimerManager;
@@ -30,6 +31,14 @@ public class GuessingSceneController {
   }
 
   public void updateTimer() {
+    if (timerManager.isTimeUp() && MainSceneController.isUserAtGuessingScene) {
+      try {
+        App.setRoot("gameover");
+      } catch (IOException e) {
+        e.printStackTrace();
+      }
+      MainSceneController.isUserAtGuessingScene = false;
+    }
     timer.setText(timerManager.getFormattedTime());
   }
 
@@ -41,6 +50,7 @@ public class GuessingSceneController {
    */
   @FXML
   private void handleArchaeologistClick(MouseEvent event) throws IOException {
+    MainSceneController.isUserAtGuessingScene = false;
     Rectangle button = (Rectangle) event.getSource();
     Scene sceneButtonIsIn = button.getScene();
     sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.GAMEOVER));
@@ -54,6 +64,7 @@ public class GuessingSceneController {
    */
   @FXML
   private void handleAuctioneerClick(MouseEvent event) throws IOException {
+    MainSceneController.isUserAtGuessingScene = false;
     Rectangle button = (Rectangle) event.getSource();
     Scene sceneButtonIsIn = button.getScene();
     sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.GAMEOVER));
@@ -67,6 +78,7 @@ public class GuessingSceneController {
    */
   @FXML
   private void handleCollectorClick(MouseEvent event) throws IOException {
+    MainSceneController.isUserAtGuessingScene = false;
     Rectangle button = (Rectangle) event.getSource();
     Scene sceneButtonIsIn = button.getScene();
     sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.CRIMEEXPLANATION));

@@ -75,5 +75,7 @@ public class TimerManager {
     return String.format("%1d:%02d", minutes, seconds);
   }
 
-  // Removed unnecessary methods
+  public boolean isTimeUp() {
+    return minutes == 0 && seconds == 0 && milliseconds == 0;
+  }
 }

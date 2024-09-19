@@ -13,6 +13,7 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
+import nz.ac.auckland.se206.App;
 import nz.ac.auckland.se206.GameStateContext;
 import nz.ac.auckland.se206.SceneManager;
 import nz.ac.auckland.se206.SceneManager.AppUi;
@@ -28,13 +29,14 @@ public class MainSceneController {
   @FXML private Button btnGuess;
   @FXML private ImageView imgSuspects;
   @FXML private ImageView phoneLogButton;
-
   @FXML private Label timer;
 
   private static boolean isFirstTimeInit = true;
   private static GameStateContext context = new GameStateContext();
   private TimerManager timerManager = TimerManager.getInstance();
   private static boolean clueClicked;
+
+  public static boolean isUserAtGuessingScene = false;
 
   /**
    * Initializes the room view. If it's the first time initialization, it will provide instructions
@@ -57,6 +59,15 @@ public class MainSceneController {
   }
 
   public void updateTimer() {
+    if (timerManager.isTimeUp() && !isUserAtGuessingScene) {
+      timerManager.setTime(1, 0, 0);
+      try {
+        App.setRoot("guessingscene");
+      } catch (IOException e) {
+        e.printStackTrace();
+      }
+      isUserAtGuessingScene = true;
+    }
     timer.setText(timerManager.getFormattedTime());
   }
 
