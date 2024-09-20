@@ -140,10 +140,13 @@ public class CrimeExplanationController extends MasterController {
    */
   @FXML
   public void onKeyPressed(KeyEvent event) {
+    // Check if the ENTER key was pressed
     if (event.getCode().toString().equals("ENTER")) {
       try {
+        // Trigger the send message action
         onSendMessage(new ActionEvent());
       } catch (ApiProxyException | IOException e) {
+        // Print stack trace if an exception occurs
         e.printStackTrace();
       }
     }

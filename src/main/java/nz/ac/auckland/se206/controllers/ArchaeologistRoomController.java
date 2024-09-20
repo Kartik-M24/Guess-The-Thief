@@ -143,10 +143,13 @@ public class ArchaeologistRoomController extends MasterController {
    */
   @FXML
   public void onKeyPressed(KeyEvent event) {
+    // Check if the ENTER key was pressed
     if (event.getCode().toString().equals("ENTER")) {
       try {
+        // Trigger the send message action
         onSendMessage(new ActionEvent());
       } catch (ApiProxyException | IOException e) {
+        // Print stack trace if an exception occurs
         e.printStackTrace();
       }
     }
@@ -159,6 +162,7 @@ public class ArchaeologistRoomController extends MasterController {
    */
   @FXML
   public void onKeyTyped(KeyEvent event) {
+    // Play typewriter audio when a key is typed
     audioManager.playAudio(AudioManager.AudioType.TYPEWRITER, 0.5);
   }
 
@@ -171,6 +175,7 @@ public class ArchaeologistRoomController extends MasterController {
    */
   @FXML
   private void onSendMessage(ActionEvent event) throws ApiProxyException, IOException {
+    // Get the trimmed text from the input field
     String message = txtInput.getText().trim();
     if (message.isEmpty()) {
       return;

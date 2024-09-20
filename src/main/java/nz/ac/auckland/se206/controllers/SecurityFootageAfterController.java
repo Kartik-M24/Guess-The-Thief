@@ -24,6 +24,7 @@ public class SecurityFootageAfterController extends MasterController {
   @FXML private Line suspect2Line;
   @FXML private ImageView suspect1Image;
   @FXML private ImageView suspect2Image;
+  private AudioManager audioManager = new AudioManager();
 
   @FXML
   public void initialize() {

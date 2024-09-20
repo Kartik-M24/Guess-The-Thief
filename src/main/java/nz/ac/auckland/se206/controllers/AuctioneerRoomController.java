@@ -45,6 +45,8 @@ public class AuctioneerRoomController extends MasterController {
   @FXML private Button btnSend;
 
   private ChatCompletionRequest chatCompletionRequest;
+  private AudioManager audioManager = new AudioManager();
+  private AudioManager doorAudioManager = new AudioManager();
 
   /** Initializes the Auctioneer room view. */
   @FXML
@@ -100,6 +102,10 @@ public class AuctioneerRoomController extends MasterController {
   /**
    * Runs the GPT model with a given chat message.
    *
+   * <p>This method processes a chat message by sending it to the GPT model and appending the
+   * response to the chat area. It also updates the chat history and handles any exceptions that
+   * occur during the API call.
+   *
    * @param msg the chat message to process
    * @return the response chat message
    * @throws ApiProxyException if there is an error communicating with the API proxy
@@ -108,22 +114,27 @@ public class AuctioneerRoomController extends MasterController {
     isAuctioneerRoomVisited = true;
     txtaChat.appendText("Emily Clarke is thinking...");
 
+    // Create a task to run the GPT model asynchronously
     Task<ChatMessage> task =
         new Task<ChatMessage>() {
           @Override
           protected ChatMessage call() {
             chatCompletionRequest.addMessage(msg);
             try {
+              // Execute the chat completion request and get the result
               ChatCompletionResult chatCompletionResult = chatCompletionRequest.execute();
               Choice result = chatCompletionResult.getChoices().iterator().next();
               chatCompletionRequest.addMessage(result.getChatMessage());
 
+              // Replace the "thinking" text with the actual response
               int beginIndex = txtaChat.getText().lastIndexOf("Emily Clarke is thinking...");
               txtaChat.replaceText(beginIndex, beginIndex + 27, "");
 
+              // Append the response message to the chat area
               appendChatMessage(result.getChatMessage());
               return result.getChatMessage();
             } catch (ApiProxyException e) {
+              // Handle any exceptions that occur during the API call
               e.printStackTrace();
               return null;
             }
@@ -158,6 +169,7 @@ public class AuctioneerRoomController extends MasterController {
    */
   @FXML
   public void onKeyTyped(KeyEvent event) {
+    // Play typewriter audio
     audioManager.playAudio(AudioManager.AudioType.TYPEWRITER, 0.5);
   }
 
