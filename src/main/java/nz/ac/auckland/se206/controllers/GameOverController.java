@@ -9,7 +9,7 @@ import nz.ac.auckland.se206.App;
 import nz.ac.auckland.se206.AudioManager;
 import nz.ac.auckland.se206.TimerManager;
 
-public class GameOverController {
+public class GameOverController extends MasterController {
 
   public static AudioManager audioManager = new AudioManager();
 
@@ -33,27 +33,5 @@ public class GameOverController {
     Stage stage = (Stage) restartButton.getScene().getWindow();
     App app = new App();
     app.start(stage);
-  }
-
-  /**
-   * Handles mouse hover on rectangles to help identify clues
-   *
-   * @param event the mouse event triggered by clicking a rectangle
-   */
-  @FXML
-  private void onMouseEntered(MouseEvent event) {
-    ImageView clickedRectangle = (ImageView) event.getSource();
-    clickedRectangle.setCursor(javafx.scene.Cursor.HAND);
-  }
-
-  /**
-   * Handles mouse hover on image
-   *
-   * @param event the mouse event triggered by clicking a rectangle
-   */
-  @FXML
-  private void onMouseEnteredImage(MouseEvent event) {
-    ImageView clickedRectangle = (ImageView) event.getSource();
-    clickedRectangle.setCursor(javafx.scene.Cursor.HAND);
   }
 }

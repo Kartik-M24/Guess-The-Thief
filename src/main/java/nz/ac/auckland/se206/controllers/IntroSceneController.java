@@ -10,7 +10,7 @@ import nz.ac.auckland.se206.SceneManager;
 import nz.ac.auckland.se206.SceneManager.AppUi;
 import nz.ac.auckland.se206.TimerManager;
 
-public class IntroSceneController {
+public class IntroSceneController extends MasterController {
 
   public static AudioManager audioManager = new AudioManager();
 
@@ -31,16 +31,5 @@ public class IntroSceneController {
     Scene sceneButtonIsIn = button.getScene();
     sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.INITIALARTIFACTSCENE));
     audioManager.playAudio(AudioManager.AudioType.AUDIENCEMURMUR, 0.2);
-  }
-
-  /**
-   * Handles mouse hover on rectangles to help identify clues
-   *
-   * @param event the mouse event triggered by clicking a rectangle
-   */
-  @FXML
-  private void onMouseEntered(MouseEvent event) {
-    ImageView clickedRectangle = (ImageView) event.getSource();
-    clickedRectangle.setCursor(javafx.scene.Cursor.HAND);
   }
 }

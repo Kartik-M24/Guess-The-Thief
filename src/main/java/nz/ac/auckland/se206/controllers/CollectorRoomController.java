@@ -7,7 +7,6 @@ import javafx.concurrent.Task;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
@@ -22,7 +21,7 @@ import nz.ac.auckland.apiproxy.exceptions.ApiProxyException;
 import nz.ac.auckland.se206.TimerManager;
 import nz.ac.auckland.se206.prompts.PromptEngineering;
 
-public class CollectorRoomController extends MasterSuspectController {
+public class CollectorRoomController extends MasterController {
 
   private static boolean isCollectorRoomVisited;
 
@@ -40,7 +39,6 @@ public class CollectorRoomController extends MasterSuspectController {
   @FXML private TextArea txtaChat;
   @FXML private TextField txtInput;
   @FXML private Button btnSend;
-  @FXML private Label timer;
 
   private ChatCompletionRequest chatCompletionRequest;
 

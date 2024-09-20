@@ -7,13 +7,11 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
-import nz.ac.auckland.se206.App;
 import nz.ac.auckland.se206.GameStateContext;
 import nz.ac.auckland.se206.SceneManager;
 import nz.ac.auckland.se206.SceneManager.AppUi;
@@ -24,7 +22,7 @@ import nz.ac.auckland.se206.speech.TextToSpeech;
  * Controller class for the room view. Handles user interactions within the room where the user can
  * chat with customers and guess their profession.
  */
-public class MainSceneController {
+public class MainSceneController extends MasterController {
 
   private static boolean isFirstTimeInit = true;
   private static GameStateContext context = new GameStateContext();
@@ -39,9 +37,6 @@ public class MainSceneController {
   @FXML private Button btnInteract;
   @FXML private ImageView imgSuspects;
   @FXML private ImageView phoneLogButton;
-  @FXML private Label timer;
-
-  private TimerManager timerManager = TimerManager.getInstance();
 
   /**
    * Initializes the room view. If it's the first time initialization, it will provide instructions
@@ -61,21 +56,6 @@ public class MainSceneController {
     timerManager.startTimer();
     Timeline timeline = TimerManager.getTimeline();
     timeline.getKeyFrames().add(new KeyFrame(Duration.millis(1), event -> updateTimer()));
-  }
-
-  public void updateTimer() {
-    if (timerManager.isTimeUp()
-        && !isUserAtGuessingScene
-        && !GuessingSceneController.isUserAtExplanationScene) {
-      timerManager.setTime(1, 0, 0);
-      try {
-        App.setRoot("guessingscene");
-      } catch (IOException e) {
-        e.printStackTrace();
-      }
-      isUserAtGuessingScene = true;
-    }
-    timer.setText(timerManager.getFormattedTime());
   }
 
   /**
@@ -157,28 +137,6 @@ public class MainSceneController {
     ImageView button = (ImageView) event.getSource();
     Scene sceneButtonIsIn = button.getScene();
     sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.PHONELOGAUCTIONEER));
-  }
-
-  /**
-   * Handles mouse hover on rectangles to help identify clues
-   *
-   * @param event the mouse event triggered by clicking a rectangle
-   */
-  @FXML
-  private void onMouseEntered(MouseEvent event) {
-    Rectangle clickedRectangle = (Rectangle) event.getSource();
-    clickedRectangle.setCursor(javafx.scene.Cursor.HAND);
-  }
-
-  /**
-   * Handles mouse hover on image
-   *
-   * @param event the mouse event triggered by clicking a rectangle
-   */
-  @FXML
-  private void onMouseEnteredImage(MouseEvent event) {
-    ImageView clickedRectangle = (ImageView) event.getSource();
-    clickedRectangle.setCursor(javafx.scene.Cursor.HAND);
   }
 
   @FXML

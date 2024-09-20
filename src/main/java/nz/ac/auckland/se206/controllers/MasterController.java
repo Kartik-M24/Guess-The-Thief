@@ -13,7 +13,7 @@ import nz.ac.auckland.se206.SceneManager;
 import nz.ac.auckland.se206.SceneManager.AppUi;
 import nz.ac.auckland.se206.TimerManager;
 
-public class MasterSuspectController {
+public class MasterController {
 
   @FXML protected Label timer;
 
@@ -113,5 +113,18 @@ public class MasterSuspectController {
     ImageView button = (ImageView) event.getSource();
     Scene sceneButtonIsIn = button.getScene();
     sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.ARCHAEOLOGISTROOM));
+  }
+
+  /**
+   * Handles when the button is clicked to take you to the game over screen
+   *
+   * @param event the mouse event triggered by clicking a rectangle
+   * @throws IOException if there is an I/O error
+   */
+  @FXML
+  private void handleGameOver(MouseEvent event) throws IOException {
+    ImageView button = (ImageView) event.getSource();
+    Scene sceneButtonIsIn = button.getScene();
+    sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.GAMEOVER));
   }
 }
