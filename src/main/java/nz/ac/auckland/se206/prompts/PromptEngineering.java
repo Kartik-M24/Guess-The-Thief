@@ -24,6 +24,7 @@ public class PromptEngineering {
    * @throws IllegalArgumentException if there is an error loading or filling the template
    */
   public static String getPrompt(String promptId) {
+    // Gets propmt of correct suspect and loads into chatgpt so that it responds accordingly
     try {
       URL resourceUrl = PromptEngineering.class.getClassLoader().getResource("prompts/" + promptId);
       String prompt = loadTemplate(resourceUrl.toURI());

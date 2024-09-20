@@ -25,6 +25,7 @@ public class IntroSceneController extends MasterController {
    */
   @FXML
   public void changeScene(MouseEvent event) throws IOException {
+    // Sets the time to 5 minutes correctly and changes the scene to the main scene
     timerManager.setTime(4, 59, 999);
     InitialSceneWithArtifactController.isFirstTime = true;
     ImageView button = (ImageView) event.getSource();

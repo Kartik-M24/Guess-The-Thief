@@ -42,6 +42,7 @@ public class CrimeExplanationController extends MasterController {
 
   @Override
   public void updateTimer() {
+    // Updates the timer accordingly with all its effects
     if (timerManager.isTimeUp() && GuessingSceneController.isUserAtExplanationScene) {
       try {
         onSendMessage(new ActionEvent());
@@ -68,6 +69,7 @@ public class CrimeExplanationController extends MasterController {
    * @param profession the profession to set
    */
   public void setProfession() {
+    // Sets the prompt accordingly so it responds accordingly
     try {
       ApiProxyConfig config = ApiProxyConfig.readConfig();
       chatCompletionRequest =
@@ -103,7 +105,7 @@ public class CrimeExplanationController extends MasterController {
    * @throws ApiProxyException if there is an error communicating with the API proxy
    */
   private ChatMessage runGpt(ChatMessage msg) throws ApiProxyException {
-
+    // Runs GPT and call the evaluation bot to respond to the player
     txtaChat.appendText("Evaluation Bot is thinking...");
 
     Task<ChatMessage> task =
@@ -112,13 +114,15 @@ public class CrimeExplanationController extends MasterController {
           protected ChatMessage call() {
             chatCompletionRequest.addMessage(msg);
             try {
+
+              // Calls GPT to set up the response
               ChatCompletionResult chatCompletionResult = chatCompletionRequest.execute();
               Choice result = chatCompletionResult.getChoices().iterator().next();
               chatCompletionRequest.addMessage(result.getChatMessage());
 
               int beginIndex = txtaChat.getText().lastIndexOf("Evaluation Bot is thinking...");
               txtaChat.replaceText(beginIndex, beginIndex + 29, "");
-
+              // Appends the chat to the player so they can read it
               appendChatMessage(result.getChatMessage());
               return result.getChatMessage();
             } catch (ApiProxyException e) {
@@ -171,10 +175,13 @@ public class CrimeExplanationController extends MasterController {
    */
   @FXML
   private void onSendMessage(ActionEvent event) throws ApiProxyException, IOException {
+    // Sends the message to GPT and runs accordingly
     String message = txtInput.getText().trim();
     if (message.isEmpty()) {
       return;
     }
+
+    // Sets appropriate fields correctly
     txtInput.setVisible(false);
     txtInput.clear();
     ChatMessage msg = new ChatMessage("user", message);

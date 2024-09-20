@@ -38,6 +38,7 @@ public class FuseBoxClueController extends MasterController {
   /** Initializes the fuse box view. */
   @FXML
   public void initialize() {
+    // Inirialises all the necessary fields and initialises the timeline
     Timeline timeline = TimerManager.getTimeline();
     timeline.getKeyFrames().add(new KeyFrame(Duration.millis(1), event -> updateTimer()));
     progressIndicator.setVisible(false);
@@ -71,6 +72,8 @@ public class FuseBoxClueController extends MasterController {
    */
   @FXML
   private void handleRectClick(MouseEvent event) throws IOException {
+    // Handles the player clicking the clues and writes them down on the notebook for the player to
+    // see
     Rectangle clickedRectangle = (Rectangle) event.getSource();
     String clickedRectangleId = clickedRectangle.getId();
     if (clickedRectangleId.equals("wires") && t1) {
