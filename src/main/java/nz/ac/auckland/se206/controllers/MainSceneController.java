@@ -7,13 +7,11 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
-import nz.ac.auckland.se206.App;
 import nz.ac.auckland.se206.AudioManager;
 import nz.ac.auckland.se206.AudioManager.AudioType;
 import nz.ac.auckland.se206.GameStateContext;
@@ -41,9 +39,7 @@ public class MainSceneController extends MasterController {
   @FXML private Button btnInteract;
   @FXML private ImageView imgSuspects;
   @FXML private ImageView phoneLogButton;
-  @FXML private Label timer;
 
-  private TimerManager timerManager = TimerManager.getInstance();
   public static AudioManager audioManager = new AudioManager();
 
   /**
@@ -64,22 +60,6 @@ public class MainSceneController extends MasterController {
     timerManager.startTimer();
     Timeline timeline = TimerManager.getTimeline();
     timeline.getKeyFrames().add(new KeyFrame(Duration.millis(1), event -> updateTimer()));
-  }
-
-  public void updateTimer() {
-    if (timerManager.isTimeUp()
-        && !isUserAtGuessingScene
-        && !GuessingSceneController.isUserAtExplanationScene) {
-      timerManager.setTime(1, 0, 0);
-      audioManager.playAudio(AudioManager.AudioType.TIMESUP, 0.5);
-      try {
-        App.setRoot("guessingscene");
-      } catch (IOException e) {
-        e.printStackTrace();
-      }
-      isUserAtGuessingScene = true;
-    }
-    timer.setText(timerManager.getFormattedTime());
   }
 
   /**

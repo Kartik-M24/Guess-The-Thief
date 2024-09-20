@@ -11,7 +11,6 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 import javafx.util.Duration;
-import nz.ac.auckland.se206.App;
 import nz.ac.auckland.se206.AudioManager;
 import nz.ac.auckland.se206.SceneManager;
 import nz.ac.auckland.se206.SceneManager.AppUi;
@@ -23,8 +22,6 @@ public class LetterClueController extends MasterController {
   @FXML private ImageView textImage2;
   @FXML private ImageView textImage3;
   @FXML private Text hintText;
-  private TimerManager timerManager = TimerManager.getInstance();
-  private AudioManager audioManager = new AudioManager();
 
   /** Initializes the letter clue view. */
   @FXML
@@ -35,22 +32,6 @@ public class LetterClueController extends MasterController {
     textImage3.setOpacity(0);
     Timeline timeline = TimerManager.getTimeline();
     timeline.getKeyFrames().add(new KeyFrame(Duration.millis(1), event -> updateTimer()));
-  }
-
-  public void updateTimer() {
-    if (timerManager.isTimeUp()
-        && !MainSceneController.isUserAtGuessingScene
-        && !GuessingSceneController.isUserAtExplanationScene) {
-      timerManager.setTime(1, 0, 0);
-      audioManager.playAudio(AudioManager.AudioType.TIMESUP, 0.5);
-      try {
-        App.setRoot("guessingscene");
-      } catch (IOException e) {
-        e.printStackTrace();
-      }
-      MainSceneController.isUserAtGuessingScene = true;
-    }
-    timer.setText(timerManager.getFormattedTime());
   }
 
   /**
