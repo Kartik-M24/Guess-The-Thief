@@ -26,6 +26,7 @@ public class LetterClueController extends MasterController {
   /** Initializes the letter clue view. */
   @FXML
   public void initialize() {
+    // initialises the scene and sets up correct fields
     hintText.setVisible(true);
     textImage1.setOpacity(0);
     textImage2.setOpacity(0);

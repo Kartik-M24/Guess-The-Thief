@@ -72,6 +72,7 @@ public class CollectorRoomController extends MasterController {
    * @param profession the profession to set
    */
   public void setProfession() {
+    // Sets the profession of the collector and sets gpt to respons accordingly
     try {
       ApiProxyConfig config = ApiProxyConfig.readConfig();
       chatCompletionRequest =
@@ -109,20 +110,23 @@ public class CollectorRoomController extends MasterController {
   private ChatMessage runGpt(ChatMessage msg) throws ApiProxyException {
     isCollectorRoomVisited = true;
     txtaChat.appendText("Victor Lancaster is thinking...");
-
+    // Delegates to background thread and makes it run it
     Task<ChatMessage> task =
         new Task<ChatMessage>() {
           @Override
           protected ChatMessage call() {
             chatCompletionRequest.addMessage(msg);
             try {
+              // Executes GPT
               ChatCompletionResult chatCompletionResult = chatCompletionRequest.execute();
               Choice result = chatCompletionResult.getChoices().iterator().next();
               chatCompletionRequest.addMessage(result.getChatMessage());
 
+              // Appends correct text into the chat box
               int beginIndex = txtaChat.getText().lastIndexOf("Victor Lancaster is thinking...");
               txtaChat.replaceText(beginIndex, beginIndex + 31, "");
 
+              // Correctly appends to the chat box so that player can see
               appendChatMessage(result.getChatMessage());
               return result.getChatMessage();
             } catch (ApiProxyException e) {
@@ -172,6 +176,7 @@ public class CollectorRoomController extends MasterController {
    */
   @FXML
   private void onSendMessage(ActionEvent event) throws ApiProxyException, IOException {
+    // Sends the message to GPT to get a response from it
     String message = txtInput.getText().trim();
     if (message.isEmpty()) {
       return;

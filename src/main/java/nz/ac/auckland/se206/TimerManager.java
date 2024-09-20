@@ -39,6 +39,8 @@ public class TimerManager {
   }
 
   private void updateTimer() {
+    // This updates and correctly decrements the timer so that the minutes, seconds and milliseconds
+    // are decremented every millisecond
     if (milliseconds > 0) {
       milliseconds--;
     } else if (milliseconds == 0 && seconds > 0) {

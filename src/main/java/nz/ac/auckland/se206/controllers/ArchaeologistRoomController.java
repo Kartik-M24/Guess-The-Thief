@@ -71,6 +71,7 @@ public class ArchaeologistRoomController extends MasterController {
    * @param profession the profession to set
    */
   public void setProfession() {
+    // Sets the profession of the archaeologist and sets gpt to respons accordingly
     try {
       ApiProxyConfig config = ApiProxyConfig.readConfig();
       chatCompletionRequest =
@@ -106,9 +107,11 @@ public class ArchaeologistRoomController extends MasterController {
    * @throws ApiProxyException if there is an error communicating with the API proxy
    */
   private ChatMessage runGpt(ChatMessage msg) throws ApiProxyException {
+    // Accordingly runs GPT and gets a response from GPT and shows to the user/player
     isArchaeologistRoomVisited = true;
     txtaChat.appendText("Dr. Samuel Carter is thinking...");
 
+    // Delegate to background thread to update and run the GPT process
     Task<ChatMessage> task =
         new Task<ChatMessage>() {
           @Override

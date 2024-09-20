@@ -26,6 +26,8 @@ public class InitialSceneWithoutArtifactController extends MasterController {
 
   @FXML
   public void initialize() {
+    // Initialises all the necessary fields and creates all the fade transitions to be used in the
+    // game.
     Timeline timeline = TimerManager.getTimeline();
     timeline
         .getKeyFrames()
@@ -54,10 +56,12 @@ public class InitialSceneWithoutArtifactController extends MasterController {
 
   @Override
   public void updateTimer() {
+    // Sets the text for the timer
     timer.setText(timerManager.getFormattedTime());
   }
 
   public void checkTime() {
+    // Checks the time and does events depending on what the time is.
     if (timerManager.getMinutes() == 4
         && timerManager.getSeconds() == 44
         && timerManager.getMilliseconds() == 0

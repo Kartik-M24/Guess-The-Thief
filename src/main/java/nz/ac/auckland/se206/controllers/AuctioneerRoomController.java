@@ -46,7 +46,6 @@ public class AuctioneerRoomController extends MasterController {
 
   private ChatCompletionRequest chatCompletionRequest;
   private AudioManager audioManager = new AudioManager();
-  private AudioManager doorAudioManager = new AudioManager();
 
   /** Initializes the Auctioneer room view. */
   @FXML
@@ -72,6 +71,7 @@ public class AuctioneerRoomController extends MasterController {
    * @param profession the profession to set
    */
   public void setProfession() {
+    // Sets the profession of the auctioneer and sets gpt to respons accordingly
     try {
       ApiProxyConfig config = ApiProxyConfig.readConfig();
       chatCompletionRequest =
@@ -182,6 +182,7 @@ public class AuctioneerRoomController extends MasterController {
    */
   @FXML
   private void onSendMessage(ActionEvent event) throws ApiProxyException, IOException {
+    // Sends the message to GPT to get a respone back from GPT
     String message = txtInput.getText().trim();
     if (message.isEmpty()) {
       return;

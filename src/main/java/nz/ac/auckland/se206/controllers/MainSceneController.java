@@ -48,6 +48,7 @@ public class MainSceneController extends MasterController {
    */
   @FXML
   public void initialize() {
+    // Initialises the main scene and correctly sets up all the fields
     if (isFirstTimeInit) {
       TextToSpeech.speak(
           "Welcome to the crime scene. You have 5 minutes to investigate the crime scene and find"
@@ -148,6 +149,7 @@ public class MainSceneController extends MasterController {
 
   @FXML
   private void onMouseEnteredImageB(MouseEvent event) {
+    // The mouse changes on hover when the cursor is on top
     if (CollectorRoomController.isCollectorRoomVisited()
         && ArchaeologistRoomController.isArchaeologistRoomVisited()
         && AuctioneerRoomController.isAuctioneerRoomVisited()

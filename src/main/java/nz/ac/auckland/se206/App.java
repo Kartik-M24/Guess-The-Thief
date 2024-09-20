@@ -48,6 +48,8 @@ public class App extends Application {
     return new FXMLLoader(App.class.getResource("/fxml/" + fxml + ".fxml")).load();
   }
 
+  // Add all the scenes in the whole video game into the hashmap in SceneManager, also adds the
+  // audio used in the video game in to AudioManager
   Task<Void> initializescene =
       new Task<>() {
         @Override

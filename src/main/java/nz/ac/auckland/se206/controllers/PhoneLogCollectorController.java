@@ -38,6 +38,7 @@ public class PhoneLogCollectorController extends MasterController {
    */
   @FXML
   private void handleCrimeSceneClick(MouseEvent event) throws IOException {
+    // Redirects the user to the crime scene when clicked
     audioManager.playAudio(AudioManager.AudioType.PHONEBACK, 0.8);
     imgStaff.setOpacity(0);
     imgLoan.setOpacity(0);
@@ -59,6 +60,7 @@ public class PhoneLogCollectorController extends MasterController {
    */
   @FXML
   private void handleSuspectsClick(MouseEvent event) throws IOException {
+    // Redirects the user to the suspects selection scene
     audioManager.playAudio(AudioManager.AudioType.PAGEFLIP, 0.8);
     imgStaff.setOpacity(0);
     imgLoan.setOpacity(0);
@@ -80,6 +82,7 @@ public class PhoneLogCollectorController extends MasterController {
    */
   @FXML
   private void handleLoanClick(MouseEvent event) throws IOException {
+    // Handles clicking the loan shark and leads player to the chat scene
     audioManager.playAudio(AudioManager.AudioType.PHONENEXT, 0.8);
     imgStaff.setOpacity(0);
     imgLoan.setOpacity(1);
@@ -98,6 +101,7 @@ public class PhoneLogCollectorController extends MasterController {
    */
   @FXML
   private void handleStaffClick(MouseEvent event) throws IOException {
+    // Handles clicking the staff and leads player to the chat scene
     audioManager.playAudio(AudioManager.AudioType.PHONENEXT, 0.8);
     imgStaff.setOpacity(1);
     imgLoan.setOpacity(0);
@@ -116,6 +120,7 @@ public class PhoneLogCollectorController extends MasterController {
    */
   @FXML
   private void handleSamuelClick(MouseEvent event) throws IOException {
+    // Handles clicking the samuel doctor and leads player to the chat scene
     audioManager.playAudio(AudioManager.AudioType.PHONENEXT, 0.8);
     imgStaff.setOpacity(0);
     imgLoan.setOpacity(0);
@@ -152,6 +157,7 @@ public class PhoneLogCollectorController extends MasterController {
    */
   @FXML
   private void handleNextArchaeologistClick(MouseEvent event) throws IOException {
+    // handles clicking on the archaeologist to move to the archaeologist
     audioManager.playAudio(AudioManager.AudioType.PHONEBACK, 0.8);
     imgStaff.setOpacity(0);
     imgLoan.setOpacity(0);
@@ -173,6 +179,7 @@ public class PhoneLogCollectorController extends MasterController {
    */
   @FXML
   private void handleNextAuctioneerClick(MouseEvent event) throws IOException {
+    // Handles moving the player to the auctioneer
     audioManager.playAudio(AudioManager.AudioType.PHONEBACK, 0.8);
     imgStaff.setOpacity(0);
     imgLoan.setOpacity(0);

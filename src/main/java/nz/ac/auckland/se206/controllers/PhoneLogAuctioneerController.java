@@ -40,6 +40,7 @@ public class PhoneLogAuctioneerController extends MasterController {
    */
   @FXML
   private void handleSuspectsClick(MouseEvent event) throws IOException {
+    // When the player clicks this, the scene changes to another scene
     audioManager.playAudio(AudioManager.AudioType.PAGEFLIP, 0.8);
     backButton.setDisable(true);
     imgPolice.setOpacity(0);
@@ -59,6 +60,7 @@ public class PhoneLogAuctioneerController extends MasterController {
    */
   @FXML
   private void handleNextArchaeologistClick(MouseEvent event) throws IOException {
+    // When the player clicks this, the scene changes to another scene
     audioManager.playAudio(AudioManager.AudioType.PHONEBACK, 0.8);
     imgPolice.setOpacity(0);
     imgFriend.setOpacity(0);
@@ -78,6 +80,7 @@ public class PhoneLogAuctioneerController extends MasterController {
    */
   @FXML
   private void handleNextCollectorClick(MouseEvent event) throws IOException {
+    // When the player clicks this, the scene changes to another scene
     audioManager.playAudio(AudioManager.AudioType.PHONEBACK, 0.8);
     imgPolice.setOpacity(0);
     imgFriend.setOpacity(0);
@@ -97,6 +100,7 @@ public class PhoneLogAuctioneerController extends MasterController {
    */
   @FXML
   private void handleFriendClick(MouseEvent event) throws IOException {
+    // When the player clicks this, the scene changes to another scene
     audioManager.playAudio(AudioManager.AudioType.PHONENEXT, 0.8);
     imgPolice.setOpacity(0);
     imgFriend.setOpacity(1);
@@ -113,6 +117,7 @@ public class PhoneLogAuctioneerController extends MasterController {
    */
   @FXML
   private void handlePoliceClick(MouseEvent event) throws IOException {
+    // When the player clicks this, the scene changes to another scene
     audioManager.playAudio(AudioManager.AudioType.PHONENEXT, 0.8);
     imgPolice.setOpacity(1);
     imgFriend.setOpacity(0);
@@ -129,6 +134,7 @@ public class PhoneLogAuctioneerController extends MasterController {
    */
   @FXML
   private void handleBackClick(MouseEvent event) throws IOException {
+    // When the player clicks this, the scene changes to another scene
     audioManager.playAudio(AudioManager.AudioType.PHONENEXT, 0.8);
     imgPolice.setOpacity(0);
     imgFriend.setOpacity(0);
@@ -145,6 +151,7 @@ public class PhoneLogAuctioneerController extends MasterController {
    */
   @FXML
   private void handleCrimeSceneClick(MouseEvent event) throws IOException {
+    // When the player clicks this, the scene changes to another scene
     audioManager.playAudio(AudioManager.AudioType.PHONEBACK, 0.8);
     imgPolice.setOpacity(0);
     imgFriend.setOpacity(0);

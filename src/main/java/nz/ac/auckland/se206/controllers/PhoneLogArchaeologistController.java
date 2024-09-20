@@ -37,6 +37,7 @@ public class PhoneLogArchaeologistController extends MasterController {
    */
   @FXML
   private void handleCrimeSceneClick(MouseEvent event) throws IOException {
+    // When the player clicks this, the scene changes to another scene
     audioManager.playAudio(AudioManager.AudioType.PHONEBACK, 0.8);
     imgColleague.setOpacity(0);
     imgVictor.setOpacity(0);
@@ -56,6 +57,7 @@ public class PhoneLogArchaeologistController extends MasterController {
    */
   @FXML
   private void handleSuspectsClick(MouseEvent event) throws IOException {
+    // When the player clicks this, the scene changes to another scene
     audioManager.playAudio(AudioType.PAGEFLIP, 0.8);
     imgColleague.setOpacity(0);
     imgVictor.setOpacity(0);
@@ -75,6 +77,7 @@ public class PhoneLogArchaeologistController extends MasterController {
    */
   @FXML
   private void handleVictorClick(MouseEvent event) throws IOException {
+    // When the player clicks this, the scene changes to another scene
     audioManager.playAudio(AudioType.PHONENEXT, 0.8);
     imgColleague.setOpacity(0);
     imgVictor.setOpacity(1);
@@ -91,6 +94,7 @@ public class PhoneLogArchaeologistController extends MasterController {
    */
   @FXML
   private void handleColleagueClick(MouseEvent event) throws IOException {
+    // When the player clicks this, the scene changes to another scene
     audioManager.playAudio(AudioType.PHONENEXT, 0.8);
     imgColleague.setOpacity(1);
     imgVictor.setOpacity(0);
@@ -107,6 +111,7 @@ public class PhoneLogArchaeologistController extends MasterController {
    */
   @FXML
   private void handleBackClick(MouseEvent event) throws IOException {
+    // When the player clicks this, the scene changes to another scene
     audioManager.playAudio(AudioType.PHONENEXT, 0.8);
     imgColleague.setOpacity(0);
     imgVictor.setOpacity(0);
@@ -123,6 +128,7 @@ public class PhoneLogArchaeologistController extends MasterController {
    */
   @FXML
   private void handleNextAuctioneerClick(MouseEvent event) throws IOException {
+    // When the player clicks this, the scene changes to another scene
     audioManager.playAudio(AudioType.PHONEBACK, 0.8);
     imgColleague.setOpacity(0);
     imgVictor.setOpacity(0);
@@ -142,6 +148,7 @@ public class PhoneLogArchaeologistController extends MasterController {
    */
   @FXML
   private void handleNextCollectorClick(MouseEvent event) throws IOException {
+    // When the player clicks this, the scene changes to another scene
     audioManager.playAudio(AudioType.PHONEBACK, 0.8);
     imgColleague.setOpacity(0);
     imgVictor.setOpacity(0);
