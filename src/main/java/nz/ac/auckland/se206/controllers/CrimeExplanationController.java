@@ -30,8 +30,6 @@ public class CrimeExplanationController extends MasterController {
   @FXML private ImageView gameoverButton;
 
   private ChatCompletionRequest chatCompletionRequest;
-  private TimerManager timerManager = TimerManager.getInstance();
-  private AudioManager audioManager = new AudioManager();
 
   /** Initializes the room view. */
   @FXML
@@ -42,7 +40,7 @@ public class CrimeExplanationController extends MasterController {
     gameoverButton.setVisible(false);
   }
 
-  /** Updates the timer. */
+  @Override
   public void updateTimer() {
     if (timerManager.isTimeUp() && GuessingSceneController.isUserAtExplanationScene) {
       try {

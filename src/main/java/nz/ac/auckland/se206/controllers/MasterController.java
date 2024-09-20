@@ -9,6 +9,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Rectangle;
 import nz.ac.auckland.se206.App;
+import nz.ac.auckland.se206.AudioManager;
 import nz.ac.auckland.se206.SceneManager;
 import nz.ac.auckland.se206.SceneManager.AppUi;
 import nz.ac.auckland.se206.TimerManager;
@@ -18,6 +19,8 @@ public class MasterController {
   @FXML protected Label timer;
 
   protected TimerManager timerManager = TimerManager.getInstance();
+  protected AudioManager audioManager = new AudioManager();
+  protected AudioManager doorAudioManager = new AudioManager();
 
   /** Updates the timer. */
   public void updateTimer() {
@@ -25,6 +28,7 @@ public class MasterController {
         && !MainSceneController.isUserAtGuessingScene
         && !GuessingSceneController.isUserAtExplanationScene) {
       timerManager.setTime(1, 0, 0);
+      audioManager.playAudio(AudioManager.AudioType.TIMESUP, 0.5);
       try {
         App.setRoot("guessingscene");
       } catch (IOException e) {
@@ -33,19 +37,6 @@ public class MasterController {
       MainSceneController.isUserAtGuessingScene = true;
     }
     timer.setText(timerManager.getFormattedTime());
-  }
-
-  /**
-   * Handles mouse click to go to the Crime Scene.
-   *
-   * @param event the mouse event triggered by clicking a rectangle
-   * @throws IOException if there is an I/O error
-   */
-  @FXML
-  private void handleCrimeSceneClick(MouseEvent event) throws IOException {
-    ImageView button = (ImageView) event.getSource();
-    Scene sceneButtonIsIn = button.getScene();
-    sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.MAINSCENE));
   }
 
   /**
@@ -84,6 +75,7 @@ public class MasterController {
    */
   @FXML
   private void gotoCollector(MouseEvent event) throws IOException {
+    doorAudioManager.playAudio(AudioManager.AudioType.DOOR, 0.8);
     ImageView button = (ImageView) event.getSource();
     Scene sceneButtonIsIn = button.getScene();
     sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.COLLECTORROOM));
@@ -97,6 +89,7 @@ public class MasterController {
    */
   @FXML
   private void gotoAuctioneer(MouseEvent event) throws IOException {
+    doorAudioManager.playAudio(AudioManager.AudioType.DOOR, 0.8);
     ImageView button = (ImageView) event.getSource();
     Scene sceneButtonIsIn = button.getScene();
     sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.AUCTIONEERROOM));
@@ -110,6 +103,7 @@ public class MasterController {
    */
   @FXML
   private void gotoArchaeologist(MouseEvent event) throws IOException {
+    doorAudioManager.playAudio(AudioManager.AudioType.DOOR, 0.8);
     ImageView button = (ImageView) event.getSource();
     Scene sceneButtonIsIn = button.getScene();
     sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.ARCHAEOLOGISTROOM));

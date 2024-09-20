@@ -15,7 +15,6 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 import javafx.util.Duration;
-import nz.ac.auckland.se206.App;
 import nz.ac.auckland.se206.AudioManager;
 import nz.ac.auckland.se206.SceneManager;
 import nz.ac.auckland.se206.SceneManager.AppUi;
@@ -35,8 +34,6 @@ public class FuseBoxClueController extends MasterController {
   private boolean t1 = false;
   private boolean t2 = false;
   private boolean t3 = false;
-  private TimerManager timerManager = TimerManager.getInstance();
-  private AudioManager audioManager = new AudioManager();
 
   /** Initializes the fuse box view. */
   @FXML
@@ -50,22 +47,6 @@ public class FuseBoxClueController extends MasterController {
     text3.setVisible(false);
     text4.setVisible(false);
     text5.setVisible(false);
-  }
-
-  public void updateTimer() {
-    if (timerManager.isTimeUp()
-        && !MainSceneController.isUserAtGuessingScene
-        && !GuessingSceneController.isUserAtExplanationScene) {
-      timerManager.setTime(1, 0, 0);
-      audioManager.playAudio(AudioManager.AudioType.TIMESUP, 0.5);
-      try {
-        App.setRoot("guessingscene");
-      } catch (IOException e) {
-        e.printStackTrace();
-      }
-      MainSceneController.isUserAtGuessingScene = true;
-    }
-    timer.setText(timerManager.getFormattedTime());
   }
 
   /**
