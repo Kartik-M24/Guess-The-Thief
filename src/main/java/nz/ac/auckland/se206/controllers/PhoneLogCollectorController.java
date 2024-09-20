@@ -16,7 +16,7 @@ import nz.ac.auckland.se206.SceneManager;
 import nz.ac.auckland.se206.SceneManager.AppUi;
 import nz.ac.auckland.se206.TimerManager;
 
-public class PhoneLogCollectorController {
+public class PhoneLogCollectorController extends MasterController {
   @FXML private ImageView imgStaff;
   @FXML private ImageView imgLoan;
   @FXML private ImageView imgSamuel;
@@ -206,27 +206,5 @@ public class PhoneLogCollectorController {
     ImageView button = (ImageView) event.getSource();
     Scene sceneButtonIsIn = button.getScene();
     sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.PHONELOGAUCTIONEER));
-  }
-
-  /**
-   * Handles mouse hover on rectangles to help identify clues
-   *
-   * @param event the mouse event triggered by clicking a rectangle
-   */
-  @FXML
-  private void onMouseEntered(MouseEvent event) {
-    Rectangle clickedRectangle = (Rectangle) event.getSource();
-    clickedRectangle.setCursor(javafx.scene.Cursor.HAND);
-  }
-
-  /**
-   * Handles mouse hover on image
-   *
-   * @param event the mouse event triggered by clicking a rectangle
-   */
-  @FXML
-  private void onMouseEnteredImage(MouseEvent event) {
-    ImageView clickedRectangle = (ImageView) event.getSource();
-    clickedRectangle.setCursor(javafx.scene.Cursor.HAND);
   }
 }

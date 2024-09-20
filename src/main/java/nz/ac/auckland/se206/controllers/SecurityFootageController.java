@@ -5,7 +5,6 @@ import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.util.Duration;
@@ -16,9 +15,8 @@ import nz.ac.auckland.se206.SceneManager;
 import nz.ac.auckland.se206.SceneManager.AppUi;
 import nz.ac.auckland.se206.TimerManager;
 
-public class SecurityFootageController {
+public class SecurityFootageController extends MasterController {
 
-  @FXML private Label timer;
   @FXML private ImageView rightButton;
   private TimerManager timerManager = TimerManager.getInstance();
   private AudioManager audioManager = new AudioManager();
@@ -84,16 +82,5 @@ public class SecurityFootageController {
     ImageView button = (ImageView) event.getSource();
     Scene sceneButtonIsIn = button.getScene();
     sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.SECURITYFOOTAGEBEFORE));
-  }
-
-  /**
-   * Handles mouse hover on image
-   *
-   * @param event the mouse event triggered by clicking a rectangle
-   */
-  @FXML
-  private void onMouseEnteredImage(MouseEvent event) {
-    ImageView clickedRectangle = (ImageView) event.getSource();
-    clickedRectangle.setCursor(javafx.scene.Cursor.HAND);
   }
 }

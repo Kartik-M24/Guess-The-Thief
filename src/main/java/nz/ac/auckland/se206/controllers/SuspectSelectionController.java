@@ -16,7 +16,7 @@ import nz.ac.auckland.se206.SceneManager;
 import nz.ac.auckland.se206.SceneManager.AppUi;
 import nz.ac.auckland.se206.TimerManager;
 
-public class SuspectSelectionController {
+public class SuspectSelectionController extends MasterController {
   @FXML private Rectangle rectArchaeologist;
   @FXML private Rectangle rectAuctioneer;
   @FXML private Rectangle rectCollector;

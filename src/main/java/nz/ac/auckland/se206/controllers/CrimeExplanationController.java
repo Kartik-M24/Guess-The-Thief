@@ -6,15 +6,11 @@ import javafx.animation.Timeline;
 import javafx.concurrent.Task;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
-import javafx.scene.input.MouseEvent;
-import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
 import nz.ac.auckland.apiproxy.chat.openai.ChatCompletionRequest;
 import nz.ac.auckland.apiproxy.chat.openai.ChatCompletionResult;
@@ -23,17 +19,14 @@ import nz.ac.auckland.apiproxy.chat.openai.Choice;
 import nz.ac.auckland.apiproxy.config.ApiProxyConfig;
 import nz.ac.auckland.apiproxy.exceptions.ApiProxyException;
 import nz.ac.auckland.se206.AudioManager;
-import nz.ac.auckland.se206.SceneManager;
-import nz.ac.auckland.se206.SceneManager.AppUi;
 import nz.ac.auckland.se206.TimerManager;
 import nz.ac.auckland.se206.prompts.PromptEngineering;
 
-public class CrimeExplanationController {
+public class CrimeExplanationController extends MasterController {
 
   @FXML private TextArea txtaChat;
   @FXML private TextField txtInput;
   @FXML private Button btnSend;
-  @FXML private Label timer;
   @FXML private ImageView gameoverButton;
 
   private ChatCompletionRequest chatCompletionRequest;
@@ -188,46 +181,5 @@ public class CrimeExplanationController {
     runGpt(msg);
     btnSend.setVisible(false);
     gameoverButton.setVisible(true);
-  }
-
-  /**
-   * Handles mouse hover on rectangles to help identify clues
-   *
-   * @param event the mouse event triggered by clicking a rectangle
-   */
-  @FXML
-  private void onMouseEntered(MouseEvent event) {
-    Rectangle clickedRectangle = (Rectangle) event.getSource();
-    clickedRectangle.setCursor(javafx.scene.Cursor.HAND);
-  }
-
-  /**
-   * Handles mouse hover on image
-   *
-   * @param event the mouse event triggered by clicking a rectangle
-   */
-  @FXML
-  private void onMouseEnteredImage(MouseEvent event) {
-    ImageView clickedRectangle = (ImageView) event.getSource();
-    clickedRectangle.setCursor(javafx.scene.Cursor.HAND);
-  }
-
-  /**
-   * Handles when the button is clicked to take you to the game over screen
-   *
-   * @param event the mouse event triggered by clicking a rectangle
-   * @throws IOException if there is an I/O error
-   */
-  @FXML
-  private void handleGameOver(MouseEvent event) throws IOException {
-    ImageView button = (ImageView) event.getSource();
-    Scene sceneButtonIsIn = button.getScene();
-    sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.GAMEOVER));
-  }
-
-  @FXML
-  private void onMouseEnteredImageB(MouseEvent event) {
-    Button clickedRectangle = (Button) event.getSource();
-    clickedRectangle.setCursor(javafx.scene.Cursor.HAND);
   }
 }

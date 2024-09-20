@@ -5,8 +5,6 @@ import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
-import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
@@ -15,16 +13,13 @@ import nz.ac.auckland.se206.SceneManager;
 import nz.ac.auckland.se206.SceneManager.AppUi;
 import nz.ac.auckland.se206.TimerManager;
 
-public class GuessingSceneController {
+public class GuessingSceneController extends MasterController {
 
   public static boolean isUserAtExplanationScene = false;
 
   @FXML private Rectangle rectArchaeologist;
   @FXML private Rectangle rectAuctioneer;
   @FXML private Rectangle rectCollector;
-  @FXML private Label timer;
-
-  private TimerManager timerManager = TimerManager.getInstance();
 
   /** Initializes the suspect selection view. */
   @FXML
@@ -33,6 +28,7 @@ public class GuessingSceneController {
     timeline.getKeyFrames().add(new KeyFrame(Duration.millis(1), event -> updateTimer()));
   }
 
+  @Override
   public void updateTimer() {
     if (timerManager.isTimeUp() && MainSceneController.isUserAtGuessingScene) {
       try {
@@ -86,27 +82,5 @@ public class GuessingSceneController {
     Rectangle button = (Rectangle) event.getSource();
     Scene sceneButtonIsIn = button.getScene();
     sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.CRIMEEXPLANATION));
-  }
-
-  /**
-   * Handles mouse hover on rectangles to help identify clues
-   *
-   * @param event the mouse event triggered by clicking a rectangle
-   */
-  @FXML
-  private void onMouseEntered(MouseEvent event) {
-    Rectangle clickedRectangle = (Rectangle) event.getSource();
-    clickedRectangle.setCursor(javafx.scene.Cursor.HAND);
-  }
-
-  /**
-   * Handles mouse hover on image
-   *
-   * @param event the mouse event triggered by clicking a rectangle
-   */
-  @FXML
-  private void onMouseEnteredImage(MouseEvent event) {
-    ImageView clickedRectangle = (ImageView) event.getSource();
-    clickedRectangle.setCursor(javafx.scene.Cursor.HAND);
   }
 }

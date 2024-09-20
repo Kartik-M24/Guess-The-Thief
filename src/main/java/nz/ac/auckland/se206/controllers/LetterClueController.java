@@ -6,7 +6,6 @@ import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -18,9 +17,8 @@ import nz.ac.auckland.se206.SceneManager;
 import nz.ac.auckland.se206.SceneManager.AppUi;
 import nz.ac.auckland.se206.TimerManager;
 
-public class LetterClueController {
+public class LetterClueController extends MasterController {
 
-  @FXML private Label timer;
   @FXML private ImageView textImage1;
   @FXML private ImageView textImage2;
   @FXML private ImageView textImage3;
@@ -103,16 +101,5 @@ public class LetterClueController {
     textImage1.setOpacity(opacityValue / 100.0);
     textImage2.setOpacity(opacityValue / 100.0);
     textImage3.setOpacity(opacityValue / 100.0);
-  }
-
-  /**
-   * Handles mouse hover on rectangles to help identify clues
-   *
-   * @param event the mouse event triggered by clicking a rectangle
-   */
-  @FXML
-  private void onMouseEnteredImage(MouseEvent event) {
-    ImageView clickedRectangle = (ImageView) event.getSource();
-    clickedRectangle.setCursor(javafx.scene.Cursor.HAND);
   }
 }

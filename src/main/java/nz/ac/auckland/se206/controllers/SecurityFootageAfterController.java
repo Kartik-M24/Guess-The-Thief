@@ -5,7 +5,6 @@ import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Circle;
@@ -19,9 +18,8 @@ import nz.ac.auckland.se206.SceneManager;
 import nz.ac.auckland.se206.SceneManager.AppUi;
 import nz.ac.auckland.se206.TimerManager;
 
-public class SecurityFootageAfterController {
+public class SecurityFootageAfterController extends MasterController {
 
-  @FXML private Label timer;
   @FXML private Circle suspect1Circle;
   @FXML private Circle suspect2Circle;
   @FXML private Line suspect1Line;
@@ -107,7 +105,6 @@ public class SecurityFootageAfterController {
   private void nextSceneLeft(MouseEvent event) throws IOException {
     Scene scene = ((ImageView) event.getSource()).getScene();
     scene.setRoot(SceneManager.getUiRoot(AppUi.SECURITYFOOTAGE));
-    audioManager.playAudio(AudioType.SECURITYCAMERA, 0.4);
   }
 
   /**

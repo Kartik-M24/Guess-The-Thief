@@ -9,7 +9,6 @@ import javafx.beans.property.SimpleIntegerProperty;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.ProgressIndicator;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -22,7 +21,7 @@ import nz.ac.auckland.se206.SceneManager;
 import nz.ac.auckland.se206.SceneManager.AppUi;
 import nz.ac.auckland.se206.TimerManager;
 
-public class FuseBoxClueController {
+public class FuseBoxClueController extends MasterController {
 
   @FXML private ImageView notepad;
   @FXML private ProgressIndicator progressIndicator;
@@ -32,7 +31,6 @@ public class FuseBoxClueController {
   @FXML private Text text3;
   @FXML private Text text4;
   @FXML private Text text5;
-  @FXML private Label timer;
   private Timeline timeLine;
   private boolean t1 = false;
   private boolean t2 = false;
@@ -150,16 +148,5 @@ public class FuseBoxClueController {
     Rectangle clickedRectangle = (Rectangle) event.getSource();
     clickedRectangle.setCursor(javafx.scene.Cursor.HAND);
     checkAllTexts();
-  }
-
-  /**
-   * Handles mouse hover on image
-   *
-   * @param event the mouse event triggered by clicking a rectangle
-   */
-  @FXML
-  private void onMouseEnteredImage(MouseEvent event) {
-    ImageView clickedRectangle = (ImageView) event.getSource();
-    clickedRectangle.setCursor(javafx.scene.Cursor.HAND);
   }
 }

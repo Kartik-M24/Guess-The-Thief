@@ -26,12 +26,16 @@ import nz.ac.auckland.se206.speech.TextToSpeech;
  * Controller class for the room view. Handles user interactions within the room where the user can
  * chat with customers and guess their profession.
  */
-public class MainSceneController {
+public class MainSceneController extends MasterController {
 
   private static boolean isFirstTimeInit = true;
   private static GameStateContext context = new GameStateContext();
   private static boolean clueClicked;
   public static boolean isUserAtGuessingScene = false;
+
+  public static void setClueClicked() {
+    clueClicked = false;
+  }
 
   @FXML private Button btnGuess;
   @FXML private Button btnInteract;
@@ -162,28 +166,6 @@ public class MainSceneController {
     sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.PHONELOGAUCTIONEER));
   }
 
-  /**
-   * Handles mouse hover on rectangles to help identify clues
-   *
-   * @param event the mouse event triggered by clicking a rectangle
-   */
-  @FXML
-  private void onMouseEntered(MouseEvent event) {
-    Rectangle clickedRectangle = (Rectangle) event.getSource();
-    clickedRectangle.setCursor(javafx.scene.Cursor.HAND);
-  }
-
-  /**
-   * Handles mouse hover on image
-   *
-   * @param event the mouse event triggered by clicking a rectangle
-   */
-  @FXML
-  private void onMouseEnteredImage(MouseEvent event) {
-    ImageView clickedRectangle = (ImageView) event.getSource();
-    clickedRectangle.setCursor(javafx.scene.Cursor.HAND);
-  }
-
   @FXML
   private void onMouseEnteredImageB(MouseEvent event) {
     if (CollectorRoomController.isCollectorRoomVisited()
@@ -202,9 +184,5 @@ public class MainSceneController {
   private void onMouseExitedImageB(MouseEvent event) {
     btnGuess.setVisible(true);
     btnInteract.setVisible(false);
-  }
-
-  public static void setClueClicked() {
-    clueClicked = false;
   }
 }
