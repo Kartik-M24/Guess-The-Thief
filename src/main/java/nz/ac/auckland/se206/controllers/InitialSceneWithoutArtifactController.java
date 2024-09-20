@@ -21,8 +21,6 @@ public class InitialSceneWithoutArtifactController extends MasterController {
   @FXML private Pane introPane;
   @FXML private ImageView nextButton;
 
-  private TimerManager timerManager = TimerManager.getInstance();
-
   private FadeTransition fadeLightTransition = new FadeTransition();
   private FadeTransition fadeIntroTransition = new FadeTransition();
 
