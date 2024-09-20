@@ -125,8 +125,6 @@ public class MainSceneController {
       Scene sceneButtonIsIn = button.getScene();
       sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.GUESSINGSCENE));
       isUserAtGuessingScene = true;
-    } else {
-      TextToSpeech.speak("You need to investigate all the rooms before making a guess.");
     }
   }
 
