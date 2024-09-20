@@ -45,19 +45,4 @@ public class PromptEngineering {
   private static String loadTemplate(URI filePath) throws IOException {
     return new String(Files.readAllBytes(Paths.get(filePath)));
   }
-
-  // /**
-  //  * Fills a template string with the provided data. Replaces placeholders in the template with
-  //  * corresponding values from the data map.
-  //  *
-  //  * @param template the template string to fill
-  //  * @param data the data to fill into the template
-  //  * @return the filled template string
-  //  */
-  // private static String fillTemplate(String template, Map<String, String> data) {
-  //   for (Map.Entry<String, String> entry : data.entrySet()) {
-  //     template = template.replace("{" + entry.getKey() + "}", entry.getValue());
-  //   }
-  //   return template;
-  // }
 }

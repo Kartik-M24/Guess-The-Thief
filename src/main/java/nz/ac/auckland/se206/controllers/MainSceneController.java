@@ -26,18 +26,18 @@ import nz.ac.auckland.se206.speech.TextToSpeech;
  */
 public class MainSceneController {
 
+  private static boolean isFirstTimeInit = true;
+  private static GameStateContext context = new GameStateContext();
+  private static boolean clueClicked;
+  public static boolean isUserAtGuessingScene = false;
+
   @FXML private Button btnGuess;
   @FXML private Button btnInteract;
   @FXML private ImageView imgSuspects;
   @FXML private ImageView phoneLogButton;
   @FXML private Label timer;
 
-  private static boolean isFirstTimeInit = true;
-  private static GameStateContext context = new GameStateContext();
   private TimerManager timerManager = TimerManager.getInstance();
-  private static boolean clueClicked;
-
-  public static boolean isUserAtGuessingScene = false;
 
   /**
    * Initializes the room view. If it's the first time initialization, it will provide instructions

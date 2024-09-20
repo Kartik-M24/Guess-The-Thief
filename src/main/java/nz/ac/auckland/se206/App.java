@@ -102,11 +102,5 @@ public class App extends Application {
     scene = new Scene(SceneManager.getUiRoot(AppUi.INTROSCENE));
     stage.setScene(scene);
     stage.show();
-    // stage.setOnCloseRequest(event -> handleWindowClose(event));
-    // root.requestFocus();
   }
-
-  // private void handleWindowClose(WindowEvent event) {
-  //   FreeTextToSpeech.deallocateSynthesizer();
-  // }
 }

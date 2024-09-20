@@ -11,9 +11,10 @@ import nz.ac.auckland.se206.TimerManager;
 
 public class GameOverController {
 
-  @FXML private ImageView restartButton;
   public static AudioManager audioManager = new AudioManager();
-  public TimerManager timerManager = TimerManager.getInstance();
+
+  @FXML private ImageView restartButton;
+  private TimerManager timerManager = TimerManager.getInstance();
 
   /**
    * Transitions to the second scene when the start button is clicked.
@@ -28,9 +29,6 @@ public class GameOverController {
     CollectorRoomController.setCollectorRoomVisited();
     AuctioneerRoomController.setAuctioneerRoomVisited();
     MainSceneController.setClueClicked();
-    // ImageView button = (ImageView) event.getSource();
-    // Scene sceneButtonIsIn = button.getScene();
-    // sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.INTROSCENE));
     timerManager.stopTimer();
     Stage stage = (Stage) restartButton.getScene().getWindow();
     App app = new App();

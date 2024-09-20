@@ -12,9 +12,10 @@ import nz.ac.auckland.se206.TimerManager;
 
 public class IntroSceneController {
 
+  public static AudioManager audioManager = new AudioManager();
+
   @FXML private ImageView startButton;
   private TimerManager timerManager = TimerManager.getInstance();
-  public static AudioManager audioManager = new AudioManager();
 
   /**
    * Transitions to the second scene when the start button is clicked.
