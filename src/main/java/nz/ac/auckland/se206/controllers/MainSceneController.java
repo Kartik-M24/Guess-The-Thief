@@ -31,6 +31,10 @@ public class MainSceneController {
   private static boolean clueClicked;
   public static boolean isUserAtGuessingScene = false;
 
+  public static void setClueClicked() {
+    clueClicked = false;
+  }
+
   @FXML private Button btnGuess;
   @FXML private Button btnInteract;
   @FXML private ImageView imgSuspects;
@@ -195,9 +199,5 @@ public class MainSceneController {
   private void onMouseExitedImageB(MouseEvent event) {
     btnGuess.setVisible(true);
     btnInteract.setVisible(false);
-  }
-
-  public static void setClueClicked() {
-    clueClicked = false;
   }
 }

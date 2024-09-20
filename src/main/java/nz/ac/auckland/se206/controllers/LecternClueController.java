@@ -18,8 +18,9 @@ import nz.ac.auckland.se206.TimerManager;
 
 public class LecternClueController {
 
-  @FXML private Label timer;
   private static GameStateContext context = new GameStateContext();
+
+  @FXML private Label timer;
   private TimerManager timerManager = TimerManager.getInstance();
 
   @FXML
