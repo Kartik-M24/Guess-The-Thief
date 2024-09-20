@@ -11,8 +11,9 @@ import nz.ac.auckland.se206.TimerManager;
 
 public class GameOverController {
 
-  @FXML private ImageView restartButton;
   public static AudioManager audioManager = new AudioManager();
+
+  @FXML private ImageView restartButton;
   private TimerManager timerManager = TimerManager.getInstance();
 
   /**

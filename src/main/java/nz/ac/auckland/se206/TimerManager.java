@@ -7,6 +7,7 @@ import javafx.util.Duration;
 public class TimerManager {
 
   private static TimerManager instance;
+  private static Timeline timeline;
 
   public static TimerManager getInstance() {
     if (instance == null) {
@@ -15,10 +16,13 @@ public class TimerManager {
     return instance;
   }
 
+  public static Timeline getTimeline() {
+    return timeline;
+  }
+
   private int minutes = 10;
   private int seconds = 59;
   private int milliseconds = 999;
-  private static Timeline timeline;
 
   private TimerManager() {}
 
@@ -26,10 +30,6 @@ public class TimerManager {
     timeline = new Timeline(new KeyFrame(Duration.millis(1), event -> updateTimer()));
     timeline.setCycleCount(Timeline.INDEFINITE);
     timeline.play();
-  }
-
-  public static Timeline getTimeline() {
-    return timeline;
   }
 
   public void stopTimer() {

@@ -12,9 +12,10 @@ import nz.ac.auckland.se206.TimerManager;
 public class InitialSceneWithArtifactController {
 
   public static boolean isFirstTime = true;
+  public static AudioManager audioManager2 = new AudioManager();
+
   private TimerManager timerManager = TimerManager.getInstance();
   private AudioManager audioManager = new AudioManager();
-  public static AudioManager audioManager2 = new AudioManager();
 
   @FXML
   public void initialize() {
