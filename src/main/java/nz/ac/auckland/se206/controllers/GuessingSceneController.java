@@ -16,13 +16,15 @@ import nz.ac.auckland.se206.SceneManager.AppUi;
 import nz.ac.auckland.se206.TimerManager;
 
 public class GuessingSceneController {
+
+  public static boolean isUserAtExplanationScene = false;
+
   @FXML private Rectangle rectArchaeologist;
   @FXML private Rectangle rectAuctioneer;
   @FXML private Rectangle rectCollector;
   @FXML private Label timer;
 
   private TimerManager timerManager = TimerManager.getInstance();
-  public static boolean isUserAtExplanationScene = false;
 
   /** Initializes the suspect selection view. */
   @FXML

@@ -31,6 +31,16 @@ import nz.ac.auckland.se206.prompts.PromptEngineering;
 
 public class CollectorRoomController {
 
+  private static boolean isCollectorRoomVisited;
+
+  public static boolean isCollectorRoomVisited() {
+    return isCollectorRoomVisited;
+  }
+
+  public static void setCollectorRoomVisited() {
+    isCollectorRoomVisited = false;
+  }
+
   @FXML private ImageView archaeologistpp;
   @FXML private ImageView auctioneerpp;
   @FXML private ImageView imgCrimeScene;
@@ -41,7 +51,6 @@ public class CollectorRoomController {
 
   private ChatCompletionRequest chatCompletionRequest;
   private TimerManager timerManager = TimerManager.getInstance();
-  private static boolean isCollectorRoomVisited;
   private AudioManager audioManager = new AudioManager();
   private AudioManager doorAudioManager = new AudioManager();
 
@@ -152,14 +161,6 @@ public class CollectorRoomController {
     return msg;
   }
 
-  public static boolean isCollectorRoomVisited() {
-    return isCollectorRoomVisited;
-  }
-
-  public static void setCollectorRoomVisited() {
-    isCollectorRoomVisited = false;
-  }
-
   /**
    * Handles the key pressed event.
    *
@@ -266,6 +267,12 @@ public class CollectorRoomController {
   @FXML
   private void onMouseEnteredImage(MouseEvent event) {
     ImageView clickedRectangle = (ImageView) event.getSource();
+    clickedRectangle.setCursor(javafx.scene.Cursor.HAND);
+  }
+
+  @FXML
+  private void onMouseEnteredImageB(MouseEvent event) {
+    Button clickedRectangle = (Button) event.getSource();
     clickedRectangle.setCursor(javafx.scene.Cursor.HAND);
   }
 }

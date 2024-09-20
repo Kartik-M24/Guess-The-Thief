@@ -31,6 +31,16 @@ import nz.ac.auckland.se206.prompts.PromptEngineering;
 
 public class AuctioneerRoomController {
 
+  private static boolean isAuctioneerRoomVisited;
+
+  public static boolean isAuctioneerRoomVisited() {
+    return isAuctioneerRoomVisited;
+  }
+
+  public static void setAuctioneerRoomVisited() {
+    isAuctioneerRoomVisited = false;
+  }
+
   @FXML private ImageView archaeologistpp;
   @FXML private ImageView collectorpp;
   @FXML private ImageView imgCrimeScene;
@@ -41,7 +51,6 @@ public class AuctioneerRoomController {
 
   private ChatCompletionRequest chatCompletionRequest;
   private TimerManager timerManager = TimerManager.getInstance();
-  private static boolean isAuctioneerRoomVisited;
   private AudioManager audioManager = new AudioManager();
   private AudioManager doorAudioManager = new AudioManager();
 
@@ -151,14 +160,6 @@ public class AuctioneerRoomController {
     return msg;
   }
 
-  public static boolean isAuctioneerRoomVisited() {
-    return isAuctioneerRoomVisited;
-  }
-
-  public static void setAuctioneerRoomVisited() {
-    isAuctioneerRoomVisited = false;
-  }
-
   /**
    * Handles the key pressed event.
    *
@@ -265,6 +266,12 @@ public class AuctioneerRoomController {
   @FXML
   private void onMouseEnteredImage(MouseEvent event) {
     ImageView clickedRectangle = (ImageView) event.getSource();
+    clickedRectangle.setCursor(javafx.scene.Cursor.HAND);
+  }
+
+  @FXML
+  private void onMouseEnteredImageB(MouseEvent event) {
+    Button clickedRectangle = (Button) event.getSource();
     clickedRectangle.setCursor(javafx.scene.Cursor.HAND);
   }
 }

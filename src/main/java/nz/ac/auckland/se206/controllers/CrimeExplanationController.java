@@ -224,4 +224,10 @@ public class CrimeExplanationController {
     Scene sceneButtonIsIn = button.getScene();
     sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.GAMEOVER));
   }
+
+  @FXML
+  private void onMouseEnteredImageB(MouseEvent event) {
+    Button clickedRectangle = (Button) event.getSource();
+    clickedRectangle.setCursor(javafx.scene.Cursor.HAND);
+  }
 }

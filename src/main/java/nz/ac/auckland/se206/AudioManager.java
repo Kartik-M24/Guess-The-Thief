@@ -26,13 +26,14 @@ public class AudioManager {
     POLICESIREN
   }
 
-  private Media sound;
-  private MediaPlayer player;
   private static HashMap<AudioType, String> audioMap = new HashMap<AudioType, String>();
 
   public static void addAudio(AudioType audioType, String audioFileName) {
     audioMap.put(audioType, audioFileName);
   }
+
+  private Media sound;
+  private MediaPlayer player;
 
   public void playAudio(AudioType audioType, double volume) {
     String audioFileName = audioMap.get(audioType);

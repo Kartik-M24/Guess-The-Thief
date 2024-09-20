@@ -31,6 +31,16 @@ import nz.ac.auckland.se206.prompts.PromptEngineering;
 
 public class ArchaeologistRoomController {
 
+  private static boolean isArchaeologistRoomVisited;
+
+  public static boolean isArchaeologistRoomVisited() {
+    return isArchaeologistRoomVisited;
+  }
+
+  public static void setArchaeologistRoomVisited() {
+    isArchaeologistRoomVisited = false;
+  }
+
   @FXML private ImageView collectorpp;
   @FXML private ImageView auctioneerpp;
   @FXML private ImageView imgCrimeScene;
@@ -41,7 +51,6 @@ public class ArchaeologistRoomController {
 
   private ChatCompletionRequest chatCompletionRequest;
   private TimerManager timerManager = TimerManager.getInstance();
-  private static boolean isArchaeologistRoomVisited;
   private AudioManager audioManager = new AudioManager();
   private AudioManager doorAudioManager = new AudioManager();
 
@@ -151,14 +160,6 @@ public class ArchaeologistRoomController {
     return msg;
   }
 
-  public static boolean isArchaeologistRoomVisited() {
-    return isArchaeologistRoomVisited;
-  }
-
-  public static void setArchaeologistRoomVisited() {
-    isArchaeologistRoomVisited = false;
-  }
-
   /**
    * Handles the key pressed event.
    *
@@ -265,6 +266,12 @@ public class ArchaeologistRoomController {
   @FXML
   private void onMouseEnteredImage(MouseEvent event) {
     ImageView clickedRectangle = (ImageView) event.getSource();
+    clickedRectangle.setCursor(javafx.scene.Cursor.HAND);
+  }
+
+  @FXML
+  private void onMouseEnteredImageB(MouseEvent event) {
+    Button clickedRectangle = (Button) event.getSource();
     clickedRectangle.setCursor(javafx.scene.Cursor.HAND);
   }
 }
