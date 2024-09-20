@@ -29,9 +29,6 @@ public class GameOverController {
     CollectorRoomController.setCollectorRoomVisited();
     AuctioneerRoomController.setAuctioneerRoomVisited();
     MainSceneController.setClueClicked();
-    // ImageView button = (ImageView) event.getSource();
-    // Scene sceneButtonIsIn = button.getScene();
-    // sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.INTROSCENE));
     timerManager.stopTimer();
     Stage stage = (Stage) restartButton.getScene().getWindow();
     App app = new App();
