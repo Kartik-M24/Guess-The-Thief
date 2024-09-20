@@ -5,10 +5,13 @@ import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
+import nz.ac.auckland.se206.App;
+import nz.ac.auckland.se206.AudioManager;
 import nz.ac.auckland.se206.SceneManager;
 import nz.ac.auckland.se206.SceneManager.AppUi;
 import nz.ac.auckland.se206.TimerManager;
@@ -23,12 +26,31 @@ public class PhoneLogAuctioneerController extends MasterController {
   @FXML private Rectangle rectFriend;
   @FXML private Rectangle rectPolice;
   @FXML private Rectangle backButton;
+  @FXML private Label timer;
+  private TimerManager timerManager = TimerManager.getInstance();
+  private AudioManager audioManager = new AudioManager();
 
   /** Initializes the letter clue view. */
   @FXML
   public void initialize() {
     Timeline timeline = TimerManager.getTimeline();
     timeline.getKeyFrames().add(new KeyFrame(Duration.millis(1), event -> updateTimer()));
+  }
+
+  public void updateTimer() {
+    if (timerManager.isTimeUp()
+        && !MainSceneController.isUserAtGuessingScene
+        && !GuessingSceneController.isUserAtExplanationScene) {
+      timerManager.setTime(1, 0, 0);
+      audioManager.playAudio(AudioManager.AudioType.TIMESUP, 0.5);
+      try {
+        App.setRoot("guessingscene");
+      } catch (IOException e) {
+        e.printStackTrace();
+      }
+      MainSceneController.isUserAtGuessingScene = true;
+    }
+    timer.setText(timerManager.getFormattedTime());
   }
 
   /**
@@ -39,6 +61,7 @@ public class PhoneLogAuctioneerController extends MasterController {
    */
   @FXML
   private void handleSuspectsClick(MouseEvent event) throws IOException {
+    audioManager.playAudio(AudioManager.AudioType.PAGEFLIP, 0.8);
     backButton.setDisable(true);
     imgPolice.setOpacity(0);
     imgFriend.setOpacity(0);
@@ -57,6 +80,7 @@ public class PhoneLogAuctioneerController extends MasterController {
    */
   @FXML
   private void handleNextArchaeologistClick(MouseEvent event) throws IOException {
+    audioManager.playAudio(AudioManager.AudioType.PHONEBACK, 0.8);
     imgPolice.setOpacity(0);
     imgFriend.setOpacity(0);
     rectFriend.setDisable(false);
@@ -75,6 +99,7 @@ public class PhoneLogAuctioneerController extends MasterController {
    */
   @FXML
   private void handleNextCollectorClick(MouseEvent event) throws IOException {
+    audioManager.playAudio(AudioManager.AudioType.PHONEBACK, 0.8);
     imgPolice.setOpacity(0);
     imgFriend.setOpacity(0);
     rectFriend.setDisable(false);
@@ -93,6 +118,7 @@ public class PhoneLogAuctioneerController extends MasterController {
    */
   @FXML
   private void handleFriendClick(MouseEvent event) throws IOException {
+    audioManager.playAudio(AudioManager.AudioType.PHONENEXT, 0.8);
     imgPolice.setOpacity(0);
     imgFriend.setOpacity(1);
     backButton.setDisable(false);
@@ -108,6 +134,7 @@ public class PhoneLogAuctioneerController extends MasterController {
    */
   @FXML
   private void handlePoliceClick(MouseEvent event) throws IOException {
+    audioManager.playAudio(AudioManager.AudioType.PHONENEXT, 0.8);
     imgPolice.setOpacity(1);
     imgFriend.setOpacity(0);
     backButton.setDisable(false);
@@ -123,6 +150,7 @@ public class PhoneLogAuctioneerController extends MasterController {
    */
   @FXML
   private void handleBackClick(MouseEvent event) throws IOException {
+    audioManager.playAudio(AudioManager.AudioType.PHONENEXT, 0.8);
     imgPolice.setOpacity(0);
     imgFriend.setOpacity(0);
     backButton.setDisable(true);
@@ -138,6 +166,7 @@ public class PhoneLogAuctioneerController extends MasterController {
    */
   @FXML
   private void handleCrimeSceneClick(MouseEvent event) throws IOException {
+    audioManager.playAudio(AudioManager.AudioType.PHONEBACK, 0.8);
     imgPolice.setOpacity(0);
     imgFriend.setOpacity(0);
     rectFriend.setDisable(false);

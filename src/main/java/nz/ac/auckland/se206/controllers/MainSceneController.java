@@ -7,11 +7,15 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
+import nz.ac.auckland.se206.App;
+import nz.ac.auckland.se206.AudioManager;
+import nz.ac.auckland.se206.AudioManager.AudioType;
 import nz.ac.auckland.se206.GameStateContext;
 import nz.ac.auckland.se206.SceneManager;
 import nz.ac.auckland.se206.SceneManager.AppUi;
@@ -37,6 +41,10 @@ public class MainSceneController extends MasterController {
   @FXML private Button btnInteract;
   @FXML private ImageView imgSuspects;
   @FXML private ImageView phoneLogButton;
+  @FXML private Label timer;
+
+  private TimerManager timerManager = TimerManager.getInstance();
+  public static AudioManager audioManager = new AudioManager();
 
   /**
    * Initializes the room view. If it's the first time initialization, it will provide instructions
@@ -56,6 +64,22 @@ public class MainSceneController extends MasterController {
     timerManager.startTimer();
     Timeline timeline = TimerManager.getTimeline();
     timeline.getKeyFrames().add(new KeyFrame(Duration.millis(1), event -> updateTimer()));
+  }
+
+  public void updateTimer() {
+    if (timerManager.isTimeUp()
+        && !isUserAtGuessingScene
+        && !GuessingSceneController.isUserAtExplanationScene) {
+      timerManager.setTime(1, 0, 0);
+      audioManager.playAudio(AudioManager.AudioType.TIMESUP, 0.5);
+      try {
+        App.setRoot("guessingscene");
+      } catch (IOException e) {
+        e.printStackTrace();
+      }
+      isUserAtGuessingScene = true;
+    }
+    timer.setText(timerManager.getFormattedTime());
   }
 
   /**
@@ -105,6 +129,7 @@ public class MainSceneController extends MasterController {
         && AuctioneerRoomController.isAuctioneerRoomVisited()
         && clueClicked) {
       timerManager.setTime(1, 0, 0);
+      audioManager.playAudio(AudioManager.AudioType.TIMESUP, 0.5);
       Button button = (Button) event.getSource();
       Scene sceneButtonIsIn = button.getScene();
       sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.GUESSINGSCENE));
@@ -120,6 +145,7 @@ public class MainSceneController extends MasterController {
    */
   @FXML
   private void handleSuspectsClick(MouseEvent event) throws IOException {
+    audioManager.playAudio(AudioManager.AudioType.PAGEFLIP, 0.8);
     ImageView button = (ImageView) event.getSource();
     Scene sceneButtonIsIn = button.getScene();
     sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.SUSPECTSSELECTION));
@@ -134,6 +160,7 @@ public class MainSceneController extends MasterController {
   @FXML
   private void handlePhoneClick(MouseEvent event) throws IOException {
     clueClicked = true;
+    audioManager.playAudio(AudioType.PHONEBACK, 0.8);
     ImageView button = (ImageView) event.getSource();
     Scene sceneButtonIsIn = button.getScene();
     sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.PHONELOGAUCTIONEER));

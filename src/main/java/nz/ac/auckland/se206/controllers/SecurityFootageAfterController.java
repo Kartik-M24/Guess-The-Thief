@@ -9,7 +9,11 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
+import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
+import nz.ac.auckland.se206.App;
+import nz.ac.auckland.se206.AudioManager;
+import nz.ac.auckland.se206.AudioManager.AudioType;
 import nz.ac.auckland.se206.SceneManager;
 import nz.ac.auckland.se206.SceneManager.AppUi;
 import nz.ac.auckland.se206.TimerManager;
@@ -22,6 +26,8 @@ public class SecurityFootageAfterController extends MasterController {
   @FXML private Line suspect2Line;
   @FXML private ImageView suspect1Image;
   @FXML private ImageView suspect2Image;
+  private TimerManager timerManager = TimerManager.getInstance();
+  private AudioManager audioManager = new AudioManager();
 
   @FXML
   public void initialize() {
@@ -33,6 +39,36 @@ public class SecurityFootageAfterController extends MasterController {
     suspect2Line.setVisible(false);
     suspect1Image.setVisible(false);
     suspect2Image.setVisible(false);
+  }
+
+  public void updateTimer() {
+    if (timerManager.isTimeUp()
+        && !MainSceneController.isUserAtGuessingScene
+        && !GuessingSceneController.isUserAtExplanationScene) {
+      timerManager.setTime(1, 0, 0);
+      audioManager.playAudio(AudioManager.AudioType.TIMESUP, 0.5);
+      try {
+        App.setRoot("guessingscene");
+      } catch (IOException e) {
+        e.printStackTrace();
+      }
+      MainSceneController.isUserAtGuessingScene = true;
+    }
+    timer.setText(timerManager.getFormattedTime());
+  }
+
+  /**
+   * Handles mouse clicks on rectangles representing people in the room.
+   *
+   * @param event the mouse event triggered by clicking a rectangle
+   * @throws IOException if there is an I/O error
+   */
+  @FXML
+  private void handleCrimeSceneClick(MouseEvent event) throws IOException {
+    audioManager.playAudio(AudioManager.AudioType.CCTVSTOP, 0.1);
+    ImageView button = (ImageView) event.getSource();
+    Scene sceneButtonIsIn = button.getScene();
+    sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.MAINSCENE));
   }
 
   /**
@@ -69,5 +105,27 @@ public class SecurityFootageAfterController extends MasterController {
   private void nextSceneLeft(MouseEvent event) throws IOException {
     Scene scene = ((ImageView) event.getSource()).getScene();
     scene.setRoot(SceneManager.getUiRoot(AppUi.SECURITYFOOTAGE));
+  }
+
+  /**
+   * Handles mouse hover on image
+   *
+   * @param event the mouse event triggered by clicking a rectangle
+   */
+  @FXML
+  private void onMouseEnteredImage(MouseEvent event) {
+    ImageView clickedRectangle = (ImageView) event.getSource();
+    clickedRectangle.setCursor(javafx.scene.Cursor.HAND);
+  }
+
+  /**
+   * Handles mouse hover on circle
+   *
+   * @param event the mouse event triggered by clicking a rectangle
+   */
+  @FXML
+  private void onMouseEntered(MouseEvent event) {
+    Rectangle clickedRectangle = (Rectangle) event.getSource();
+    clickedRectangle.setCursor(javafx.scene.Cursor.HAND);
   }
 }
