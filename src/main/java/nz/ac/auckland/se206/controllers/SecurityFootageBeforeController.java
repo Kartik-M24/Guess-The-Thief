@@ -25,11 +25,12 @@ public class SecurityFootageBeforeController extends MasterController {
   @FXML private ImageView suspect1Image;
   @FXML private ImageView suspect2Image;
   @FXML private ImageView missingImage;
-  
+
   private AudioManager audioManager = new AudioManager();
 
   @FXML
   public void initialize() {
+    // Initialises the timeline for this scene so the timer updates and sets necessary fields
     Timeline timeline = TimerManager.getTimeline();
     timeline.getKeyFrames().add(new KeyFrame(Duration.millis(1), event -> updateTimer()));
     suspect1Circle.setVisible(false);

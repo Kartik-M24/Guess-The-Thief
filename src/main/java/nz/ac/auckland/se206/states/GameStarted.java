@@ -50,6 +50,8 @@ public class GameStarted implements GameState {
    */
   @Override
   public void handleClueClick(MouseEvent event, String rectangleId) throws IOException {
+    // Handles all instances of clicking the clues in the main scene and redirects the player to the
+    // acording clue scene
     if (rectangleId.equals("fuseboxClue")) {
       MainSceneController.audioManager.playAudio(AudioManager.AudioType.FUSEBOXOPEN, 1);
       Rectangle rectValue = (Rectangle) event.getSource();

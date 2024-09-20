@@ -30,6 +30,8 @@ public class GuessingSceneController extends MasterController {
 
   @Override
   public void updateTimer() {
+    // Updates the timer accordingly so it decrements correctly and checks if the timer is 0 and
+    // redirects to the game over scene
     if (timerManager.isTimeUp() && MainSceneController.isUserAtGuessingScene) {
       try {
         App.setRoot("gameover");

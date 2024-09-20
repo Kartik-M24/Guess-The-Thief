@@ -139,6 +139,7 @@ public class PhoneLogCollectorController extends MasterController {
    */
   @FXML
   private void handleBackClick(MouseEvent event) throws IOException {
+    // Handles clicking the back button and leads player to the messages scene
     audioManager.playAudio(AudioManager.AudioType.PHONENEXT, 0.8);
     imgStaff.setOpacity(0);
     imgLoan.setOpacity(0);

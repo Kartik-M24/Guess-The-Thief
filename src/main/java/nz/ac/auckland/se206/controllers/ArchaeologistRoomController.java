@@ -118,13 +118,16 @@ public class ArchaeologistRoomController extends MasterController {
           protected ChatMessage call() {
             chatCompletionRequest.addMessage(msg);
             try {
+              // Executes the written message to ChatGPT
               ChatCompletionResult chatCompletionResult = chatCompletionRequest.execute();
               Choice result = chatCompletionResult.getChoices().iterator().next();
               chatCompletionRequest.addMessage(result.getChatMessage());
 
+              // Appends thinking message to the text area
               int beginIndex = txtaChat.getText().lastIndexOf("Dr. Samuel Carter is thinking...");
               txtaChat.replaceText(beginIndex, beginIndex + 32, "");
 
+              // Appends the actual response to the text area
               appendChatMessage(result.getChatMessage());
               return result.getChatMessage();
             } catch (ApiProxyException e) {
