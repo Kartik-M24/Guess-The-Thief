@@ -52,6 +52,16 @@
             <Image url="@../images/auctionWithArtifact.png" />
          </image>
       </ImageView>
+      <ImageView fitHeight="36.0" fitWidth="38.0" layoutX="775.0" layoutY="369.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/whitecircle.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="36.0" fitWidth="38.0" layoutX="317.0" layoutY="380.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/whitecircle.png" />
+         </image>
+      </ImageView>
       <Circle fx:id="suspect1Circle" fill="#ff212100" layoutX="336.0" layoutY="398.0" radius="12.0" stroke="RED" strokeType="INSIDE" strokeWidth="2.0" />
       <Circle fx:id="suspect2Circle" fill="#ff212100" layoutX="794.0" layoutY="387.0" radius="12.0" stroke="RED" strokeType="INSIDE" strokeWidth="2.0" />
       <Line fx:id="suspect1Line" endX="16.4000244140625" endY="54.0" layoutX="347.0" layoutY="442.0" startX="-10.79998779296875" startY="-33.0" stroke="RED" strokeWidth="2.0" />

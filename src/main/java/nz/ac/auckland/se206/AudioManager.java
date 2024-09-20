@@ -9,7 +9,21 @@ public class AudioManager {
   public enum AudioType {
     INITIALTHEFTAUDIO,
     AUDIENCEMURMUR,
-    BACKGROUNDMUSIC
+    BACKGROUNDMUSIC,
+    TYPEWRITER,
+    PAGEFLIP,
+    DOOR,
+    PHONENEXT,
+    PHONEBACK,
+    CRIMESCENE,
+    SECURITYCAMERA,
+    FUSEBOXOPEN,
+    FUSEBOXCLOSE,
+    WALKING,
+    CCTVSTART,
+    CCTVSTOP,
+    TIMESUP,
+    POLICESIREN
   }
 
   private static HashMap<AudioType, String> audioMap = new HashMap<AudioType, String>();

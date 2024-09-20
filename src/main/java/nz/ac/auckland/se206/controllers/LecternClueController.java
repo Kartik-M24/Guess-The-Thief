@@ -11,6 +11,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
 import nz.ac.auckland.se206.App;
+import nz.ac.auckland.se206.AudioManager;
 import nz.ac.auckland.se206.GameStateContext;
 import nz.ac.auckland.se206.SceneManager;
 import nz.ac.auckland.se206.SceneManager.AppUi;
@@ -21,6 +22,7 @@ public class LecternClueController {
   @FXML private Label timer;
   private static GameStateContext context = new GameStateContext();
   private TimerManager timerManager = TimerManager.getInstance();
+  private AudioManager audioManager = new AudioManager();
 
   @FXML
   public void initialize() {
@@ -33,6 +35,7 @@ public class LecternClueController {
         && !MainSceneController.isUserAtGuessingScene
         && !GuessingSceneController.isUserAtExplanationScene) {
       timerManager.setTime(1, 0, 0);
+      audioManager.playAudio(AudioManager.AudioType.TIMESUP, 0.5);
       try {
         App.setRoot("guessingscene");
       } catch (IOException e) {
@@ -51,6 +54,7 @@ public class LecternClueController {
    */
   @FXML
   private void handleCrimeSceneClick(MouseEvent event) throws IOException {
+    audioManager.playAudio(AudioManager.AudioType.WALKING, 0.8);
     ImageView button = (ImageView) event.getSource();
     Scene sceneButtonIsIn = button.getScene();
     sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.MAINSCENE));

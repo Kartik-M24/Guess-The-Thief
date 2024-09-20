@@ -23,6 +23,7 @@ import nz.ac.auckland.apiproxy.chat.openai.Choice;
 import nz.ac.auckland.apiproxy.config.ApiProxyConfig;
 import nz.ac.auckland.apiproxy.exceptions.ApiProxyException;
 import nz.ac.auckland.se206.App;
+import nz.ac.auckland.se206.AudioManager;
 import nz.ac.auckland.se206.SceneManager;
 import nz.ac.auckland.se206.SceneManager.AppUi;
 import nz.ac.auckland.se206.TimerManager;
@@ -50,6 +51,8 @@ public class CollectorRoomController {
 
   private ChatCompletionRequest chatCompletionRequest;
   private TimerManager timerManager = TimerManager.getInstance();
+  private AudioManager audioManager = new AudioManager();
+  private AudioManager doorAudioManager = new AudioManager();
 
   /** Initializes the room view. */
   @FXML
@@ -66,6 +69,7 @@ public class CollectorRoomController {
         && !MainSceneController.isUserAtGuessingScene
         && !GuessingSceneController.isUserAtExplanationScene) {
       timerManager.setTime(1, 0, 0);
+      audioManager.playAudio(AudioManager.AudioType.TIMESUP, 0.5);
       try {
         App.setRoot("guessingscene");
       } catch (IOException e) {
@@ -174,6 +178,16 @@ public class CollectorRoomController {
   }
 
   /**
+   * Handles the key pressed event.
+   *
+   * @param event the key event
+   */
+  @FXML
+  public void onKeyTyped(KeyEvent event) {
+    audioManager.playAudio(AudioManager.AudioType.TYPEWRITER, 0.5);
+  }
+
+  /**
    * Sends a message to the GPT model.
    *
    * @param event the action event triggered by the send button
@@ -200,6 +214,7 @@ public class CollectorRoomController {
    */
   @FXML
   private void handleCrimeSceneClick(MouseEvent event) throws IOException {
+    audioManager.playAudio(AudioManager.AudioType.CRIMESCENE, 0.4);
     ImageView button = (ImageView) event.getSource();
     Scene sceneButtonIsIn = button.getScene();
     sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.MAINSCENE));
@@ -213,6 +228,7 @@ public class CollectorRoomController {
    */
   @FXML
   private void gotoArchaeologist(MouseEvent event) throws IOException {
+    doorAudioManager.playAudio(AudioManager.AudioType.DOOR, 0.8);
     ImageView button = (ImageView) event.getSource();
     Scene sceneButtonIsIn = button.getScene();
     sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.ARCHAEOLOGISTROOM));
@@ -226,6 +242,7 @@ public class CollectorRoomController {
    */
   @FXML
   private void gotoAuctioneer(MouseEvent event) throws IOException {
+    doorAudioManager.playAudio(AudioManager.AudioType.DOOR, 0.8);
     ImageView button = (ImageView) event.getSource();
     Scene sceneButtonIsIn = button.getScene();
     sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.AUCTIONEERROOM));

@@ -11,6 +11,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
 import nz.ac.auckland.se206.App;
+import nz.ac.auckland.se206.AudioManager;
 import nz.ac.auckland.se206.SceneManager;
 import nz.ac.auckland.se206.SceneManager.AppUi;
 import nz.ac.auckland.se206.TimerManager;
@@ -23,6 +24,7 @@ public class SuspectSelectionController {
   @FXML private Label timer;
 
   private TimerManager timerManager = TimerManager.getInstance();
+  private AudioManager audioManager = new AudioManager();
 
   /** Initializes the suspect selection view. */
   @FXML
@@ -36,6 +38,7 @@ public class SuspectSelectionController {
         && !MainSceneController.isUserAtGuessingScene
         && !GuessingSceneController.isUserAtExplanationScene) {
       timerManager.setTime(1, 0, 0);
+      audioManager.playAudio(AudioManager.AudioType.TIMESUP, 0.5);
       try {
         App.setRoot("guessingscene");
       } catch (IOException e) {
@@ -54,6 +57,7 @@ public class SuspectSelectionController {
    */
   @FXML
   private void handleArchaeologistClick(MouseEvent event) throws IOException {
+    audioManager.playAudio(AudioManager.AudioType.DOOR, 0.8);
     Rectangle button = (Rectangle) event.getSource();
     Scene sceneButtonIsIn = button.getScene();
     sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.ARCHAEOLOGISTROOM));
@@ -67,6 +71,7 @@ public class SuspectSelectionController {
    */
   @FXML
   private void handleAuctioneerClick(MouseEvent event) throws IOException {
+    audioManager.playAudio(AudioManager.AudioType.DOOR, 0.8);
     Rectangle button = (Rectangle) event.getSource();
     Scene sceneButtonIsIn = button.getScene();
     sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.AUCTIONEERROOM));
@@ -80,6 +85,7 @@ public class SuspectSelectionController {
    */
   @FXML
   private void handleCollectorClick(MouseEvent event) throws IOException {
+    audioManager.playAudio(AudioManager.AudioType.DOOR, 0.8);
     Rectangle button = (Rectangle) event.getSource();
     Scene sceneButtonIsIn = button.getScene();
     sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.COLLECTORROOM));
@@ -93,6 +99,7 @@ public class SuspectSelectionController {
    */
   @FXML
   private void handleCrimeSceneClick(MouseEvent event) throws IOException {
+    audioManager.playAudio(AudioManager.AudioType.PAGEFLIP, 0.8);
     ImageView button = (ImageView) event.getSource();
     Scene sceneButtonIsIn = button.getScene();
     sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.MAINSCENE));

@@ -4,9 +4,11 @@ import java.io.IOException;
 import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Rectangle;
+import nz.ac.auckland.se206.AudioManager;
 import nz.ac.auckland.se206.GameStateContext;
 import nz.ac.auckland.se206.SceneManager;
 import nz.ac.auckland.se206.SceneManager.AppUi;
+import nz.ac.auckland.se206.controllers.MainSceneController;
 import nz.ac.auckland.se206.speech.TextToSpeech;
 
 /**
@@ -49,21 +51,25 @@ public class GameStarted implements GameState {
   @Override
   public void handleClueClick(MouseEvent event, String rectangleId) throws IOException {
     if (rectangleId.equals("fuseboxClue")) {
+      MainSceneController.audioManager.playAudio(AudioManager.AudioType.FUSEBOXOPEN, 1);
       Rectangle rectValue = (Rectangle) event.getSource();
       Scene rectScene = rectValue.getScene();
       rectScene.setRoot(SceneManager.getUiRoot(AppUi.FUSEBOXCLUE));
     }
     if (rectangleId.equals("lecternClue")) {
+      MainSceneController.audioManager.playAudio(AudioManager.AudioType.WALKING, 0.8);
       Rectangle rectValue = (Rectangle) event.getSource();
       Scene rectScene = rectValue.getScene();
       rectScene.setRoot(SceneManager.getUiRoot(AppUi.LECTERNCLUE));
     }
     if (rectangleId.equals("letterClue")) {
+      MainSceneController.audioManager.playAudio(AudioManager.AudioType.PAGEFLIP, 0.8);
       Rectangle rectValue = (Rectangle) event.getSource();
       Scene rectScene = rectValue.getScene();
       rectScene.setRoot(SceneManager.getUiRoot(AppUi.LETTERCLUE));
     }
     if (rectangleId.equals("securityCameraClue")) {
+      MainSceneController.audioManager.playAudio(AudioManager.AudioType.CCTVSTART, 1.3);
       Rectangle rectValue = (Rectangle) event.getSource();
       Scene rectScene = rectValue.getScene();
       rectScene.setRoot(SceneManager.getUiRoot(AppUi.SECURITYFOOTAGE));
