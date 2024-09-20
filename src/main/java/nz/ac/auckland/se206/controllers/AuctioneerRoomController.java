@@ -250,4 +250,10 @@ public class AuctioneerRoomController {
     ImageView clickedRectangle = (ImageView) event.getSource();
     clickedRectangle.setCursor(javafx.scene.Cursor.HAND);
   }
+
+  @FXML
+  private void onMouseEnteredImageB(MouseEvent event) {
+    Button clickedRectangle = (Button) event.getSource();
+    clickedRectangle.setCursor(javafx.scene.Cursor.HAND);
+  }
 }
