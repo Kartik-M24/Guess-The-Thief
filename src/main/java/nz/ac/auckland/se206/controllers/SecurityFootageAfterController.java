@@ -103,6 +103,7 @@ public class SecurityFootageAfterController extends MasterController {
    */
   @FXML
   private void nextSceneLeft(MouseEvent event) throws IOException {
+    audioManager.playAudio(AudioType.SECURITYCAMERA, 0.4);
     Scene scene = ((ImageView) event.getSource()).getScene();
     scene.setRoot(SceneManager.getUiRoot(AppUi.SECURITYFOOTAGE));
   }
