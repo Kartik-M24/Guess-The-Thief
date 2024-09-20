@@ -28,6 +28,8 @@ public class SecurityFootageAfterController extends MasterController {
 
   @FXML
   public void initialize() {
+    // Initialises the fields necessary for the scene and also initialises the timeline for this
+    // scene.
     Timeline timeline = TimerManager.getTimeline();
     timeline.getKeyFrames().add(new KeyFrame(Duration.millis(1), event -> updateTimer()));
     suspect1Circle.setVisible(false);

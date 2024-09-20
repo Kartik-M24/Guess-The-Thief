@@ -36,6 +36,8 @@ public class AudioManager {
   private MediaPlayer player;
 
   public void playAudio(AudioType audioType, double volume) {
+    // Gets the audio file name from the hash map and plays it so the player can hear it when
+    // playing the game
     String audioFileName = audioMap.get(audioType);
     try {
       sound =

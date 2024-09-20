@@ -54,6 +54,8 @@ public class App extends Application {
       new Task<>() {
         @Override
         protected Void call() {
+          // Add all the scenes in the whole video game into the hashmap in SceneManager, also adds
+          // the audio used in the video game in to AudioManager
           try {
             SceneManager.addUi(SceneManager.AppUi.MAINSCENE, loadFxml("mainscene"));
             SceneManager.addUi(SceneManager.AppUi.SUSPECTSSELECTION, loadFxml("suspectsselection"));
