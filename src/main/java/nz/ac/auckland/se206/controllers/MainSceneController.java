@@ -45,7 +45,6 @@ public class MainSceneController extends MasterController {
   @FXML private Slider volumeSlider;
 
   public static AudioManager audioManager = new AudioManager();
-  private AudioManager backgroundAudioManager = new AudioManager();
 
   /**
    * Initializes the room view. If it's the first time initialization, it will provide instructions
@@ -143,8 +142,8 @@ public class MainSceneController extends MasterController {
    */
   @FXML
   private void handleSuspectsClick(MouseEvent event) throws IOException {
-    backgroundAudioManager.playAudio(AudioType.BACKGROUNDMUSIC, 0.5);
     audioManager.playAudio(AudioManager.AudioType.PAGEFLIP, 0.8);
+    audioManager.bindVolumeSlider(volumeSlider);
     ImageView button = (ImageView) event.getSource();
     Scene sceneButtonIsIn = button.getScene();
     sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.SUSPECTSSELECTION));
@@ -160,6 +159,7 @@ public class MainSceneController extends MasterController {
   private void handlePhoneClick(MouseEvent event) throws IOException {
     clueClicked = true;
     audioManager.playAudio(AudioType.PHONEBACK, 0.8);
+    audioManager.bindVolumeSlider(volumeSlider);
     ImageView button = (ImageView) event.getSource();
     Scene sceneButtonIsIn = button.getScene();
     sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.PHONELOGAUCTIONEER));
