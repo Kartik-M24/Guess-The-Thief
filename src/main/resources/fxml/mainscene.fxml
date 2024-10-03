@@ -2,67 +2,48 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-  prefHeight="649.0" prefWidth="1137.0" xmlns="http://javafx.com/javafx/22"
-  xmlns:fx="http://javafx.com/fxml/1"
-  fx:controller="nz.ac.auckland.se206.controllers.MainSceneController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="649.0" prefWidth="1137.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nz.ac.auckland.se206.controllers.MainSceneController">
   <children>
     <ImageView fitHeight="650.0" fitWidth="1137.0" pickOnBounds="true" preserveRatio="true">
       <image>
         <Image url="@../images/MainSceneView.jpg" />
       </image>
     </ImageView>
-    <Button fx:id="btnGuess" layoutX="493.0" layoutY="32.0" mnemonicParsing="false"
-      onAction="#handleGuessClick" onMouseEntered="#onMouseEnteredImageB" opacity="0.7"
-      prefHeight="50.0" prefWidth="190.0" style="-fx-background-color: #010a2e;" text="Make a Guess"
-      textFill="WHITE">
+    <Button fx:id="btnGuess" layoutX="493.0" layoutY="32.0" mnemonicParsing="false" onAction="#handleGuessClick" onMouseEntered="#onMouseEnteredImageB" opacity="0.7" prefHeight="50.0" prefWidth="190.0" style="-fx-background-color: #010a2e;" text="Make a Guess" textFill="WHITE">
       <font>
         <Font size="25.0" />
       </font>
     </Button>
-    <Rectangle fx:id="lecternClue" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="128.0"
-      layoutX="551.0" layoutY="239.0" onMouseClicked="#handleClueClick"
-      onMouseEntered="#onMouseEntered" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="78.0" />
-    <Rectangle fx:id="fuseboxClue" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="353.0"
-      layoutX="215.0" layoutY="253.0" onMouseClicked="#handleClueClick"
-      onMouseEntered="#onMouseEntered" opacity="0.0" stroke="BLACK" strokeType="INSIDE"
-      width="161.0" />
-    <Rectangle fx:id="securityCameraClue" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE"
-      height="62.0" layoutX="856.0" layoutY="20.0" onMouseClicked="#handleClueClick"
-      onMouseEntered="#onMouseEntered" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="78.0" />
-    <ImageView fx:id="rectSuspects" fitHeight="69.0" fitWidth="69.0" layoutX="1048.0" layoutY="17.0"
-      onMouseClicked="#handleSuspectsClick" onMouseEntered="#onMouseEnteredImage"
-      pickOnBounds="true" preserveRatio="true">
+    <Rectangle fx:id="lecternClue" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="128.0" layoutX="551.0" layoutY="239.0" onMouseClicked="#handleClueClick" onMouseEntered="#onMouseEntered" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="78.0" />
+    <Rectangle fx:id="fuseboxClue" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="353.0" layoutX="215.0" layoutY="253.0" onMouseClicked="#handleClueClick" onMouseEntered="#onMouseEntered" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="161.0" />
+    <Rectangle fx:id="securityCameraClue" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="62.0" layoutX="856.0" layoutY="20.0" onMouseClicked="#handleClueClick" onMouseEntered="#onMouseEntered" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="78.0" />
+    <ImageView fx:id="rectSuspects" fitHeight="69.0" fitWidth="69.0" layoutX="1048.0" layoutY="17.0" onMouseClicked="#handleSuspectsClick" onMouseEntered="#onMouseEnteredImage" pickOnBounds="true" preserveRatio="true">
       <image>
         <Image url="@../images/suspectsIcon.png" />
       </image>
     </ImageView>
-    <Label fx:id="timer" alignment="CENTER" layoutX="24.0" layoutY="24.0" prefHeight="62.0"
-      prefWidth="154.0" textAlignment="CENTER" textFill="#b71616">
+    <Label fx:id="timer" alignment="CENTER" layoutX="24.0" layoutY="24.0" prefHeight="62.0" prefWidth="154.0" textAlignment="CENTER" textFill="#b71616">
       <font>
         <Font size="40.0" />
       </font>
     </Label>
-    <ImageView fx:id="phoneLogButton" fitHeight="69.0" fitWidth="69.0" layoutX="1060.0"
-      layoutY="104.0" onMouseClicked="#handlePhoneClick" onMouseEntered="#onMouseEnteredImage"
-      pickOnBounds="true" preserveRatio="true">
+    <ImageView fx:id="phoneLogButton" fitHeight="69.0" fitWidth="69.0" layoutX="1060.0" layoutY="104.0" onMouseClicked="#handlePhoneClick" onMouseEntered="#onMouseEnteredImage" pickOnBounds="true" preserveRatio="true">
       <image>
         <Image url="@../images/phonelogicon.png" />
       </image>
     </ImageView>
-    <Button fx:id="btnInteract" layoutX="337.0" layoutY="32.0" mnemonicParsing="false"
-      onMouseExited="#onMouseExitedImageB" opacity="0.7" prefHeight="52.0" prefWidth="502.0"
-      style="-fx-background-color: #010a2e;" text="Interact with a clue and suspects to guess!"
-      textFill="WHITE">
+    <Button fx:id="btnInteract" layoutX="337.0" layoutY="32.0" mnemonicParsing="false" onMouseExited="#onMouseExitedImageB" opacity="0.7" prefHeight="52.0" prefWidth="502.0" style="-fx-background-color: #010a2e;" text="Interact with a clue and suspects to guess!" textFill="WHITE">
       <font>
         <Font size="25.0" />
       </font>
     </Button>
+      <Slider fx:id="volumeSlider" layoutX="207.0" layoutY="269.0" />
   </children>
 </Pane>

@@ -3,10 +3,13 @@ package nz.ac.auckland.se206.controllers;
 import java.io.IOException;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
+import javafx.beans.InvalidationListener;
+import javafx.beans.Observable;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Slider;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
@@ -39,8 +42,10 @@ public class MainSceneController extends MasterController {
   @FXML private Button btnInteract;
   @FXML private ImageView imgSuspects;
   @FXML private ImageView phoneLogButton;
+  @FXML private Slider volumeSlider;
 
   public static AudioManager audioManager = new AudioManager();
+  private AudioManager backgroundAudioManager = new AudioManager();
 
   /**
    * Initializes the room view. If it's the first time initialization, it will provide instructions
@@ -61,6 +66,18 @@ public class MainSceneController extends MasterController {
     timerManager.startTimer();
     Timeline timeline = TimerManager.getTimeline();
     timeline.getKeyFrames().add(new KeyFrame(Duration.millis(1), event -> updateTimer()));
+
+    volumeSlider.setValue(50);
+    volumeSlider
+        .valueProperty()
+        .addListener(
+            new InvalidationListener() {
+              @Override
+              public void invalidated(Observable observable) {
+                InitialSceneWithArtifactController.backgroundAudioManager.setVolume(
+                    volumeSlider.getValue() / 100);
+              }
+            });
   }
 
   /**
@@ -126,6 +143,7 @@ public class MainSceneController extends MasterController {
    */
   @FXML
   private void handleSuspectsClick(MouseEvent event) throws IOException {
+    backgroundAudioManager.playAudio(AudioType.BACKGROUNDMUSIC, 0.5);
     audioManager.playAudio(AudioManager.AudioType.PAGEFLIP, 0.8);
     ImageView button = (ImageView) event.getSource();
     Scene sceneButtonIsIn = button.getScene();

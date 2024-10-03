@@ -46,8 +46,14 @@ public class AudioManager {
       e.printStackTrace();
     }
     player = new MediaPlayer(sound);
-    player.setVolume(volume);
+    // player.setVolume(volume);
     player.play();
+  }
+
+  public void setVolume(double volume) {
+    if (player != null) {
+      player.setVolume(volume);
+    }
   }
 
   public void stopAudio() {
