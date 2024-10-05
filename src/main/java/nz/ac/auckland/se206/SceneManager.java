@@ -24,8 +24,6 @@ public class SceneManager {
     PHONELOGARCHAEOLOGIST,
     PHONELOGCOLLECTOR,
     SECURITYFOOTAGE,
-    SECURITYFOOTAGEBEFORE,
-    SECURITYFOOTAGEAFTER,
   }
 
   private static HashMap<AppUi, Parent> sceneMap = new HashMap<AppUi, Parent>();
