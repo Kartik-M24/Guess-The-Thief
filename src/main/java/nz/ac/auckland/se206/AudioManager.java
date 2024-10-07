@@ -19,7 +19,6 @@ public class AudioManager {
     PHONENEXT,
     PHONEBACK,
     CRIMESCENE,
-    SECURITYCAMERA,
     FUSEBOXOPEN,
     FUSEBOXCLOSE,
     WALKING,
