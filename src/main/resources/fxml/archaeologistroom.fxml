@@ -36,7 +36,7 @@
         <Image url="@../images/crimeSceneIcon.png" />
       </image>
     </ImageView>
-    <TextField fx:id="txtInput" layoutX="32.0" layoutY="579.0" onKeyTyped="#onKeyTyped" opacity="0.8" prefHeight="45.0" prefWidth="1075.0" promptText="Interrogate the suspect..." style="-fx-background-radius: 20; -fx-padding: 10 15;">
+    <TextField fx:id="txtInput" layoutX="32.0" layoutY="579.0" onKeyTyped="#onKeyTyped" opacity="0.8" prefHeight="45.0" prefWidth="1075.0" promptText="Interrogate the suspect..." style="-fx-background-radius: 20; -fx-padding: 10 65 10 15;">
          <font>
             <Font name="AlbertusMTStd" size="17.0" />
          </font></TextField>
