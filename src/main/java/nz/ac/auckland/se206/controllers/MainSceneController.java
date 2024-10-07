@@ -66,7 +66,7 @@ public class MainSceneController extends MasterController {
     Timeline timeline = TimerManager.getTimeline();
     timeline.getKeyFrames().add(new KeyFrame(Duration.millis(1), event -> updateTimer()));
 
-    volumeSlider.setValue(50);
+    volumeSlider.setValue(100);
     volumeSlider
         .valueProperty()
         .addListener(
@@ -75,6 +75,7 @@ public class MainSceneController extends MasterController {
               public void invalidated(Observable observable) {
                 InitialSceneWithArtifactController.backgroundAudioManager.setVolume(
                     volumeSlider.getValue() / 100);
+                audioManager.setMultiplier(volumeSlider.getValue() / 100);
               }
             });
   }
@@ -143,7 +144,6 @@ public class MainSceneController extends MasterController {
   @FXML
   private void handleSuspectsClick(MouseEvent event) throws IOException {
     audioManager.playAudio(AudioManager.AudioType.PAGEFLIP, 0.8);
-    audioManager.bindVolumeSlider(volumeSlider);
     ImageView button = (ImageView) event.getSource();
     Scene sceneButtonIsIn = button.getScene();
     sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.SUSPECTSSELECTION));
@@ -159,7 +159,6 @@ public class MainSceneController extends MasterController {
   private void handlePhoneClick(MouseEvent event) throws IOException {
     clueClicked = true;
     audioManager.playAudio(AudioType.PHONEBACK, 0.8);
-    audioManager.bindVolumeSlider(volumeSlider);
     ImageView button = (ImageView) event.getSource();
     Scene sceneButtonIsIn = button.getScene();
     sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.PHONELOGAUCTIONEER));

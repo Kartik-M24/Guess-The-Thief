@@ -31,9 +31,14 @@ public class AudioManager {
 
   private static HashMap<AudioType, String> audioMap = new HashMap<AudioType, String>();
   private DoubleProperty volume = new SimpleDoubleProperty(1.0);
+  private static Double multiplier;
 
   public DoubleProperty volumeProperty() {
     return volume;
+  }
+
+  public void setMultiplier(Double multiplier) {
+    AudioManager.multiplier = multiplier;
   }
 
   public static void addAudio(AudioType audioType, String audioFileName) {
@@ -54,6 +59,9 @@ public class AudioManager {
       e.printStackTrace();
     }
     player = new MediaPlayer(sound);
+    if (multiplier != null) {
+      volume = volume * multiplier;
+    }
     player.setVolume(volume);
     player.play();
   }
