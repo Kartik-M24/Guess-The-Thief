@@ -18,11 +18,13 @@ import nz.ac.auckland.se206.TimerManager;
 public class LecternClueController extends MasterController {
 
   private static GameStateContext context = new GameStateContext();
+  @FXML private ImageView letterClueGlow;
 
   @FXML
   public void initialize() {
     Timeline timeline = TimerManager.getTimeline();
     timeline.getKeyFrames().add(new KeyFrame(Duration.millis(1), event -> updateTimer()));
+    letterClueGlow.setVisible(false);
   }
 
   /**
@@ -49,5 +51,17 @@ public class LecternClueController extends MasterController {
   private void handleClueClick(MouseEvent event) throws IOException {
     Rectangle clickedRectangle = (Rectangle) event.getSource();
     context.handleClueClick(event, clickedRectangle.getId());
+  }
+
+  @FXML
+  private void onMouseEnteredL(MouseEvent event) {
+    Rectangle clickedRectangle = (Rectangle) event.getSource();
+    clickedRectangle.setCursor(javafx.scene.Cursor.HAND);
+    letterClueGlow.setVisible(true);
+  }
+
+  @FXML
+  private void onMouseExitedL(MouseEvent event) {
+    letterClueGlow.setVisible(false);
   }
 }
