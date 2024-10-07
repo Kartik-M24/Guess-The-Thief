@@ -2,6 +2,10 @@
   background-color: transparent;
   -fx-background-color: transparent;
   -fx-text-fill: white;
+  font-family: "Albertus MT Std";
+  -fx-font-family: "Albertus MT Std";
+  font-size: 17px;
+  -fx-font-size: 17px;
 }
 
 .text-area .scroll-pane {
@@ -18,4 +22,15 @@
 .text-area .scroll-pane .content {
   background-color: transparent;
   -fx-background-color: transparent;
+  font-family: "Albertus MT Std";
+  -fx-font-family: "Albertus MT Std";
+  font-size: 17px;
+  -fx-font-size: 17px;
+}
+
+.text-field {
+  font-family: "Albertus MT Std";
+  -fx-font-family: "Albertus MT Std";
+  font-size: 17px;
+  -fx-font-size: 17px;
 }
