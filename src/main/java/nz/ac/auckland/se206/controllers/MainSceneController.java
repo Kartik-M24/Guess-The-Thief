@@ -39,6 +39,7 @@ public class MainSceneController extends MasterController {
   @FXML private Button btnInteract;
   @FXML private ImageView imgSuspects;
   @FXML private ImageView phoneLogButton;
+  @FXML private ImageView lecternClueGlow;
 
   public static AudioManager audioManager = new AudioManager();
 
@@ -57,6 +58,7 @@ public class MainSceneController extends MasterController {
       isFirstTimeInit = false;
     }
     btnInteract.setVisible(false);
+    lecternClueGlow.setVisible(false);
     clueClicked = false;
     timerManager.startTimer();
     Timeline timeline = TimerManager.getTimeline();
@@ -166,5 +168,17 @@ public class MainSceneController extends MasterController {
   private void onMouseExitedImageB(MouseEvent event) {
     btnGuess.setVisible(true);
     btnInteract.setVisible(false);
+  }
+
+  @FXML
+  private void onMouseEnteredL(MouseEvent event) {
+    Rectangle clickedRectangle = (Rectangle) event.getSource();
+    clickedRectangle.setCursor(javafx.scene.Cursor.HAND);
+    lecternClueGlow.setVisible(true);
+  }
+
+  @FXML
+  private void onMouseExitedL(MouseEvent event) {
+    lecternClueGlow.setVisible(false);
   }
 }
