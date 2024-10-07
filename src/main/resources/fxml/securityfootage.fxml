@@ -10,7 +10,6 @@
 <?import javafx.scene.media.MediaView?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="649.0" prefWidth="1137.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nz.ac.auckland.se206.controllers.SecurityFootageController">
    <children>
@@ -19,43 +18,37 @@
             <Image url="@../images/MainSceneView.jpg" />
          </image>
       </ImageView>
-      <ImageView fitHeight="112.0" fitWidth="423.0" layoutX="356.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="79.0" fitWidth="139.0" layoutX="32.0" layoutY="16.0" opacity="0.6" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../images/brown-ripped-paper.png" />
+            <Image url="@../images/timerBackground.jpeg" />
          </image>
       </ImageView>
-      <Text layoutX="403.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Security Footage During Blackout ">
+      <Label fx:id="timer" alignment="CENTER" layoutX="24.0" layoutY="24.0" prefHeight="62.0" prefWidth="154.0" style="-fx-font-family: 'AMGDT_IV25'; -fx-font-size: 40px; -fx-text-fill: white;" textAlignment="CENTER" textFill="WHITE">
          <font>
-            <Font size="22.0" />
-         </font>
-      </Text>
+            <Font name="AMGDT_IV25" size="12.0" />
+         </font></Label>
       <ImageView fx:id="imgCrimeScene" fitHeight="90.0" fitWidth="88.0" layoutX="1018.0" layoutY="24.0" onMouseClicked="#handleCrimeSceneClick" onMouseEntered="#onMouseEnteredImage" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/crimeSceneIcon.png" />
          </image>
       </ImageView>
-      <Label fx:id="timer" alignment="CENTER" layoutX="34.0" layoutY="34.0" prefHeight="62.0" prefWidth="154.0" textAlignment="CENTER" textFill="#b71616">
-         <font>
-            <Font size="40.0" />
-         </font>
-      </Label>
-      <MediaView fx:id="securityMedia" fitHeight="500.0" fitWidth="824.0" layoutX="157.0" layoutY="85.0" />
-      <Slider fx:id="sliderTime" layoutX="157.0" layoutY="583.0" prefHeight="14.0" prefWidth="824.0" style="-fx-cursor: hand;">
+      <MediaView fx:id="securityMedia" fitHeight="480.0" fitWidth="824.0" layoutX="156.0" layoutY="105.0" />
+      <Slider fx:id="sliderTime" layoutX="157.0" layoutY="583.0" prefHeight="24.0" prefWidth="790.0" style="-fx-cursor: hand;">
          <padding>
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
          </padding>
       </Slider>
-      <Label fx:id="currentTime" layoutX="843.0" layoutY="607.0" prefHeight="31.0" prefWidth="113.0" text="00:00" textFill="WHITE">
+      <Label fx:id="currentTime" layoutX="825.0" layoutY="607.0" prefHeight="31.0" prefWidth="113.0" text="00:00" textFill="WHITE">
          <font>
             <Font size="21.0" />
          </font>
       </Label>
-      <Label fx:id="totalTime" layoutX="908.0" layoutY="607.0" prefHeight="31.0" prefWidth="59.0" text="00:00" textFill="WHITE">
+      <Label fx:id="totalTime" layoutX="890.0" layoutY="607.0" prefHeight="31.0" prefWidth="59.0" text="00:00" textFill="WHITE">
          <font>
             <Font size="21.0" />
          </font>
       </Label>
-      <Label layoutX="897.0" layoutY="606.0" prefHeight="31.0" prefWidth="11.0" text="/" textFill="WHITE">
+      <Label layoutX="879.0" layoutY="606.0" prefHeight="31.0" prefWidth="11.0" text="/" textFill="WHITE">
          <font>
             <Font size="21.0" />
          </font>
