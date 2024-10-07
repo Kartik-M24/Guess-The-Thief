@@ -41,6 +41,7 @@ public class MainSceneController extends MasterController {
   @FXML private ImageView phoneLogButton;
   @FXML private ImageView lecternClueGlow;
   @FXML private ImageView fuseClueGlow;
+  @FXML private ImageView cameraClueGlow;
 
   public static AudioManager audioManager = new AudioManager();
 
@@ -65,6 +66,7 @@ public class MainSceneController extends MasterController {
     btnInteract.setVisible(false);
     lecternClueGlow.setVisible(false);
     fuseClueGlow.setVisible(false);
+    cameraClueGlow.setVisible(false);
   }
 
   /**
@@ -194,5 +196,17 @@ public class MainSceneController extends MasterController {
   @FXML
   private void onMouseExitedF(MouseEvent event) {
     fuseClueGlow.setVisible(false);
+  }
+
+  @FXML
+  private void onMouseEnteredC(MouseEvent event) {
+    Rectangle clickedRectangle = (Rectangle) event.getSource();
+    clickedRectangle.setCursor(javafx.scene.Cursor.HAND);
+    cameraClueGlow.setVisible(true);
+  }
+
+  @FXML
+  private void onMouseExitedC(MouseEvent event) {
+    cameraClueGlow.setVisible(false);
   }
 }
