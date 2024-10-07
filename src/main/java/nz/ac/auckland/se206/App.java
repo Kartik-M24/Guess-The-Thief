@@ -71,9 +71,6 @@ public class App extends Application {
                 SceneManager.AppUi.PHONELOGARCHAEOLOGIST, loadFxml("phonelogarchaeologist"));
             SceneManager.addUi(SceneManager.AppUi.PHONELOGCOLLECTOR, loadFxml("phonelogcollector"));
             SceneManager.addUi(SceneManager.AppUi.SECURITYFOOTAGE, loadFxml("securityfootage"));
-            SceneManager.addUi(
-                SceneManager.AppUi.SECURITYFOOTAGEBEFORE, loadFxml("securityfootagebefore"));
-            SceneManager.addUi(AppUi.SECURITYFOOTAGEAFTER, loadFxml("securityfootageafter"));
             SceneManager.addUi(SceneManager.AppUi.GUESSINGSCENE, loadFxml("guessingscene"));
             SceneManager.addUi(SceneManager.AppUi.CRIMEEXPLANATION, loadFxml("crimeexplanation"));
             SceneManager.addUi(SceneManager.AppUi.GAMEOVER, loadFxml("gameover"));
@@ -109,7 +106,6 @@ public class App extends Application {
     AudioManager.addAudio(AudioManager.AudioType.PHONENEXT, "phoneNext");
     AudioManager.addAudio(AudioManager.AudioType.PHONEBACK, "phoneBack");
     AudioManager.addAudio(AudioManager.AudioType.CRIMESCENE, "crimeScene");
-    AudioManager.addAudio(AudioManager.AudioType.SECURITYCAMERA, "securityCamera");
     AudioManager.addAudio(AudioManager.AudioType.FUSEBOXOPEN, "fuseBoxOpen");
     AudioManager.addAudio(AudioManager.AudioType.FUSEBOXCLOSE, "fuseBoxClose");
     AudioManager.addAudio(AudioManager.AudioType.WALKING, "walking");
