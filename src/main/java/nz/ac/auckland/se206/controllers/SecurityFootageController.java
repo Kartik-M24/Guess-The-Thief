@@ -102,12 +102,15 @@ public class SecurityFootageController extends MasterController {
         .currentTimeProperty()
         .addListener(
             new ChangeListener<Duration>() {
+              // If the slider is not changing, set the value of the slider to the current time
               @Override
               public void changed(
+                  // If the slider is not changing, set the value of the slider to the current time
                   ObservableValue<? extends Duration> observable,
                   Duration oldValue,
                   Duration newValue) {
                 if (!sliderTime.isValueChanging()) {
+                  // Set the value of the slider to the current time
                   sliderTime.setValue(newValue.toSeconds());
                 }
                 labelMatchEndVideo(currentTime.getText(), totalTime.getText());
@@ -119,10 +122,13 @@ public class SecurityFootageController extends MasterController {
         .valueProperty()
         .addListener(
             new ChangeListener<Number>() {
+              // Set the progress colour of the slider as the video plays
               @Override
               public void changed(
+                  // Set the progress colour of the slider as the video plays
                   ObservableValue<? extends Number> ov, Number oldValue, Number newValue) {
                 if (mediaPlayer.getTotalDuration() != null) {
+                  // Calculate the progress of the video
                   double progress =
                       newValue.doubleValue() / mediaPlayer.getTotalDuration().toSeconds() * 100;
                   String style =
@@ -158,7 +164,10 @@ public class SecurityFootageController extends MasterController {
     if (playing) {
       playVideo(event);
     }
+    // Handles bringing the user back to the main scene
+    playVideo(event);
     mediaPlayer.seek(Duration.ZERO);
+    // Plays the audio for the CCTV stopping
     audioManager.playAudio(AudioManager.AudioType.CCTVSTOP, 0.1);
     ImageView button = (ImageView) event.getSource();
     Scene sceneButtonIsIn = button.getScene();
@@ -172,12 +181,14 @@ public class SecurityFootageController extends MasterController {
    */
   @FXML
   private void playVideo(MouseEvent event) {
+    // Checks if the video is currenty playing and sets visibility of the play and pause buttons
     if (playing) {
       playImage.setVisible(true);
       pauseImage.setVisible(false);
       mediaPlayer.pause();
       playing = false;
     } else {
+      // Checks if the video has reached the end and sets visibility of the play and pause buttons
       playImage.setVisible(false);
       pauseImage.setVisible(true);
       mediaPlayer.play();
@@ -187,13 +198,16 @@ public class SecurityFootageController extends MasterController {
 
   /** Updates the timer of the video. */
   private void bindCurrentTimeLabel() {
+    // Bind the current time of the video to the label
     currentTime
         .textProperty()
         .bind(
             Bindings.createStringBinding(
                 new Callable<String>() {
+                  // Bind the current time of the video to the label
                   @Override
                   public String call() throws Exception {
+                    // Return the current time of the video
                     return getTime(mediaPlayer.getCurrentTime());
                   }
                 },

@@ -24,17 +24,12 @@
     <Rectangle fx:id="lecternClue" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="128.0" layoutX="551.0" layoutY="239.0" onMouseClicked="#handleClueClick" onMouseEntered="#onMouseEntered" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="78.0" />
     <Rectangle fx:id="fuseboxClue" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="353.0" layoutX="215.0" layoutY="253.0" onMouseClicked="#handleClueClick" onMouseEntered="#onMouseEntered" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="161.0" />
     <Rectangle fx:id="securityCameraClue" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="62.0" layoutX="856.0" layoutY="20.0" onMouseClicked="#handleClueClick" onMouseEntered="#onMouseEntered" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="78.0" />
-    <ImageView fx:id="rectSuspects" fitHeight="69.0" fitWidth="69.0" layoutX="1048.0" layoutY="17.0" onMouseClicked="#handleSuspectsClick" onMouseEntered="#onMouseEnteredImage" pickOnBounds="true" preserveRatio="true">
+    <ImageView fx:id="rectSuspects" fitHeight="105.0" fitWidth="78.0" layoutX="1039.0" layoutY="17.0" onMouseClicked="#handleSuspectsClick" onMouseEntered="#onMouseEnteredImage" pickOnBounds="true" preserveRatio="true">
       <image>
         <Image url="@../images/suspectsIcon.png" />
       </image>
     </ImageView>
-    <Label fx:id="timer" alignment="CENTER" layoutX="24.0" layoutY="24.0" prefHeight="62.0" prefWidth="154.0" textAlignment="CENTER" textFill="#b71616">
-      <font>
-        <Font size="40.0" />
-      </font>
-    </Label>
-    <ImageView fx:id="phoneLogButton" fitHeight="69.0" fitWidth="69.0" layoutX="1060.0" layoutY="104.0" onMouseClicked="#handlePhoneClick" onMouseEntered="#onMouseEnteredImage" pickOnBounds="true" preserveRatio="true">
+    <ImageView fx:id="phoneLogButton" fitHeight="105.0" fitWidth="72.0" layoutX="1042.0" layoutY="124.0" onMouseClicked="#handlePhoneClick" onMouseEntered="#onMouseEnteredImage" pickOnBounds="true" preserveRatio="true">
       <image>
         <Image url="@../images/phonelogicon.png" />
       </image>
@@ -44,11 +39,18 @@
         <Font size="25.0" />
       </font>
     </Button>
+
       <Slider fx:id="volumeSlider" layoutX="233.0" layoutY="48.0" onMouseExited="#sliderHide" prefHeight="8.0" prefWidth="95.0" stylesheets="@../css/volumeslider.css" value="100.0" />
       <ImageView fx:id="soundIcon" fitHeight="45.0" fitWidth="43.0" layoutX="186.0" layoutY="37.0" onMouseClicked="#showSlider" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/soundImage.png" />
          </image>
       </ImageView>
+      <ImageView fitHeight="79.0" fitWidth="139.0" layoutX="32.0" layoutY="16.0" opacity="0.6" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/timerBackground.jpeg" />
+         </image>
+      </ImageView>
+    <Label fx:id="timer" alignment="CENTER" layoutX="24.0" layoutY="24.0" prefHeight="62.0" prefWidth="154.0" style="-fx-font-family: 'AMGDT_IV25'; -fx-font-size: 40px; -fx-text-fill: white;" textAlignment="CENTER" textFill="WHITE" />
   </children>
 </Pane>
