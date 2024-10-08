@@ -4,13 +4,12 @@ import java.io.IOException;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.concurrent.Task;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.input.MouseEvent;
 import javafx.util.Duration;
 import nz.ac.auckland.apiproxy.chat.openai.ChatCompletionRequest;
 import nz.ac.auckland.apiproxy.chat.openai.ChatCompletionResult;
@@ -26,8 +25,8 @@ public class CrimeExplanationController extends MasterController {
 
   @FXML private TextArea txtaChat;
   @FXML private TextField txtInput;
-  @FXML private Button btnSend;
   @FXML private ImageView gameoverButton;
+  @FXML private ImageView imgSend;
 
   private ChatCompletionRequest chatCompletionRequest;
 
@@ -45,7 +44,7 @@ public class CrimeExplanationController extends MasterController {
     // Updates the timer accordingly with all its effects
     if (timerManager.isTimeUp() && GuessingSceneController.isUserAtExplanationScene) {
       try {
-        onSendMessage(new ActionEvent());
+        onSendMessage(null);
       } catch (ApiProxyException | IOException e) {
         e.printStackTrace();
       }
@@ -148,7 +147,7 @@ public class CrimeExplanationController extends MasterController {
     if (event.getCode().toString().equals("ENTER")) {
       try {
         // Trigger the send message action
-        onSendMessage(new ActionEvent());
+        onSendMessage(null);
       } catch (ApiProxyException | IOException e) {
         // Print stack trace if an exception occurs
         e.printStackTrace();
@@ -174,7 +173,7 @@ public class CrimeExplanationController extends MasterController {
    * @throws IOException if there is an I/O error
    */
   @FXML
-  private void onSendMessage(ActionEvent event) throws ApiProxyException, IOException {
+  private void onSendMessage(MouseEvent event) throws ApiProxyException, IOException {
     // Sends the message to GPT and runs accordingly
     String message = txtInput.getText().trim();
     if (message.isEmpty()) {
@@ -182,12 +181,14 @@ public class CrimeExplanationController extends MasterController {
     }
 
     // Sets appropriate fields correctly
-    txtInput.setVisible(false);
     txtInput.clear();
     ChatMessage msg = new ChatMessage("user", message);
     appendChatMessage(msg);
     runGpt(msg);
-    btnSend.setVisible(false);
+    imgSend.setVisible(false);
+    txtInput.setDisable(true);
+    imgSend.setDisable(true);
     gameoverButton.setVisible(true);
+    gameoverButton.setDisable(false);
   }
 }
