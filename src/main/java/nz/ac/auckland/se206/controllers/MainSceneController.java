@@ -42,6 +42,7 @@ public class MainSceneController extends MasterController {
   @FXML private Button btnInteract;
   @FXML private ImageView imgSuspects;
   @FXML private ImageView phoneLogButton;
+  @FXML private ImageView soundIcon;
   @FXML private Slider volumeSlider;
 
   public static AudioManager audioManager = new AudioManager();
@@ -65,6 +66,7 @@ public class MainSceneController extends MasterController {
     timerManager.startTimer();
     Timeline timeline = TimerManager.getTimeline();
     timeline.getKeyFrames().add(new KeyFrame(Duration.millis(1), event -> updateTimer()));
+    volumeSlider.setVisible(false);
 
     volumeSlider.setValue(100);
     volumeSlider
@@ -75,9 +77,21 @@ public class MainSceneController extends MasterController {
               public void invalidated(Observable observable) {
                 InitialSceneWithArtifactController.backgroundAudioManager.setVolume(
                     volumeSlider.getValue() / 100);
-                audioManager.setMultiplier(volumeSlider.getValue() / 100);
               }
             });
+  }
+
+  /** Hanldes when the user clicks the sound icon to adjust the volume of the video. */
+  @FXML
+  private void showSlider() {
+    if (volumeSlider.isVisible()) {
+      volumeSlider.setVisible(false);
+    } else volumeSlider.setVisible(true);
+  }
+
+  @FXML
+  private void sliderHide() {
+    showSlider();
   }
 
   /**
