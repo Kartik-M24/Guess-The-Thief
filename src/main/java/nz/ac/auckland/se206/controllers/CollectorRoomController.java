@@ -4,7 +4,6 @@ import java.io.IOException;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.concurrent.Task;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -41,6 +40,7 @@ public class CollectorRoomController extends MasterController {
   @FXML private ImageView archaeologistpp;
   @FXML private ImageView auctioneerpp;
   @FXML private ImageView imgCrimeScene;
+  @FXML private ImageView imgSend;
   @FXML private TextArea txtaChat;
   @FXML private TextField txtInput;
   @FXML private Button btnSend;
@@ -150,7 +150,7 @@ public class CollectorRoomController extends MasterController {
   public void onKeyPressed(KeyEvent event) {
     if (event.getCode().toString().equals("ENTER")) {
       try {
-        onSendMessage(new ActionEvent());
+        onSendMessage(null);
       } catch (ApiProxyException | IOException e) {
         e.printStackTrace();
       }
@@ -175,7 +175,7 @@ public class CollectorRoomController extends MasterController {
    * @throws IOException if there is an I/O error
    */
   @FXML
-  private void onSendMessage(ActionEvent event) throws ApiProxyException, IOException {
+  private void onSendMessage(MouseEvent event) throws ApiProxyException, IOException {
     // Sends the message to GPT to get a response from it
     String message = txtInput.getText().trim();
     if (message.isEmpty()) {
