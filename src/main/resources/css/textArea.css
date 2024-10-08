@@ -28,6 +28,18 @@
   -fx-font-size: 17px;
 }
 
+.text-area .scroll-bar:vertical {
+  background-color: transparent;
+  -fx-background-color: transparent;
+}
+
+.text-area .scroll-bar:vertical .thumb {
+  background-color: rgb(98, 98, 98);
+  border-radius: 5px;
+  -fx-background-color: rgb(98, 98, 98);
+  -fx-border-radius: 5px;
+}
+
 .text-field {
   font-family: "Albertus MT Std";
   -fx-font-family: "Albertus MT Std";
