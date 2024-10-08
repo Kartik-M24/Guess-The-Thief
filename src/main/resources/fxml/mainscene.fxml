@@ -2,6 +2,7 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
@@ -38,6 +39,12 @@
         <Font size="25.0" />
       </font>
     </Button>
+      <Slider fx:id="volumeSlider" layoutX="233.0" layoutY="48.0" onMouseExited="#sliderHide" prefHeight="8.0" prefWidth="95.0" style="-fx-cursor: hand;" stylesheets="@../css/volumeslider.css" value="100.0" />
+      <ImageView fx:id="soundIcon" fitHeight="45.0" fitWidth="43.0" layoutX="186.0" layoutY="37.0" onMouseClicked="#showSlider" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;">
+         <image>
+            <Image url="@../images/soundImage.png" />
+         </image>
+      </ImageView>
       <ImageView fitHeight="79.0" fitWidth="139.0" layoutX="32.0" layoutY="16.0" opacity="0.6" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/timerBackground.jpeg" />

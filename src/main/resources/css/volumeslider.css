@@ -1,0 +1,18 @@
+/* Track styling */
+.slider .track {
+  -fx-background-color: linear-gradient(to right, #B0B0B0, #E0E0E0); /* Smooth gradient from dark gray to light gray */
+  background-color: linear-gradient(to right, #B0B0B0, #E0E0E0); /* For non-JavaFX environments */
+  -fx-background-radius: 10; /* Rounded track */
+  -fx-pref-width: 8px; /* Narrower width for a sleek look */
+  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 5, 0, 2, 2); /* Subtle shadow for depth */
+}
+
+/* Thumb (handle) styling */
+.slider .thumb {
+  -fx-pref-width: 14px;
+  -fx-pref-height: 14px;
+  -fx-background-color: linear-gradient(to top, #333333, #FFFFFF); /* Smooth gradient from black to white */
+  background-color: linear-gradient(to top, #333333, #FFFFFF);
+  -fx-background-radius: 50%; /* Circular thumb for a modern look */
+  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 5, 0, 2, 2); /* Shadow for depth */
+}

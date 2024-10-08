@@ -3,10 +3,13 @@ package nz.ac.auckland.se206.controllers;
 import java.io.IOException;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
+import javafx.beans.InvalidationListener;
+import javafx.beans.Observable;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Slider;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
@@ -39,6 +42,8 @@ public class MainSceneController extends MasterController {
   @FXML private Button btnInteract;
   @FXML private ImageView imgSuspects;
   @FXML private ImageView phoneLogButton;
+  @FXML private ImageView soundIcon;
+  @FXML private Slider volumeSlider;
 
   public static AudioManager audioManager = new AudioManager();
 
@@ -61,6 +66,32 @@ public class MainSceneController extends MasterController {
     timerManager.startTimer();
     Timeline timeline = TimerManager.getTimeline();
     timeline.getKeyFrames().add(new KeyFrame(Duration.millis(1), event -> updateTimer()));
+    volumeSlider.setVisible(false);
+
+    volumeSlider.setValue(100);
+    volumeSlider
+        .valueProperty()
+        .addListener(
+            new InvalidationListener() {
+              @Override
+              public void invalidated(Observable observable) {
+                InitialSceneWithArtifactController.backgroundAudioManager.setVolume(
+                    volumeSlider.getValue() / 100);
+              }
+            });
+  }
+
+  /** Hanldes when the user clicks the sound icon to adjust the volume of the video. */
+  @FXML
+  private void showSlider() {
+    if (volumeSlider.isVisible()) {
+      volumeSlider.setVisible(false);
+    } else volumeSlider.setVisible(true);
+  }
+
+  @FXML
+  private void sliderHide() {
+    showSlider();
   }
 
   /**

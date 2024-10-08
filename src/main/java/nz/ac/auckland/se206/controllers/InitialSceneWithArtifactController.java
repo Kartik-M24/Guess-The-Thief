@@ -12,7 +12,7 @@ import nz.ac.auckland.se206.TimerManager;
 public class InitialSceneWithArtifactController {
 
   public static boolean isFirstTime = true;
-  public static AudioManager audioManager2 = new AudioManager();
+  public static AudioManager backgroundAudioManager = new AudioManager();
 
   private TimerManager timerManager = TimerManager.getInstance();
   private AudioManager audioManager = new AudioManager();
@@ -50,7 +50,7 @@ public class InitialSceneWithArtifactController {
         && timerManager.getSeconds() == 48
         && timerManager.getMilliseconds() == 0
         && isFirstTime) {
-      audioManager2.playAudio(AudioManager.AudioType.BACKGROUNDMUSIC, 0.5);
+      backgroundAudioManager.playAudio(AudioManager.AudioType.BACKGROUNDMUSIC, 0.5);
       try {
         App.setRoot("initialscenewithOUTartifact");
       } catch (IOException e) {

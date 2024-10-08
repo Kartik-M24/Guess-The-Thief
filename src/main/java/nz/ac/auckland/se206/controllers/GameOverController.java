@@ -26,7 +26,7 @@ public class GameOverController extends MasterController {
   public void changeScene(MouseEvent event) throws IOException {
     // Correctly resets everything in the game and restarts the game properly so that the player can
     // play again.
-    InitialSceneWithArtifactController.audioManager2.stopAudio();
+    InitialSceneWithArtifactController.backgroundAudioManager.stopAudio();
     ArchaeologistRoomController.setArchaeologistRoomVisited();
     CollectorRoomController.setCollectorRoomVisited();
     AuctioneerRoomController.setAuctioneerRoomVisited();

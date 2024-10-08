@@ -160,6 +160,10 @@ public class SecurityFootageController extends MasterController {
    */
   @FXML
   private void handleCrimeSceneClick(MouseEvent event) throws IOException {
+    // Stops the video and plays the audio when the player clicks the button to leave the CCTV room
+    if (playing) {
+      playVideo(event);
+    }
     // Handles bringing the user back to the main scene
     playVideo(event);
     mediaPlayer.seek(Duration.ZERO);
