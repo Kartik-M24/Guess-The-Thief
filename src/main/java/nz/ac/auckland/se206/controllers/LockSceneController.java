@@ -93,7 +93,7 @@ public class LockSceneController extends MasterController {
       timeline3 = timeline;
     }
   }
- 
+
   /**
    * Handles mouse clicks on sliders.
    *
