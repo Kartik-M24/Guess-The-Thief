@@ -42,6 +42,9 @@ public class MainSceneController extends MasterController {
   @FXML private Button btnInteract;
   @FXML private ImageView imgSuspects;
   @FXML private ImageView phoneLogButton;
+  @FXML private ImageView lecternClueGlow;
+  @FXML private ImageView fuseClueGlow;
+  @FXML private ImageView cameraClueGlow;
   @FXML private ImageView soundIcon;
   @FXML private Slider volumeSlider;
 
@@ -61,13 +64,15 @@ public class MainSceneController extends MasterController {
               + " you can make a guess. Good luck!");
       isFirstTimeInit = false;
     }
-    btnInteract.setVisible(false);
     clueClicked = false;
     timerManager.startTimer();
     Timeline timeline = TimerManager.getTimeline();
     timeline.getKeyFrames().add(new KeyFrame(Duration.millis(1), event -> updateTimer()));
+    btnInteract.setVisible(false);
+    lecternClueGlow.setVisible(false);
+    fuseClueGlow.setVisible(false);
+    cameraClueGlow.setVisible(false);
     volumeSlider.setVisible(false);
-
     volumeSlider.setValue(100);
     volumeSlider
         .valueProperty()
@@ -197,5 +202,41 @@ public class MainSceneController extends MasterController {
   private void onMouseExitedImageB(MouseEvent event) {
     btnGuess.setVisible(true);
     btnInteract.setVisible(false);
+  }
+
+  @FXML
+  private void onMouseEnteredL(MouseEvent event) {
+    Rectangle clickedRectangle = (Rectangle) event.getSource();
+    clickedRectangle.setCursor(javafx.scene.Cursor.HAND);
+    lecternClueGlow.setVisible(true);
+  }
+
+  @FXML
+  private void onMouseExitedL(MouseEvent event) {
+    lecternClueGlow.setVisible(false);
+  }
+
+  @FXML
+  private void onMouseEnteredF(MouseEvent event) {
+    Rectangle clickedRectangle = (Rectangle) event.getSource();
+    clickedRectangle.setCursor(javafx.scene.Cursor.HAND);
+    fuseClueGlow.setVisible(true);
+  }
+
+  @FXML
+  private void onMouseExitedF(MouseEvent event) {
+    fuseClueGlow.setVisible(false);
+  }
+
+  @FXML
+  private void onMouseEnteredC(MouseEvent event) {
+    Rectangle clickedRectangle = (Rectangle) event.getSource();
+    clickedRectangle.setCursor(javafx.scene.Cursor.HAND);
+    cameraClueGlow.setVisible(true);
+  }
+
+  @FXML
+  private void onMouseExitedC(MouseEvent event) {
+    cameraClueGlow.setVisible(false);
   }
 }

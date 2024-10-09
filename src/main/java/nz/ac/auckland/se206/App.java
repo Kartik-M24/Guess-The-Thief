@@ -57,7 +57,6 @@ public class App extends Application {
           // Add all the scenes in the whole video game into the hashmap in SceneManager, also adds
           // the audio used in the video game in to AudioManager
           try {
-            SceneManager.addUi(SceneManager.AppUi.MAINSCENE, loadFxml("mainscene"));
             SceneManager.addUi(SceneManager.AppUi.SUSPECTSSELECTION, loadFxml("suspectsselection"));
             SceneManager.addUi(SceneManager.AppUi.COLLECTORROOM, loadFxml("collectorroom"));
             SceneManager.addUi(SceneManager.AppUi.ARCHAEOLOGISTROOM, loadFxml("archaeologistroom"));
@@ -76,6 +75,19 @@ public class App extends Application {
             SceneManager.addUi(SceneManager.AppUi.GAMEOVER, loadFxml("gameover"));
             SceneManager.addUi(SceneManager.AppUi.LIGHTSOFFSCENE, loadFxml("lightsoffscene"));
             AudioManager.addAudio(AudioManager.AudioType.BACKGROUNDMUSIC, "backgroundMusic");
+            AudioManager.addAudio(AudioManager.AudioType.TYPEWRITER, "typewriteraudio");
+            AudioManager.addAudio(AudioManager.AudioType.PAGEFLIP, "pageflip");
+            AudioManager.addAudio(AudioManager.AudioType.DOOR, "door");
+            AudioManager.addAudio(AudioManager.AudioType.PHONENEXT, "phoneNext");
+            AudioManager.addAudio(AudioManager.AudioType.PHONEBACK, "phoneBack");
+            AudioManager.addAudio(AudioManager.AudioType.CRIMESCENE, "crimeScene");
+            AudioManager.addAudio(AudioManager.AudioType.FUSEBOXOPEN, "fuseBoxOpen");
+            AudioManager.addAudio(AudioManager.AudioType.FUSEBOXCLOSE, "fuseBoxClose");
+            AudioManager.addAudio(AudioManager.AudioType.WALKING, "walking");
+            AudioManager.addAudio(AudioManager.AudioType.CCTVSTART, "CCTVstart");
+            AudioManager.addAudio(AudioManager.AudioType.CCTVSTOP, "CCTVstop");
+            AudioManager.addAudio(AudioManager.AudioType.TIMESUP, "timesup");
+            AudioManager.addAudio(AudioManager.AudioType.POLICESIREN, "policesiren");
           } catch (IOException e) {
             e.printStackTrace();
           }
@@ -91,6 +103,7 @@ public class App extends Application {
    */
   @Override
   public void start(final Stage stage) throws IOException {
+    SceneManager.addUi(SceneManager.AppUi.MAINSCENE, loadFxml("mainscene"));
     Thread initialize = new Thread(initializescene);
     initialize.start();
     SceneManager.addUi(SceneManager.AppUi.INTROSCENE, loadFxml("introscene"));
@@ -100,19 +113,6 @@ public class App extends Application {
         SceneManager.AppUi.INTIALWITHOUTARTIFACTSCENE, loadFxml("initialscenewithOUTartifact"));
     AudioManager.addAudio(AudioManager.AudioType.INITIALTHEFTAUDIO, "intialtheftaudio");
     AudioManager.addAudio(AudioManager.AudioType.AUDIENCEMURMUR, "audienceMurmur");
-    AudioManager.addAudio(AudioManager.AudioType.TYPEWRITER, "typewriteraudio");
-    AudioManager.addAudio(AudioManager.AudioType.PAGEFLIP, "pageflip");
-    AudioManager.addAudio(AudioManager.AudioType.DOOR, "door");
-    AudioManager.addAudio(AudioManager.AudioType.PHONENEXT, "phoneNext");
-    AudioManager.addAudio(AudioManager.AudioType.PHONEBACK, "phoneBack");
-    AudioManager.addAudio(AudioManager.AudioType.CRIMESCENE, "crimeScene");
-    AudioManager.addAudio(AudioManager.AudioType.FUSEBOXOPEN, "fuseBoxOpen");
-    AudioManager.addAudio(AudioManager.AudioType.FUSEBOXCLOSE, "fuseBoxClose");
-    AudioManager.addAudio(AudioManager.AudioType.WALKING, "walking");
-    AudioManager.addAudio(AudioManager.AudioType.CCTVSTART, "CCTVstart");
-    AudioManager.addAudio(AudioManager.AudioType.CCTVSTOP, "CCTVstop");
-    AudioManager.addAudio(AudioManager.AudioType.TIMESUP, "timesup");
-    AudioManager.addAudio(AudioManager.AudioType.POLICESIREN, "policesiren");
     scene = new Scene(SceneManager.getUiRoot(AppUi.INTROSCENE));
     stage.setScene(scene);
     stage.show();

@@ -21,10 +21,25 @@
         <Font size="25.0" />
       </font>
     </Button>
-    <Rectangle fx:id="lecternClue" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="128.0" layoutX="551.0" layoutY="239.0" onMouseClicked="#handleClueClick" onMouseEntered="#onMouseEntered" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="78.0" />
-    <Rectangle fx:id="fuseboxClue" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="353.0" layoutX="215.0" layoutY="253.0" onMouseClicked="#handleClueClick" onMouseEntered="#onMouseEntered" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="161.0" />
-    <Rectangle fx:id="securityCameraClue" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="62.0" layoutX="856.0" layoutY="20.0" onMouseClicked="#handleClueClick" onMouseEntered="#onMouseEntered" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="78.0" />
-    <ImageView fx:id="rectSuspects" fitHeight="105.0" fitWidth="78.0" layoutX="1039.0" layoutY="17.0" onMouseClicked="#handleSuspectsClick" onMouseEntered="#onMouseEnteredImage" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="lecternClueGlow" fitHeight="169.0" fitWidth="123.0" layoutX="533.0" layoutY="226.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/lecturnclue.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="fuseClueGlow" fitHeight="365.0" fitWidth="286.0" layoutX="161.0" layoutY="239.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/fuseclue.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="cameraClueGlow" fitHeight="55.0" fitWidth="85.0" layoutX="854.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/cameraclue.png" />
+         </image>
+      </ImageView>
+    <Rectangle fx:id="lecternClue" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="128.0" layoutX="551.0" layoutY="239.0" onMouseClicked="#handleClueClick" onMouseEntered="#onMouseEnteredL" onMouseExited="#onMouseExitedL" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="78.0" />
+    <Rectangle fx:id="fuseboxClue" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="353.0" layoutX="215.0" layoutY="253.0" onMouseClicked="#handleClueClick" onMouseEntered="#onMouseEnteredF" onMouseExited="#onMouseExitedF" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="161.0" />
+    <Rectangle fx:id="securityCameraClue" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="62.0" layoutX="856.0" layoutY="20.0" onMouseClicked="#handleClueClick" onMouseEntered="#onMouseEnteredC" onMouseExited="#onMouseExitedC" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="78.0" />
+    <ImageView fx:id="rectSuspects" fitHeight="69.0" fitWidth="69.0" layoutX="1048.0" layoutY="17.0" onMouseClicked="#handleSuspectsClick" onMouseEntered="#onMouseEnteredImage" pickOnBounds="true" preserveRatio="true">
       <image>
         <Image url="@../images/suspectsIcon.png" />
       </image>
