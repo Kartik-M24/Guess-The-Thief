@@ -31,7 +31,7 @@ public class LockSceneController extends MasterController {
   // Create a boolean flag for direction and use an array to mutate it within the lambda
   final boolean[] isIncreasing = {true};
 
-  /** Initializes the fuse box view. */
+  /** Initializes the locked fuse box view. */
   @FXML
   public void initialize() {
     // Inirialises all the necessary fields and initialises the timeline
@@ -48,6 +48,12 @@ public class LockSceneController extends MasterController {
     createTimelineForSlider(slider3, 10); // Slider 3 moves every 0.01 second
   }
 
+  /**
+   * Creates a timeline for a slider with a specified duration.
+   *
+   * @param slider the slider to create a timeline for
+   * @param durationMillis the duration of the timeline in milliseconds
+   */
   private void createTimelineForSlider(Slider slider, int durationMillis) {
     Timeline timeline =
         new Timeline(
@@ -87,7 +93,12 @@ public class LockSceneController extends MasterController {
       timeline3 = timeline;
     }
   }
-
+ 
+  /**
+   * Handles mouse clicks on sliders.
+   *
+   * @param event the mouse event triggered by clicking a slider
+   */
   @FXML
   private void handleSliderClick(MouseEvent event) {
     Slider slider = (Slider) event.getSource();
