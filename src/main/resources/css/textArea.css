@@ -1,0 +1,48 @@
+.text-area {
+  background-color: transparent;
+  -fx-background-color: transparent;
+  -fx-text-fill: white;
+  font-family: "Albertus MT Std";
+  -fx-font-family: "Albertus MT Std";
+  font-size: 17px;
+  -fx-font-size: 17px;
+}
+
+.text-area .scroll-pane {
+  background-color: transparent;
+  -fx-background-color: transparent;
+}
+
+.text-area .scroll-pane .viewport {
+  background-color: transparent;
+  -fx-background-color: transparent;
+}
+
+
+.text-area .scroll-pane .content {
+  background-color: transparent;
+  -fx-background-color: transparent;
+  font-family: "Albertus MT Std";
+  -fx-font-family: "Albertus MT Std";
+  font-size: 17px;
+  -fx-font-size: 17px;
+}
+
+.text-area .scroll-bar:vertical {
+  background-color: transparent;
+  -fx-background-color: transparent;
+}
+
+.text-area .scroll-bar:vertical .thumb {
+  background-color: rgb(98, 98, 98);
+  border-radius: 5px;
+  -fx-background-color: rgb(98, 98, 98);
+  -fx-border-radius: 5px;
+}
+
+.text-field {
+  font-family: "Albertus MT Std";
+  -fx-font-family: "Albertus MT Std";
+  font-size: 17px;
+  -fx-font-size: 17px;
+}

@@ -19,16 +19,17 @@
             <Image url="@../images/crimeSceneIcon.png" />
           </image>
       </ImageView>
-      <Label fx:id="timer" alignment="CENTER" layoutX="34.0" layoutY="34.0" prefHeight="62.0" prefWidth="154.0" textAlignment="CENTER" textFill="#b71616">
-         <font>
-            <Font size="40.0" />
-         </font>
-      </Label>
       <ImageView fx:id="letterClueGlow" fitHeight="116.0" fitWidth="176.0" layoutX="626.0" layoutY="467.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/letterclue.png" />
          </image>
       </ImageView>
       <Rectangle fx:id="letterClue" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="88.0" layoutX="633.0" layoutY="476.0" onMouseClicked="#handleClueClick" onMouseEntered="#onMouseEnteredL" onMouseExited="#onMouseExitedL" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="107.0" />
+      <ImageView fitHeight="79.0" fitWidth="139.0" layoutX="32.0" layoutY="16.0" opacity="0.6" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/timerBackground.jpeg" />
+         </image>
+      </ImageView>
+    <Label fx:id="timer" alignment="CENTER" layoutX="24.0" layoutY="24.0" prefHeight="62.0" prefWidth="154.0" style="-fx-font-family: 'AMGDT_IV25'; -fx-font-size: 40px; -fx-text-fill: white;" textAlignment="CENTER" textFill="WHITE" />
    </children>
 </Pane>
