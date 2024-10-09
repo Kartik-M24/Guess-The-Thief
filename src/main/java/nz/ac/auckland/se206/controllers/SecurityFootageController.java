@@ -164,8 +164,6 @@ public class SecurityFootageController extends MasterController {
     if (playing) {
       playVideo(event);
     }
-    // Handles bringing the user back to the main scene
-    playVideo(event);
     mediaPlayer.seek(Duration.ZERO);
     // Plays the audio for the CCTV stopping
     audioManager.playAudio(AudioManager.AudioType.CCTVSTOP, 0.1);
