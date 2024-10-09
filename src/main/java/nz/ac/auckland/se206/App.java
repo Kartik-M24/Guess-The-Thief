@@ -69,11 +69,12 @@ public class App extends Application {
             SceneManager.addUi(
                 SceneManager.AppUi.PHONELOGARCHAEOLOGIST, loadFxml("phonelogarchaeologist"));
             SceneManager.addUi(SceneManager.AppUi.PHONELOGCOLLECTOR, loadFxml("phonelogcollector"));
-            SceneManager.addUi(SceneManager.AppUi.SECURITYFOOTAGE, loadFxml("securityfootage"));
             SceneManager.addUi(SceneManager.AppUi.GUESSINGSCENE, loadFxml("guessingscene"));
             SceneManager.addUi(SceneManager.AppUi.CRIMEEXPLANATION, loadFxml("crimeexplanation"));
             SceneManager.addUi(SceneManager.AppUi.GAMEOVER, loadFxml("gameover"));
             SceneManager.addUi(SceneManager.AppUi.LIGHTSOFFSCENE, loadFxml("lightsoffscene"));
+            SceneManager.addUi(SceneManager.AppUi.LOCKSCENE, loadFxml("lockscene"));
+            SceneManager.addUi(SceneManager.AppUi.FUSEBOXINITIAL, loadFxml("fuseboxinitial"));
             AudioManager.addAudio(AudioManager.AudioType.BACKGROUNDMUSIC, "backgroundMusic");
             AudioManager.addAudio(AudioManager.AudioType.TYPEWRITER, "typewriteraudio");
             AudioManager.addAudio(AudioManager.AudioType.PAGEFLIP, "pageflip");
@@ -104,6 +105,7 @@ public class App extends Application {
   @Override
   public void start(final Stage stage) throws IOException {
     SceneManager.addUi(SceneManager.AppUi.MAINSCENE, loadFxml("mainscene"));
+    SceneManager.addUi(SceneManager.AppUi.SECURITYFOOTAGE, loadFxml("securityfootage"));
     Thread initialize = new Thread(initializescene);
     initialize.start();
     SceneManager.addUi(SceneManager.AppUi.INTROSCENE, loadFxml("introscene"));

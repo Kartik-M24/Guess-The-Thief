@@ -56,7 +56,7 @@ public class GameStarted implements GameState {
       MainSceneController.audioManager.playAudio(AudioManager.AudioType.FUSEBOXOPEN, 1);
       Rectangle rectValue = (Rectangle) event.getSource();
       Scene rectScene = rectValue.getScene();
-      rectScene.setRoot(SceneManager.getUiRoot(AppUi.FUSEBOXCLUE));
+      rectScene.setRoot(SceneManager.getUiRoot(AppUi.FUSEBOXINITIAL));
     }
     if (rectangleId.equals("lecternClue")) {
       MainSceneController.audioManager.playAudio(AudioManager.AudioType.WALKING, 0.8);
