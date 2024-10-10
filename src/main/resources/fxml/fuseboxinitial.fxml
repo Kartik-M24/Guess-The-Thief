@@ -20,7 +20,7 @@
          </image>
       </ImageView>
       <Rectangle fx:id="lock" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="108.0" layoutX="521.0" layoutY="342.0" onMouseClicked="#handleRectClick" onMouseEntered="#onMouseEnteredL" onMouseExited="#onMouseExitedL" opacity="0.0" stroke="BLACK" strokeType="INSIDE" style="-fx-cursor: hand;" width="88.0" />
-      <ImageView fx:id="imgCrimeScene" fitHeight="90.0" fitWidth="88.0" layoutX="1018.0" layoutY="24.0" onMouseClicked="#handleCrimeSceneClick" onMouseEntered="#onMouseEnteredImage" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imgCrimeScene" fitHeight="90.0" fitWidth="88.0" layoutX="1018.0" layoutY="14.0" onMouseClicked="#handleCrimeSceneClick" onMouseEntered="#onMouseEnteredImage" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/crimeSceneIcon.png" />
          </image>

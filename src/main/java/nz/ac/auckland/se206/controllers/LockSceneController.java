@@ -44,9 +44,9 @@ public class LockSceneController extends MasterController {
     gauge3.setVisible(false);
     nextScene.setVisible(false);
     // Create timelines for each slider with different speeds
-    createTimelineForSlider(slider1, 50); // Slider 1 moves every 0.1 seconds
-    createTimelineForSlider(slider2, 25); // Slider 2 moves every 0.05 seconds
-    createTimelineForSlider(slider3, 10); // Slider 3 moves every 0.01 second
+    createTimelineForSlider(slider1, 50); // Slider 1 moves every 0.05 seconds
+    createTimelineForSlider(slider2, 25); // Slider 2 moves every 0.025 seconds
+    createTimelineForSlider(slider3, 15); // Slider 3 moves every 0.015 second
   }
 
   /**

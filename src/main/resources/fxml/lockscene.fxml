@@ -55,14 +55,9 @@
             <Image url="@../images/accuracy%20bar.png" />
          </image>
       </ImageView>
-      <Slider fx:id="slider3" blockIncrement="1.0" layoutX="967.0" layoutY="129.0" onMouseClicked="#handleSliderClick" orientation="VERTICAL" prefHeight="490.0" prefWidth="34.0" stylesheets="@../css/fuseSliders.css" />
-      <Slider fx:id="slider2" blockIncrement="1.0" layoutX="850.0" layoutY="129.0" onMouseClicked="#handleSliderClick" orientation="VERTICAL" prefHeight="490.0" prefWidth="34.0" stylesheets="@../css/fuseSliders.css" />
-      <Slider fx:id="slider1" blockIncrement="1.0" layoutX="733.0" layoutY="129.0" onMouseClicked="#handleSliderClick" orientation="VERTICAL" prefHeight="490.0" prefWidth="34.0" stylesheets="@../css/fuseSliders.css" />
-      <ImageView fx:id="imgCrimeScene" fitHeight="90.0" fitWidth="88.0" layoutX="1028.0" layoutY="34.0" onMouseClicked="#handleCrimeSceneClick" onMouseEntered="#onMouseEnteredImage" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../images/crimeSceneIcon.png" />
-         </image>
-      </ImageView>
+      <Slider fx:id="slider3" blockIncrement="1.0" layoutX="967.0" layoutY="129.0" onMouseClicked="#handleSliderClick" orientation="VERTICAL" prefHeight="490.0" prefWidth="34.0" style="-fx-cursor: hand;" stylesheets="@../css/fuseSliders.css" />
+      <Slider fx:id="slider2" blockIncrement="1.0" layoutX="850.0" layoutY="129.0" onMouseClicked="#handleSliderClick" orientation="VERTICAL" prefHeight="490.0" prefWidth="34.0" style="-fx-cursor: hand;" stylesheets="@../css/fuseSliders.css" />
+      <Slider fx:id="slider1" blockIncrement="1.0" layoutX="733.0" layoutY="129.0" onMouseClicked="#handleSliderClick" orientation="VERTICAL" prefHeight="490.0" prefWidth="34.0" style="-fx-cursor: hand;" stylesheets="@../css/fuseSliders.css" />
       <ImageView fx:id="nextScene" fitHeight="150.0" fitWidth="200.0" layoutX="809.0" layoutY="273.0" onMouseClicked="#moveNextScene" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;">
          <image>
             <Image url="@../images/nextIcon.png" />
@@ -73,5 +68,10 @@
             <Font name="AlbertusMTStd" size="39.0" />
          </font>
       </Text>
+      <ImageView fx:id="imgCrimeScene" fitHeight="90.0" fitWidth="88.0" layoutX="1008.0" layoutY="14.0" onMouseClicked="#handleCrimeSceneClick" onMouseEntered="#onMouseEnteredImage" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/crimeSceneIcon.png" />
+         </image>
+      </ImageView>
    </children>
 </Pane>

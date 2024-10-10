@@ -45,7 +45,7 @@
             <Font size="40.0" />
          </font>
       </Label>
-      <Slider fx:id="lightSlider" blockIncrement="5.0" layoutX="797.0" layoutY="102.0" max="50.0" min="-50.0" onMouseReleased="#onSliderChanged" orientation="VERTICAL" prefHeight="444.0" prefWidth="88.0" stylesheets="@../css/slider.css" value="-50.0" />
+      <Slider fx:id="lightSlider" blockIncrement="5.0" layoutX="797.0" layoutY="102.0" max="50.0" min="-50.0" onMouseReleased="#onSliderChanged" orientation="VERTICAL" prefHeight="444.0" prefWidth="88.0" style="-fx-cursor: hand;" stylesheets="@../css/slider.css" value="-50.0" />
       <Text fx:id="hintText" fill="WHITE" layoutX="885.0" layoutY="491.0" opacity="0.79" strokeType="OUTSIDE" strokeWidth="0.0" text="Adjust the Slider to illuminate the invisible ink on the letter" textAlignment="CENTER" wrappingWidth="223.09930419921875">
          <font>
             <Font size="20.0" />

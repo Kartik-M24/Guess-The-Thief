@@ -108,14 +108,17 @@ public class FuseBoxClueController extends MasterController {
           if (clickedRectangleId.equals("wires")) {
             text1.setVisible(true);
             t1 = true;
+            checkAllTexts();
           }
           if (clickedRectangleId.equals("switches")) {
             text2.setVisible(true);
             t2 = true;
+            checkAllTexts();
           }
           if (clickedRectangleId.equals("ashes")) {
             text4.setVisible(true);
             t3 = true;
+            checkAllTexts();
           }
         });
   }
