@@ -68,7 +68,7 @@
             <Image url="@../images/nextIcon.png" />
          </image>
       </ImageView>
-      <Text fx:id="text1" layoutX="289.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Click the Slider Thumb to Pick the Lock">
+      <Text fx:id="text1" layoutX="211.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Click on the Slider at the Marked Region to Pick the Lock" textAlignment="CENTER" wrappingWidth="716.0">
          <font>
             <Font name="AlbertusMTStd" size="39.0" />
          </font>

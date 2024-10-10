@@ -106,7 +106,7 @@ public class LockSceneController extends MasterController {
     double value = slider.getValue();
 
     // Define the "suitable zone" for accepting the slider position
-    if (value > 10 && value < 30) {
+    if (value > 20 && value < 40) {
       if (slider == slider1) {
         slider1.setVisible(false);
         gauge1.setVisible(false);
