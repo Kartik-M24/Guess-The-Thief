@@ -23,6 +23,9 @@ import nz.ac.auckland.se206.TimerManager;
 public class FuseBoxClueController extends MasterController {
 
   @FXML private ImageView notepad;
+  @FXML private ImageView cigarClueGlow;
+  @FXML private ImageView switchClueGlow;
+  @FXML private ImageView wireClueGlow;
   @FXML private ProgressIndicator progressIndicator;
   @FXML private Button analyseButton;
   @FXML private Text text1;
@@ -34,6 +37,7 @@ public class FuseBoxClueController extends MasterController {
   private boolean t1 = false;
   private boolean t2 = false;
   private boolean t3 = false;
+  private AudioManager audioManager = new AudioManager();
 
   /** Initializes the fuse box view. */
   @FXML
@@ -48,6 +52,9 @@ public class FuseBoxClueController extends MasterController {
     text3.setVisible(false);
     text4.setVisible(false);
     text5.setVisible(false);
+    cigarClueGlow.setVisible(false);
+    switchClueGlow.setVisible(false);
+    wireClueGlow.setVisible(false);
   }
 
   /**
@@ -74,6 +81,7 @@ public class FuseBoxClueController extends MasterController {
   private void handleRectClick(MouseEvent event) throws IOException {
     // Handles the player clicking the clues and writes them down on the notebook for the player to
     // see
+    audioManager.playAudio(AudioManager.AudioType.WRITING, 0.8);
     Rectangle clickedRectangle = (Rectangle) event.getSource();
     String clickedRectangleId = clickedRectangle.getId();
     if (clickedRectangleId.equals("wires") && t1) {
@@ -102,14 +110,17 @@ public class FuseBoxClueController extends MasterController {
           if (clickedRectangleId.equals("wires")) {
             text1.setVisible(true);
             t1 = true;
+            checkAllTexts();
           }
           if (clickedRectangleId.equals("switches")) {
             text2.setVisible(true);
             t2 = true;
+            checkAllTexts();
           }
           if (clickedRectangleId.equals("ashes")) {
             text4.setVisible(true);
             t3 = true;
+            checkAllTexts();
           }
         });
   }
@@ -128,9 +139,41 @@ public class FuseBoxClueController extends MasterController {
    * @param event the mouse event triggered by clicking a rectangle
    */
   @FXML
-  private void onMouseEntered(MouseEvent event) {
+  private void onMouseEnteredC(MouseEvent event) {
     Rectangle clickedRectangle = (Rectangle) event.getSource();
     clickedRectangle.setCursor(javafx.scene.Cursor.HAND);
+    cigarClueGlow.setVisible(true);
     checkAllTexts();
+  }
+
+  @FXML
+  private void onMouseExitedC(MouseEvent event) {
+    cigarClueGlow.setVisible(false);
+  }
+
+  @FXML
+  private void onMouseEnteredS(MouseEvent event) {
+    Rectangle clickedRectangle = (Rectangle) event.getSource();
+    clickedRectangle.setCursor(javafx.scene.Cursor.HAND);
+    switchClueGlow.setVisible(true);
+    checkAllTexts();
+  }
+
+  @FXML
+  private void onMouseExitedS(MouseEvent event) {
+    switchClueGlow.setVisible(false);
+  }
+
+  @FXML
+  private void onMouseEnteredW(MouseEvent event) {
+    Rectangle clickedRectangle = (Rectangle) event.getSource();
+    clickedRectangle.setCursor(javafx.scene.Cursor.HAND);
+    wireClueGlow.setVisible(true);
+    checkAllTexts();
+  }
+
+  @FXML
+  private void onMouseExitedW(MouseEvent event) {
+    wireClueGlow.setVisible(false);
   }
 }

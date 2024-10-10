@@ -57,6 +57,7 @@ public class App extends Application {
           // Add all the scenes in the whole video game into the hashmap in SceneManager, also adds
           // the audio used in the video game in to AudioManager
           try {
+            SceneManager.addUi(SceneManager.AppUi.SECURITYFOOTAGE, loadFxml("securityfootage"));
             SceneManager.addUi(SceneManager.AppUi.SUSPECTSSELECTION, loadFxml("suspectsselection"));
             SceneManager.addUi(SceneManager.AppUi.COLLECTORROOM, loadFxml("collectorroom"));
             SceneManager.addUi(SceneManager.AppUi.ARCHAEOLOGISTROOM, loadFxml("archaeologistroom"));
@@ -69,11 +70,12 @@ public class App extends Application {
             SceneManager.addUi(
                 SceneManager.AppUi.PHONELOGARCHAEOLOGIST, loadFxml("phonelogarchaeologist"));
             SceneManager.addUi(SceneManager.AppUi.PHONELOGCOLLECTOR, loadFxml("phonelogcollector"));
-            SceneManager.addUi(SceneManager.AppUi.SECURITYFOOTAGE, loadFxml("securityfootage"));
             SceneManager.addUi(SceneManager.AppUi.GUESSINGSCENE, loadFxml("guessingscene"));
             SceneManager.addUi(SceneManager.AppUi.CRIMEEXPLANATION, loadFxml("crimeexplanation"));
             SceneManager.addUi(SceneManager.AppUi.GAMEOVER, loadFxml("gameover"));
             SceneManager.addUi(SceneManager.AppUi.LIGHTSOFFSCENE, loadFxml("lightsoffscene"));
+            SceneManager.addUi(SceneManager.AppUi.LOCKSCENE, loadFxml("lockscene"));
+            SceneManager.addUi(SceneManager.AppUi.FUSEBOXINITIAL, loadFxml("fuseboxinitial"));
             SceneManager.addUi(SceneManager.AppUi.GAMELOST, loadFxml("gamelost"));
             AudioManager.addAudio(AudioManager.AudioType.BACKGROUNDMUSIC, "backgroundMusic");
             AudioManager.addAudio(AudioManager.AudioType.TYPEWRITER, "typewriteraudio");
@@ -89,6 +91,8 @@ public class App extends Application {
             AudioManager.addAudio(AudioManager.AudioType.CCTVSTOP, "CCTVstop");
             AudioManager.addAudio(AudioManager.AudioType.TIMESUP, "timesup");
             AudioManager.addAudio(AudioManager.AudioType.POLICESIREN, "policesiren");
+            AudioManager.addAudio(AudioManager.AudioType.LOCKPICKING, "lockPicking");
+            AudioManager.addAudio(AudioManager.AudioType.WRITING, "writing");
           } catch (IOException e) {
             e.printStackTrace();
           }

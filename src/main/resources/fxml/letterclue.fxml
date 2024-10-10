@@ -45,15 +45,15 @@
             <Font size="40.0" />
          </font>
       </Label>
-      <Slider fx:id="lightSlider" blockIncrement="5.0" layoutX="797.0" layoutY="102.0" max="50.0" min="-50.0" onMouseReleased="#onSliderChanged" orientation="VERTICAL" prefHeight="444.0" prefWidth="88.0" stylesheets="@../css/slider.css" value="-50.0" />
+      <Slider fx:id="lightSlider" blockIncrement="5.0" layoutX="797.0" layoutY="102.0" max="50.0" min="-50.0" onMouseReleased="#onSliderChanged" orientation="VERTICAL" prefHeight="444.0" prefWidth="88.0" style="-fx-cursor: hand;" stylesheets="@../css/slider.css" value="-50.0" />
       <Text fx:id="hintText" fill="WHITE" layoutX="885.0" layoutY="491.0" opacity="0.79" strokeType="OUTSIDE" strokeWidth="0.0" text="Adjust the Slider to illuminate the invisible ink on the letter" textAlignment="CENTER" wrappingWidth="223.09930419921875">
          <font>
-            <Font size="20.0" />
+            <Font name="AlbertusMTStd" size="20.0" />
          </font>
       </Text>
       <Text fx:id="hintText1" fill="WHITE" layoutX="861.0" layoutY="179.0" opacity="0.79" strokeType="OUTSIDE" strokeWidth="0.0" text="*Note* You must release the slider, to illuminate the letter" textAlignment="CENTER" wrappingWidth="258.29931640625">
          <font>
-            <Font size="20.0" />
+            <Font name="AlbertusMTStd" size="20.0" />
          </font>
       </Text>
       <ImageView fitHeight="79.0" fitWidth="139.0" layoutX="32.0" layoutY="16.0" opacity="0.6" pickOnBounds="true" preserveRatio="true">

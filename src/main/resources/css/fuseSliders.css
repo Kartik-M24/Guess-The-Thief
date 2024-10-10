@@ -1,0 +1,32 @@
+.slider .track {
+  -fx-background-color: linear-gradient(to left, #D3D3D3, #F5F5F5);
+  /* Light gray to white for a metallic look */
+  background-color: linear-gradient(to left, #D3D3D3, #F5F5F5);
+  /* For non-JavaFX environments */
+  -fx-background-radius: 5;
+  /* Slightly rounded corners for a polished look */
+  -fx-pref-width: 10px;
+  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 5, 0, 2, 2);
+  /* Subtle shadow for depth */
+}
+
+.slider .thumb {
+  -fx-pref-width: 30px;
+  -fx-pref-height: 14px;
+  -fx-background-color: linear-gradient(to top, #7b3022, #972f0a);
+  /* Gradient from dark red to rusty red */
+  background-color: linear-gradient(to top, #7b3022, #972f0a);
+  /* For non-JavaFX environments */
+  -fx-background-radius: 3;
+  /* Slightly rounded corners for a modern look */
+  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.7), 5, 0, 2, 2);
+  /* Shadow for depth */
+  border-color: yellow;
+  -fx-border-color: yellow;
+  border-width: 2px;
+  -fx-border-width: 2px;
+  border-radius: 3px;
+  -fx-border-radius: 3px;
+  cursor: hand;
+  -fx-cursor: hand;
+}
