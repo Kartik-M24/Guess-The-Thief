@@ -81,7 +81,6 @@ public class FuseBoxClueController extends MasterController {
   private void handleRectClick(MouseEvent event) throws IOException {
     // Handles the player clicking the clues and writes them down on the notebook for the player to
     // see
-    audioManager.playAudio(AudioManager.AudioType.WRITING, 0.8);
     Rectangle clickedRectangle = (Rectangle) event.getSource();
     String clickedRectangleId = clickedRectangle.getId();
     if (clickedRectangleId.equals("wires") && t1) {
@@ -93,6 +92,7 @@ public class FuseBoxClueController extends MasterController {
     if (clickedRectangleId.equals("ashes") && t3) {
       return;
     }
+    audioManager.playAudio(AudioManager.AudioType.WRITING, 0.8);
     progressIndicator.setVisible(true);
     progressIndicator.setProgress(ProgressIndicator.INDETERMINATE_PROGRESS);
     IntegerProperty seconds = new SimpleIntegerProperty();
@@ -128,6 +128,7 @@ public class FuseBoxClueController extends MasterController {
   /** Displays analysis is complete when all clues have been analysed */
   private void checkAllTexts() {
     if (t1 && t2 && t3) {
+
       text5.setVisible(true);
       progressIndicator.setVisible(false);
     }
