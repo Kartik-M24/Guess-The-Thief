@@ -25,7 +25,8 @@ public class SceneManager {
     PHONELOGCOLLECTOR,
     SECURITYFOOTAGE,
     LOCKSCENE,
-    FUSEBOXINITIAL
+    FUSEBOXINITIAL,
+    GAMELOST
   }
 
   private static HashMap<AppUi, Parent> sceneMap = new HashMap<AppUi, Parent>();
