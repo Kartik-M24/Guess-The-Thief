@@ -28,6 +28,7 @@ public class LockSceneController extends MasterController {
   private Timeline timeline1;
   private Timeline timeline2;
   private Timeline timeline3;
+  private AudioManager audioManager = new AudioManager();
   // Create a boolean flag for direction and use an array to mutate it within the lambda
   final boolean[] isIncreasing = {true};
 
@@ -111,6 +112,7 @@ public class LockSceneController extends MasterController {
         gauge1.setVisible(false);
         slider2.setVisible(true);
         gauge2.setVisible(true);
+        audioManager.playAudio(AudioManager.AudioType.LOCKPICKING, 0.6);
         timeline1.stop();
         timeline2.play();
       } else if (slider == slider2) {
@@ -118,11 +120,13 @@ public class LockSceneController extends MasterController {
         gauge2.setVisible(false);
         slider3.setVisible(true);
         gauge3.setVisible(true);
+        audioManager.playAudio(AudioManager.AudioType.LOCKPICKING, 0.6);
         timeline2.stop();
         timeline3.play();
       } else if (slider == slider3) {
         slider3.setVisible(false);
         gauge3.setVisible(false);
+        audioManager.playAudio(AudioManager.AudioType.LOCKPICKING, 0.6);
         timeline3.stop();
         // All sliders done, move to next scene
         nextScene.setVisible(true);
@@ -139,6 +143,7 @@ public class LockSceneController extends MasterController {
    */
   @FXML
   private void moveNextScene(MouseEvent event) throws IOException {
+    audioManager.playAudio(AudioManager.AudioType.FUSEBOXOPEN, 1);
     ImageView button = (ImageView) event.getSource();
     Scene sceneButtonIsIn = button.getScene();
     sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.FUSEBOXCLUE));

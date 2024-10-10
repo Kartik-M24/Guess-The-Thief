@@ -57,6 +57,7 @@ public class App extends Application {
           // Add all the scenes in the whole video game into the hashmap in SceneManager, also adds
           // the audio used in the video game in to AudioManager
           try {
+            SceneManager.addUi(SceneManager.AppUi.SECURITYFOOTAGE, loadFxml("securityfootage"));
             SceneManager.addUi(SceneManager.AppUi.SUSPECTSSELECTION, loadFxml("suspectsselection"));
             SceneManager.addUi(SceneManager.AppUi.COLLECTORROOM, loadFxml("collectorroom"));
             SceneManager.addUi(SceneManager.AppUi.ARCHAEOLOGISTROOM, loadFxml("archaeologistroom"));
@@ -90,6 +91,8 @@ public class App extends Application {
             AudioManager.addAudio(AudioManager.AudioType.CCTVSTOP, "CCTVstop");
             AudioManager.addAudio(AudioManager.AudioType.TIMESUP, "timesup");
             AudioManager.addAudio(AudioManager.AudioType.POLICESIREN, "policesiren");
+            AudioManager.addAudio(AudioManager.AudioType.LOCKPICKING, "lockPicking");
+            AudioManager.addAudio(AudioManager.AudioType.WRITING, "writing");
           } catch (IOException e) {
             e.printStackTrace();
           }
@@ -106,7 +109,6 @@ public class App extends Application {
   @Override
   public void start(final Stage stage) throws IOException {
     SceneManager.addUi(SceneManager.AppUi.MAINSCENE, loadFxml("mainscene"));
-    SceneManager.addUi(SceneManager.AppUi.SECURITYFOOTAGE, loadFxml("securityfootage"));
     Thread initialize = new Thread(initializescene);
     initialize.start();
     SceneManager.addUi(SceneManager.AppUi.INTROSCENE, loadFxml("introscene"));
