@@ -57,12 +57,14 @@ public class FuseboxInitialController extends MasterController {
   }
 
   @FXML
-  private void onMouseEnteredL() {
+  private void onMouseEnteredL(MouseEvent event) {
+    Rectangle clickedRectangle = (Rectangle) event.getSource();
+    clickedRectangle.setCursor(javafx.scene.Cursor.HAND);
     lockClueGlow.setVisible(true);
   }
 
   @FXML
-  private void onMouseExitedL() {
+  private void onMouseExitedL(MouseEvent event) {
     lockClueGlow.setVisible(false);
   }
 }
