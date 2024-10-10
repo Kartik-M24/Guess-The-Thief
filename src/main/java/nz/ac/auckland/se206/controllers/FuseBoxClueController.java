@@ -24,6 +24,7 @@ public class FuseBoxClueController extends MasterController {
 
   @FXML private ImageView notepad;
   @FXML private ImageView cigarClueGlow;
+  @FXML private ImageView switchClueGlow;
   @FXML private ProgressIndicator progressIndicator;
   @FXML private Button analyseButton;
   @FXML private Text text1;
@@ -50,6 +51,7 @@ public class FuseBoxClueController extends MasterController {
     text4.setVisible(false);
     text5.setVisible(false);
     cigarClueGlow.setVisible(false);
+    switchClueGlow.setVisible(false);
   }
 
   /**
@@ -140,5 +142,18 @@ public class FuseBoxClueController extends MasterController {
   @FXML
   private void onMouseExitedC(MouseEvent event) {
     cigarClueGlow.setVisible(false);
+  }
+
+  @FXML
+  private void onMouseEnteredS(MouseEvent event) {
+    Rectangle clickedRectangle = (Rectangle) event.getSource();
+    clickedRectangle.setCursor(javafx.scene.Cursor.HAND);
+    switchClueGlow.setVisible(true);
+    checkAllTexts();
+  }
+
+  @FXML
+  private void onMouseExitedS(MouseEvent event) {
+    switchClueGlow.setVisible(false);
   }
 }

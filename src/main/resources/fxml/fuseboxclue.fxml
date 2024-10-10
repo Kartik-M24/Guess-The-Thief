@@ -48,7 +48,12 @@
             <Font size="16.0" />
          </font>
       </Text>
-      <Rectangle fx:id="switches" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="94.0" layoutX="456.0" layoutY="122.0" onMouseClicked="#handleRectClick" onMouseEntered="#onMouseEntered" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="224.0" />
+      <ImageView fx:id="switchClueGlow" fitHeight="124.0" fitWidth="262.0" layoutX="438.0" layoutY="104.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/switchclue.png" />
+         </image>
+      </ImageView>
+      <Rectangle fx:id="switches" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="94.0" layoutX="456.0" layoutY="122.0" onMouseClicked="#handleRectClick" onMouseEntered="#onMouseEnteredS" onMouseExited="#onMouseExitedS" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="224.0" />
       <Rectangle fx:id="wires" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="88.0" layoutX="474.0" layoutY="12.0" onMouseClicked="#handleRectClick" onMouseEntered="#onMouseEntered" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="81.0" />
       <ProgressIndicator fx:id="progressIndicator" layoutX="494.0" layoutY="268.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="125.0" prefWidth="125.0" progress="0.55" style="-fx-progress-color: #ff0000;" />
       <ImageView fx:id="cigarClueGlow" fitHeight="71.0" fitWidth="106.0" layoutX="369.0" layoutY="529.0" pickOnBounds="true" preserveRatio="true">
