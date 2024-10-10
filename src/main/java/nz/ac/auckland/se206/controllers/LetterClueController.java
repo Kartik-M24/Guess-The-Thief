@@ -23,7 +23,10 @@ public class LetterClueController extends MasterController {
   @FXML private ImageView textImage3;
   @FXML private Text hintText;
 
-  /** Initializes the letter clue view. */
+  /**
+   * Initializes the letter clue view by setting up the initial visibility and opacity of text
+   * images and adding a key frame to the timeline for updating the timer.
+   */
   @FXML
   public void initialize() {
     // initialises the scene and sets up correct fields
@@ -49,6 +52,12 @@ public class LetterClueController extends MasterController {
     sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.MAINSCENE));
   }
 
+  /**
+   * Handles changes in the slider value by adjusting the opacity of text images with a random
+   * perturbation and non-linear transformation.
+   *
+   * @param event the mouse event triggered by changing the slider value
+   */
   @FXML
   private void onSliderChanged(MouseEvent event) {
     hintText.setVisible(false);

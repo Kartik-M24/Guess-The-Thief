@@ -22,7 +22,11 @@ public class MasterController {
   protected AudioManager audioManager = new AudioManager();
   protected AudioManager doorAudioManager = new AudioManager();
 
-  /** Updates the timer. */
+  /**
+   * Updates the timer. If the timer is up and the user is not at the guessing or explanation scene,
+   * it sets the timer to 1 hour, plays the "time's up" audio, and navigates to the guessing scene.
+   * It also updates the timer label with the formatted time.
+   */
   public void updateTimer() {
     // Updates the timer accordingly so it decrements and also checks if the timer is 0 and sends
     // the player to the guessing scene.
@@ -63,6 +67,11 @@ public class MasterController {
     clickedRectangle.setCursor(javafx.scene.Cursor.HAND);
   }
 
+  /**
+   * Handles mouse hover on buttons.
+   *
+   * @param event the mouse event triggered by hovering over a button
+   */
   @FXML
   private void onMouseEnteredImageB(MouseEvent event) {
     Button clickedRectangle = (Button) event.getSource();
