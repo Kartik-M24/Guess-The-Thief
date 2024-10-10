@@ -74,6 +74,7 @@ public class App extends Application {
             SceneManager.addUi(SceneManager.AppUi.CRIMEEXPLANATION, loadFxml("crimeexplanation"));
             SceneManager.addUi(SceneManager.AppUi.GAMEOVER, loadFxml("gameover"));
             SceneManager.addUi(SceneManager.AppUi.LIGHTSOFFSCENE, loadFxml("lightsoffscene"));
+            SceneManager.addUi(SceneManager.AppUi.GAMELOST, loadFxml("gamelost"));
             AudioManager.addAudio(AudioManager.AudioType.BACKGROUNDMUSIC, "backgroundMusic");
             AudioManager.addAudio(AudioManager.AudioType.TYPEWRITER, "typewriteraudio");
             AudioManager.addAudio(AudioManager.AudioType.PAGEFLIP, "pageflip");

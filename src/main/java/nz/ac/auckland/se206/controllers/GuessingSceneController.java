@@ -54,7 +54,7 @@ public class GuessingSceneController extends MasterController {
     MainSceneController.isUserAtGuessingScene = false;
     Rectangle button = (Rectangle) event.getSource();
     Scene sceneButtonIsIn = button.getScene();
-    sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.GAMEOVER));
+    sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.GAMELOST));
   }
 
   /**
@@ -68,7 +68,7 @@ public class GuessingSceneController extends MasterController {
     MainSceneController.isUserAtGuessingScene = false;
     Rectangle button = (Rectangle) event.getSource();
     Scene sceneButtonIsIn = button.getScene();
-    sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.GAMEOVER));
+    sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.GAMELOST));
   }
 
   /**
