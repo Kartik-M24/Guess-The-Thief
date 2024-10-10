@@ -31,14 +31,15 @@ public class AudioManager {
   }
 
   private static HashMap<AudioType, String> audioMap = new HashMap<AudioType, String>();
+
+  public static void addAudio(AudioType audioType, String audioFileName) {
+    audioMap.put(audioType, audioFileName);
+  }
+
   private DoubleProperty volume = new SimpleDoubleProperty(1.0);
 
   public DoubleProperty volumeProperty() {
     return volume;
-  }
-
-  public static void addAudio(AudioType audioType, String audioFileName) {
-    audioMap.put(audioType, audioFileName);
   }
 
   private Media sound;
