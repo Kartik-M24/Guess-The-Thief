@@ -9,18 +9,13 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="649.0" prefWidth="1137.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nz.ac.auckland.se206.controllers.MainSceneController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="649.0" prefWidth="1137.0" stylesheets="@../css/textFont.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nz.ac.auckland.se206.controllers.MainSceneController">
   <children>
     <ImageView fitHeight="650.0" fitWidth="1137.0" pickOnBounds="true" preserveRatio="true">
       <image>
         <Image url="@../images/MainSceneView.jpg" />
       </image>
     </ImageView>
-    <Button fx:id="btnGuess" layoutX="493.0" layoutY="32.0" mnemonicParsing="false" onAction="#handleGuessClick" onMouseEntered="#onMouseEnteredImageB" opacity="0.7" prefHeight="50.0" prefWidth="190.0" style="-fx-background-color: #010a2e;" text="Make a Guess" textFill="WHITE">
-      <font>
-        <Font size="25.0" />
-      </font>
-    </Button>
       <ImageView fx:id="lecternClueGlow" fitHeight="169.0" fitWidth="123.0" layoutX="533.0" layoutY="226.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/lecturnclue.png" />
@@ -49,7 +44,12 @@
         <Image url="@../images/phonelogicon.png" />
       </image>
     </ImageView>
-    <Button fx:id="btnInteract" layoutX="337.0" layoutY="32.0" mnemonicParsing="false" onMouseExited="#onMouseExitedImageB" opacity="0.7" prefHeight="52.0" prefWidth="502.0" style="-fx-background-color: #010a2e;" text="Interact with a clue and suspects to guess!" textFill="WHITE">
+    <Button fx:id="btnGuess" layoutX="493.0" layoutY="32.0" mnemonicParsing="false" onAction="#handleGuessClick" onMouseEntered="#onMouseEnteredImageB" opacity="0.7" prefHeight="50.0" prefWidth="190.0" style="-fx-background-color: #010a2e; -fx-font-size: 25px;" text="Make a Guess" textFill="WHITE">
+      <font>
+        <Font size="25.0" />
+      </font>
+    </Button>
+    <Button fx:id="btnInteract" layoutX="337.0" layoutY="32.0" mnemonicParsing="false" onMouseExited="#onMouseExitedImageB" opacity="0.7" prefHeight="52.0" prefWidth="502.0" style="-fx-background-color: #010a2e; -fx-font-family: System; -fx-font-size: 25px;" text="Interact with a clue and suspects to guess!" textFill="WHITE">
       <font>
         <Font size="25.0" />
       </font>

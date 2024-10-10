@@ -1,0 +1,24 @@
+@font-face {
+  font-family: 'Fleftex';
+  src: url('/fonts/AlbertusMTStd.otf');
+}
+
+.label {
+  font-family: 'AlbertusMTStd';
+  -fx-font-family: 'AlbertusMTStd';
+}
+
+.text {
+  font-family: 'AlbertusMTStd';
+  -fx-font-family: 'AlbertusMTStd';
+}
+
+.text-area {
+  font-family: 'AlbertusMTStd';
+  -fx-font-family: 'AlbertusMTStd';
+}
+
+.text-field {
+  font-family: 'AlbertusMTStd';
+  -fx-font-family: 'AlbertusMTStd';
+}

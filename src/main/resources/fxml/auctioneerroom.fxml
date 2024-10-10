@@ -9,7 +9,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#onKeyPressed" prefHeight="650.0" prefWidth="1137.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nz.ac.auckland.se206.controllers.AuctioneerRoomController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#onKeyPressed" prefHeight="650.0" prefWidth="1137.0" stylesheets="@../css/textFont.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nz.ac.auckland.se206.controllers.AuctioneerRoomController">
   <children>
     <ImageView fitHeight="650.0" fitWidth="1137.0">
       <image>
@@ -19,7 +19,7 @@
       <Rectangle arcHeight="5.0" arcWidth="5.0" height="247.0" layoutX="20.0" layoutY="389.0" opacity="0.3" stroke="BLACK" strokeType="INSIDE" style="-fx-arc-height: 50; -fx-arc-width: 50;" width="1098.0" />
       <TextArea fx:id="txtaChat" editable="false" layoutX="32.0" layoutY="403.0" prefHeight="171.0" prefWidth="1075.0" stylesheets="@../css/textArea.css" wrapText="true">
          <font>
-            <Font name="AlbertusMTStd" size="17.0" />
+            <Font size="17.0" />
          </font>
       </TextArea>
     <ImageView fx:id="archaeologistpp" fitHeight="120.0" fitWidth="120.0" layoutX="992.0" layoutY="116.0" onMouseClicked="#gotoArchaeologist" onMouseEntered="#onMouseEnteredImage" pickOnBounds="true" preserveRatio="true">
@@ -50,7 +50,7 @@
     <Label fx:id="timer" alignment="CENTER" layoutX="24.0" layoutY="24.0" prefHeight="62.0" prefWidth="154.0" style="-fx-font-family: 'AMGDT_IV25'; -fx-font-size: 40px; -fx-text-fill: white;" textAlignment="CENTER" textFill="WHITE" />
       <TextField fx:id="txtInput" layoutX="32.0" layoutY="579.0" onKeyTyped="#onKeyTyped" opacity="0.8" prefHeight="45.0" prefWidth="1075.0" promptText="Interrogate the suspect..." style="-fx-background-radius: 20; -fx-padding: 10 65 10 15;">
          <font>
-            <Font name="AlbertusMTStd" size="17.0" />
+            <Font size="17.0" />
          </font>
       </TextField>
       <ImageView fx:id="imgSend" fitHeight="39.0" fitWidth="43.0" layoutX="1064.0" layoutY="582.0" onMouseClicked="#onSendMessage" onMouseEntered="#onMouseEnteredImage" pickOnBounds="true" preserveRatio="true">
