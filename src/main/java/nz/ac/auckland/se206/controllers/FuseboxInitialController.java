@@ -16,6 +16,7 @@ import nz.ac.auckland.se206.TimerManager;
 public class FuseboxInitialController extends MasterController {
 
   @FXML private Rectangle lock;
+  @FXML private ImageView lockClueGlow;
 
   /** Initializes the fuse box view. */
   @FXML
@@ -23,6 +24,7 @@ public class FuseboxInitialController extends MasterController {
     // Inirialises all the necessary fields and initialises the timeline
     Timeline timeline = TimerManager.getTimeline();
     timeline.getKeyFrames().add(new KeyFrame(Duration.millis(1), event -> updateTimer()));
+    lockClueGlow.setVisible(false);
   }
 
   /**
@@ -50,5 +52,17 @@ public class FuseboxInitialController extends MasterController {
     Rectangle button = (Rectangle) event.getSource();
     Scene sceneButtonIsIn = button.getScene();
     sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.LOCKSCENE));
+  }
+
+  @FXML
+  private void onMouseEnteredL(MouseEvent event) {
+    Rectangle clickedRectangle = (Rectangle) event.getSource();
+    clickedRectangle.setCursor(javafx.scene.Cursor.HAND);
+    lockClueGlow.setVisible(true);
+  }
+
+  @FXML
+  private void onMouseExitedL(MouseEvent event) {
+    lockClueGlow.setVisible(false);
   }
 }

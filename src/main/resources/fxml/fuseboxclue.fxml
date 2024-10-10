@@ -48,11 +48,16 @@
             <Font name="AlbertusMTStd" size="16.0" />
          </font>
       </Text>
-      <Rectangle fx:id="switches" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="200.0" layoutX="456.0" layoutY="122.0" onMouseClicked="#handleRectClick" onMouseEntered="#onMouseEntered" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="235.0" />
-      <Rectangle fx:id="wires" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="94.0" layoutX="417.0" layoutY="12.0" onMouseClicked="#handleRectClick" onMouseEntered="#onMouseEntered" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="305.0" />
+      <Rectangle fx:id="switches" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="94.0" layoutX="456.0" layoutY="122.0" onMouseClicked="#handleRectClick" onMouseEntered="#onMouseEntered" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="224.0" />
+      <Rectangle fx:id="wires" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="88.0" layoutX="474.0" layoutY="12.0" onMouseClicked="#handleRectClick" onMouseEntered="#onMouseEntered" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="81.0" />
       <ProgressIndicator fx:id="progressIndicator" layoutX="494.0" layoutY="268.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="125.0" prefWidth="125.0" progress="0.55" style="-fx-progress-color: #ff0000;" />
-      <Rectangle fx:id="ashes" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="139.0" layoutX="366.0" layoutY="496.0" onMouseClicked="#handleRectClick" onMouseEntered="#onMouseEntered" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="382.0" />
-      <Text fx:id="text5" fill="WHITE" layoutX="319.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Analysis Complete">
+      <ImageView fx:id="cigarClueGlow" fitHeight="71.0" fitWidth="106.0" layoutX="369.0" layoutY="529.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/cigarclue.png" />
+         </image>
+      </ImageView>
+      <Rectangle fx:id="ashes" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="54.0" layoutX="373.0" layoutY="536.0" onMouseClicked="#handleRectClick" onMouseEntered="#onMouseEnteredC" onMouseExited="#onMouseExitedC" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="88.0" />
+      <Text fx:id="text5" fill="WHITE" layoutX="314.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Analysis Complete">
          <font>
             <Font name="AlbertusMTStd" size="63.0" />
          </font>

@@ -44,8 +44,10 @@ public class SecurityFootageController extends MasterController {
     Timeline timeline = TimerManager.getTimeline();
     timeline.getKeyFrames().add(new KeyFrame(Duration.millis(1), event -> updateTimer()));
     video = new Media(App.class.getResource("/images/securityFootage.mp4").toURI().toString());
+    System.out.println(video.getSource());
     mediaPlayer = new MediaPlayer(video);
     securityMedia.setMediaPlayer(mediaPlayer);
+    System.out.println("Initialised Security Footage Controller");
     playImage.setVisible(true);
     pauseImage.setVisible(false);
     bindCurrentTimeLabel();
