@@ -25,7 +25,9 @@ public class AudioManager {
     CCTVSTART,
     CCTVSTOP,
     TIMESUP,
-    POLICESIREN
+    POLICESIREN,
+    LOCKPICKING,
+    WRITING
   }
 
   private static HashMap<AudioType, String> audioMap = new HashMap<AudioType, String>();

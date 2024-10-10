@@ -28,33 +28,33 @@
             <Image url="@../images/notepad.png" />
          </image>
       </ImageView>
-      <Text fx:id="text1" layoutX="73.0" layoutY="223.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Wire Tampering: Some of the wires are frayed and disconnected." wrappingWidth="244.53672790527344">
+      <Text fx:id="text1" layoutX="73.0" layoutY="234.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Wire Tampering: Some of the wires are frayed and disconnected." wrappingWidth="235.0">
          <font>
-            <Font size="16.0" />
+            <Font name="AlbertusMTStd" size="16.0" />
          </font>
       </Text>
       <Text fx:id="text3" layoutX="73.0" layoutY="145.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Finger Prints: None Found." wrappingWidth="223.7367401123047">
          <font>
-            <Font size="16.0" />
+            <Font name="AlbertusMTStd" size="16.0" />
          </font>
       </Text>
-      <Text fx:id="text4" layoutX="73.0" layoutY="276.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Additional Materials: Cigar ash was detected  on the bottom frame. Ingredients seem to match with the expensive Cuban cigar brand Cohiba." wrappingWidth="244.53672790527338">
+      <Text fx:id="text4" layoutX="75.0" layoutY="311.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Additional Materials: Cigar ash was detected  on the bottom frame. Ingredients seem to match with the expensive Cuban cigar brand Cohiba." wrappingWidth="223.7367401123047">
          <font>
-            <Font size="16.0" />
+            <Font name="AlbertusMTStd" size="16.0" />
          </font>
       </Text>
-      <Text fx:id="text2" layoutX="73.0" layoutY="173.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Switch Manipulation: Switches have been manually disabled." wrappingWidth="223.7367401123047">
+      <Text fx:id="text2" layoutX="73.0" layoutY="183.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Switch Manipulation: Switches have been manually disabled." wrappingWidth="223.7367401123047">
          <font>
-            <Font size="16.0" />
+            <Font name="AlbertusMTStd" size="16.0" />
          </font>
       </Text>
       <Rectangle fx:id="switches" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="200.0" layoutX="456.0" layoutY="122.0" onMouseClicked="#handleRectClick" onMouseEntered="#onMouseEntered" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="235.0" />
       <Rectangle fx:id="wires" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="94.0" layoutX="417.0" layoutY="12.0" onMouseClicked="#handleRectClick" onMouseEntered="#onMouseEntered" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="305.0" />
       <ProgressIndicator fx:id="progressIndicator" layoutX="494.0" layoutY="268.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="125.0" prefWidth="125.0" progress="0.55" style="-fx-progress-color: #ff0000;" />
       <Rectangle fx:id="ashes" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="139.0" layoutX="366.0" layoutY="496.0" onMouseClicked="#handleRectClick" onMouseEntered="#onMouseEntered" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="382.0" />
-      <Text fx:id="text5" fill="WHITE" layoutX="314.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Analysis Complete">
+      <Text fx:id="text5" fill="WHITE" layoutX="319.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Analysis Complete">
          <font>
-            <Font size="63.0" />
+            <Font name="AlbertusMTStd" size="63.0" />
          </font>
       </Text>
       <Label fx:id="timer" alignment="CENTER" layoutX="24.0" layoutY="24.0" prefHeight="62.0" prefWidth="154.0" textAlignment="CENTER" textFill="#b71616">
