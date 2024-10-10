@@ -37,6 +37,7 @@ public class FuseBoxClueController extends MasterController {
   private boolean t1 = false;
   private boolean t2 = false;
   private boolean t3 = false;
+  private AudioManager audioManager = new AudioManager();
 
   /** Initializes the fuse box view. */
   @FXML
@@ -80,6 +81,7 @@ public class FuseBoxClueController extends MasterController {
   private void handleRectClick(MouseEvent event) throws IOException {
     // Handles the player clicking the clues and writes them down on the notebook for the player to
     // see
+    audioManager.playAudio(AudioManager.AudioType.WRITING, 0.8);
     Rectangle clickedRectangle = (Rectangle) event.getSource();
     String clickedRectangleId = clickedRectangle.getId();
     if (clickedRectangleId.equals("wires") && t1) {
