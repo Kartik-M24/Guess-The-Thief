@@ -66,7 +66,7 @@
             <Image url="@../images/crimeSceneIcon.png" />
          </image>
       </ImageView>
-      <Label fx:id="text1" layoutX="194.0" layoutY="-30.0" prefHeight="206.0" prefWidth="620.0" text="Click on the Slider at the Marked Region to Pick the Lock" textAlignment="CENTER" wrapText="true">
+      <Label fx:id="text1" layoutX="194.0" layoutY="1.0" prefHeight="139.0" prefWidth="768.0" text="Click on the Slider at the Marked Region to Pick the Lock" textAlignment="CENTER" textFill="#160000" wrapText="true">
          <font>
             <Font size="39.0" />
          </font>
