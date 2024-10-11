@@ -9,7 +9,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#onKeyPressed" prefHeight="650.0" prefWidth="1137.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nz.ac.auckland.se206.controllers.ArchaeologistRoomController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#onKeyPressed" prefHeight="650.0" prefWidth="1137.0" stylesheets="@../css/textFont.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nz.ac.auckland.se206.controllers.ArchaeologistRoomController">
   <children>
     <ImageView fitHeight="650.0" fitWidth="1137.0" opacity="0.9">
       <image>
@@ -50,7 +50,7 @@
             <Image url="@../images/timerBackground.jpeg" />
          </image>
       </ImageView>
-    <Label fx:id="timer" alignment="CENTER" layoutX="24.0" layoutY="24.0" prefHeight="62.0" prefWidth="154.0" style="-fx-font-family: 'AMGDT_IV25'; -fx-font-size: 40px; -fx-text-fill: white;" textAlignment="CENTER" textFill="WHITE" />
+    <Label fx:id="timer" alignment="CENTER" layoutX="24.0" layoutY="24.0" prefHeight="62.0" prefWidth="154.0" style="-fx-font-size: 40px; -fx-text-fill: white;" textAlignment="CENTER" textFill="WHITE" />
       <ImageView fx:id="imgSend" fitHeight="39.0" fitWidth="43.0" layoutX="1064.0" layoutY="582.0" onMouseClicked="#onSendMessage" onMouseEntered="#onMouseEnteredImage" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/sendIcon.png" />

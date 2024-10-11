@@ -9,7 +9,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#onKeyPressed" prefHeight="650.0" prefWidth="1137.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nz.ac.auckland.se206.controllers.CrimeExplanationController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#onKeyPressed" prefHeight="650.0" prefWidth="1137.0" stylesheets="@../css/textFont.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nz.ac.auckland.se206.controllers.CrimeExplanationController">
   <children>
     <ImageView fitHeight="650.0" fitWidth="1137.0" pickOnBounds="true" preserveRatio="true">
       <image>
@@ -66,7 +66,7 @@
             <Image url="@../images/nextArrow.png" />
          </image>
       </ImageView>
-    <Label fx:id="timer" alignment="CENTER" layoutX="24.0" layoutY="24.0" prefHeight="62.0" prefWidth="154.0" style="-fx-font-family: 'AMGDT_IV25'; -fx-font-size: 40px; -fx-text-fill: white;" textAlignment="CENTER" textFill="WHITE" />
+    <Label fx:id="timer" alignment="CENTER" layoutX="24.0" layoutY="24.0" prefHeight="62.0" prefWidth="154.0" style="-fx-font-size: 40px; -fx-text-fill: white;" textAlignment="CENTER" textFill="WHITE" />
       <TextField fx:id="txtInput" layoutX="406.0" layoutY="577.0" onKeyTyped="#onKeyTyped" opacity="0.8" prefHeight="45.0" prefWidth="688.0" promptText="Interrogate the suspect..." style="-fx-background-radius: 20; -fx-padding: 10 65 10 15;">
          <font>
             <Font name="AlbertusMTStd" size="17.0" />

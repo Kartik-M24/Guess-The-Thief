@@ -1,0 +1,19 @@
+.label {
+  font-family: 'Georgia';
+  -fx-font-family: 'Georgia';
+}
+
+Text {
+  font-family: 'Georgia';
+  -fx-font-family: 'Georgia';
+}
+
+.text-area {
+  font-family: 'Georgia';
+  -fx-font-family: 'Georgia';
+}
+
+.text-field {
+  font-family: 'Georgia';
+  -fx-font-family: 'Georgia';
+}
