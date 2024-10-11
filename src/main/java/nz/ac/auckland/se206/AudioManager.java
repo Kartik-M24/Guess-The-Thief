@@ -9,6 +9,11 @@ import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 
 public class AudioManager {
+
+  /**
+   * Enum representing different types of audio that can be used in the application. Each constant
+   * corresponds to a specific sound effect or music track.
+   */
   public enum AudioType {
     INITIALTHEFTAUDIO,
     AUDIENCEMURMUR,
@@ -45,7 +50,7 @@ public class AudioManager {
   private DoubleProperty volume = new SimpleDoubleProperty(1.0);
 
   /**
-   * Returns the volume property.
+   * Returns the volume property to be used in other necessary scenes
    *
    * @return The volume property.
    */

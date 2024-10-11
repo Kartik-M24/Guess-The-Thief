@@ -4,6 +4,11 @@ import java.util.HashMap;
 import javafx.scene.Parent;
 
 public class SceneManager {
+
+  /**
+   * Enum representing the various UI scenes in the application. Each constant corresponds to a
+   * specific scene or part of the user interface.
+   */
   public enum AppUi {
     INTROSCENE,
     MAINSCENE,

@@ -31,6 +31,7 @@ import nz.ac.auckland.se206.TimerManager;
  */
 public class SecurityFootageController extends MasterController {
 
+  public static boolean isMediaLoaded = false;
   @FXML private ImageView pauseImage;
   @FXML private ImageView playImage;
   @FXML private MediaView securityMedia;
@@ -42,7 +43,6 @@ public class SecurityFootageController extends MasterController {
   private MediaPlayer mediaPlayer;
   private boolean playing = false;
   private boolean endOfVideo = false;
-  public static boolean isMediaLoaded = false;
 
   /**
    * Initializes the SecurityFootageController. Sets up the media player, binds the current time

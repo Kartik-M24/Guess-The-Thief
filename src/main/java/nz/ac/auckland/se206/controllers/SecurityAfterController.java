@@ -26,8 +26,15 @@ public class SecurityAfterController extends MasterController {
   @FXML private ImageView suspect2Image;
   private TimerManager timerManager = TimerManager.getInstance();
 
+  /**
+   * Initializes the scene by setting up the timer and configuring the visibility of UI elements.
+   * The timer is retrieved from the TimerManager and is set to trigger the updateTimer() method
+   * every millisecond. Specific UI components related to suspects are made invisible at the start.
+   */
   @FXML
   public void initialize() {
+    // Sets the timer for the scene and set appropriate fields as visible and not visible depending
+    // on what we neeed
     Timeline timeline = TimerManager.getTimeline();
     timeline.getKeyFrames().add(new KeyFrame(Duration.millis(1), event -> updateTimer()));
     suspect1Circle.setVisible(false);
@@ -92,7 +99,7 @@ public class SecurityAfterController extends MasterController {
   }
 
   /**
-   * Handles mouse hover on image
+   * Handles mouse hover on image.
    *
    * @param event the mouse event triggered by clicking a rectangle
    */
@@ -103,7 +110,7 @@ public class SecurityAfterController extends MasterController {
   }
 
   /**
-   * Handles mouse hover on circle
+   * Handles mouse hover on circle.
    *
    * @param event the mouse event triggered by clicking a rectangle
    */
