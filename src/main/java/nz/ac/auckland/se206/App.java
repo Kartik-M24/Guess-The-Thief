@@ -77,6 +77,10 @@ public class App extends Application {
             SceneManager.addUi(SceneManager.AppUi.LOCKSCENE, loadFxml("lockscene"));
             SceneManager.addUi(SceneManager.AppUi.FUSEBOXINITIAL, loadFxml("fuseboxinitial"));
             SceneManager.addUi(SceneManager.AppUi.GAMELOST, loadFxml("gamelost"));
+            SceneManager.addUi(SceneManager.AppUi.SECURITYFOOTAGEAFTER, loadFxml("securityafter"));
+            SceneManager.addUi(
+                SceneManager.AppUi.SECURITYFOOTAGEBEFORE, loadFxml("securitybefore"));
+            SceneManager.addUi(SceneManager.AppUi.SECURITYFOOTAGEMIDDLE, loadFxml("security"));
             AudioManager.addAudio(AudioManager.AudioType.BACKGROUNDMUSIC, "backgroundMusic");
             AudioManager.addAudio(AudioManager.AudioType.TYPEWRITER, "typewriteraudio");
             AudioManager.addAudio(AudioManager.AudioType.PAGEFLIP, "pageflip");

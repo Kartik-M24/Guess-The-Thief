@@ -9,6 +9,7 @@ import nz.ac.auckland.se206.GameStateContext;
 import nz.ac.auckland.se206.SceneManager;
 import nz.ac.auckland.se206.SceneManager.AppUi;
 import nz.ac.auckland.se206.controllers.MainSceneController;
+import nz.ac.auckland.se206.controllers.SecurityFootageController;
 import nz.ac.auckland.se206.speech.TextToSpeech;
 
 /**
@@ -70,10 +71,17 @@ public class GameStarted implements GameState {
       rectScene.setRoot(SceneManager.getUiRoot(AppUi.LETTERCLUE));
     }
     if (rectangleId.equals("securityCameraClue")) {
-      MainSceneController.audioManager.playAudio(AudioManager.AudioType.CCTVSTART, 1.3);
-      Rectangle rectValue = (Rectangle) event.getSource();
-      Scene rectScene = rectValue.getScene();
-      rectScene.setRoot(SceneManager.getUiRoot(AppUi.SECURITYFOOTAGE));
+      if (SecurityFootageController.isMediaLoaded) {
+        MainSceneController.audioManager.playAudio(AudioManager.AudioType.CCTVSTART, 1.3);
+        Rectangle rectValue = (Rectangle) event.getSource();
+        Scene rectScene = rectValue.getScene();
+        rectScene.setRoot(SceneManager.getUiRoot(AppUi.SECURITYFOOTAGE));
+      } else {
+        MainSceneController.audioManager.playAudio(AudioManager.AudioType.CCTVSTART, 1.3);
+        Rectangle rectValue = (Rectangle) event.getSource();
+        Scene rectScene = rectValue.getScene();
+        rectScene.setRoot(SceneManager.getUiRoot(AppUi.SECURITYFOOTAGEMIDDLE));
+      }
     }
   }
 }

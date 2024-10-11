@@ -38,6 +38,7 @@ public class SecurityFootageController extends MasterController {
   private MediaPlayer mediaPlayer;
   private boolean playing = false;
   private boolean endOfVideo = false;
+  public static boolean isMediaLoaded = false;
 
   @FXML
   public void initialize() throws URISyntaxException {
@@ -48,6 +49,7 @@ public class SecurityFootageController extends MasterController {
     mediaPlayer = new MediaPlayer(video);
     mediaPlayer.setOnReady(
         () -> {
+          isMediaLoaded = true;
           System.out.println("Media loaded successfully!");
           securityMedia.setMediaPlayer(mediaPlayer);
         });

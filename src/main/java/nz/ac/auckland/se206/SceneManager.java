@@ -26,7 +26,10 @@ public class SceneManager {
     SECURITYFOOTAGE,
     LOCKSCENE,
     FUSEBOXINITIAL,
-    GAMELOST
+    GAMELOST,
+    SECURITYFOOTAGEAFTER,
+    SECURITYFOOTAGEBEFORE,
+    SECURITYFOOTAGEMIDDLE
   }
 
   private static HashMap<AppUi, Parent> sceneMap = new HashMap<AppUi, Parent>();
