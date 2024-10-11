@@ -25,6 +25,10 @@ import nz.ac.auckland.se206.SceneManager.AppUi;
 import nz.ac.auckland.se206.TimerManager;
 import nz.ac.auckland.se206.prompts.PromptEngineering;
 
+/**
+ * Controls the collector room scene, handling user interactions and chat communication with a GPT
+ * model. Manages scene navigation and updates the room's visited state.
+ */
 public class CollectorRoomController extends MasterController {
 
   private static boolean isCollectorRoomVisited;
@@ -47,7 +51,7 @@ public class CollectorRoomController extends MasterController {
 
   private ChatCompletionRequest chatCompletionRequest;
 
-  /** Initializes the room view. */
+  /** Initializes the Collector room view and sets relevant and necessary fields */
   @FXML
   public void initialize() {
     setProfession();
@@ -66,11 +70,7 @@ public class CollectorRoomController extends MasterController {
     return PromptEngineering.getPrompt("collectorPrompt.txt");
   }
 
-  /**
-   * Sets the profession for the chat context and initializes the ChatCompletionRequest.
-   *
-   * @param profession the profession to set
-   */
+  /** Sets the profession for the chat context and initializes the ChatCompletionRequest. */
   public void setProfession() {
     // Sets the profession of the collector and sets gpt to respons accordingly
     try {

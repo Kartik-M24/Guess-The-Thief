@@ -16,6 +16,13 @@ import nz.ac.auckland.se206.SceneManager;
 import nz.ac.auckland.se206.SceneManager.AppUi;
 import nz.ac.auckland.se206.TimerManager;
 
+/**
+ * Controller for the letter clue scene. Manages user interactions with the letter clue images and
+ * updates the opacity based on slider input. - Initializes the scene by setting initial visibility
+ * and opacity of clue images. - Handles mouse clicks on the crime scene to navigate back to the
+ * main scene. - Adjusts the opacity of text images with random perturbations and a non-linear
+ * transformation when the slider value changes.
+ */
 public class LetterClueController extends MasterController {
 
   @FXML private ImageView textImage1;

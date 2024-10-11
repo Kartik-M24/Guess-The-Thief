@@ -15,6 +15,13 @@ import nz.ac.auckland.se206.SceneManager;
 import nz.ac.auckland.se206.SceneManager.AppUi;
 import nz.ac.auckland.se206.TimerManager;
 
+/**
+ * Controller for the initial scene without an artifact. Manages the fade transitions and timer
+ * updates based on elapsed time. - Fades out the light rectangle after 4 minutes and 44 seconds. -
+ * Resets the timer to 4 minutes and 59 seconds when the time reaches 4 minutes and 43.9 seconds. -
+ * Fades in the introduction pane and enables the next button when the timer reaches 4 minutes and
+ * 57 seconds.
+ */
 public class InitialSceneWithoutArtifactController extends MasterController {
 
   @FXML private Rectangle lightRect;

@@ -13,6 +13,12 @@ import nz.ac.auckland.se206.SceneManager;
 import nz.ac.auckland.se206.SceneManager.AppUi;
 import nz.ac.auckland.se206.TimerManager;
 
+/**
+ * Controller for the guessing scene, managing user interactions with suspects and timer updates.
+ * Handles clicks on rectangles representing the archaeologist, auctioneer, and collector,
+ * transitioning to appropriate scenes based on user choices. Monitors the timer and redirects to
+ * the game over scene if the time runs out.
+ */
 public class GuessingSceneController extends MasterController {
 
   public static boolean isUserAtExplanationScene = false;

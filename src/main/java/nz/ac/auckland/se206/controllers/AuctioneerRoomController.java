@@ -24,6 +24,10 @@ import nz.ac.auckland.se206.SceneManager.AppUi;
 import nz.ac.auckland.se206.TimerManager;
 import nz.ac.auckland.se206.prompts.PromptEngineering;
 
+/**
+ * Controls the auctioneer room scene, handling user interactions and chat communication with a GPT
+ * model. Manages scene navigation and updates the room's visited state.
+ */
 public class AuctioneerRoomController extends MasterController {
   private static boolean isAuctioneerRoomVisited;
 
@@ -63,11 +67,7 @@ public class AuctioneerRoomController extends MasterController {
     return PromptEngineering.getPrompt("auctioneerPrompt.txt");
   }
 
-  /**
-   * Sets the profession for the chat context and initializes the ChatCompletionRequest.
-   *
-   * @param profession the profession to set
-   */
+  /** Sets the profession for the chat context and initializes the ChatCompletionRequest. */
   public void setProfession() {
     // Sets the profession of the auctioneer and sets gpt to respons accordingly
     try {

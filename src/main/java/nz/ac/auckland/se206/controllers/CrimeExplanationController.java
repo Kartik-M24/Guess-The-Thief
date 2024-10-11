@@ -21,6 +21,11 @@ import nz.ac.auckland.se206.AudioManager;
 import nz.ac.auckland.se206.TimerManager;
 import nz.ac.auckland.se206.prompts.PromptEngineering;
 
+/**
+ * Controls the crime explanation scene, managing user interactions and chat communication with the
+ * evaluation bot. Handles message sending, timer updates, and scene transitions, providing feedback
+ * based on user input.
+ */
 public class CrimeExplanationController extends MasterController {
 
   @FXML private TextArea txtaChat;
@@ -30,7 +35,7 @@ public class CrimeExplanationController extends MasterController {
 
   private ChatCompletionRequest chatCompletionRequest;
 
-  /** Initializes the room view. */
+  /** Initializes the crime explanation scene whie setting necessary fields . */
   @FXML
   public void initialize() {
     setProfession();

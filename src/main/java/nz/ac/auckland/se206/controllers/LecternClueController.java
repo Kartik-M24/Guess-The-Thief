@@ -15,6 +15,12 @@ import nz.ac.auckland.se206.SceneManager;
 import nz.ac.auckland.se206.SceneManager.AppUi;
 import nz.ac.auckland.se206.TimerManager;
 
+/**
+ * Controller for the lectern clue scene. Manages user interactions with the clues and transitions
+ * to the main scene. - Handles mouse clicks on crime scenes and clues. - Updates the timer and
+ * manages visual effects for clues. - Changes the cursor to a hand icon when hovering over clues
+ * and displays a glow effect.
+ */
 public class LecternClueController extends MasterController {
 
   private static GameStateContext context = new GameStateContext();

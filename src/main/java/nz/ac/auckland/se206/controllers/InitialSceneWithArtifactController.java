@@ -9,6 +9,13 @@ import nz.ac.auckland.se206.App;
 import nz.ac.auckland.se206.AudioManager;
 import nz.ac.auckland.se206.TimerManager;
 
+/**
+ * Controller for the initial scene that includes an artifact. Manages the timer and performs
+ * specific actions based on elapsed time. - Plays an auction audio when the timer reaches 4
+ * minutes, 57 seconds, and 999 milliseconds. - Switches to the "lightsoffscene" when the timer
+ * reaches 4 minutes, 49 seconds, and 380 milliseconds. - Switches to "initialscenewithOUTartifact"
+ * and plays background music when the timer reaches 4 minutes and 48 seconds.
+ */
 public class InitialSceneWithArtifactController {
 
   public static boolean isFirstTime = true;

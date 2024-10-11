@@ -24,6 +24,10 @@ import nz.ac.auckland.se206.SceneManager.AppUi;
 import nz.ac.auckland.se206.TimerManager;
 import nz.ac.auckland.se206.prompts.PromptEngineering;
 
+/**
+ * Controls the archaeologist room scene, handling user interactions and chat communication with a
+ * GPT model. Manages scene navigation and updates the room's visited state.
+ */
 public class ArchaeologistRoomController extends MasterController {
 
   private static boolean isArchaeologistRoomVisited;
@@ -45,7 +49,7 @@ public class ArchaeologistRoomController extends MasterController {
 
   private ChatCompletionRequest chatCompletionRequest;
 
-  /** Initializes the room view. */
+  /** Initializes the room view and set neccessary and relevant fields to use. */
   @FXML
   public void initialize() {
     setProfession();
@@ -63,11 +67,7 @@ public class ArchaeologistRoomController extends MasterController {
     return PromptEngineering.getPrompt("archaeologistPrompt.txt");
   }
 
-  /**
-   * Sets the profession for the chat context and initializes the ChatCompletionRequest.
-   *
-   * @param profession the profession to set
-   */
+  /** Sets the profession for the chat context and initializes the ChatCompletionRequest. */
   public void setProfession() {
     // Sets the profession of the archaeologist and sets gpt to respons accordingly
     try {
