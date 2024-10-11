@@ -81,6 +81,8 @@ public class App extends Application {
             SceneManager.addUi(
                 SceneManager.AppUi.SECURITYFOOTAGEBEFORE, loadFxml("securitybefore"));
             SceneManager.addUi(SceneManager.AppUi.SECURITYFOOTAGEMIDDLE, loadFxml("security"));
+            // Add all releveant audio files that are used in the duration of the video game into
+            // the project so that is can be called later
             AudioManager.addAudio(AudioManager.AudioType.BACKGROUNDMUSIC, "backgroundMusic");
             AudioManager.addAudio(AudioManager.AudioType.TYPEWRITER, "typewriteraudio");
             AudioManager.addAudio(AudioManager.AudioType.PAGEFLIP, "pageflip");

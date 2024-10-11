@@ -51,7 +51,7 @@ public class CollectorRoomController extends MasterController {
 
   private ChatCompletionRequest chatCompletionRequest;
 
-  /** Initializes the Collector room view and sets relevant and necessary fields */
+  /** Initializes the Collector room view and sets relevant and necessary fields. */
   @FXML
   public void initialize() {
     setProfession();

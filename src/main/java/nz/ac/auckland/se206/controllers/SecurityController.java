@@ -67,7 +67,7 @@ public class SecurityController extends MasterController {
   }
 
   /**
-   * Handles mouse hover on image
+   * Handles mouse hover on image.
    *
    * @param event the mouse event triggered by clicking a rectangle
    */
