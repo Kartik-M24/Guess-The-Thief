@@ -25,7 +25,7 @@ public class MasterController {
   /** Updates the timer. */
   public void updateTimer() {
     // Updates the timer accordingly so it decrements and also checks if the timer is 0 and sends
-    // the player to the guessing scene.
+    // the player to the guessing scene.`
     if (timerManager.isTimeUp()
         && !MainSceneController.isUserAtGuessingScene
         && !GuessingSceneController.isUserAtExplanationScene) {

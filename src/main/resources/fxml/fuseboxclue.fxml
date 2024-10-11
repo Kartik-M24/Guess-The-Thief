@@ -52,11 +52,6 @@
             <Font name="AlbertusMTStd" size="63.0" />
          </font>
       </Text>
-      <Label fx:id="timer" alignment="CENTER" layoutX="24.0" layoutY="24.0" prefHeight="62.0" prefWidth="154.0" textAlignment="CENTER" textFill="#b71616">
-         <font>
-            <Font size="40.0" />
-         </font>
-      </Label>
       <ImageView fitHeight="79.0" fitWidth="139.0" layoutX="32.0" layoutY="16.0" opacity="0.6" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/timerBackground.jpeg" />
@@ -80,6 +75,6 @@
       <Rectangle fx:id="wires" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="88.0" layoutX="474.0" layoutY="12.0" onMouseClicked="#handleRectClick" onMouseEntered="#onMouseEnteredW" onMouseExited="#onMouseExitedW" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="81.0" />
       <Rectangle fx:id="switches" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="94.0" layoutX="456.0" layoutY="122.0" onMouseClicked="#handleRectClick" onMouseEntered="#onMouseEnteredS" onMouseExited="#onMouseExitedS" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="224.0" />
       <Rectangle fx:id="ashes" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="54.0" layoutX="373.0" layoutY="536.0" onMouseClicked="#handleRectClick" onMouseEntered="#onMouseEnteredC" onMouseExited="#onMouseExitedC" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="88.0" />
-    <Label fx:id="timer" alignment="CENTER" layoutX="24.0" layoutY="24.0" prefHeight="62.0" prefWidth="154.0" style="-fx-font-family: 'AMGDT_IV25'; -fx-font-size: 40px; -fx-text-fill: white;" textAlignment="CENTER" textFill="WHITE" />
+    <Label fx:id="timer" alignment="CENTER" layoutX="24.0" layoutY="24.0" prefHeight="62.0" prefWidth="154.0" style="-fx-font-size: 40px; -fx-text-fill: white;" textAlignment="CENTER" textFill="WHITE" />
    </children>
 </Pane>

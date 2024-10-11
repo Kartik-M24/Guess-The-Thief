@@ -20,9 +20,9 @@
             <Image url="@../images/timerBackground.jpeg" />
          </image>
       </ImageView>
-      <Label fx:id="timer" alignment="CENTER" layoutX="24.0" layoutY="24.0" prefHeight="62.0" prefWidth="154.0" style="-fx-font-family: 'AMGDT_IV25'; -fx-font-size: 40px; -fx-text-fill: white;" textAlignment="CENTER" textFill="WHITE" />
+      <Label fx:id="timer" alignment="CENTER" layoutX="24.0" layoutY="24.0" prefHeight="62.0" prefWidth="154.0" style="-fx-font-size: 40px; -fx-text-fill: white;" textAlignment="CENTER" textFill="WHITE" />
       <Rectangle fx:id="lightRect" arcHeight="5.0" arcWidth="5.0" height="650.0" layoutX="1.0" stroke="BLACK" strokeType="INSIDE" width="1137.0" />
-      <Pane fx:id="introPane" layoutX="212.0" layoutY="23.0" opacity="0.0" prefHeight="586.0" prefWidth="830.0">
+      <Pane fx:id="introPane" layoutX="212.0" layoutY="23.0" opacity="0.0" prefHeight="586.0" prefWidth="830.0" stylesheets="@../css/textFont.css">
          <children>
             <ImageView fitHeight="640.0" fitWidth="596.0" layoutX="92.0" layoutY="-27.0">
                <image>

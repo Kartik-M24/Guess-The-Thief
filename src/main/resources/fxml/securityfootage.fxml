@@ -23,7 +23,7 @@
             <Image url="@../images/timerBackground.jpeg" />
          </image>
       </ImageView>
-      <Label fx:id="timer" alignment="CENTER" layoutX="24.0" layoutY="24.0" prefHeight="62.0" prefWidth="154.0" style="-fx-font-family: 'AMGDT_IV25'; -fx-font-size: 40px; -fx-text-fill: white;" textAlignment="CENTER" textFill="WHITE">
+      <Label fx:id="timer" alignment="CENTER" layoutX="24.0" layoutY="24.0" prefHeight="62.0" prefWidth="154.0" style="-fx-font-size: 40px; -fx-text-fill: white;" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="AMGDT_IV25" size="12.0" />
          </font></Label>

@@ -1,5 +1,5 @@
 @font-face {
-  font-family: 'Fleftex';
+  font-family: 'AlbertusMTStd';
   src: url('/fonts/AlbertusMTStd.otf');
 }
 
@@ -8,7 +8,7 @@
   -fx-font-family: 'AlbertusMTStd';
 }
 
-.text {
+Text {
   font-family: 'AlbertusMTStd';
   -fx-font-family: 'AlbertusMTStd';
 }
