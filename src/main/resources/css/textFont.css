@@ -1,24 +1,19 @@
-@font-face {
-  font-family: 'AlbertusMTStd';
-  src: url('/fonts/AlbertusMTStd.otf');
-}
-
 .label {
-  font-family: 'AlbertusMTStd';
-  -fx-font-family: 'AlbertusMTStd';
+  font-family: 'Georgia';
+  -fx-font-family: 'Georgia';
 }
 
 Text {
-  font-family: 'AlbertusMTStd';
-  -fx-font-family: 'AlbertusMTStd';
+  font-family: 'Georgia';
+  -fx-font-family: 'Georgia';
 }
 
 .text-area {
-  font-family: 'AlbertusMTStd';
-  -fx-font-family: 'AlbertusMTStd';
+  font-family: 'Georgia';
+  -fx-font-family: 'Georgia';
 }
 
 .text-field {
-  font-family: 'AlbertusMTStd';
-  -fx-font-family: 'AlbertusMTStd';
+  font-family: 'Georgia';
+  -fx-font-family: 'Georgia';
 }
