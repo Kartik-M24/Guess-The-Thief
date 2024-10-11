@@ -39,6 +39,7 @@ public class CrimeExplanationController extends MasterController {
     gameoverButton.setVisible(false);
   }
 
+  /** Updates the timer accordingly with all its effects. */
   @Override
   public void updateTimer() {
     // Updates the timer accordingly with all its effects
@@ -62,11 +63,7 @@ public class CrimeExplanationController extends MasterController {
     return PromptEngineering.getPrompt("crimePrompt.txt");
   }
 
-  /**
-   * Sets the profession for the chat context and initializes the ChatCompletionRequest.
-   *
-   * @param profession the profession to set
-   */
+  /** Sets the profession for the chat context and initializes the ChatCompletionRequest. */
   public void setProfession() {
     // Sets the prompt accordingly so it responds accordingly
     try {

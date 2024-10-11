@@ -134,9 +134,9 @@ public class FuseBoxClueController extends MasterController {
   }
 
   /**
-   * Handles mouse hover on rectangles to help identify clues
+   * Handles mouse hover on rectangles to help identify clues.
    *
-   * @param event the mouse event triggered by clicking a rectangle
+   * @param event the mouse event triggered by hovering over a rectangle
    */
   @FXML
   private void onMouseEnteredC(MouseEvent event) {
@@ -146,11 +146,21 @@ public class FuseBoxClueController extends MasterController {
     checkAllTexts();
   }
 
+  /**
+   * Handles mouse exit on rectangles to help identify clues.
+   *
+   * @param event the mouse event triggered by exiting a rectangle
+   */
   @FXML
   private void onMouseExitedC(MouseEvent event) {
     cigarClueGlow.setVisible(false);
   }
 
+  /**
+   * Handles mouse hover on rectangles to help identify clues.
+   *
+   * @param event the mouse event triggered by hovering over a rectangle
+   */
   @FXML
   private void onMouseEnteredS(MouseEvent event) {
     Rectangle clickedRectangle = (Rectangle) event.getSource();
@@ -159,11 +169,21 @@ public class FuseBoxClueController extends MasterController {
     checkAllTexts();
   }
 
+  /**
+   * Handles mouse exit on rectangles to help identify clues.
+   *
+   * @param event the mouse event triggered by exiting a rectangle
+   */
   @FXML
   private void onMouseExitedS(MouseEvent event) {
     switchClueGlow.setVisible(false);
   }
 
+  /**
+   * Handles mouse hover on rectangles to help identify clues.
+   *
+   * @param event the mouse event triggered by hovering over a rectangle
+   */
   @FXML
   private void onMouseEnteredW(MouseEvent event) {
     Rectangle clickedRectangle = (Rectangle) event.getSource();
@@ -172,6 +192,11 @@ public class FuseBoxClueController extends MasterController {
     checkAllTexts();
   }
 
+  /**
+   * Handles mouse exit on rectangles to help identify clues.
+   *
+   * @param event the mouse event triggered by exiting a rectangle
+   */
   @FXML
   private void onMouseExitedW(MouseEvent event) {
     wireClueGlow.setVisible(false);

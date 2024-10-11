@@ -54,6 +54,12 @@ public class FuseboxInitialController extends MasterController {
     sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.LOCKSCENE));
   }
 
+  /**
+   * Changes the cursor to a hand cursor and makes the lock clue glow visible when the mouse enters
+   * a rectangle.
+   *
+   * @param event the mouse event triggered by entering a rectangle
+   */
   @FXML
   private void onMouseEnteredL(MouseEvent event) {
     Rectangle clickedRectangle = (Rectangle) event.getSource();
@@ -61,6 +67,11 @@ public class FuseboxInitialController extends MasterController {
     lockClueGlow.setVisible(true);
   }
 
+  /**
+   * Hides the lock clue glow when the mouse exits a rectangle.
+   *
+   * @param event the mouse event triggered by exiting a rectangle
+   */
   @FXML
   private void onMouseExitedL(MouseEvent event) {
     lockClueGlow.setVisible(false);

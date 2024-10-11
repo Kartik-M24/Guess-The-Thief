@@ -32,7 +32,10 @@ public class LockSceneController extends MasterController {
   // Create a boolean flag for direction and use an array to mutate it within the lambda
   final boolean[] isIncreasing = {true};
 
-  /** Initializes the locked fuse box view. */
+  /**
+   * Initializes the locked fuse box view. Sets up the initial visibility of sliders and gauges, and
+   * creates timelines for each slider.
+   */
   @FXML
   public void initialize() {
     // Inirialises all the necessary fields and initialises the timeline

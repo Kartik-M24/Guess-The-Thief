@@ -24,6 +24,11 @@ public class InitialSceneWithoutArtifactController extends MasterController {
   private FadeTransition fadeLightTransition = new FadeTransition();
   private FadeTransition fadeIntroTransition = new FadeTransition();
 
+  /**
+   * Initializes the controller class. This method is automatically called after the FXML file has
+   * been loaded. It sets up the necessary fields and creates all the fade transitions to be used in
+   * the game.
+   */
   @FXML
   public void initialize() {
     // Initialises all the necessary fields and creates all the fade transitions to be used in the
@@ -54,12 +59,20 @@ public class InitialSceneWithoutArtifactController extends MasterController {
     fadeIntroTransition.setAutoReverse(false);
   }
 
+  /**
+   * Updates the timer display. This method is called to refresh the timer text with the current
+   * formatted time.
+   */
   @Override
   public void updateTimer() {
     // Sets the text for the timer
     timer.setText(timerManager.getFormattedTime());
   }
 
+  /**
+   * Checks the current time and performs specific actions based on the time. It handles the fade
+   * transitions and updates the timer accordingly.
+   */
   public void checkTime() {
     // Checks the time and does events depending on what the time is.
     if (timerManager.getMinutes() == 4

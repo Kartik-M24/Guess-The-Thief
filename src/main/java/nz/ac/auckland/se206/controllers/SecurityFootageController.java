@@ -39,6 +39,12 @@ public class SecurityFootageController extends MasterController {
   private boolean playing = false;
   private boolean endOfVideo = false;
 
+  /**
+   * Initializes the SecurityFootageController. Sets up the media player, binds the current time
+   * label, and configures the slider and its listeners.
+   *
+   * @throws URISyntaxException if the URI syntax is incorrect
+   */
   @FXML
   public void initialize() throws URISyntaxException {
     Timeline timeline = TimerManager.getTimeline();
@@ -214,10 +220,22 @@ public class SecurityFootageController extends MasterController {
                 mediaPlayer.currentTimeProperty()));
   }
 
+  /**
+   * Converts a Duration object to a formatted time string.
+   *
+   * @param time the Duration object representing the time
+   * @return the formatted time string in the format "MM:SS"
+   */
   private String getTime(Duration time) {
     return String.format("%02d:%02d", (int) time.toSeconds() / 60, (int) time.toSeconds() % 60);
   }
 
+  /**
+   * Checks if the current time matches the total time of the video and sets the endOfVideo flag.
+   *
+   * @param currentTime the current time of the video
+   * @param totalTime the total time of the video
+   */
   private void labelMatchEndVideo(String currentTime, String totalTime) {
     endOfVideo = false;
     if (currentTime.equals(totalTime)) {
@@ -225,11 +243,13 @@ public class SecurityFootageController extends MasterController {
     }
   }
 
+  /** Skips the video forward by 5 seconds. */
   @FXML
   private void skip5Seconds() {
     mediaPlayer.seek(mediaPlayer.getCurrentTime().add(Duration.seconds(5)));
   }
 
+  /** Rewinds the video backward by 5 seconds. */
   @FXML
   private void goBack5Seconds() {
     mediaPlayer.seek(mediaPlayer.getCurrentTime().subtract(Duration.seconds(5)));
