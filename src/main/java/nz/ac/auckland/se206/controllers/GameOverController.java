@@ -9,6 +9,11 @@ import nz.ac.auckland.se206.App;
 import nz.ac.auckland.se206.AudioManager;
 import nz.ac.auckland.se206.TimerManager;
 
+/**
+ * Controller for the game over scene, managing the restart functionality. Handles user interactions
+ * with the restart button, allowing the game to reset and transition back to the initial scene for
+ * a new game.
+ */
 public class GameOverController extends MasterController {
 
   public static AudioManager audioManager = new AudioManager();

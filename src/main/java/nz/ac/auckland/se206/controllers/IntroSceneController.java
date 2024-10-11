@@ -10,6 +10,11 @@ import nz.ac.auckland.se206.SceneManager;
 import nz.ac.auckland.se206.SceneManager.AppUi;
 import nz.ac.auckland.se206.TimerManager;
 
+/**
+ * Controller for the introductory scene. Manages the transition to the main scene when the start
+ * button is clicked. - Resets the timer to 4 minutes and 59 seconds upon starting the game. -
+ * Initializes the audio for the audience murmurs.
+ */
 public class IntroSceneController extends MasterController {
 
   public static AudioManager audioManager = new AudioManager();

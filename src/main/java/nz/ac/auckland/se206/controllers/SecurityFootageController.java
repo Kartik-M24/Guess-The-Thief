@@ -25,6 +25,10 @@ import nz.ac.auckland.se206.SceneManager;
 import nz.ac.auckland.se206.SceneManager.AppUi;
 import nz.ac.auckland.se206.TimerManager;
 
+/**
+ * Controls playback of security footage in the application. Manages video playback, user
+ * interactions, and updates UI components. Supports play, pause, skip, and rewind functionalities.
+ */
 public class SecurityFootageController extends MasterController {
 
   @FXML private ImageView pauseImage;

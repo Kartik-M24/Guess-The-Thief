@@ -13,6 +13,11 @@ import nz.ac.auckland.se206.SceneManager;
 import nz.ac.auckland.se206.SceneManager.AppUi;
 import nz.ac.auckland.se206.TimerManager;
 
+/**
+ * Controls the initial fuse box scene, managing user interactions with the lock clue. Handles mouse
+ * events for clicking on the lock and changing the cursor when hovering over the rectangle
+ * representing the lock. Updates the scene based on user actions.
+ */
 public class FuseboxInitialController extends MasterController {
 
   @FXML private Rectangle lock;

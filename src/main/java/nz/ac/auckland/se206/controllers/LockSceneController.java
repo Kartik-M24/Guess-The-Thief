@@ -15,6 +15,12 @@ import nz.ac.auckland.se206.SceneManager;
 import nz.ac.auckland.se206.SceneManager.AppUi;
 import nz.ac.auckland.se206.TimerManager;
 
+/**
+ * Controller for the Lock Scene. This class manages the interactions and behavior of the lock scene
+ * in the application, where players interact with sliders to unlock a fuse box. It handles the
+ * initialization of sliders and gauges, manages slider movements, and transitions to the next scene
+ * upon successfully unlocking the fuse box.
+ */
 public class LockSceneController extends MasterController {
 
   @FXML private Slider slider1;

@@ -14,6 +14,10 @@ import nz.ac.auckland.se206.SceneManager;
 import nz.ac.auckland.se206.SceneManager.AppUi;
 import nz.ac.auckland.se206.TimerManager;
 
+/**
+ * Manages the suspect selection interface. Handles user interactions for selecting suspects and
+ * navigating between scenes.
+ */
 public class SuspectSelectionController extends MasterController {
   @FXML private Rectangle rectArchaeologist;
   @FXML private Rectangle rectAuctioneer;

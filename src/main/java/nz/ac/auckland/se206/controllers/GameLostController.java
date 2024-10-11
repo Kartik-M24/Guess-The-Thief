@@ -7,6 +7,11 @@ import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 import nz.ac.auckland.se206.App;
 
+/**
+ * Controller for the game lost scene, managing the restart functionality. Handles user interactions
+ * with the restart rectangle, allowing the game to reset and transition back to the initial scene
+ * for a new game.
+ */
 public class GameLostController extends MasterController {
 
   @FXML private Rectangle restartRect;

@@ -20,6 +20,11 @@ import nz.ac.auckland.se206.SceneManager;
 import nz.ac.auckland.se206.SceneManager.AppUi;
 import nz.ac.auckland.se206.TimerManager;
 
+/**
+ * Controls the fuse box clue scene, managing user interactions with clues and analyzing findings.
+ * Handles mouse events for clicking and hovering over clues, updates the user interface based on
+ * the analysis progress, and plays audio cues for interactions.
+ */
 public class FuseBoxClueController extends MasterController {
 
   @FXML private ImageView notepad;
@@ -125,7 +130,7 @@ public class FuseBoxClueController extends MasterController {
         });
   }
 
-  /** Displays analysis is complete when all clues have been analysed */
+  /** Displays analysis is complete when all clues have been analysed. */
   private void checkAllTexts() {
     if (t1 && t2 && t3) {
       text5.setVisible(true);
