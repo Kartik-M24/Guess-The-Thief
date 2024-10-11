@@ -46,11 +46,27 @@ public class SecurityFootageController extends MasterController {
     video = new Media(App.class.getResource("/images/securityFootage.mp4").toURI().toString());
     System.out.println(video.getSource());
     mediaPlayer = new MediaPlayer(video);
-    securityMedia.setMediaPlayer(mediaPlayer);
+    mediaPlayer.setOnReady(
+        () -> {
+          System.out.println("Media loaded successfully!");
+          securityMedia.setMediaPlayer(mediaPlayer);
+        });
     System.out.println("Initialised Security Footage Controller");
     playImage.setVisible(true);
     pauseImage.setVisible(false);
     bindCurrentTimeLabel();
+
+    mediaPlayer
+        .statusProperty()
+        .addListener(
+            (obs, oldStatus, newStatus) -> {
+              System.out.println("MediaPlayer status: " + newStatus);
+              if (newStatus == MediaPlayer.Status.READY) {
+                System.out.println("Media is loaded and ready.");
+              } else if (newStatus == MediaPlayer.Status.UNKNOWN) {
+                System.err.println("Failed to load media.");
+              }
+            });
 
     // Set the total time of the video and the slider
     mediaPlayer
