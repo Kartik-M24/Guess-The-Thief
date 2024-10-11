@@ -16,7 +16,7 @@ import nz.ac.auckland.se206.SceneManager;
 import nz.ac.auckland.se206.SceneManager.AppUi;
 import nz.ac.auckland.se206.TimerManager;
 
-public class SecurityAfterController {
+public class SecurityAfterController extends MasterController {
   @FXML private Label timer;
   @FXML private Circle suspect1Circle;
   @FXML private Circle suspect2Circle;
