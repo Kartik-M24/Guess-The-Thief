@@ -16,6 +16,13 @@ import nz.ac.auckland.se206.SceneManager;
 import nz.ac.auckland.se206.SceneManager.AppUi;
 import nz.ac.auckland.se206.TimerManager;
 
+/**
+ * Controller for the letter clue scene. Manages user interactions with the letter clue images and
+ * updates the opacity based on slider input. - Initializes the scene by setting initial visibility
+ * and opacity of clue images. - Handles mouse clicks on the crime scene to navigate back to the
+ * main scene. - Adjusts the opacity of text images with random perturbations and a non-linear
+ * transformation when the slider value changes.
+ */
 public class LetterClueController extends MasterController {
 
   @FXML private ImageView textImage1;
@@ -23,7 +30,10 @@ public class LetterClueController extends MasterController {
   @FXML private ImageView textImage3;
   @FXML private Text hintText;
 
-  /** Initializes the letter clue view. */
+  /**
+   * Initializes the letter clue view by setting up the initial visibility and opacity of text
+   * images and adding a key frame to the timeline for updating the timer.
+   */
   @FXML
   public void initialize() {
     // initialises the scene and sets up correct fields
@@ -49,6 +59,12 @@ public class LetterClueController extends MasterController {
     sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.MAINSCENE));
   }
 
+  /**
+   * Handles changes in the slider value by adjusting the opacity of text images with a random
+   * perturbation and non-linear transformation.
+   *
+   * @param event the mouse event triggered by changing the slider value
+   */
   @FXML
   private void onSliderChanged(MouseEvent event) {
     hintText.setVisible(false);

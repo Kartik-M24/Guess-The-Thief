@@ -33,6 +33,7 @@ public class MainSceneController extends MasterController {
   private static GameStateContext context = new GameStateContext();
   private static boolean clueClicked;
   public static boolean isUserAtGuessingScene = false;
+  public static AudioManager audioManager = new AudioManager();
 
   public static void setClueClicked() {
     clueClicked = false;
@@ -47,8 +48,6 @@ public class MainSceneController extends MasterController {
   @FXML private ImageView cameraClueGlow;
   @FXML private ImageView soundIcon;
   @FXML private Slider volumeSlider;
-
-  public static AudioManager audioManager = new AudioManager();
 
   /**
    * Initializes the room view. If it's the first time initialization, it will provide instructions
@@ -68,11 +67,13 @@ public class MainSceneController extends MasterController {
     timerManager.startTimer();
     Timeline timeline = TimerManager.getTimeline();
     timeline.getKeyFrames().add(new KeyFrame(Duration.millis(1), event -> updateTimer()));
+    // Set all the glows to be invisible at the start
     btnInteract.setVisible(false);
     lecternClueGlow.setVisible(false);
     fuseClueGlow.setVisible(false);
     cameraClueGlow.setVisible(false);
     volumeSlider.setVisible(false);
+    // set the volume slider to the initial state
     volumeSlider.setValue(100);
     volumeSlider
         .valueProperty()

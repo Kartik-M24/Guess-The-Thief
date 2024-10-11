@@ -13,6 +13,11 @@ import nz.ac.auckland.se206.SceneManager;
 import nz.ac.auckland.se206.SceneManager.AppUi;
 import nz.ac.auckland.se206.TimerManager;
 
+/**
+ * Controls the initial fuse box scene, managing user interactions with the lock clue. Handles mouse
+ * events for clicking on the lock and changing the cursor when hovering over the rectangle
+ * representing the lock. Updates the scene based on user actions.
+ */
 public class FuseboxInitialController extends MasterController {
 
   @FXML private Rectangle lock;
@@ -54,6 +59,12 @@ public class FuseboxInitialController extends MasterController {
     sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.LOCKSCENE));
   }
 
+  /**
+   * Changes the cursor to a hand cursor and makes the lock clue glow visible when the mouse enters
+   * a rectangle.
+   *
+   * @param event the mouse event triggered by entering a rectangle
+   */
   @FXML
   private void onMouseEnteredL(MouseEvent event) {
     Rectangle clickedRectangle = (Rectangle) event.getSource();
@@ -61,6 +72,11 @@ public class FuseboxInitialController extends MasterController {
     lockClueGlow.setVisible(true);
   }
 
+  /**
+   * Hides the lock clue glow when the mouse exits a rectangle.
+   *
+   * @param event the mouse event triggered by exiting a rectangle
+   */
   @FXML
   private void onMouseExitedL(MouseEvent event) {
     lockClueGlow.setVisible(false);

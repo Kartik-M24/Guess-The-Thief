@@ -20,6 +20,11 @@ import nz.ac.auckland.se206.SceneManager;
 import nz.ac.auckland.se206.SceneManager.AppUi;
 import nz.ac.auckland.se206.TimerManager;
 
+/**
+ * Controls the fuse box clue scene, managing user interactions with clues and analyzing findings.
+ * Handles mouse events for clicking and hovering over clues, updates the user interface based on
+ * the analysis progress, and plays audio cues for interactions.
+ */
 public class FuseBoxClueController extends MasterController {
 
   @FXML private ImageView notepad;
@@ -125,7 +130,7 @@ public class FuseBoxClueController extends MasterController {
         });
   }
 
-  /** Displays analysis is complete when all clues have been analysed */
+  /** Displays analysis is complete when all clues have been analysed. */
   private void checkAllTexts() {
     if (t1 && t2 && t3) {
 
@@ -135,9 +140,9 @@ public class FuseBoxClueController extends MasterController {
   }
 
   /**
-   * Handles mouse hover on rectangles to help identify clues
+   * Handles mouse hover on rectangles to help identify clues.
    *
-   * @param event the mouse event triggered by clicking a rectangle
+   * @param event the mouse event triggered by hovering over a rectangle
    */
   @FXML
   private void onMouseEnteredC(MouseEvent event) {
@@ -147,11 +152,21 @@ public class FuseBoxClueController extends MasterController {
     checkAllTexts();
   }
 
+  /**
+   * Handles mouse exit on rectangles to help identify clues.
+   *
+   * @param event the mouse event triggered by exiting a rectangle
+   */
   @FXML
   private void onMouseExitedC(MouseEvent event) {
     cigarClueGlow.setVisible(false);
   }
 
+  /**
+   * Handles mouse hover on rectangles to help identify clues.
+   *
+   * @param event the mouse event triggered by hovering over a rectangle
+   */
   @FXML
   private void onMouseEnteredS(MouseEvent event) {
     Rectangle clickedRectangle = (Rectangle) event.getSource();
@@ -160,11 +175,21 @@ public class FuseBoxClueController extends MasterController {
     checkAllTexts();
   }
 
+  /**
+   * Handles mouse exit on rectangles to help identify clues.
+   *
+   * @param event the mouse event triggered by exiting a rectangle
+   */
   @FXML
   private void onMouseExitedS(MouseEvent event) {
     switchClueGlow.setVisible(false);
   }
 
+  /**
+   * Handles mouse hover on rectangles to help identify clues.
+   *
+   * @param event the mouse event triggered by hovering over a rectangle
+   */
   @FXML
   private void onMouseEnteredW(MouseEvent event) {
     Rectangle clickedRectangle = (Rectangle) event.getSource();
@@ -173,6 +198,11 @@ public class FuseBoxClueController extends MasterController {
     checkAllTexts();
   }
 
+  /**
+   * Handles mouse exit on rectangles to help identify clues.
+   *
+   * @param event the mouse event triggered by exiting a rectangle
+   */
   @FXML
   private void onMouseExitedW(MouseEvent event) {
     wireClueGlow.setVisible(false);

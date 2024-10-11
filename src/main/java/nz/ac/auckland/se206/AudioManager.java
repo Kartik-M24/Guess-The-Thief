@@ -31,19 +31,37 @@ public class AudioManager {
   }
 
   private static HashMap<AudioType, String> audioMap = new HashMap<AudioType, String>();
-  private DoubleProperty volume = new SimpleDoubleProperty(1.0);
 
-  public DoubleProperty volumeProperty() {
-    return volume;
-  }
-
+  /**
+   * Adds an audio file to the audio map with the specified audio type.
+   *
+   * @param audioType The type of audio to add.
+   * @param audioFileName The name of the audio file to add.
+   */
   public static void addAudio(AudioType audioType, String audioFileName) {
     audioMap.put(audioType, audioFileName);
+  }
+
+  private DoubleProperty volume = new SimpleDoubleProperty(1.0);
+
+  /**
+   * Returns the volume property.
+   *
+   * @return The volume property.
+   */
+  public DoubleProperty volumeProperty() {
+    return volume;
   }
 
   private Media sound;
   private MediaPlayer player;
 
+  /**
+   * Plays the specified audio type at the given volume.
+   *
+   * @param audioType The type of audio to play.
+   * @param volume The volume at which to play the audio.
+   */
   public void playAudio(AudioType audioType, double volume) {
     // Gets the audio file name from the hash map and plays it so the player can hear it when
     // playing the game
@@ -59,12 +77,18 @@ public class AudioManager {
     player.play();
   }
 
+  /**
+   * Sets the volume of the currently playing audio.
+   *
+   * @param volume The volume to set.
+   */
   public void setVolume(double volume) {
     if (player != null) {
       player.setVolume(volume);
     }
   }
 
+  /** Stops the currently playing audio. */
   public void stopAudio() {
     if (player != null) {
       player.stop(); // Stop the audio immediately
@@ -72,6 +96,11 @@ public class AudioManager {
     }
   }
 
+  /**
+   * Binds the volume of the audio player to the specified volume slider.
+   *
+   * @param volumeSlider The slider to bind the volume to.
+   */
   public void bindVolumeSlider(Slider volumeSlider) {
     if (player != null) {
       player.volumeProperty().bind(volumeSlider.valueProperty().divide(100));

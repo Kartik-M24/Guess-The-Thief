@@ -15,11 +15,20 @@ import nz.ac.auckland.se206.SceneManager;
 import nz.ac.auckland.se206.SceneManager.AppUi;
 import nz.ac.auckland.se206.TimerManager;
 
+/**
+ * Controller for the lectern clue scene. Manages user interactions with the clues and transitions
+ * to the main scene. - Handles mouse clicks on crime scenes and clues. - Updates the timer and
+ * manages visual effects for clues. - Changes the cursor to a hand icon when hovering over clues
+ * and displays a glow effect.
+ */
 public class LecternClueController extends MasterController {
 
   private static GameStateContext context = new GameStateContext();
   @FXML private ImageView letterClueGlow;
 
+  /**
+   * Initializes the controller. Sets up the timeline for the timer and hides the letter clue glow.
+   */
   @FXML
   public void initialize() {
     Timeline timeline = TimerManager.getTimeline();
@@ -53,6 +62,12 @@ public class LecternClueController extends MasterController {
     context.handleClueClick(event, clickedRectangle.getId());
   }
 
+  /**
+   * Handles the mouse entering a rectangle representing a clue. Changes the cursor to a hand and
+   * makes the letter clue glow visible.
+   *
+   * @param event the mouse event triggered by entering a rectangle
+   */
   @FXML
   private void onMouseEnteredL(MouseEvent event) {
     Rectangle clickedRectangle = (Rectangle) event.getSource();
@@ -60,6 +75,11 @@ public class LecternClueController extends MasterController {
     letterClueGlow.setVisible(true);
   }
 
+  /**
+   * Handles the mouse exiting a rectangle representing a clue. Hides the letter clue glow.
+   *
+   * @param event the mouse event triggered by exiting a rectangle
+   */
   @FXML
   private void onMouseExitedL(MouseEvent event) {
     letterClueGlow.setVisible(false);

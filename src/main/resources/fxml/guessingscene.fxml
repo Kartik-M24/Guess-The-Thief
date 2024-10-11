@@ -8,7 +8,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1137.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nz.ac.auckland.se206.controllers.GuessingSceneController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1137.0" stylesheets="@../css/textFont.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nz.ac.auckland.se206.controllers.GuessingSceneController">
    <children>
       <ImageView fitHeight="650.0" fitWidth="1137.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -134,11 +134,6 @@
       <Rectangle fx:id="rectCollector" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="489.0" layoutX="774.0" layoutY="121.0" onMouseClicked="#handleCollectorClick" onMouseEntered="#onMouseEntered" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="331.0" />
       <Rectangle fx:id="rectAuctioneer" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="489.0" layoutX="405.0" layoutY="125.0" onMouseClicked="#handleAuctioneerClick" onMouseEntered="#onMouseEntered" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="331.0" />
       <Rectangle fx:id="rectArchaeologist" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="489.0" layoutX="34.0" layoutY="124.0" onMouseClicked="#handleArchaeologistClick" onMouseEntered="#onMouseEntered" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="324.0" />
-      <Label fx:id="timer" alignment="CENTER" layoutX="24.0" layoutY="24.0" prefHeight="62.0" prefWidth="154.0" textAlignment="CENTER" textFill="#b71616">
-         <font>
-            <Font size="40.0" />
-         </font>
-      </Label>
       <Label layoutX="437.0" layoutY="16.0" prefHeight="79.0" prefWidth="284.0" text="Guess the Thief" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="AlbertusMTStd" size="40.0" />
@@ -149,6 +144,10 @@
             <Image url="@../images/timerBackground.jpeg" />
          </image>
       </ImageView>
-    <Label fx:id="timer" alignment="CENTER" layoutX="24.0" layoutY="24.0" prefHeight="62.0" prefWidth="154.0" style="-fx-font-family: 'AMGDT_IV25'; -fx-font-size: 40px; -fx-text-fill: white;" textAlignment="CENTER" textFill="WHITE" />
+      <Label fx:id="timer" alignment="CENTER" layoutX="24.0" layoutY="24.0" prefHeight="62.0" prefWidth="154.0" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font size="40.0" />
+         </font>
+      </Label>
    </children>
 </Pane>

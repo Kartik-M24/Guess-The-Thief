@@ -5,16 +5,22 @@ import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.text.Text;
 import javafx.util.Duration;
 import nz.ac.auckland.se206.AudioManager;
 import nz.ac.auckland.se206.SceneManager;
 import nz.ac.auckland.se206.SceneManager.AppUi;
 import nz.ac.auckland.se206.TimerManager;
 
+/**
+ * Controller for the Lock Scene. This class manages the interactions and behavior of the lock scene
+ * in the application, where players interact with sliders to unlock a fuse box. It handles the
+ * initialization of sliders and gauges, manages slider movements, and transitions to the next scene
+ * upon successfully unlocking the fuse box.
+ */
 public class LockSceneController extends MasterController {
 
   @FXML private Slider slider1;
@@ -24,7 +30,7 @@ public class LockSceneController extends MasterController {
   @FXML private ImageView gauge2;
   @FXML private ImageView gauge3;
   @FXML private ImageView nextScene;
-  @FXML private Text text1;
+  @FXML private Label text1;
   private Timeline timeline1;
   private Timeline timeline2;
   private Timeline timeline3;
@@ -32,7 +38,10 @@ public class LockSceneController extends MasterController {
   // Create a boolean flag for direction and use an array to mutate it within the lambda
   final boolean[] isIncreasing = {true};
 
-  /** Initializes the locked fuse box view. */
+  /**
+   * Initializes the locked fuse box view. Sets up the initial visibility of sliders and gauges, and
+   * creates timelines for each slider.
+   */
   @FXML
   public void initialize() {
     // Inirialises all the necessary fields and initialises the timeline

@@ -9,6 +9,13 @@ import nz.ac.auckland.se206.App;
 import nz.ac.auckland.se206.AudioManager;
 import nz.ac.auckland.se206.TimerManager;
 
+/**
+ * Controller for the initial scene that includes an artifact. Manages the timer and performs
+ * specific actions based on elapsed time. - Plays an auction audio when the timer reaches 4
+ * minutes, 57 seconds, and 999 milliseconds. - Switches to the "lightsoffscene" when the timer
+ * reaches 4 minutes, 49 seconds, and 380 milliseconds. - Switches to "initialscenewithOUTartifact"
+ * and plays background music when the timer reaches 4 minutes and 48 seconds.
+ */
 public class InitialSceneWithArtifactController {
 
   public static boolean isFirstTime = true;
@@ -17,12 +24,23 @@ public class InitialSceneWithArtifactController {
   private TimerManager timerManager = TimerManager.getInstance();
   private AudioManager audioManager = new AudioManager();
 
+  /**
+   * Initializes the controller. This method is called after the FXML file has been loaded. It sets
+   * up a timeline with a key frame that calls the checkTime method every millisecond.
+   */
   @FXML
   public void initialize() {
     Timeline timeline = TimerManager.getTimeline();
     timeline.getKeyFrames().add(new KeyFrame(Duration.millis(1), event -> checkTime()));
   }
 
+  /**
+   * Checks the current time from the TimerManager and performs specific actions based on the time.
+   * - Plays an auction audio when the timer reaches 4 minutes, 57 seconds, and 999 milliseconds. -
+   * Switches the scene to "lightsoffscene" when the timer reaches 4 minutes, 49 seconds, and 380
+   * milliseconds. - Switches the scene to "initialscenewithOUTartifact" and plays background music
+   * when the timer reaches 4 minutes and 48 seconds.
+   */
   public void checkTime() {
 
     // Play auction audio

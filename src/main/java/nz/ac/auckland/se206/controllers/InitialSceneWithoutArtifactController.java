@@ -15,6 +15,13 @@ import nz.ac.auckland.se206.SceneManager;
 import nz.ac.auckland.se206.SceneManager.AppUi;
 import nz.ac.auckland.se206.TimerManager;
 
+/**
+ * Controller for the initial scene without an artifact. Manages the fade transitions and timer
+ * updates based on elapsed time. - Fades out the light rectangle after 4 minutes and 44 seconds. -
+ * Resets the timer to 4 minutes and 59 seconds when the time reaches 4 minutes and 43.9 seconds. -
+ * Fades in the introduction pane and enables the next button when the timer reaches 4 minutes and
+ * 57 seconds.
+ */
 public class InitialSceneWithoutArtifactController extends MasterController {
 
   @FXML private Rectangle lightRect;
@@ -24,6 +31,11 @@ public class InitialSceneWithoutArtifactController extends MasterController {
   private FadeTransition fadeLightTransition = new FadeTransition();
   private FadeTransition fadeIntroTransition = new FadeTransition();
 
+  /**
+   * Initializes the controller class. This method is automatically called after the FXML file has
+   * been loaded. It sets up the necessary fields and creates all the fade transitions to be used in
+   * the game.
+   */
   @FXML
   public void initialize() {
     // Initialises all the necessary fields and creates all the fade transitions to be used in the
@@ -54,12 +66,20 @@ public class InitialSceneWithoutArtifactController extends MasterController {
     fadeIntroTransition.setAutoReverse(false);
   }
 
+  /**
+   * Updates the timer display. This method is called to refresh the timer text with the current
+   * formatted time.
+   */
   @Override
   public void updateTimer() {
     // Sets the text for the timer
     timer.setText(timerManager.getFormattedTime());
   }
 
+  /**
+   * Checks the current time and performs specific actions based on the time. It handles the fade
+   * transitions and updates the timer accordingly.
+   */
   public void checkTime() {
     // Checks the time and does events depending on what the time is.
     if (timerManager.getMinutes() == 4

@@ -14,6 +14,12 @@ import nz.ac.auckland.se206.SceneManager;
 import nz.ac.auckland.se206.SceneManager.AppUi;
 import nz.ac.auckland.se206.TimerManager;
 
+/**
+ * Base controller class for managing shared functionality across different scenes. This class
+ * handles the timer updates, audio management, and navigation between different rooms in the game.
+ * It provides common methods for responding to mouse events, including entering and clicking on UI
+ * elements. Specific room navigation and game-over handling methods are also included.
+ */
 public class MasterController {
 
   @FXML protected Label timer;
@@ -22,10 +28,14 @@ public class MasterController {
   protected AudioManager audioManager = new AudioManager();
   protected AudioManager doorAudioManager = new AudioManager();
 
-  /** Updates the timer. */
+  /**
+   * Updates the timer. If the timer is up and the user is not at the guessing or explanation scene,
+   * it sets the timer to 1 hour, plays the "time's up" audio, and navigates to the guessing scene.
+   * It also updates the timer label with the formatted time.
+   */
   public void updateTimer() {
     // Updates the timer accordingly so it decrements and also checks if the timer is 0 and sends
-    // the player to the guessing scene.
+    // the player to the guessing scene.`
     if (timerManager.isTimeUp()
         && !MainSceneController.isUserAtGuessingScene
         && !GuessingSceneController.isUserAtExplanationScene) {
@@ -42,7 +52,7 @@ public class MasterController {
   }
 
   /**
-   * Handles mouse hover on rectangles to help identify clues
+   * Handles mouse hover on rectangles to help identify clues.
    *
    * @param event the mouse event triggered by clicking a rectangle
    */
@@ -53,7 +63,7 @@ public class MasterController {
   }
 
   /**
-   * Handles mouse hover on image
+   * Handles mouse hover on image.
    *
    * @param event the mouse event triggered by clicking a rectangle
    */
@@ -63,6 +73,11 @@ public class MasterController {
     clickedRectangle.setCursor(javafx.scene.Cursor.HAND);
   }
 
+  /**
+   * Handles mouse hover on buttons.
+   *
+   * @param event the mouse event triggered by hovering over a button
+   */
   @FXML
   private void onMouseEnteredImageB(MouseEvent event) {
     Button clickedRectangle = (Button) event.getSource();
@@ -112,7 +127,7 @@ public class MasterController {
   }
 
   /**
-   * Handles when the button is clicked to take you to the game over screen
+   * Handles when the button is clicked to take you to the game over screen.
    *
    * @param event the mouse event triggered by clicking a rectangle
    * @throws IOException if there is an I/O error

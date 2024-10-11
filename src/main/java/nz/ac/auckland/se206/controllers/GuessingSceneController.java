@@ -13,6 +13,12 @@ import nz.ac.auckland.se206.SceneManager;
 import nz.ac.auckland.se206.SceneManager.AppUi;
 import nz.ac.auckland.se206.TimerManager;
 
+/**
+ * Controller for the guessing scene, managing user interactions with suspects and timer updates.
+ * Handles clicks on rectangles representing the archaeologist, auctioneer, and collector,
+ * transitioning to appropriate scenes based on user choices. Monitors the timer and redirects to
+ * the game over scene if the time runs out.
+ */
 public class GuessingSceneController extends MasterController {
 
   public static boolean isUserAtExplanationScene = false;
@@ -28,6 +34,11 @@ public class GuessingSceneController extends MasterController {
     timeline.getKeyFrames().add(new KeyFrame(Duration.millis(1), event -> updateTimer()));
   }
 
+  /**
+   * Updates the timer, decrements it correctly, and checks if the timer has reached zero. If the
+   * timer is up and the user is at the guessing scene, it redirects to the game over scene. Updates
+   * the timer display with the formatted time.
+   */
   @Override
   public void updateTimer() {
     // Updates the timer accordingly so it decrements correctly and checks if the timer is 0 and

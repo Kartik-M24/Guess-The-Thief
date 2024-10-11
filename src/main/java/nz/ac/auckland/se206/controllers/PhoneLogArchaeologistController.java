@@ -15,6 +15,12 @@ import nz.ac.auckland.se206.SceneManager;
 import nz.ac.auckland.se206.SceneManager.AppUi;
 import nz.ac.auckland.se206.TimerManager;
 
+/**
+ * Controller for managing the Phone Log interface specific to the Archaeologist scene. This class
+ * handles user interactions with phone log images, allowing navigation between different suspects
+ * and the crime scene. It manages audio feedback and visibility states of UI components based on
+ * user clicks.
+ */
 public class PhoneLogArchaeologistController extends MasterController {
   @FXML private ImageView imgColleague;
   @FXML private ImageView imgVictor;
